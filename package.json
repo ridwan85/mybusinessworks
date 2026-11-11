@@ -13,7 +13,10 @@
         "generate": "node --env-file=.env scripts/generate.mjs",
         "extract": "node --env-file=.env scripts/extract.mjs",
         "import": "node scripts/import.mjs",
-        "test:image": "node --env-file=.env scripts/test-image-gen.mjs"
+        "test:image": "node --env-file=.env scripts/test-image-gen.mjs",
+        "pinterest:oauth": "node --env-file=.env scripts/pinterest-oauth.mjs",
+        "pinterest:draft": "node --env-file=.env scripts/pinterest-draft.mjs",
+        "pinterest:publish": "node --env-file=.env scripts/pinterest-publish.mjs"
     },
     "dependencies": {
         "@astrojs/sitemap": "^3.2.1",
