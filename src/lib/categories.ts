@@ -20,7 +20,7 @@ export const categoryHubs: CategoryHub[] = [
         match: (r) =>
             testCategory(
                 r,
-                /home|living|kitchen|house|vacuum|sealer|cleaner|appliance|decor|bedding|cook|food|storage|laundry|bath|garden|yard/i,
+                /home|living|kitchen|house|vacuum|sealer|cleaner|appliance|decor|bedding|cook|food|storage|laundry|bath|garden|yard|baby|nursery|video monitor/i,
             ) &&
             // Smart-home gadgets from Amazon Devices belong in Work & tech.
             !testCategory(r, /amazon devices|doorbell|smart home|security camera|echo |kindle|fire tv|video doorbell/i),
@@ -34,7 +34,9 @@ export const categoryHubs: CategoryHub[] = [
             testCategory(
                 r,
                 /tech|electronic|computer|office|work|gadget|phone|laptop|audio|headphone|charger|keyboard|mouse|monitor|tablet|usb|ssd|router|wifi|amazon devices|doorbell|smart home|security camera|echo |kindle|fire tv|video doorbell|camera/i,
-            ),
+            ) &&
+            // Nursery / baby monitors stay in Home & living.
+            !testCategory(r, /baby|nursery|hellobaby/i),
     },
     {
         slug: 'everyday-essentials',
@@ -91,5 +93,6 @@ export function normalizeProductCategory(raw: string | undefined, title = '') {
     const text = `${raw ?? ''} ${title}`;
     if (/amazon devices|doorbell|echo |kindle|fire tv|blink /i.test(text)) return 'Amazon Devices';
     if (/vacuum sealer|food sealer/i.test(text)) return 'Kitchen';
+    if (/baby|nursery|video monitor|hellobaby/i.test(text)) return 'Baby Products';
     return (raw ?? '').trim() || undefined;
 }

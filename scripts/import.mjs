@@ -26,6 +26,7 @@ function normalizeProductCategory(raw, title = '') {
     const text = `${raw ?? ''} ${title}`;
     if (/amazon devices|doorbell|echo |kindle|fire tv|blink /i.test(text)) return 'Amazon Devices';
     if (/vacuum sealer|food sealer/i.test(text)) return 'Kitchen';
+    if (/baby|nursery|video monitor|hellobaby/i.test(text)) return 'Baby Products';
     return String(raw ?? '').trim();
 }
 
