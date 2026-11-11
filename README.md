@@ -67,9 +67,10 @@ CLI-only tooling for **your** MyBusinessWorks account. Official Pins API only. E
 1. Create/connect an app at [developers.pinterest.com](https://developers.pinterest.com/).
 2. Redirect URI (register exactly): `https://mybusinesswork.com/oauth/pinterest/`  
    That page lives on this site and hands the auth code to your local CLI (`127.0.0.1:8787`). Set the same value in `.env` as `PINTEREST_REDIRECT_URI`.
-3. Request scopes: `boards:read`, `pins:read`, `pins:write`.
+3. Request scopes: `boards:read`, `boards:write`, `pins:read`, `pins:write`.
 4. For app review, link privacy policy `https://mybusinesswork.com/privacy/` and describe an **internal content tool** that drafts pins from Daily Viral Deals reviews and publishes only after you confirm each pin.
 5. Put `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, and `PINTEREST_BOARD_ID` in `.env`.
+6. **Trial vs Standard:** new apps start on **Trial**. Trial cannot create Pins on production (`api.pinterest.com`) — you’ll get HTTP 403. For real Pins on your public boards, open the app → **Upgrade to Standard access**, link `https://mybusinesswork.com/privacy/`, and upload a short screen recording of `pinterest:oauth` + one confirmed `pinterest:publish`. Until approved, you can only test creates against the sandbox (`PINTEREST_USE_SANDBOX=1`; sandbox boards/Pins are separate and only visible to you).
 
 ### Auth → draft → publish
 

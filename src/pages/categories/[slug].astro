@@ -7,6 +7,7 @@ import {
   reviewsForHub,
   uniqueProductCategories,
 } from '../../lib/categories';
+import { breadcrumbListJsonLd } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const reviews = await getCollection('reviews');
@@ -39,6 +40,24 @@ const allReviews = await getCollection('reviews');
 const relatedHubs = categoryHubs
   .filter((h) => h.slug !== Astro.params.slug)
   .map((h) => ({ ...h, count: reviewsForHub(allReviews, h).length }));
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbListJsonLd([
+      { name: 'Home', url: new URL('/', Astro.site).href },
+      { name: 'Categories', url: new URL('/#categories', Astro.site).href },
+      { name: label, url: pageUrl },
+    ]),
+    {
+      '@type': 'CollectionPage',
+      name: `${label} Reviews`,
+      description: blurb,
+      url: pageUrl,
+    },
+  ],
+};
 ---
 
 <Base
@@ -46,7 +65,9 @@ const relatedHubs = categoryHubs
   description={blurb}
   image={image}
 >
-  <p class="crumb"><a href="/">Home</a> / <a href="/#categories">Categories</a> / {label}</p>
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> / <a href="/#categories">Categories</a> / <span aria-current="page">{label}</span>
+  </nav>
   <h1>{label}</h1>
   <p class="lead">{blurb}</p>
   <p class="notice">As an Amazon Associate I earn from qualifying purchases.</p>
@@ -70,6 +91,7 @@ const relatedHubs = categoryHubs
       <li><a href="/#reviews">All reviews</a></li>
     </ul>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </Base>
 
 <style>

@@ -5,8 +5,10 @@ interface Props {
   image?: string;
   layout?: 'default' | 'landing' | 'review';
   noindex?: boolean;
+  /** Open Graph type — website (default), article for reviews */
+  ogType?: 'website' | 'article';
 }
-const { title, description, image, layout = 'default', noindex = false } = Astro.props;
+const { title, description, image, layout = 'default', noindex = false, ogType = 'website' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = image ? new URL(image, Astro.site).href : undefined;
 const isLanding = layout === 'landing';
@@ -22,10 +24,17 @@ const isWide = layout === 'landing' || layout === 'review';
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex,nofollow" />}
     <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Daily Viral Deals" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

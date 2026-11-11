@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { slugifyCategory } from '../../lib/categories';
+import { absoluteUrl, parseFaqFromMarkdown, reviewPageJsonLd } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const reviews = await getCollection('reviews');
@@ -33,26 +34,52 @@ const ctaLabel = data.ctaLabel || 'Check Price on Amazon';
 const angleLabel =
   data.angle === 'time' ? 'Saves time' : data.angle === 'incident' ? 'Avoids a headache' : 'More convenient';
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: data.title,
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const categorySlug = data.category ? slugifyCategory(data.category) : undefined;
+const categoryHref = categorySlug ? `/categories/${categorySlug}/` : undefined;
+const breadcrumbs = [
+  { name: 'Home', url: new URL('/', Astro.site).href },
+  ...(data.category && categoryHref
+    ? [{ name: data.category, url: new URL(categoryHref, Astro.site).href }]
+    : []),
+  { name: data.title, url: pageUrl },
+];
+
+const jsonLd = reviewPageJsonLd({
+  title: data.title,
   description: data.description,
-  datePublished: data.pubDate.toISOString(),
-  author: { '@type': 'Organization', name: 'Daily Viral Deals' },
-  ...(heroSrc ? { image: new URL(heroSrc, Astro.site).href } : {}),
-};
+  hook: data.hook,
+  hookSupport: data.hookSupport,
+  brand: data.brand,
+  asin: data.asin,
+  affiliateUrl: data.affiliateUrl,
+  pubDate: data.pubDate,
+  pageUrl,
+  imageUrl: absoluteUrl(heroSrc, Astro.site),
+  faqs: parseFaqFromMarkdown(entry.body),
+  breadcrumbs,
+});
 ---
 
-<Base layout="review" title={data.title} description={data.description} image={heroSrc}>
+<Base layout="review" ogType="article" title={data.title} description={data.description} image={heroSrc}>
   <article class="review">
-    <!-- HOOK -->
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        {data.category && categoryHref && (
+          <li><a href={categoryHref}>{data.category}</a></li>
+        )}
+        <li aria-current="page">{data.title}</li>
+      </ol>
+    </nav>
+
+    <!-- HOOK (H1 stays the hook — product SEO title is <title> + kicker) -->
     <section class="hook-block" aria-labelledby="hook-title">
       <div class="hook-grid">
         <div class="hook-copy">
           <div class="hook-meta">
-            {data.category && (
-              <a class="cat" href={`/categories/${slugifyCategory(data.category)}/`}>{data.category}</a>
+            {data.category && categoryHref && (
+              <a class="cat" href={categoryHref}>{data.category}</a>
             )}
             <span class="angle">{angleLabel}</span>
           </div>
@@ -139,6 +166,37 @@ const jsonLd = {
     padding: 8px 0 28px;
     max-width: 920px;
     margin: 0 auto;
+  }
+
+  .crumbs {
+    margin: 0 0 18px;
+  }
+  .crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .crumbs li:not(:last-child)::after {
+    content: '/';
+    margin: 0 8px;
+    color: var(--line);
+  }
+  .crumbs a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .crumbs a:hover { color: var(--fg); }
+  .crumbs [aria-current='page'] {
+    color: var(--fg);
+    max-width: 28rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .hook-block {

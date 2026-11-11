@@ -19,10 +19,35 @@ const coverage = categoryHubs.map((hub) => ({
   count: reviewsForHub(reviews, hub).length,
   href: `/categories/${hub.slug}/`,
 }));
+
+const siteUrl = Astro.site ? new URL('/', Astro.site).href : 'https://mybusinesswork.com/';
+const homeJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      name: 'Daily Viral Deals',
+      url: siteUrl,
+      description:
+        'Helpful Amazon product reviews across categories—clear verdicts, real tradeoffs, and affiliate links that help US shoppers buy with confidence.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Daily Viral Deals',
+        url: siteUrl,
+      },
+    },
+    {
+      '@type': 'Organization',
+      name: 'Daily Viral Deals',
+      url: siteUrl,
+    },
+  ],
+};
 ---
 
 <Base
   layout="landing"
+  ogType="website"
   title="Daily Viral Deals | Honest Amazon Product Picks"
   description="Helpful Amazon product reviews across categories—clear verdicts, real tradeoffs, and affiliate links that help US shoppers buy with confidence."
   image={heroImage}
@@ -139,6 +164,7 @@ const coverage = categoryHubs.map((hub) => ({
       </div>
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(homeJsonLd)} />
 </Base>
 
 <script>

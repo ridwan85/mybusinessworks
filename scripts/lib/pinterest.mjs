@@ -8,8 +8,15 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 
 export const SITE_URL = (process.env.SITE_URL || 'https://mybusinesswork.com').replace(/\/$/, '');
-export const API_BASE = 'https://api.pinterest.com/v5';
-export const DEFAULT_SCOPES = ['boards:read', 'pins:read', 'pins:write'];
+/** Production by default. Trial apps must use sandbox until Standard access is approved. */
+export const API_BASE = (
+    process.env.PINTEREST_API_BASE ||
+    (process.env.PINTEREST_USE_SANDBOX === '1'
+        ? 'https://api-sandbox.pinterest.com/v5'
+        : 'https://api.pinterest.com/v5')
+).replace(/\/$/, '');
+// boards:write is required by Pins API create even when posting to an existing board.
+export const DEFAULT_SCOPES = ['boards:read', 'boards:write', 'pins:read', 'pins:write'];
 export const DRAFTS_DIR = path.join('data', 'pinterest', 'drafts');
 export const PUBLISHED_DIR = path.join('data', 'pinterest', 'published');
 export const REVIEWS_DIR = path.join('src', 'content', 'reviews');
@@ -300,7 +307,17 @@ export async function createPin({ token, boardId, draft }) {
             }
             return retryJson;
         }
-        fail(`Pin create failed (${res.status}): ${json.message || JSON.stringify(json)}`);
+        const detail = json.message || JSON.stringify(json);
+        if (res.status === 403 && /Trial access|api-sandbox/i.test(detail)) {
+            fail(
+                `Pin create failed (403): ${detail}\n\n` +
+                    'Your Pinterest app is on Trial access — production Pin creates are blocked.\n' +
+                    'Fix: developers.pinterest.com → your app → Upgrade to Standard access\n' +
+                    '(submit a short screen recording of oauth + one confirmed publish).\n' +
+                    'Optional test-only: set PINTEREST_USE_SANDBOX=1 and use a sandbox board id.',
+            );
+        }
+        fail(`Pin create failed (${res.status}): ${detail}`);
     }
     return json;
 }
