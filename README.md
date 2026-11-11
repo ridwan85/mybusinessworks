@@ -28,12 +28,12 @@ Preview locally: `npm run dev`
 2. Push:
    ```bash
    git init && git add . && git commit -m "Initial site"
-   git branch -M main
+   git branch -M master
    git remote add origin https://github.com/<your-username>/amazon-affiliate.git
-   git push -u origin main
+   git push -u origin master
    ```
 3. On GitHub: **Settings > Pages > Build and deployment > Source: GitHub Actions**.
-4. The workflow in `.github/workflows/deploy.yml` builds and publishes on every push to `main`.
+4. The workflow in `.github/workflows/deploy.yml` builds and publishes on every push to `master`.
 5. After each new review: `git add . && git commit -m "Add review" && git push`.
 
 ## 4. Custom domain (mybusinesswork.com)
