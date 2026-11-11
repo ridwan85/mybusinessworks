@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+const { title, description, image } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <style is:global>
+      :root { --fg:#1f2937; --muted:#6b7280; --accent:#ff9900; --bg:#fff; --card:#f9fafb; }
+      * { box-sizing: border-box; }
+      body { margin:0; font:17px/1.7 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; color:var(--fg); background:var(--bg); }
+      a { color:#0b5cad; }
+      .wrap { max-width:860px; margin:0 auto; padding:0 20px; }
+      header, footer { border-bottom:1px solid #e5e7eb; padding:16px 0; }
+      footer { border:0; border-top:1px solid #e5e7eb; margin-top:60px; color:var(--muted); font-size:14px; }
+      header a.brand { font-weight:800; font-size:20px; color:var(--fg); text-decoration:none; }
+      header nav { float:right; } header nav a { margin-left:16px; }
+      .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; padding:0; list-style:none; }
+      .card { background:var(--card); border:1px solid #e5e7eb; border-radius:10px; overflow:hidden; height:100%; }
+      .card a { text-decoration:none; color:inherit; display:block; height:100%; }
+      .card img { width:100%; aspect-ratio:1; object-fit:contain; background:#fff; }
+      .card div { padding:12px 16px 16px; }
+      .card h2 { font-size:17px; line-height:1.35; margin:0 0 6px; }
+      .card p { margin:0; font-size:14px; color:var(--muted); }
+      article img.hero { max-width:100%; max-height:420px; display:block; margin:0 auto 20px; }
+      .thumbs { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:20px; }
+      .thumbs img { height:80px; width:auto; border:1px solid #e5e7eb; border-radius:6px; background:#fff; }
+      .cta { display:inline-block; background:var(--accent); color:#111; font-weight:700; padding:12px 22px; border-radius:8px; text-decoration:none; }
+      .notice { background:#fff7e6; border:1px solid #ffd591; padding:10px 14px; border-radius:8px; font-size:14px; }
+      blockquote { margin:20px 0; padding:8px 16px; background:var(--card); border-left:4px solid var(--accent); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <nav><a href="/">Reviews</a><a href="/disclosure/">Disclosure</a></nav>
+        <a class="brand" href="/">MyBusinessWork Reviews</a>
+      </div>
+    </header>
+    <main class="wrap"><slot /></main>
+    <footer>
+      <div class="wrap">
+        <p>As an Amazon Associate I earn from qualifying purchases.</p>
+        <p>&copy; {new Date().getFullYear()} mybusinesswork.com &middot; <a href="/disclosure/">Affiliate Disclosure</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+    "name": "amazon-affiliate-reviews",
+    "type": "module",
+    "version": "1.0.0",
+    "private": true,
+    "engines": {
+        "node": ">=20.6"
+    },
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "generate": "node --env-file=.env scripts/generate.mjs"
+    },
+    "dependencies": {
+        "@astrojs/sitemap": "^3.2.1",
+        "astro": "^5.1.0",
+        "openai": "^4.77.0"
+    }
+}

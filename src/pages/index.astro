@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const reviews = (await getCollection('reviews')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Base
+  title="Honest Product Reviews | MyBusinessWork Reviews"
+  description="Clear, honest Amazon product reviews to help US shoppers decide what to buy."
+>
+  <h1>Latest Product Reviews</h1>
+  <p class="notice">As an Amazon Associate I earn from qualifying purchases.</p>
+  {reviews.length === 0 && <p>No reviews yet. Run <code>npm run generate</code> to add one.</p>}
+  <ul class="grid">
+    {reviews.map((r) => (
+      <li class="card">
+        <a href={`/reviews/${r.id}/`}>
+          <img src={r.data.images[0]} alt={r.data.title} loading="lazy" referrerpolicy="no-referrer" />
+          <div>
+            <h2>{r.data.title}</h2>
+            <p>{r.data.description}</p>
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>
