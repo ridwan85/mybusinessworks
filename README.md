@@ -80,12 +80,19 @@ npm run pinterest:oauth
 # If handoff fails, the page shows the code:
 # npm run pinterest:oauth -- --code PASTE_CODE_HERE
 
-# Build draft JSON from review Markdown (does not publish)
+# Build draft + generate a dedicated Pinterest Pin image (does not publish)
+# Image: 1000×1500 (2:3) with the review HOOK on the image
+# Description: starts with the same HOOK
 npm run pinterest:draft
 npm run pinterest:draft -- hellobaby-hb6550-no-wifi-baby-monitor-review-b09gm8jzm9
 
+# Deploy so /images/reviews/<asin>/pinterest-pin.jpg is live, then:
 # Publish ONE draft after typing "publish" to confirm
 npm run pinterest:publish -- data/pinterest/drafts/<file>.json
 ```
 
-Drafts live in `data/pinterest/drafts/`. Publish receipts (pin id + timestamp only) go to `data/pinterest/published/`. We do not scrape the Pinterest UI or store other users’ Pins.
+**Before publish, every Pin must have:**
+1. A generated **Pinterest image** at **1000×1500 (2:3)** with the **hook text on the image** (`public/images/reviews/<asin>/pinterest-pin.jpg`)
+2. The **same hook in the Pin description** (title also uses the hook)
+
+`pinterest:publish` refuses drafts that skip those. Drafts live in `data/pinterest/drafts/`. Publish receipts (pin id + timestamp only) go to `data/pinterest/published/`. We do not scrape the Pinterest UI or store other users’ Pins.

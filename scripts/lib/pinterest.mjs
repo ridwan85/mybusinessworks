@@ -14,8 +14,14 @@ export const DRAFTS_DIR = path.join('data', 'pinterest', 'drafts');
 export const PUBLISHED_DIR = path.join('data', 'pinterest', 'published');
 export const REVIEWS_DIR = path.join('src', 'content', 'reviews');
 
+/** Pinterest-recommended standard Pin: 2:3 vertical @ 1000×1500. */
+export const PIN_WIDTH = 1000;
+export const PIN_HEIGHT = 1500;
+export const PIN_ASPECT = '2:3';
+export const PIN_FILENAME = 'pinterest-pin.jpg';
+
 const TITLE_MAX = 100;
-const DESC_MAX = 500;
+const DESC_MAX = 800;
 
 export function fail(msg) {
     console.error(`\nError: ${msg}\n`);
@@ -86,48 +92,111 @@ export function parseReviewFrontmatter(raw, filePath) {
 
 export async function listDraftableReviews(filterSlug) {
     const names = (await fs.readdir(REVIEWS_DIR)).filter((f) => f.endsWith('.md'));
+    const needle = filterSlug ? String(filterSlug).toLowerCase() : '';
     const out = [];
     for (const name of names) {
         const slug = name.replace(/\.md$/, '');
-        if (filterSlug && slug !== filterSlug && !slug.includes(filterSlug)) continue;
         const filePath = path.join(REVIEWS_DIR, name);
         const raw = await fs.readFile(filePath, 'utf8');
-        out.push(parseReviewFrontmatter(raw, filePath));
+        const review = parseReviewFrontmatter(raw, filePath);
+        if (needle) {
+            const hay = `${slug} ${review.asin || ''}`.toLowerCase();
+            if (!hay.includes(needle)) continue;
+        }
+        out.push(review);
     }
     out.sort((a, b) => String(a.slug).localeCompare(String(b.slug)));
     return out;
 }
 
-export function buildPinDraft(review) {
-    const imageSrc = review.imageSrc || undefined;
-    const mediaUrl = absoluteUrl(imageSrc);
-    if (!mediaUrl) fail(`Review ${review.slug} has no imageSrc — add a product image before drafting.`);
+export function reviewImageDir(review) {
+    const asin = String(review.asin || review.id || 'unknown').toLowerCase();
+    return path.join('public', 'images', 'reviews', asin);
+}
+
+export function pinImageLocalPath(review) {
+    return path.join(reviewImageDir(review), PIN_FILENAME);
+}
+
+export function pinImagePublicPath(review) {
+    const asin = String(review.asin || review.id || 'unknown').toLowerCase();
+    return `/images/reviews/${asin}/${PIN_FILENAME}`;
+}
+
+/** Pin copy: hook on the Pin (title + description), not just product SEO title. */
+export function buildPinDraft(review, { pinImageReady = false } = {}) {
+    const hook = String(review.hook || '').trim();
+    if (!hook) fail(`Review ${review.slug} is missing hook — required on the Pin image and description.`);
+
     const link = `${SITE_URL}/reviews/${review.slug}/`;
-    const title = truncate(review.title || review.hook || 'Daily Viral Deals pick', TITLE_MAX);
+    const title = truncate(hook, TITLE_MAX);
     const description = truncate(
-        review.hookSupport || review.description || review.hook || title,
+        [
+            hook,
+            review.hookSupport || '',
+            `Full review: ${review.title || 'Daily Viral Deals'}`,
+        ]
+            .map((s) => String(s || '').trim())
+            .filter(Boolean)
+            .join('\n\n'),
         DESC_MAX,
     );
+
+    const pinRel = pinImagePublicPath(review);
+    const mediaUrl = absoluteUrl(pinRel);
     const draft = {
         id: review.asin || review.slug,
         slug: review.slug,
         asin: review.asin || undefined,
+        hook,
         title,
         description,
         link,
         mediaUrl,
-        altText: truncate(review.imageCaption || title, 500),
+        mediaLocalPath: pinImageLocalPath(review),
+        mediaPublicPath: pinRel,
+        sourceImageSrc: review.imageSrc || undefined,
+        altText: truncate(`${hook} — Daily Viral Deals`, 500),
         angle: review.angle || undefined,
+        pinSpec: {
+            width: PIN_WIDTH,
+            height: PIN_HEIGHT,
+            aspectRatio: PIN_ASPECT,
+            hookOnImage: true,
+        },
+        hookOnImage: Boolean(pinImageReady),
         createdAt: new Date().toISOString(),
         source: 'daily-viral-deals-review',
     };
-    draft.draftHash = crypto.createHash('sha256').update(JSON.stringify({
-        title: draft.title,
-        description: draft.description,
-        link: draft.link,
-        mediaUrl: draft.mediaUrl,
-    })).digest('hex').slice(0, 16);
+    draft.draftHash = crypto
+        .createHash('sha256')
+        .update(
+            JSON.stringify({
+                title: draft.title,
+                description: draft.description,
+                link: draft.link,
+                mediaUrl: draft.mediaUrl,
+                hook: draft.hook,
+            }),
+        )
+        .digest('hex')
+        .slice(0, 16);
     return draft;
+}
+
+/** Refuse publish unless hook is in the description and a dedicated Pin image exists. */
+export function assertDraftReadyForPublish(draft) {
+    const hook = String(draft.hook || '').trim();
+    if (!hook) fail('Draft is missing hook. Re-run: npm run pinterest:draft');
+    if (!String(draft.description || '').includes(hook)) {
+        fail('Pin description must include the review hook. Re-run: npm run pinterest:draft');
+    }
+    if (!draft.hookOnImage || !String(draft.mediaUrl || '').includes(PIN_FILENAME)) {
+        fail(
+            `Missing Pinterest Pin image with hook on it (${PIN_WIDTH}×${PIN_HEIGHT}, ${PIN_ASPECT}).\n` +
+                'Run: npm run pinterest:draft  (generates the Pin image before publish)',
+        );
+    }
 }
 
 export async function writeDraft(draft) {

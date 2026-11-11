@@ -2,13 +2,24 @@
   "id": "B09GM8JZM9",
   "slug": "hellobaby-hb6550-no-wifi-baby-monitor-review-b09gm8jzm9",
   "asin": "B09GM8JZM9",
-  "title": "HelloBaby HB6550 No WiFi Baby Monitor Review",
-  "description": "The HelloBaby HB6550 skips Wi-Fi entirely with a dedicated 5-inch handheld screen, fast setup, and secure direct-link pairing right out of the box.",
+  "hook": "Checking on naptime shouldn't mean loading phone apps or rebooting routers.",
+  "title": "Checking on naptime shouldn't mean loading phone apps or rebooting routers.",
+  "description": "Checking on naptime shouldn't mean loading phone apps or rebooting routers.\n\nThe HelloBaby HB6550 skips Wi-Fi entirely with a dedicated 5-inch handheld screen, fast setup, and secure direct-link pairing right out of the box.\n\nFull review: HelloBaby HB6550 No WiFi Baby Monitor Review",
   "link": "https://mybusinesswork.com/reviews/hellobaby-hb6550-no-wifi-baby-monitor-review-b09gm8jzm9/",
-  "mediaUrl": "https://mybusinesswork.com/images/reviews/b09gm8jzm9/kitchen-check.jpg",
-  "altText": "A quick glance at the handheld screen while making coffee—no phone app or Wi‑Fi login required.",
+  "mediaUrl": "https://mybusinesswork.com/images/reviews/b09gm8jzm9/pinterest-pin.jpg",
+  "mediaLocalPath": "public/images/reviews/b09gm8jzm9/pinterest-pin.jpg",
+  "mediaPublicPath": "/images/reviews/b09gm8jzm9/pinterest-pin.jpg",
+  "sourceImageSrc": "/images/reviews/b09gm8jzm9/kitchen-check.jpg",
+  "altText": "Checking on naptime shouldn't mean loading phone apps or rebooting routers. — Daily Viral Deals",
   "angle": "convenience",
-  "createdAt": "2026-11-11T07:48:27.717Z",
+  "pinSpec": {
+    "width": 1000,
+    "height": 1500,
+    "aspectRatio": "2:3",
+    "hookOnImage": true
+  },
+  "hookOnImage": true,
+  "createdAt": "2026-11-11T08:14:47.971Z",
   "source": "daily-viral-deals-review",
-  "draftHash": "fa4892cc772e8f0d"
+  "draftHash": "a523465507663ebe"
 }
