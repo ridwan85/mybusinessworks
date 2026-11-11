@@ -2,10 +2,13 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ReviewCard from '../components/ReviewCard.astro';
-import { categoryHubs, reviewsForHub } from '../lib/categories';
+import { categoryHubs, reviewsForHub, sortReviewsNewestFirst } from '../lib/categories';
 
-const reviews = (await getCollection('reviews')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const HOME_CAROUSEL_LIMIT = 10;
+const reviews = sortReviewsNewestFirst(await getCollection('reviews'));
 const featured = reviews[0];
+/** Newest by createdAt; homepage carousel stays capped so it doesn’t grow forever. */
+const latestReviews = reviews.slice(0, HOME_CAROUSEL_LIMIT);
 
 const heroSlides = [
   '/images/site/hero-home-lifestyle.jpg',
@@ -91,7 +94,7 @@ const homeJsonLd = {
         <h2 id="reviews-title">Latest reviews</h2>
         <p class="notice affiliate-note">As an Amazon Associate I earn from qualifying purchases.</p>
       </div>
-      {reviews.length > 1 && (
+      {latestReviews.length > 1 && (
         <div class="carousel-controls" data-carousel-controls="reviews">
           <button type="button" class="carousel-btn" data-dir="-1" aria-label="Previous reviews">‹</button>
           <button type="button" class="carousel-btn" data-dir="1" aria-label="Next reviews">›</button>
@@ -99,12 +102,14 @@ const homeJsonLd = {
       )}
     </div>
 
-    {reviews.length === 0 ? (
+    {latestReviews.length === 0 ? (
       <p>No reviews yet. Check back soon.</p>
     ) : (
       <div class="carousel" data-carousel="reviews">
         <ul class="carousel-track" data-carousel-track>
-          {reviews.map((r) => <ReviewCard review={r} />)}
+          {latestReviews.map((r, i) => (
+            <ReviewCard review={r} priority={i === 0} />
+          ))}
         </ul>
       </div>
     )}

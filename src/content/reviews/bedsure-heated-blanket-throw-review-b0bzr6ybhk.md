@@ -15,6 +15,7 @@ angle: "convenience"
 ctaLabel: "Check Price on Amazon"
 features: ["Fast & Even Warmth: 6 heating levels and 6 timer settings (1-2-4-6-8-10H) let you enjoy personalized coziness. Advanced longer heating wires provide fast, even warmth.","Safer & More Reliable: ETL and FCC certified with default 8-hour auto shut-off to help prevent overheating.","Preheat Function: Preheat the blanket for toasty warmth, then enjoy longer sessions at a comfortable heat level without constant fiddling.","Softness & Versatile Comfort: 220 GSM flannel top and 200 GSM sherpa backing. When not powered on, it serves as a regular throw blanket. Machine care friendly.","Energy-Saving: 100W power rating designed for standard 120V AC wall outlets—cozy warmth with lower electricity use than traditional space heaters.","Giftable: Great for movie nights, beds, housewarmings, birthdays, or holidays; available in multiple colors and sizes."]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T22:35:00+08:00
 ---
 
 ## Quick Verdict

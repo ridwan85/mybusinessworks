@@ -15,6 +15,7 @@ angle: "convenience"
 ctaLabel: "Check Price on Amazon"
 features: ["Fast Humidification All Night: Runs for up to 25 hours on low thanks to its large 2.5 liter capacity. The soothing moisture helps quickly relieve congestion and dry throat.","Easy Top-Fill Design: Easy top-fill design—no need to turn the water tank over or spill water. Just one step to remove the cover and fill the tank.","Much Easier for Cleaning: Easily clean the inside of the tank through its big opening. Detachable designs leave no hard-to-reach corners when cleaning.","No Disturbance When Sleeping: Noise level as low as 25dB and all lights off. Perfect humidifier for bedrooms and baby nurseries.","Customize Your Mist: Customize mist output with one knob and adjust direction freely with the 360 degree nozzle.","Auto Shut-Off for Safety: Automatically stops when the water tank is empty or removed from the base, preventing overheating or running dry."]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T22:33:00+08:00
 ---
 
 ## Quick Verdict

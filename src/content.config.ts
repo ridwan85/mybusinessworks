@@ -37,6 +37,8 @@ const reviews = defineCollection({
         ctaLabel: z.string().optional(),
         features: z.array(z.string()),
         pubDate: z.coerce.date(),
+        /** When we added the product to the catalog (ISO). Prefer this over pubDate for “latest”. */
+        createdAt: z.coerce.date().optional(),
     }),
 });
 

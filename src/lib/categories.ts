@@ -62,8 +62,17 @@ function testCategory(review: Review, re: RegExp) {
     return re.test(hay);
 }
 
+/** Prefer product create time; fall back to pubDate. */
+export function reviewCreatedAt(review: Review) {
+    return (review.data.createdAt ?? review.data.pubDate).valueOf();
+}
+
+export function sortReviewsNewestFirst(reviews: Review[]) {
+    return [...reviews].sort((a, b) => reviewCreatedAt(b) - reviewCreatedAt(a));
+}
+
 export function reviewsForHub(reviews: Review[], hub: CategoryHub) {
-    return reviews.filter(hub.match).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    return sortReviewsNewestFirst(reviews.filter(hub.match));
 }
 
 export function uniqueProductCategories(reviews: Review[]) {
@@ -79,7 +88,7 @@ export function uniqueProductCategories(reviews: Review[]) {
     return [...map.values()]
         .map((c) => ({
             ...c,
-            reviews: c.reviews.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+            reviews: sortReviewsNewestFirst(c.reviews),
         }))
         .sort((a, b) => a.label.localeCompare(b.label));
 }

@@ -4,19 +4,22 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   review: CollectionEntry<'reviews'>;
+  /** First/latest card in the homepage carousel. */
+  priority?: boolean;
 }
-const { review: r } = Astro.props;
+const { review: r, priority = false } = Astro.props;
 const href = `/reviews/${r.id}/`;
 ---
 
-<li class="card">
+<li class:list={['card', priority && 'is-priority']}>
   <article class="card-inner">
     <a class="media" href={href} tabindex="-1" aria-hidden="true">
       {r.data.imageSrc ? (
-        <img src={r.data.imageSrc} alt="" loading="lazy" />
+        <img src={r.data.imageSrc} alt="" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
       ) : (
         <div class="media-fallback"></div>
       )}
+      {priority && <span class="priority-badge">Latest</span>}
     </a>
     <div class="body">
       {r.data.category && (
@@ -38,14 +41,33 @@ const href = `/reviews/${r.id}/`;
     scroll-snap-align: start;
     flex: 0 0 min(78vw, 280px);
   }
+  .card.is-priority {
+    flex-basis: min(86vw, 320px);
+  }
   .card-inner { display: flex; flex-direction: column; height: 100%; }
-  .media { display: block; }
+  .media {
+    display: block;
+    position: relative;
+  }
   .media img, .media-fallback {
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
     background: #fff;
     display: block;
+  }
+  .priority-badge {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 5px 9px;
+    border-radius: 6px;
+    background: var(--fg);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
   .body {
     padding: 14px 16px 18px;
@@ -98,5 +120,6 @@ const href = `/reviews/${r.id}/`;
 
   @media (min-width: 860px) {
     .card { flex-basis: 260px; }
+    .card.is-priority { flex-basis: 300px; }
   }
 </style>

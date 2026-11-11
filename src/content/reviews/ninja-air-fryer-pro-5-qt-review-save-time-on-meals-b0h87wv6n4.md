@@ -15,6 +15,7 @@ angle: "time"
 ctaLabel: "Check Price on Amazon"
 features: ["AIR CRISP TECHNOLOGY: 400℉ superheated air surrounds food for hot, crispy results with little to no oil","5-in-1 FUNCTIONALITY: Air Fry, Bake, Roast, Reheat, and Dehydrate","LARGE CAPACITY: The 5-QT nonstick basket and crisper plate fit up to 4 lbs of French fries or 5 lbs of chicken wings","GUILT-FREE FRIED FOODS: Up to 75% less fat than traditional air frying methods. Tested against hand-cut, deep-fried French fries","FROZEN TO CRISPY: Cook frozen foods in just minutes for an extra-crispy finish","SPACE SAVER: Ninja’s latest air fryer design allows you to save even more space on your countertop without compromising capacity","EASY TO CLEAN: The basket and crisper plate are both nonstick for easy cleaning"]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T22:30:00+08:00
 ---
 
 ## Quick Verdict

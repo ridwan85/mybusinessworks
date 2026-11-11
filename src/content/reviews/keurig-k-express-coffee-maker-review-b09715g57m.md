@@ -15,6 +15,7 @@ angle: "time"
 ctaLabel: "Check Price on Amazon"
 features: ["STRONG BREW: Increases the strength and bold taste of your coffee’s flavor.","3 CUP SIZES: Brew an 8, 10, or 12 oz. cup at the push of a button.","MULTIPLE CUP WATER RESERVOIR: 42oz. removable reservoir lets you brew up to 4 cups before refilling. 8 oz. cup size","FAST & FRESH BREWED: Delicious coffee made in minutes.","TRAVEL MUG FRIENDLY: Removable drip tray accommodates travel mugs up to 7.4” tall.","ENERGY EFFICIENT: Auto off feature turns off your coffee maker 5 minutes after the last brew, helping to save energy.","COMPATIBLE WITH THE MY K-CUP UNIVERSAL REUSABLE COFFEE FILTER: Brew your own ground coffee (sold separately)."]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T22:07:11+08:00
 ---
 
 ## Quick Verdict

@@ -15,6 +15,7 @@ angle: "incident"
 ctaLabel: "Check Price on Amazon"
 features: ["SAVE YOUR SANCTUARY: Tackle spills and pet stains while removing dander, dust, and pollen allergens.","CLEANS MORE THAN CARPET: Spray, scrub, and suction to remove embedded dirt and stains from upholstery, car interiors, pet beds, and more.","INCLUDES: 4” Tough Stain Tool with removable lens, HydroRinse self-cleaning hose tool, and 8oz. BISSELL Little Green Formula.","EASY STORAGE: Conveniently stores in small spaces - perfect for cabinets, closets, and more.","LITTLE GREEN FORMULA: Instantly and permanently removes stains and eliminates everyday household odors.","EVERY PURCHASE SAVES PETS: BISSELL supports BISSELL Pet Foundation and its mission of saving pets in need."]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T22:36:00+08:00
 ---
 
 ## Quick Verdict

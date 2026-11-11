@@ -1,7 +1,7 @@
 // Usage: copy a product's data with the bookmarklet (tools/bookmarklet.html), then run: npm run import
 import { execFileSync } from 'node:child_process';
-import fs from 'node:fs/promises';
 import path from 'node:path';
+import { writeProductJson } from './lib/product-meta.mjs';
 
 function fail(msg) {
     console.error(`\nError: ${msg}\n`);
@@ -21,7 +21,6 @@ if (!isStr(d.title) || !d.title.trim()) fail('Clipboard data has no title.');
 if (!Array.isArray(d.features) || !d.features.every(isStr) || !d.features.length) fail('Clipboard data has no feature bullets.');
 
 const out = path.join('data', 'products', `${d.asin}.json`);
-const existing = await fs.readFile(out, 'utf8').then(JSON.parse, () => ({}));
 function normalizeProductCategory(raw, title = '') {
     const text = `${raw ?? ''} ${title}`;
     if (/amazon devices|doorbell|echo |kindle|fire tv|blink /i.test(text)) return 'Amazon Devices';
@@ -31,13 +30,11 @@ function normalizeProductCategory(raw, title = '') {
 }
 
 const title = d.title.trim();
-const product = {
-    ...existing,
+const saved = await writeProductJson(out, {
     title,
     brand: isStr(d.brand) ? d.brand.trim() : '',
     category: normalizeProductCategory(isStr(d.category) ? d.category.trim() : '', title),
     features: d.features.map((f) => f.trim()).filter(Boolean),
-};
-await fs.writeFile(out, JSON.stringify(product, null, 2) + '\n');
-console.log(`Wrote ${out} (${product.features.length} features).`);
+});
+console.log(`Wrote ${out} (${saved.features.length} features, createdAt ${saved.createdAt}).`);
 console.log(`Next: npm run generate -- "https://www.amazon.com/dp/${d.asin}"`);

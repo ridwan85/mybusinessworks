@@ -15,6 +15,7 @@ angle: "convenience"
 ctaLabel: "Check Price on Amazon"
 features: ["AUTOMATIC DRAINAGE SYSTEM: Slope design for drainage that reduces cleaning time for the sponge holder and keeps the sink area tidier.","PREMIUM STURDY MATERIAL: Made of premium stainless steel which can effectively prevent rust and deformation. Easy to rinse clean under a running tap.","REASONABLE DIVIDER DESIGN: Ergonomic divider design with 3 separate storage spaces for sponge, brush, and soap so the kitchen looks cleaner.","SATISFACTION GUARANTEED: Ready to use upon receipt, no installation required. Widely used on counters or bathrooms; a practical gift."]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T22:34:00+08:00
 ---
 
 ## Quick Verdict

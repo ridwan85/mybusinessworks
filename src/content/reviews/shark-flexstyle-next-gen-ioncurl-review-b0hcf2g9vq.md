@@ -15,6 +15,7 @@ angle: "time"
 ctaLabel: "Check Price on Amazon"
 features: ["NEXT-GEN ION-POWERED HAIR DRYER & MULTI-STYLER: Dries, styles, and creates bouncy, defined curls with powerful Coanda ion airflow—all without heat damage.","POWERFUL COANDA WRAP CURLING: Hassle-free curls in seconds. Stronger wrap force for bouncier, more defined curls.","THE IONCURL DIFFERENCE: Ion power and powerful airflow help dry and style hair faster than your usual routine, with no heat damage for healthier looking hair.","NEW AIRSET BUTTON: Double-tap to pause airflow mid-style or hold down for a burst of cool air that locks your look in place.","NOW WITH SCALP SHIELD MODE: Activate to instantly drop to a cooler, scalp-safe setting — designed to protect hair growth from excessive heat.","ULTRA-FAST HAIR DRYER, VERSATILE MULTI-STYLER: Dry and style with one tool. Simplify your routine without sacrificing style.","NO HEAT DAMAGE: Advanced airflow technology styles without causing heat damage."]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T22:31:00+08:00
 ---
 
 ## Quick Verdict

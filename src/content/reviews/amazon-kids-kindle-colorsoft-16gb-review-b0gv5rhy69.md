@@ -24,6 +24,7 @@ angle: "convenience"
 ctaLabel: "Check Price on Amazon"
 features: ["A complete bundle: Includes Amazon Kids Kindle Colorsoft with 7” display, 1-year Kids+ subscription and protective case.","Colorsoft display: Paper-like color brings covers, comics, and graphic novels to life, while staying glare-free in bright sunlight.","1-year Kids+ subscription included: Thousands of graphic novels, comics and illustrated chapter books for kids 6-12, including Big Nate, Catwad and Marvel. Renews automatically at the applicable rate. You can cancel anytime.","Adjustable warm light: Shift the front light from crisp white to warm amber. Bright by day, warm by night, and easy on the eyes either way.","Waterproof: For reading by the pool, at the beach, or in the bath.","Up to 8 weeks of battery: A single charge lasts for months, so the charger can stay in the drawer.","Distraction-free: Just read with no apps, videos, games, or notifications to pull kids away from their books."]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T20:48:07+08:00
 ---
 
 ## Quick Verdict

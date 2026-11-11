@@ -10,6 +10,7 @@ import {
     buildImagesFrontmatter,
     normalizeProductCategory,
 } from './lib/review-format.mjs';
+import { stampCreatedAt } from './lib/product-meta.mjs';
 
 const TAG = process.env.AMAZON_ASSOCIATE_TAG;
 const env = process.env;
@@ -104,6 +105,11 @@ async function loadProduct(asin) {
         const p = JSON.parse(await fs.readFile(file, 'utf8'));
         if (!p.title?.trim()) fail(`${file}: "title" is empty.`);
         if (!Array.isArray(p.features) || !p.features.length) fail(`${file}: "features" must be a non-empty array.`);
+        // Stamp once when we first process this ASIN — homepage “latest” sorts on createdAt.
+        if (stampCreatedAt(p)) {
+            await fs.writeFile(file, `${JSON.stringify(p, null, 2)}\n`);
+            console.log(`Stamped createdAt ${p.createdAt} on ${file}`);
+        }
         const stripe = parseSiteStripe(p.siteStripe, file);
         const showcases = collectShowcases(p);
         return {
@@ -201,6 +207,7 @@ const frontmatter = [
     `ctaLabel: ${JSON.stringify(review.ctaLabel || DEFAULT_CTA)}`,
     `features: ${JSON.stringify(product.features)}`,
     `pubDate: ${new Date().toISOString().slice(0, 10)}`,
+    `createdAt: ${JSON.stringify(product.createdAt || new Date().toISOString())}`,
     '---',
     '',
 ]

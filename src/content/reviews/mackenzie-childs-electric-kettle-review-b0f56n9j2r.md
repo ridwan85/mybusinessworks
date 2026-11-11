@@ -15,6 +15,7 @@ angle: "convenience"
 ctaLabel: "Check Price on Amazon"
 features: ["FANCY ELECTRIC TEA KETTLE: Our iconic hot water kettle is boiling and bubbling over with style. This colorful electric kettle is a functional and fun addition to your modern kitchen and a fast way to heat water for tea or coffee.","CUTE KITCHEN ESSENTIAL: The Cherry Check electric stainless-steel kettle features a vibrant red-and-white checkered pattern with color-dragged accents that mimic brushstrokes. It has an 8-cup capacity that is perfect for tea parties and office breaks.","KITCHEN DECOR ACCESSORIES: At MacKenzie-Childs, we make everyday items extraordinary. From the countertop to the table, you can enjoy the magic of MacKenzie-Childs anywhere. Check out our tea kettle for stovetop use, stainless-steel water kettle, and more.","THE PERFECT GIFT: A MacKenzie-Childs piece is much more than a gift—it’s the beginning of a lifelong collection. Our decorative tea kettle makes an amazing Christmas, wedding, or housewarming gift. Welcome to the MacKenzie-Childs family!","MACKENZIE-CHILDS: MacKenzie-Childs was born of our love of home and our commitment to fresh, innovative design. Each piece holds the surprise and joy of the unexpected."]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T21:28:30+08:00
 ---
 
 ## Quick Verdict

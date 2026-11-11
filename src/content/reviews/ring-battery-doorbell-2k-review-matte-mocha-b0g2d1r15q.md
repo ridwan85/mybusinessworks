@@ -24,6 +24,7 @@ angle: "convenience"
 ctaLabel: "Check Price on Amazon"
 features: ["Capture it all with Retinal 2K video — From wide views to tighter focus, it’s easy to see your home or business in crisp clarity with Retinal 2K.","Zoom in up to 6x — Catch details at a distance, inspect faces, and more with up to 6x Enhanced Zoom.","Connect to who’s there — See, hear, and speak in real time with Live View and Two-Way Talk.","Get real-time alerts — Receive real-time notifications on your phone when motion is detected.","Easily recharge — Simply insert the included removal tool to detach your doorbell from the wall, then recharge the built-in battery via USB-C. (Cable not included.)","See more. Know more. Protect more. — Scroll back in time to rewatch what you missed, get AI-powered alerts that tell you what’s happening, and so much more with a compatible Ring Protect subscription (sold separately).","Works with Alexa — Hear custom notifications from Echo Dot, launch video with Echo Show, and enjoy hands-free home monitoring with select Alexa-enabled devices."]
 pubDate: 2026-11-11
+createdAt: 2026-11-11T12:14:01+08:00
 ---
 ## Quick Verdict
 

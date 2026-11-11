@@ -3,6 +3,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import OpenAI from 'openai';
+import { writeProductJson } from './lib/product-meta.mjs';
 
 const env = process.env;
 const args = process.argv.slice(2);
@@ -50,5 +51,13 @@ const data = JSON.parse(res.choices[0].message.content);
 if (!data.title || !data.features?.length) fail('Could not find a title and feature bullets in that file. Save the full product page and try again.');
 
 const out = path.join('data', 'products', `${asin}.json`);
-await fs.writeFile(out, JSON.stringify({ title: data.title, brand: data.brand, category: data.category, features: data.features }, null, 2) + '\n');
-console.log(`Wrote ${out} (${data.features.length} features). Review it, then run: npm run generate -- "https://www.amazon.com/dp/${asin}"`);
+const saved = await writeProductJson(out, {
+    title: data.title,
+    brand: data.brand,
+    category: data.category,
+    features: data.features,
+});
+console.log(
+    `Wrote ${out} (${data.features.length} features, createdAt ${saved.createdAt}). ` +
+        `Review it, then run: npm run generate -- "https://www.amazon.com/dp/${asin}"`,
+);

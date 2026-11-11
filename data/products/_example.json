@@ -2,6 +2,7 @@
     "title": "Full product title from the Amazon page",
     "brand": "Brand name",
     "category": "Kitchen",
+    "createdAt": "2026-11-11T12:00:00+08:00",
     "features": [
         "Paste each 'About this item' bullet here",
         "One bullet per array item"
