@@ -2,13 +2,24 @@
   "id": "B0G2D1R15Q",
   "slug": "ring-battery-doorbell-2k-review-matte-mocha-b0g2d1r15q",
   "asin": "B0G2D1R15Q",
-  "title": "Ring Battery Doorbell 2K Review: Matte Mocha",
-  "description": "Instead of dropping everything to rush to the front entrance, you can see and speak to visitors directly from your phone or Echo screen in crisp Retinal 2K.",
+  "hook": "Someone knocks while your hands are full across the house.",
+  "title": "Someone knocks while your hands are full across the house.",
+  "description": "Someone knocks while your hands are full across the house.\n\nInstead of dropping everything to rush to the front entrance, you can see and speak to visitors directly from your phone or Echo screen in crisp Retinal 2K.\n\nFull review: Ring Battery Doorbell 2K Review: Matte Mocha",
   "link": "https://mybusinesswork.com/reviews/ring-battery-doorbell-2k-review-matte-mocha-b0g2d1r15q/",
-  "mediaUrl": "https://mybusinesswork.com/images/reviews/b0g2d1r15q/entry.jpg",
-  "altText": "The Matte Mocha doorbell mounted by the front door—ready for live view when someone knocks.",
+  "mediaUrl": "https://mybusinesswork.com/images/reviews/b0g2d1r15q/pinterest-pin.jpg",
+  "mediaLocalPath": "public/images/reviews/b0g2d1r15q/pinterest-pin.jpg",
+  "mediaPublicPath": "/images/reviews/b0g2d1r15q/pinterest-pin.jpg",
+  "sourceImageSrc": "/images/reviews/b0g2d1r15q/entry.jpg",
+  "altText": "Someone knocks while your hands are full across the house. — Daily Viral Deals",
   "angle": "convenience",
-  "createdAt": "2026-11-11T07:48:27.724Z",
+  "pinSpec": {
+    "width": 1000,
+    "height": 1500,
+    "aspectRatio": "2:3",
+    "hookOnImage": true
+  },
+  "hookOnImage": true,
+  "createdAt": "2026-11-11T09:16:02.138Z",
   "source": "daily-viral-deals-review",
-  "draftHash": "38c5763db55ea2e6"
+  "draftHash": "aacff5ec73e52c17"
 }

@@ -2,13 +2,24 @@
   "id": "B0HF4XHL1R",
   "slug": "tiptop-home-handheld-vacuum-sealer-review-b0hf4xhl1r",
   "asin": "B0HF4XHL1R",
-  "title": "Tiptop Home Handheld Vacuum Sealer Review",
-  "description": "When dinner leftovers and meal-prep portions sit loosely covered in the fridge, smells mix and food goes soft fast. A cordless one-touch vacuum sealer helps you lock bags in about 5 seconds—so weeknight food stays usable instead of getting tossed.",
+  "hook": "Leftovers shouldn’t turn into a science experiment by Thursday.",
+  "title": "Leftovers shouldn’t turn into a science experiment by Thursday.",
+  "description": "Leftovers shouldn’t turn into a science experiment by Thursday.\n\nWhen dinner leftovers and meal-prep portions sit loosely covered in the fridge, smells mix and food goes soft fast. A cordless one-touch vacuum sealer helps you lock bags in about 5 seconds—so weeknight food stays usable instead of getting tossed.\n\nFull review: Tiptop Home Handheld Vacuum Sealer Review",
   "link": "https://mybusinesswork.com/reviews/tiptop-home-handheld-vacuum-sealer-review-b0hf4xhl1r/",
-  "mediaUrl": "https://mybusinesswork.com/images/reviews/b0hf4xhl1r/kitchen-counter.jpg",
-  "altText": "The handheld sealer beside vacuum-sealed bags of salmon and steak, ready for the fridge or freezer.",
+  "mediaUrl": "https://mybusinesswork.com/images/reviews/b0hf4xhl1r/pinterest-pin.jpg",
+  "mediaLocalPath": "public/images/reviews/b0hf4xhl1r/pinterest-pin.jpg",
+  "mediaPublicPath": "/images/reviews/b0hf4xhl1r/pinterest-pin.jpg",
+  "sourceImageSrc": "/images/reviews/b0hf4xhl1r/kitchen-counter.jpg",
+  "altText": "Leftovers shouldn’t turn into a science experiment by Thursday. — Daily Viral Deals",
   "angle": "incident",
-  "createdAt": "2026-11-11T07:48:27.733Z",
+  "pinSpec": {
+    "width": 1000,
+    "height": 1500,
+    "aspectRatio": "2:3",
+    "hookOnImage": true
+  },
+  "hookOnImage": true,
+  "createdAt": "2026-11-11T09:16:02.139Z",
   "source": "daily-viral-deals-review",
-  "draftHash": "2c52e45b953adf44"
+  "draftHash": "a7d8d9f259458e56"
 }
