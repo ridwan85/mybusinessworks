@@ -323,14 +323,11 @@ const jsonLd = reviewPageJsonLd({
   .hook-visual .hero img {
     width: 100%;
     max-width: none;
-    max-height: 420px;
     height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    display: block;
     border-radius: 14px;
     border: 1px solid var(--line);
     background: #fff;
-    display: block;
   }
   .hook-visual .hero figcaption {
     margin: 10px 0 0;
@@ -565,8 +562,8 @@ const jsonLd = reviewPageJsonLd({
       margin-inline: calc(var(--page-gutter) * -1);
     }
     .hook-visual .hero img {
-      max-height: none;
       aspect-ratio: 1 / 1;
+      object-fit: cover;
       border-radius: 0;
       border-left: 0;
       border-right: 0;
