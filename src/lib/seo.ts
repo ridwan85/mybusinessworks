@@ -85,7 +85,6 @@ type ReviewSeoInput = {
     hookSupport: string;
     brand?: string;
     asin: string;
-    affiliateUrl: string;
     pubDate: Date;
     pageUrl: string;
     imageUrl?: string;
@@ -110,8 +109,7 @@ export function reviewPageJsonLd(input: ReviewSeoInput) {
         url: input.pageUrl,
         ...(input.brand ? { brand: { '@type': 'Brand', name: input.brand } } : {}),
         ...(input.imageUrl ? { image: [input.imageUrl] } : {}),
-        // No on-site price (Amazon owns pricing) — omit Offer to avoid invalid Product rich results.
-        sameAs: input.affiliateUrl,
+        // Keep affiliate URLs out of JSON-LD — they belong on visible CTAs with rel=sponsored.
     };
 
     const review = {
