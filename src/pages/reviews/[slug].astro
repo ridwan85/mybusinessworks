@@ -11,31 +11,48 @@ const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 
+const gallery = (data.images?.length ? data.images : data.imageSrc ? [data.imageSrc] : []).filter(
+  (src, i, arr) => arr.indexOf(src) === i,
+);
+const heroSrc = data.imageSrc || gallery[0];
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: data.title,
   description: data.description,
-  image: data.images,
   datePublished: data.pubDate.toISOString(),
   author: { '@type': 'Organization', name: 'MyBusinessWork Reviews' },
+  ...(heroSrc ? { image: new URL(heroSrc, Astro.site).href } : {}),
 };
 ---
 
-<Base title={data.title} description={data.description} image={data.images[0]}>
+<Base title={data.title} description={data.description} image={heroSrc}>
   <article>
     <h1>{data.title}</h1>
-    <img class="hero" src={data.images[0]} alt={data.title} referrerpolicy="no-referrer" />
-    {data.images.length > 1 && (
-      <div class="thumbs">
-        {data.images.slice(1, 6).map((src) => (
-          <img src={src} alt={`${data.title} view`} loading="lazy" referrerpolicy="no-referrer" />
-        ))}
+    {data.imageHtml && <div class="hero" set:html={data.imageHtml} />}
+    {!data.imageHtml && heroSrc && (
+      <div class="hero">
+        <img src={heroSrc} alt={data.title} width="860" height="860" />
       </div>
     )}
     <p style="text-align:center">
       <a class="cta" href={data.affiliateUrl} rel="sponsored nofollow noopener" target="_blank">Check Price on Amazon</a>
     </p>
+    {gallery.length > 1 && (
+      <section class="gallery" aria-label="Product showcase photos">
+        <h2>Product Showcase</h2>
+        <ul>
+          {gallery.map((src) => (
+            <li>
+              <a href={src} target="_blank" rel="noopener">
+                <img src={src} alt={`${data.title} showcase`} loading="lazy" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
     <Content />
   </article>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

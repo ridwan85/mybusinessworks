@@ -10,7 +10,10 @@
         "dev": "astro dev",
         "build": "astro build",
         "preview": "astro preview",
-        "generate": "node --env-file=.env scripts/generate.mjs"
+        "generate": "node --env-file=.env scripts/generate.mjs",
+        "extract": "node --env-file=.env scripts/extract.mjs",
+        "import": "node scripts/import.mjs",
+        "test:image": "node --env-file=.env scripts/test-image-gen.mjs"
     },
     "dependencies": {
         "@astrojs/sitemap": "^3.2.1",

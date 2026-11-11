@@ -10,7 +10,10 @@ const reviews = defineCollection({
         brand: z.string().optional(),
         category: z.string().optional(),
         affiliateUrl: z.string().url(),
-        images: z.array(z.string().url()).min(1),
+        // Absolute http(s) URLs or site-relative paths like /images/...
+        images: z.array(z.string().min(1)).optional(),
+        imageHtml: z.string().optional(),
+        imageSrc: z.string().min(1).optional(),
         features: z.array(z.string()),
         pubDate: z.coerce.date(),
     }),

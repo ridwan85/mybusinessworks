@@ -6,7 +6,5 @@
         "Paste each 'About this item' bullet here",
         "One bullet per array item"
     ],
-    "images": [
-        "https://m.media-amazon.com/images/I/EXAMPLE.jpg"
-    ]
+    "siteStripe": "Paste the SiteStripe 'Image' HTML snippet here (optional)"
 }

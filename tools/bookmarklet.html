@@ -1,0 +1,38 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Amazon product copier</title>
+
+<body style="font:16px/1.6 system-ui;max-width:640px;margin:40px auto">
+    <h1>Amazon product copier</h1>
+    <p>Drag this link to your bookmarks bar:</p>
+    <p><a id="bm"
+            style="padding:8px 14px;background:#ff9900;color:#111;border-radius:6px;text-decoration:none;font-weight:700">Copy
+            product</a></p>
+    <p>Then open one product page on amazon.com, click the bookmark, and run <code>npm run import</code> in the project
+        folder.</p>
+    <p>If the bookmark does nothing, paste the code below into the browser's DevTools console on the product page
+        instead.</p>
+    <pre id="src" style="white-space:pre-wrap;background:#f3f4f6;padding:12px;border-radius:6px;font-size:13px"></pre>
+    <script>
+        const code = `(() => {
+      const t = (s) => document.querySelector(s)?.textContent.trim() ?? '';
+      const asin = (location.pathname.match(/\\/(?:dp|gp\\/product)\\/([A-Z0-9]{10})/i) || [])[1];
+      if (!asin) return alert('Open a single product page (amazon.com/dp/...) first.');
+      const features = [...document.querySelectorAll('#feature-bullets li span.a-list-item')].map((e) => e.textContent.trim()).filter(Boolean);
+      const crumbs = [...document.querySelectorAll('#wayfinding-breadcrumbs_feature_div li a')];
+      const data = {
+        asin: asin.toUpperCase(),
+        title: t('#productTitle'),
+        brand: t('#bylineInfo').replace(/^(Visit the |Brand: )/, '').replace(/ Store$/, ''),
+        category: crumbs.length ? crumbs[crumbs.length - 1].textContent.trim() : '',
+        features,
+      };
+      const json = JSON.stringify(data);
+      const done = () => alert('Copied ' + features.length + ' features. Now run: npm run import');
+      if (typeof copy === 'function') { copy(json); done(); }
+      else navigator.clipboard.writeText(json).then(done, () => prompt('Press Cmd+C to copy, then run: npm run import', json));
+    })();`;
+        document.getElementById('bm').href = 'javascript:' + encodeURIComponent(code);
+        document.getElementById('src').textContent = code;
+    </script>
+</body>

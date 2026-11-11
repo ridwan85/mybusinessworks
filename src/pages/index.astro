@@ -16,7 +16,7 @@ const reviews = (await getCollection('reviews')).sort((a, b) => b.data.pubDate.v
     {reviews.map((r) => (
       <li class="card">
         <a href={`/reviews/${r.id}/`}>
-          <img src={r.data.images[0]} alt={r.data.title} loading="lazy" referrerpolicy="no-referrer" />
+          {r.data.imageSrc && <img src={r.data.imageSrc} alt={r.data.title} loading="lazy" />}
           <div>
             <h2>{r.data.title}</h2>
             <p>{r.data.description}</p>

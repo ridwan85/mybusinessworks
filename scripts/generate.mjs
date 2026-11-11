@@ -4,7 +4,14 @@ import path from 'node:path';
 import OpenAI from 'openai';
 
 const TAG = process.env.AMAZON_ASSOCIATE_TAG;
-const MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+const env = process.env;
+const PROVIDER = env.GEMINI_API_KEY ? 'gemini' : env.XAI_API_KEY ? 'grok' : 'openai';
+const PROVIDERS = {
+    gemini: { apiKey: env.GEMINI_API_KEY, baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/', model: env.GEMINI_MODEL || 'gemini-flash-latest' },
+    grok: { apiKey: env.XAI_API_KEY, baseURL: 'https://api.x.ai/v1', model: env.XAI_MODEL || 'grok-4' },
+    openai: { apiKey: env.OPENAI_API_KEY, baseURL: undefined, model: env.OPENAI_MODEL || 'gpt-4o-mini' },
+};
+const MODEL = PROVIDERS[PROVIDER].model;
 const DISCLOSURE = 'As an Amazon Associate I earn from qualifying purchases.';
 
 const args = process.argv.slice(2);
@@ -18,10 +25,10 @@ function fail(msg) {
 
 if (!inputUrl) fail('Pass an Amazon product URL: npm run generate -- "https://www.amazon.com/dp/XXXXXXXXXX"');
 if (!TAG) fail('AMAZON_ASSOCIATE_TAG is missing in .env');
-if (!process.env.OPENAI_API_KEY) fail('OPENAI_API_KEY is missing in .env');
+if (!PROVIDERS[PROVIDER].apiKey) fail('Set GEMINI_API_KEY, XAI_API_KEY or OPENAI_API_KEY in .env');
 
 const isAmazonHost = (h) => /(^|\.)amazon\.com$/i.test(h);
-const isShortHost = (h) => /^(amzn\.to|a\.co|amzn\.com)$/i.test(h);
+const isShortHost = (h) => /^(amzn\.to|a\.co|amzn\.com|link\.amazon)$/i.test(h);
 
 async function resolveUrl(raw) {
     let url;
@@ -32,7 +39,8 @@ async function resolveUrl(raw) {
     }
     if (url.protocol !== 'https:') fail('URL must use https.');
     if (isShortHost(url.hostname)) {
-        const res = await fetch(url, { method: 'HEAD', redirect: 'follow' });
+        const res = await fetch(url, { redirect: 'follow', headers: { 'User-Agent': 'Mozilla/5.0' } });
+        await res.body?.cancel();
         url = new URL(res.url);
     }
     if (!isAmazonHost(url.hostname)) fail('Only amazon.com (US store) links are supported.');
@@ -41,7 +49,7 @@ async function resolveUrl(raw) {
 
 function extractAsin(url) {
     const m = url.pathname.match(/\/(?:dp|gp\/product|gp\/aw\/d|product)\/([A-Z0-9]{10})/i);
-    if (!m) fail('Could not find a 10-character ASIN in the URL.');
+    if (!m) fail('No product ASIN found. This link points to a non-product page (e.g. a storefront or list). Open the product page and copy its link.');
     return m[1].toUpperCase();
 }
 
@@ -53,27 +61,44 @@ const slugify = (s) =>
         .slice(0, 60)
         .replace(/-+$/, '');
 
+// SiteStripe "Image" snippet: only Amazon-hosted <a>/<img> tags are accepted.
+function parseSiteStripe(html, file) {
+    if (!html?.trim()) return {};
+    const bad = /<script|\son\w+\s*=|javascript:|<(?!\/?(?:a|img)\b)[a-z]/i.test(html);
+    const urls = [...html.matchAll(/(?:src|href)\s*=\s*["']([^"']+)["']/gi)].map((m) => (m[1].startsWith('//') ? `https:${m[1]}` : m[1]));
+    const okHost = (u) => {
+        try {
+            return /(^|\.)(amazon\.com|amazon-adsystem\.com)$/.test(new URL(u).hostname);
+        } catch {
+            return false;
+        }
+    };
+    const imgSrc = html.match(/<img[^>]+src\s*=\s*["']([^"']*amazon-adsystem\.com[^"']*)["']/i)?.[1];
+    if (bad || !urls.length || !urls.every(okHost) || !imgSrc)
+        fail(`${file}: "siteStripe" must be the unmodified Image snippet copied from SiteStripe.`);
+    return { imageHtml: html.trim(), imageSrc: imgSrc.startsWith('//') ? `https:${imgSrc}` : imgSrc };
+}
+
 async function loadProduct(asin) {
     const file = path.join('data', 'products', `${asin}.json`);
     try {
         const p = JSON.parse(await fs.readFile(file, 'utf8'));
         if (!p.title?.trim()) fail(`${file}: "title" is empty.`);
         if (!Array.isArray(p.features) || !p.features.length) fail(`${file}: "features" must be a non-empty array.`);
-        if (!Array.isArray(p.images) || !p.images.length || !p.images.every((i) => /^https:\/\//.test(i)))
-            fail(`${file}: "images" must be a non-empty array of https URLs.`);
-        return p;
+        return { ...p, ...parseSiteStripe(p.siteStripe, file) };
     } catch (e) {
         if (e.code !== 'ENOENT') throw e;
         await fs.copyFile(path.join('data', 'products', '_example.json'), file);
         fail(
             `No product data for ${asin}. A template was created at ${file}.\n` +
-            'Fill in title, features and image URLs (from the Amazon page / SiteStripe), then run the command again.',
+            'Fill in title, features and (optionally) the SiteStripe Image snippet, then run the command again.',
         );
     }
 }
 
 async function writeReview(p, asin, affiliateUrl) {
-    const client = new OpenAI();
+    const { apiKey, baseURL } = PROVIDERS[PROVIDER];
+    const client = new OpenAI({ apiKey, baseURL });
     const completion = await client.chat.completions.create({
         model: MODEL,
         temperature: 0.6,
@@ -134,7 +159,8 @@ const frontmatter = [
     product.brand ? `brand: ${JSON.stringify(product.brand)}` : null,
     product.category ? `category: ${JSON.stringify(product.category)}` : null,
     `affiliateUrl: ${JSON.stringify(affiliateUrl)}`,
-    `images: ${JSON.stringify(product.images)}`,
+    product.imageHtml ? `imageHtml: ${JSON.stringify(product.imageHtml)}` : null,
+    product.imageSrc ? `imageSrc: ${JSON.stringify(product.imageSrc)}` : null,
     `features: ${JSON.stringify(product.features)}`,
     `pubDate: ${new Date().toISOString().slice(0, 10)}`,
     '---',
