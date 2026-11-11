@@ -54,5 +54,38 @@ DNS (apex + www) uses GitHub Pages A/CNAME records as documented in GitHub’s P
 ## Compliance
 
 - Disclosure: “As an Amazon Associate I earn from qualifying purchases.”
+- Privacy: `/privacy/` ([live](https://mybusinesswork.com/privacy/)).
 - No prices on-site (must stay current on Amazon).
 - Affiliate links use `?tag=` from `AMAZON_ASSOCIATE_TAG` and `rel="sponsored nofollow"`.
+
+## 4. Pinterest (internal, compliant publisher)
+
+CLI-only tooling for **your** MyBusinessWorks account. Official Pins API only. Each pin requires typing `publish` — no silent batch auto-post.
+
+### Register the developer app
+
+1. Create/connect an app at [developers.pinterest.com](https://developers.pinterest.com/).
+2. Redirect URI (register exactly): `https://mybusinesswork.com/oauth/pinterest/`  
+   That page lives on this site and hands the auth code to your local CLI (`127.0.0.1:8787`). Set the same value in `.env` as `PINTEREST_REDIRECT_URI`.
+3. Request scopes: `boards:read`, `pins:read`, `pins:write`.
+4. For app review, link privacy policy `https://mybusinesswork.com/privacy/` and describe an **internal content tool** that drafts pins from Daily Viral Deals reviews and publishes only after you confirm each pin.
+5. Put `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, and `PINTEREST_BOARD_ID` in `.env`.
+
+### Auth → draft → publish
+
+```bash
+# Deploy the site first so /oauth/pinterest/ is live, then:
+npm run pinterest:oauth
+# (opens browser → Pinterest → mybusinesswork.com/oauth/pinterest/ → local CLI)
+# If handoff fails, the page shows the code:
+# npm run pinterest:oauth -- --code PASTE_CODE_HERE
+
+# Build draft JSON from review Markdown (does not publish)
+npm run pinterest:draft
+npm run pinterest:draft -- hellobaby-hb6550-no-wifi-baby-monitor-review-b09gm8jzm9
+
+# Publish ONE draft after typing "publish" to confirm
+npm run pinterest:publish -- data/pinterest/drafts/<file>.json
+```
+
+Drafts live in `data/pinterest/drafts/`. Publish receipts (pin id + timestamp only) go to `data/pinterest/published/`. We do not scrape the Pinterest UI or store other users’ Pins.

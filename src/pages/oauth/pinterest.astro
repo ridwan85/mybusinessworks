@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base
+  noindex
+  title="Pinterest OAuth | Daily Viral Deals"
+  description="OAuth redirect endpoint for the internal Daily Viral Deals Pinterest publisher."
+>
+  <h1>Pinterest connection</h1>
+  <p id="status">Finishing authorization…</p>
+  <div id="fallback" hidden>
+    <p>
+      If the CLI did not pick this up automatically, copy the authorization code below and run:
+    </p>
+    <pre><code>npm run pinterest:oauth -- --code PASTE_CODE_HERE</code></pre>
+    <p><strong>Authorization code</strong></p>
+    <pre id="code-box"></pre>
+    <p class="notice">
+      Keep this private. Only use it with your local <code>pinterest:oauth</code> command. Do not share it.
+    </p>
+  </div>
+  <p id="error" class="notice" hidden></p>
+</Base>
+
+<script is:inline>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const status = document.getElementById('status');
+    const fallback = document.getElementById('fallback');
+    const errorEl = document.getElementById('error');
+    const codeBox = document.getElementById('code-box');
+
+    const err = params.get('error');
+    if (err) {
+      status.textContent = 'Authorization was denied or failed.';
+      errorEl.hidden = false;
+      errorEl.textContent = err + (params.get('error_description') ? ': ' + params.get('error_description') : '');
+      return;
+    }
+
+    const code = params.get('code');
+    const state = params.get('state') || '';
+    if (!code) {
+      status.textContent = 'No authorization code in this URL.';
+      errorEl.hidden = false;
+      errorEl.textContent =
+        'Open this page only after Pinterest redirects you here from npm run pinterest:oauth.';
+      return;
+    }
+
+    const local = new URL('http://127.0.0.1:8787/callback');
+    local.searchParams.set('code', code);
+    if (state) local.searchParams.set('state', state);
+
+    status.textContent = 'Handing off to your local CLI…';
+    window.location.replace(local.toString());
+
+    window.setTimeout(function () {
+      status.textContent = 'Could not reach the local CLI on port 8787.';
+      fallback.hidden = false;
+      codeBox.textContent = code;
+    }, 1200);
+  })();
+</script>

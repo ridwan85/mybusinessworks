@@ -16,6 +16,10 @@ function rehypeSponsoredLinks() {
 export default defineConfig({
     site: 'https://mybusinesswork.com',
     output: 'static',
-    integrations: [sitemap()],
+    integrations: [
+        sitemap({
+            filter: (page) => !page.includes('/oauth/'),
+        }),
+    ],
     markdown: { rehypePlugins: [rehypeSponsoredLinks] },
 });
