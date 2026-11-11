@@ -22,11 +22,19 @@ if (!Array.isArray(d.features) || !d.features.every(isStr) || !d.features.length
 
 const out = path.join('data', 'products', `${d.asin}.json`);
 const existing = await fs.readFile(out, 'utf8').then(JSON.parse, () => ({}));
+function normalizeProductCategory(raw, title = '') {
+    const text = `${raw ?? ''} ${title}`;
+    if (/doorbell|home security|security camera/i.test(text)) return 'Home Security';
+    if (/vacuum sealer|food sealer/i.test(text)) return 'Kitchen';
+    return String(raw ?? '').trim();
+}
+
+const title = d.title.trim();
 const product = {
     ...existing,
-    title: d.title.trim(),
+    title,
     brand: isStr(d.brand) ? d.brand.trim() : '',
-    category: isStr(d.category) ? d.category.trim() : '',
+    category: normalizeProductCategory(isStr(d.category) ? d.category.trim() : '', title),
     features: d.features.map((f) => f.trim()).filter(Boolean),
 };
 await fs.writeFile(out, JSON.stringify(product, null, 2) + '\n');

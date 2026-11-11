@@ -8,6 +8,7 @@ import {
     DEFAULT_CTA,
     normalizeReviewOutput,
     buildImagesFrontmatter,
+    normalizeProductCategory,
 } from './lib/review-format.mjs';
 
 const TAG = process.env.AMAZON_ASSOCIATE_TAG;
@@ -164,6 +165,7 @@ const url = await resolveUrl(inputUrl);
 const asin = extractAsin(url);
 const affiliateUrl = `https://www.amazon.com/dp/${asin}?tag=${encodeURIComponent(TAG)}`;
 const product = await loadProduct(asin);
+const category = normalizeProductCategory(product.category, product.title);
 
 const outDir = path.join('src', 'content', 'reviews');
 const existing = (await fs.readdir(outDir)).find((f) => f.endsWith(`-${asin.toLowerCase()}.md`));
@@ -186,7 +188,7 @@ const frontmatter = [
     `description: ${JSON.stringify(review.description)}`,
     `asin: ${JSON.stringify(asin)}`,
     product.brand ? `brand: ${JSON.stringify(product.brand)}` : null,
-    product.category ? `category: ${JSON.stringify(product.category)}` : null,
+    category ? `category: ${JSON.stringify(category)}` : null,
     `affiliateUrl: ${JSON.stringify(affiliateUrl)}`,
     product.imageHtml ? `imageHtml: ${JSON.stringify(product.imageHtml)}` : null,
     product.imageSrc ? `imageSrc: ${JSON.stringify(product.imageSrc)}` : null,
