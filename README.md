@@ -1,62 +1,58 @@
-# Amazon Affiliate Review Site (Astro + GitHub Pages)
+# Daily Viral Deals (Astro + GitHub Pages)
 
-Input an Amazon product link, get an SEO-optimized Markdown review with your affiliate link and the required disclosure, published as a static site.
+Amazon affiliate review site. Paste a product link → generate a locked-format review → publish static pages.
+
+## Locked review format
+
+Every product page uses the same arc (do not invent a new structure):
+
+1. **Hook** — real-life situation headline + support (`time` | `convenience` | `incident`)
+2. **Why it helps** — 3–4 concrete everyday points (`whyHelps`)
+3. **Details** — Quick Verdict → Key Features → Who It’s For → Pros → Things to Consider → FAQ → Final Verdict
+4. **CTA** — Amazon orange “Check Price on Amazon” (template-owned, tagged affiliate URL)
+
+Image captions must describe what the photo shows/does in real life — never prompt-style words like “showcase”, “lifestyle shot”, or “marble look”.
+
+`npm run generate` enforces this via `scripts/lib/review-format.mjs`. Astro schema also requires `hook`, `hookSupport`, `whyHelps`, and `angle`.
 
 ## 1. Setup
 
-Requires Node.js 20.6+ (check with `node -v`; install from https://nodejs.org if needed).
+Requires Node.js 20.6+ (`node -v`).
 
 ```bash
 npm install
-cp .env.example .env     # then put your OPENAI_API_KEY in .env (never commit it)
+cp .env.example .env     # add API keys + AMAZON_ASSOCIATE_TAG (never commit .env)
 ```
 
-## 2. Add a review
+## 2. Add a product review
 
 ```bash
+# Option A: bookmarklet copy → import
+# open tools/bookmarklet.html, copy product on Amazon, then:
+npm run import
+
+# Option B: generate (creates data/products/<ASIN>.json on first run)
 npm run generate -- "https://www.amazon.com/dp/B0XXXXXXXX"
+# or short links: https://link.amazon/... / amzn.to/...
 ```
 
-The first run creates `data/products/<ASIN>.json`. Fill in the title, "About this item" bullets and image URLs
-(copy image links via Amazon Associates SiteStripe), then run the command again. A review is written to `src/content/reviews/`.
+1. First `generate` run may create `data/products/<ASIN>.json` — fill `title`, `features`, optional `imageUrl` / `showcases` / SiteStripe, then run again.
+2. Review Markdown is written to `src/content/reviews/` in the locked format.
+3. Preview: `npm run dev`
+4. Publish: `git add . && git commit -m "Add review" && git push` (GitHub Actions deploys `master`).
 
-Preview locally: `npm run dev`
+Overwrite an existing review: `npm run generate -- "https://www.amazon.com/dp/ASIN" --force`
 
-## 3. Deploy to GitHub Pages
+## 3. Deploy / custom domain
 
-1. Create an empty repo on GitHub (e.g. `amazon-affiliate`).
-2. Push:
-   ```bash
-   git init && git add . && git commit -m "Initial site"
-   git branch -M master
-   git remote add origin https://github.com/<your-username>/amazon-affiliate.git
-   git push -u origin master
-   ```
-3. On GitHub: **Settings > Pages > Build and deployment > Source: GitHub Actions**.
-4. The workflow in `.github/workflows/deploy.yml` builds and publishes on every push to `master`.
-5. After each new review: `git add . && git commit -m "Add review" && git push`.
+Brand: **Daily Viral Deals**. `public/CNAME` currently points at `mybusinesswork.com` (also set `site` in `astro.config.mjs` if the domain changes).
 
-## 4. Custom domain
+GitHub Pages: **Settings → Pages → Source: GitHub Actions**.
 
-Brand: **Daily Viral Deals**. `public/CNAME` currently points at `mybusinesswork.com` (update both CNAME and `astro.config.mjs` `site` if you move domains).
+DNS (apex + www) uses GitHub Pages A/CNAME records as documented in GitHub’s Pages custom-domain guide.
 
-1. In GitHub: **Settings > Pages > Custom domain**, enter your domain, Save.
-2. At your registrar's DNS settings, add:
+## Compliance
 
-   | Type  | Host/Name | Value                    |
-   |-------|-----------|--------------------------|
-   | A     | `@`       | `185.199.108.153`        |
-   | A     | `@`       | `185.199.109.153`        |
-   | A     | `@`       | `185.199.110.153`        |
-   | A     | `@`       | `185.199.111.153`        |
-   | CNAME | `www`     | `<your-username>.github.io` |
-
-   Remove any conflicting old A/AAAA/CNAME records for `@` and `www`. If using Cloudflare, set the records to "DNS only" (grey cloud) until HTTPS is issued.
-3. Wait for DNS to propagate (minutes to a few hours; check with https://dnschecker.org).
-4. Back in **Settings > Pages**, tick **Enforce HTTPS** once it becomes available.
-
-## Compliance notes
-
-- Every page footer and every review carry: "As an Amazon Associate I earn from qualifying purchases."
-- Prices are intentionally not shown (Amazon requires them to be current).
-- Amazon images are hotlinked from Amazon's CDN; use only images you obtain through Associates tools.
+- Disclosure: “As an Amazon Associate I earn from qualifying purchases.”
+- No prices on-site (must stay current on Amazon).
+- Affiliate links use `?tag=` from `AMAZON_ASSOCIATE_TAG` and `rel="sponsored nofollow"`.

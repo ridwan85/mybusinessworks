@@ -6,5 +6,9 @@
         "Paste each 'About this item' bullet here",
         "One bullet per array item"
     ],
+    "imageUrl": "Optional primary product image URL or local path like /images/reviews/asin/main.jpg",
+    "showcases": [
+        "/images/reviews/asin/main.jpg"
+    ],
     "siteStripe": "Paste the SiteStripe 'Image' HTML snippet here (optional)"
 }

@@ -1,7 +1,14 @@
 // Usage: npm run generate -- "<amazon-product-url>" [--force]
+// Locked format: Hook → Why it helps → Details → Amazon CTA (see scripts/lib/review-format.mjs)
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import OpenAI from 'openai';
+import {
+    SYSTEM_PROMPT,
+    DEFAULT_CTA,
+    normalizeReviewOutput,
+    buildImagesFrontmatter,
+} from './lib/review-format.mjs';
 
 const TAG = process.env.AMAZON_ASSOCIATE_TAG;
 const env = process.env;
@@ -12,7 +19,6 @@ const PROVIDERS = {
     openai: { apiKey: env.OPENAI_API_KEY, baseURL: undefined, model: env.OPENAI_MODEL || 'gpt-4o-mini' },
 };
 const MODEL = PROVIDERS[PROVIDER].model;
-const DISCLOSURE = 'As an Amazon Associate I earn from qualifying purchases.';
 
 const args = process.argv.slice(2);
 const force = args.includes('--force');
@@ -79,65 +85,79 @@ function parseSiteStripe(html, file) {
     return { imageHtml: html.trim(), imageSrc: imgSrc.startsWith('//') ? `https:${imgSrc}` : imgSrc };
 }
 
+function collectShowcases(p) {
+    const out = [];
+    if (Array.isArray(p.showcases)) {
+        for (const s of p.showcases) {
+            const src = typeof s === 'string' ? s : s?.src;
+            if (src) out.push(src);
+        }
+    }
+    if (p.imageUrl && !out.includes(p.imageUrl)) out.push(p.imageUrl);
+    return out;
+}
+
 async function loadProduct(asin) {
     const file = path.join('data', 'products', `${asin}.json`);
     try {
         const p = JSON.parse(await fs.readFile(file, 'utf8'));
         if (!p.title?.trim()) fail(`${file}: "title" is empty.`);
         if (!Array.isArray(p.features) || !p.features.length) fail(`${file}: "features" must be a non-empty array.`);
-        return { ...p, ...parseSiteStripe(p.siteStripe, file) };
+        const stripe = parseSiteStripe(p.siteStripe, file);
+        const showcases = collectShowcases(p);
+        return {
+            ...p,
+            ...stripe,
+            imageSrc: stripe.imageSrc || p.imageSrc || showcases[0] || undefined,
+            showcases,
+        };
     } catch (e) {
         if (e.code !== 'ENOENT') throw e;
         await fs.copyFile(path.join('data', 'products', '_example.json'), file);
         fail(
             `No product data for ${asin}. A template was created at ${file}.\n` +
-            'Fill in title, features and (optionally) the SiteStripe Image snippet, then run the command again.',
+                'Fill in title, features and (optionally) imageUrl/showcases/SiteStripe, then run the command again.',
         );
     }
 }
 
-async function writeReview(p, asin, affiliateUrl) {
+async function writeReview(p) {
     const { apiKey, baseURL } = PROVIDERS[PROVIDER];
     const client = new OpenAI({ apiKey, baseURL });
+    const hasImages = Boolean(p.imageSrc || p.showcases?.length);
     const completion = await client.chat.completions.create({
         model: MODEL,
         temperature: 0.6,
         response_format: { type: 'json_object' },
         messages: [
-            {
-                role: 'system',
-                content:
-                    'You are an experienced US affiliate product reviewer and conversion copywriter. Write in American English, helpful and honest. ' +
-                    'Use ONLY the facts supplied. Never invent specifications, prices, ratings, awards, or claim hands-on testing. ' +
-                    'Do not make medical or guaranteed-result claims. Do not include links, a title (H1), or any affiliate disclosure. ' +
-                    'Pick ONE primary angle for the page: "time" (saves time), "convenience" (fewer steps / easier), or "incident" (avoids a real-life mess, waste, failure, or headache). ' +
-                    'Return JSON with keys: ' +
-                    '"title" (SEO title, max 60 chars, includes the product name), ' +
-                    '"description" (meta description, max 155 chars), ' +
-                    '"angle" (one of: time, convenience, incident), ' +
-                    '"hook" (max 90 chars: a real-life situation headline the product helps with; concrete everyday scene; no product name required), ' +
-                    '"hookSupport" (1-2 sentences, max 220 chars: connect that situation to how this product helps, using only supplied facts), ' +
-                    '"whyHelps" (array of 3-4 short sentences: each one explains a concrete real-life benefit tied to the chosen angle, using only supplied facts; write like advice to a busy shopper, not a feature list dump), ' +
-                    '"ctaLabel" (short Amazon button label, e.g. "Check Price on Amazon"), ' +
-                    '"body" (Markdown, 900-1300 words, H2/H3 in this order: Quick Verdict, Key Features, Who It\'s For, Pros, Things to Consider, FAQ (3-4 questions), Final Verdict). ' +
-                    'Do NOT include a Where to Buy section—the template owns the CTAs.',
-            },
+            { role: 'system', content: SYSTEM_PROMPT },
             {
                 role: 'user',
-                content: JSON.stringify({ product: p.title, brand: p.brand, category: p.category, features: p.features }),
+                content: JSON.stringify({
+                    format: 'Daily Viral Deals locked review format',
+                    product: p.title,
+                    brand: p.brand,
+                    category: p.category,
+                    features: p.features,
+                    hasProductImages: hasImages,
+                    imageCount: Math.max(p.showcases?.length || 0, p.imageSrc ? 1 : 0),
+                }),
             },
         ],
     });
-    const out = JSON.parse(completion.choices[0].message.content);
-    if (!out.title || !out.description || !out.body || !out.hook || !out.hookSupport || !out.angle || !Array.isArray(out.whyHelps)) {
-        fail('The model returned an incomplete response. Try again.');
+
+    let parsed;
+    try {
+        parsed = JSON.parse(completion.choices[0].message.content);
+    } catch {
+        fail('The model returned invalid JSON. Try again.');
     }
-    if (!['time', 'convenience', 'incident'].includes(out.angle)) {
-        fail(`Invalid angle "${out.angle}". Expected time, convenience, or incident.`);
+
+    try {
+        return normalizeReviewOutput(parsed, { hasImages });
+    } catch (e) {
+        fail(`Locked format validation failed: ${e.message}. Try again.`);
     }
-    out.whyHelps = out.whyHelps.map((s) => String(s || '').trim()).filter(Boolean).slice(0, 4);
-    if (out.whyHelps.length < 2) fail('whyHelps needs at least 2 real-life points.');
-    return out;
 }
 
 const url = await resolveUrl(inputUrl);
@@ -149,10 +169,16 @@ const outDir = path.join('src', 'content', 'reviews');
 const existing = (await fs.readdir(outDir)).find((f) => f.endsWith(`-${asin.toLowerCase()}.md`));
 if (existing && !force) fail(`Review already exists (${existing}). Use --force to overwrite.`);
 
-console.log(`Generating review for ${asin} with ${MODEL}...`);
-const review = await writeReview(product, asin, affiliateUrl);
+console.log(`Generating locked-format review for ${asin} with ${MODEL}...`);
+const review = await writeReview(product);
+const { imagesLine, imageCaptionLine } = buildImagesFrontmatter({
+    imageSrc: product.imageSrc,
+    showcases: product.showcases,
+    imageCaption: review.imageCaption,
+    imageCaptions: review.imageCaptions,
+});
 
-const body = review.body.trim() + '\n';
+const body = review.body + '\n';
 
 const frontmatter = [
     '---',
@@ -164,11 +190,13 @@ const frontmatter = [
     `affiliateUrl: ${JSON.stringify(affiliateUrl)}`,
     product.imageHtml ? `imageHtml: ${JSON.stringify(product.imageHtml)}` : null,
     product.imageSrc ? `imageSrc: ${JSON.stringify(product.imageSrc)}` : null,
+    imageCaptionLine,
+    imagesLine,
     `hook: ${JSON.stringify(review.hook)}`,
     `hookSupport: ${JSON.stringify(review.hookSupport)}`,
     `whyHelps: ${JSON.stringify(review.whyHelps)}`,
     `angle: ${JSON.stringify(review.angle)}`,
-    `ctaLabel: ${JSON.stringify(review.ctaLabel || 'Check Price on Amazon')}`,
+    `ctaLabel: ${JSON.stringify(review.ctaLabel || DEFAULT_CTA)}`,
     `features: ${JSON.stringify(product.features)}`,
     `pubDate: ${new Date().toISOString().slice(0, 10)}`,
     '---',
@@ -180,3 +208,4 @@ const frontmatter = [
 const fileName = existing ?? `${slugify(review.title)}-${asin.toLowerCase()}.md`;
 await fs.writeFile(path.join(outDir, fileName), frontmatter + '\n' + body);
 console.log(`Created src/content/reviews/${fileName}`);
+console.log(`Format: Hook → Why it helps (${review.whyHelps.length} points) → Details → CTA [${review.angle}]`);
