@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
+import {
+  categoryHubs,
+  reviewsForHub,
+  uniqueProductCategories,
+} from '../../lib/categories';
+
+export async function getStaticPaths() {
+  const reviews = await getCollection('reviews');
+  const hubs = categoryHubs.map((hub) => ({
+    params: { slug: hub.slug },
+    props: {
+      label: hub.label,
+      blurb: hub.blurb,
+      image: hub.src,
+      reviews: reviewsForHub(reviews, hub),
+    },
+  }));
+
+  const productCats = uniqueProductCategories(reviews).map((cat) => ({
+    params: { slug: cat.slug },
+    props: {
+      label: cat.label,
+      blurb: `Product reviews in ${cat.label}.`,
+      image: cat.reviews[0]?.data.imageSrc,
+      reviews: cat.reviews,
+    },
+  }));
+
+  const seen = new Set(hubs.map((h) => h.params.slug));
+  return [...hubs, ...productCats.filter((c) => !seen.has(c.params.slug))];
+}
+
+const { label, blurb, image, reviews } = Astro.props;
+const allReviews = await getCollection('reviews');
+const relatedHubs = categoryHubs
+  .filter((h) => h.slug !== Astro.params.slug)
+  .map((h) => ({ ...h, count: reviewsForHub(allReviews, h).length }));
+---
+
+<Base
+  title={`${label} Reviews | Daily Viral Deals`}
+  description={blurb}
+  image={image}
+>
+  <p class="crumb"><a href="/">Home</a> / <a href="/#categories">Categories</a> / {label}</p>
+  <h1>{label}</h1>
+  <p class="lead">{blurb}</p>
+  <p class="notice">As an Amazon Associate I earn from qualifying purchases.</p>
+
+  {reviews.length === 0 ? (
+    <p class="empty">No reviews in this category yet. <a href="/#reviews">Browse all reviews</a>.</p>
+  ) : (
+    <ul class="grid">
+      {reviews.map((r) => <ReviewCard review={r} />)}
+    </ul>
+  )}
+
+  <section class="more-cats">
+    <h2>More categories</h2>
+    <ul>
+      {relatedHubs.map((h) => (
+        <li>
+          <a href={`/categories/${h.slug}/`}>{h.label} <span>({h.count})</span></a>
+        </li>
+      ))}
+      <li><a href="/#reviews">All reviews</a></li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .crumb { color: var(--muted); font-size: 0.92rem; margin: 0 0 10px; }
+  .crumb a { color: var(--muted); text-decoration: none; }
+  .crumb a:hover { color: var(--fg); }
+  .lead { color: var(--muted); max-width: 40rem; margin: 0 0 16px; }
+  .empty { margin-top: 20px; }
+  .more-cats { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .more-cats h2 { font-family: var(--display); font-size: 1.35rem; margin: 0 0 12px; }
+  .more-cats ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px 16px; }
+  .more-cats a { font-weight: 600; text-decoration: none; color: var(--fg); border-bottom: 2px solid var(--accent); }
+  .more-cats span { color: var(--muted); font-weight: 500; }
+</style>

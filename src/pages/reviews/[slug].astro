@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { slugifyCategory } from '../../lib/categories';
 
 export async function getStaticPaths() {
   const reviews = await getCollection('reviews');
@@ -11,10 +12,26 @@ const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 
-const gallery = (data.images?.length ? data.images : data.imageSrc ? [data.imageSrc] : []).filter(
-  (src, i, arr) => arr.indexOf(src) === i,
-);
-const heroSrc = data.imageSrc || gallery[0];
+type GalleryItem = { src: string; caption?: string; alt?: string };
+
+const gallery: GalleryItem[] = (data.images ?? [])
+  .map((item) => (typeof item === 'string' ? { src: item } : item))
+  .filter((item, i, arr) => arr.findIndex((x) => x.src === item.src) === i);
+
+if (data.imageSrc && !gallery.some((g) => g.src === data.imageSrc)) {
+  gallery.unshift({
+    src: data.imageSrc,
+    caption: data.imageCaption,
+    alt: data.title,
+  });
+}
+
+const heroSrc = data.imageSrc || gallery[0]?.src;
+const heroCaption = data.imageCaption || gallery.find((g) => g.src === heroSrc)?.caption;
+const showcase = gallery.filter((g) => g.src !== heroSrc);
+const ctaLabel = data.ctaLabel || 'Check Price on Amazon';
+const angleLabel =
+  data.angle === 'time' ? 'Saves time' : data.angle === 'incident' ? 'Avoids a headache' : 'More convenient';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -22,38 +39,332 @@ const jsonLd = {
   headline: data.title,
   description: data.description,
   datePublished: data.pubDate.toISOString(),
-  author: { '@type': 'Organization', name: 'MyBusinessWork Reviews' },
+  author: { '@type': 'Organization', name: 'Daily Viral Deals' },
   ...(heroSrc ? { image: new URL(heroSrc, Astro.site).href } : {}),
 };
 ---
 
-<Base title={data.title} description={data.description} image={heroSrc}>
-  <article>
-    <h1>{data.title}</h1>
-    {data.imageHtml && <div class="hero" set:html={data.imageHtml} />}
-    {!data.imageHtml && heroSrc && (
-      <div class="hero">
-        <img src={heroSrc} alt={data.title} width="860" height="860" />
+<Base layout="review" title={data.title} description={data.description} image={heroSrc}>
+  <article class="review">
+    <!-- HOOK -->
+    <section class="hook-block" aria-labelledby="hook-title">
+      <div class="hook-grid">
+        <div class="hook-copy">
+          <div class="hook-meta">
+            {data.category && (
+              <a class="cat" href={`/categories/${slugifyCategory(data.category)}/`}>{data.category}</a>
+            )}
+            <span class="angle">{angleLabel}</span>
+          </div>
+          <p class="product-kicker">{data.title}</p>
+          <h1 id="hook-title">{data.hook}</h1>
+          <p class="hook-support">{data.hookSupport}</p>
+          <p class="cta-wrap">
+            <a class="cta-amazon" href={data.affiliateUrl} rel="sponsored nofollow noopener" target="_blank">{ctaLabel}</a>
+          </p>
+        </div>
+
+        {(data.imageHtml || heroSrc) && (
+          <div class="hook-visual">
+            {data.imageHtml && <div class="hero" set:html={data.imageHtml} />}
+            {!data.imageHtml && heroSrc && (
+              <figure class="hero">
+                <img src={heroSrc} alt={data.title} width="640" height="640" />
+                {heroCaption && <figcaption>{heroCaption}</figcaption>}
+              </figure>
+            )}
+          </div>
+        )}
       </div>
-    )}
-    <p style="text-align:center">
-      <a class="cta" href={data.affiliateUrl} rel="sponsored nofollow noopener" target="_blank">Check Price on Amazon</a>
-    </p>
-    {gallery.length > 1 && (
-      <section class="gallery" aria-label="Product showcase photos">
-        <h2>Product Showcase</h2>
-        <ul>
-          {gallery.map((src) => (
-            <li>
-              <a href={src} target="_blank" rel="noopener">
-                <img src={src} alt={`${data.title} showcase`} loading="lazy" />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
-    <Content />
+    </section>
+
+    <!-- MEAT -->
+    <section class="meat-block" aria-labelledby="meat-title">
+      <div class="meat-intro">
+        <h2 id="meat-title" class="meat-heading">Why it helps in real life</h2>
+        <p class="meat-lead">
+          {data.angle === 'time' && 'Here’s how it saves time in everyday use—not in a lab, in the situations you actually hit.'}
+          {data.angle === 'convenience' && 'Here’s how it removes friction in everyday use—fewer steps when you’d otherwise skip the chore.'}
+          {data.angle === 'incident' && 'Here’s how it helps you avoid the usual mess, waste, or fridge headache in everyday use.'}
+        </p>
+        <ol class="why-helps">
+          {data.whyHelps.map((point) => <li>{point}</li>)}
+        </ol>
+        <p class="notice">As an Amazon Associate I earn from qualifying purchases. This post contains affiliate links at no extra cost to you.</p>
+      </div>
+
+      {showcase.length > 0 && (
+        <div class="gallery" aria-label="Product photos">
+          <h3>In the kitchen</h3>
+          <ul>
+            {showcase.map((item) => (
+              <li>
+                <figure>
+                  <a href={item.src} target="_blank" rel="noopener">
+                    <img src={item.src} alt={item.alt || data.title} loading="lazy" />
+                  </a>
+                  {item.caption && <figcaption>{item.caption}</figcaption>}
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <div class="review-body">
+        <Content />
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-block" aria-labelledby="cta-title">
+      <div class="cta-panel">
+        <div>
+          <h2 id="cta-title">Ready to make the switch?</h2>
+          <p>
+            {data.angle === 'time' && 'If saving minutes on a repeated chore matters, check today’s price and see if this fits your setup.'}
+            {data.angle === 'convenience' && 'If you want fewer steps and less friction day to day, check today’s price on Amazon.'}
+            {data.angle === 'incident' && 'If you’d rather avoid the usual mess, waste, or surprise failure, check today’s price on Amazon.'}
+          </p>
+        </div>
+        <a class="cta-amazon" href={data.affiliateUrl} rel="sponsored nofollow noopener" target="_blank">{ctaLabel}</a>
+      </div>
+    </section>
   </article>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </Base>
+
+<style>
+  .review {
+    padding: 8px 0 28px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .hook-block {
+    margin-bottom: 40px;
+    padding-bottom: 8px;
+  }
+  .hook-grid {
+    display: grid;
+    gap: 28px;
+    align-items: start;
+  }
+  .hook-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    align-items: center;
+    margin: 0 0 12px;
+  }
+  .cat {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .cat:hover { color: var(--fg); }
+  .angle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: #f3e4e8;
+    border: 1px solid #e5cdd4;
+    border-radius: 999px;
+    padding: 4px 10px;
+  }
+  .product-kicker {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .hook-copy h1 {
+    font-family: var(--display);
+    font-size: clamp(1.55rem, 3.4vw, 2.15rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+    max-width: 16ch;
+  }
+  .hook-support {
+    margin: 0 0 22px;
+    max-width: 36rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+  .cta-wrap { margin: 0; }
+
+  .hook-visual .hero {
+    margin: 0;
+    text-align: left;
+  }
+  .hook-visual .hero img {
+    width: 100%;
+    max-width: none;
+    max-height: 420px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: #fff;
+    display: block;
+  }
+  .hook-visual .hero figcaption {
+    margin: 10px 0 0;
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .meat-block { margin: 0 0 36px; }
+  .meat-intro { margin-bottom: 18px; }
+  .meat-heading {
+    font-family: var(--display);
+    font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+    margin: 0 0 10px;
+  }
+  .meat-lead {
+    margin: 0 0 14px;
+    color: var(--muted);
+    max-width: 40rem;
+  }
+  .why-helps {
+    counter-reset: why;
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  .why-helps li {
+    position: relative;
+    padding: 14px 14px 14px 42px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(252, 250, 251, 0.9);
+    color: var(--fg);
+    line-height: 1.5;
+  }
+  .why-helps li::before {
+    counter-increment: why;
+    content: counter(why);
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: #f3e4e8;
+    color: var(--accent-ink);
+    font-size: 0.78rem;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+  }
+
+  .gallery {
+    margin: 0 0 28px;
+  }
+  .gallery h3 {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    margin: 0 0 12px;
+  }
+  .gallery ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .gallery figure { margin: 0; }
+  .gallery img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: #fff;
+    display: block;
+  }
+  .gallery figcaption {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .review-body {
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+  .review-body :global(h2) {
+    font-family: var(--display);
+    font-size: 1.3rem;
+    margin: 1.7em 0 0.55em;
+  }
+  .review-body :global(h3) {
+    font-size: 1.05rem;
+    margin: 1.3em 0 0.45em;
+  }
+  .review-body :global(p) { margin: 0 0 1em; }
+  .review-body :global(ul),
+  .review-body :global(ol) {
+    margin: 0 0 1em;
+    padding-left: 1.2em;
+  }
+  .review-body :global(li) { margin: 0.35em 0; }
+  .review-body :global(blockquote) {
+    margin: 1.2em 0;
+    font-size: 0.95rem;
+  }
+
+  .cta-block { margin-top: 8px; }
+  .cta-panel {
+    display: grid;
+    gap: 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px;
+    background:
+      linear-gradient(135deg, rgba(255, 153, 0, 0.12), transparent 42%),
+      rgba(252, 250, 251, 0.95);
+  }
+  .cta-panel h2 {
+    font-family: var(--display);
+    font-size: 1.35rem;
+    margin: 0 0 8px;
+  }
+  .cta-panel p {
+    margin: 0;
+    color: var(--muted);
+    max-width: 38rem;
+  }
+
+  @media (min-width: 780px) {
+    .hook-grid {
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 32px;
+      align-items: center;
+    }
+    .hook-copy h1 { max-width: 15ch; }
+    .gallery ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cta-panel {
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 779px) {
+    .hook-visual .hero img { max-height: 340px; }
+    .hook-copy h1 { max-width: none; }
+  }
+</style>

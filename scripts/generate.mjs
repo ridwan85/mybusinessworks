@@ -107,11 +107,20 @@ async function writeReview(p, asin, affiliateUrl) {
             {
                 role: 'system',
                 content:
-                    'You are an experienced US affiliate product reviewer and SEO writer. Write in American English, in a helpful, honest, conversational tone. ' +
+                    'You are an experienced US affiliate product reviewer and conversion copywriter. Write in American English, helpful and honest. ' +
                     'Use ONLY the facts supplied. Never invent specifications, prices, ratings, awards, or claim hands-on testing. ' +
                     'Do not make medical or guaranteed-result claims. Do not include links, a title (H1), or any affiliate disclosure. ' +
-                    'Return JSON with keys: "title" (SEO title, max 60 chars, includes the product name), "description" (meta description, max 155 chars), ' +
-                    '"body" (Markdown, 900-1300 words, using H2/H3 headings in this order: Quick Verdict, Key Features, Who It\'s For, Pros, Things to Consider, FAQ (3-4 questions), Final Verdict).',
+                    'Pick ONE primary angle for the page: "time" (saves time), "convenience" (fewer steps / easier), or "incident" (avoids a real-life mess, waste, failure, or headache). ' +
+                    'Return JSON with keys: ' +
+                    '"title" (SEO title, max 60 chars, includes the product name), ' +
+                    '"description" (meta description, max 155 chars), ' +
+                    '"angle" (one of: time, convenience, incident), ' +
+                    '"hook" (max 90 chars: a real-life situation headline the product helps with; concrete everyday scene; no product name required), ' +
+                    '"hookSupport" (1-2 sentences, max 220 chars: connect that situation to how this product helps, using only supplied facts), ' +
+                    '"whyHelps" (array of 3-4 short sentences: each one explains a concrete real-life benefit tied to the chosen angle, using only supplied facts; write like advice to a busy shopper, not a feature list dump), ' +
+                    '"ctaLabel" (short Amazon button label, e.g. "Check Price on Amazon"), ' +
+                    '"body" (Markdown, 900-1300 words, H2/H3 in this order: Quick Verdict, Key Features, Who It\'s For, Pros, Things to Consider, FAQ (3-4 questions), Final Verdict). ' +
+                    'Do NOT include a Where to Buy section—the template owns the CTAs.',
             },
             {
                 role: 'user',
@@ -120,7 +129,14 @@ async function writeReview(p, asin, affiliateUrl) {
         ],
     });
     const out = JSON.parse(completion.choices[0].message.content);
-    if (!out.title || !out.description || !out.body) fail('The model returned an incomplete response. Try again.');
+    if (!out.title || !out.description || !out.body || !out.hook || !out.hookSupport || !out.angle || !Array.isArray(out.whyHelps)) {
+        fail('The model returned an incomplete response. Try again.');
+    }
+    if (!['time', 'convenience', 'incident'].includes(out.angle)) {
+        fail(`Invalid angle "${out.angle}". Expected time, convenience, or incident.`);
+    }
+    out.whyHelps = out.whyHelps.map((s) => String(s || '').trim()).filter(Boolean).slice(0, 4);
+    if (out.whyHelps.length < 2) fail('whyHelps needs at least 2 real-life points.');
     return out;
 }
 
@@ -136,20 +152,7 @@ if (existing && !force) fail(`Review already exists (${existing}). Use --force t
 console.log(`Generating review for ${asin} with ${MODEL}...`);
 const review = await writeReview(product, asin, affiliateUrl);
 
-const body = [
-    `> **Disclosure:** ${DISCLOSURE} This post contains affiliate links at no extra cost to you.`,
-    '',
-    review.body.trim(),
-    '',
-    '## Where to Buy',
-    '',
-    `[Check the current price and availability on Amazon](${affiliateUrl})`,
-    '',
-    '---',
-    '',
-    `*${DISCLOSURE}*`,
-    '',
-].join('\n');
+const body = review.body.trim() + '\n';
 
 const frontmatter = [
     '---',
@@ -161,6 +164,11 @@ const frontmatter = [
     `affiliateUrl: ${JSON.stringify(affiliateUrl)}`,
     product.imageHtml ? `imageHtml: ${JSON.stringify(product.imageHtml)}` : null,
     product.imageSrc ? `imageSrc: ${JSON.stringify(product.imageSrc)}` : null,
+    `hook: ${JSON.stringify(review.hook)}`,
+    `hookSupport: ${JSON.stringify(review.hookSupport)}`,
+    `whyHelps: ${JSON.stringify(review.whyHelps)}`,
+    `angle: ${JSON.stringify(review.angle)}`,
+    `ctaLabel: ${JSON.stringify(review.ctaLabel || 'Check Price on Amazon')}`,
     `features: ${JSON.stringify(product.features)}`,
     `pubDate: ${new Date().toISOString().slice(0, 10)}`,
     '---',

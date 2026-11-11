@@ -36,11 +36,11 @@ Preview locally: `npm run dev`
 4. The workflow in `.github/workflows/deploy.yml` builds and publishes on every push to `master`.
 5. After each new review: `git add . && git commit -m "Add review" && git push`.
 
-## 4. Custom domain (mybusinesswork.com)
+## 4. Custom domain
 
-`public/CNAME` already contains `mybusinesswork.com`.
+Brand: **Daily Viral Deals**. `public/CNAME` currently points at `mybusinesswork.com` (update both CNAME and `astro.config.mjs` `site` if you move domains).
 
-1. In GitHub: **Settings > Pages > Custom domain**, enter `mybusinesswork.com`, Save.
+1. In GitHub: **Settings > Pages > Custom domain**, enter your domain, Save.
 2. At your registrar's DNS settings, add:
 
    | Type  | Host/Name | Value                    |

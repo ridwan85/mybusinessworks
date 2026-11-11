@@ -3,10 +3,13 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  layout?: 'default' | 'landing' | 'review';
 }
-const { title, description, image } = Astro.props;
+const { title, description, image, layout = 'default' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = image ? new URL(image, Astro.site).href : undefined;
+const isLanding = layout === 'landing';
+const isWide = layout === 'landing' || layout === 'review';
 ---
 
 <!doctype html>
@@ -21,46 +24,226 @@ const ogImage = image ? new URL(image, Astro.site).href : undefined;
     <meta property="og:description" content={description} />
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style is:global>
-      :root { --fg:#1f2937; --muted:#6b7280; --accent:#ff9900; --bg:#fff; --card:#f9fafb; }
+      :root {
+        --fg: #1c171a;
+        --muted: #6d6168;
+        --accent: #b56b78;
+        --accent-ink: #1f1418;
+        --amazon: #ff9900;
+        --amazon-ink: #111111;
+        --bg: #f5f1f3;
+        --bg-deep: #ebe4e8;
+        --surface: #fcfafb;
+        --line: #e0d6db;
+        --brand: #1a1417;
+        --wrap: 860px;
+        --wrap-wide: 1120px;
+        --font: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, sans-serif;
+        --display: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+      }
       * { box-sizing: border-box; }
-      body { margin:0; font:17px/1.7 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; color:var(--fg); background:var(--bg); }
-      a { color:#0b5cad; }
-      .wrap { max-width:860px; margin:0 auto; padding:0 20px; }
-      header, footer { border-bottom:1px solid #e5e7eb; padding:16px 0; }
-      footer { border:0; border-top:1px solid #e5e7eb; margin-top:60px; color:var(--muted); font-size:14px; }
-      header a.brand { font-weight:800; font-size:20px; color:var(--fg); text-decoration:none; }
-      header nav { float:right; } header nav a { margin-left:16px; }
-      .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; padding:0; list-style:none; }
-      .card { background:var(--card); border:1px solid #e5e7eb; border-radius:10px; overflow:hidden; height:100%; }
-      .card a { text-decoration:none; color:inherit; display:block; height:100%; }
-      .card img { width:100%; aspect-ratio:1; object-fit:cover; background:#fff; }
-      .card div { padding:12px 16px 16px; }
-      .card h2 { font-size:17px; line-height:1.35; margin:0 0 6px; }
-      .card p { margin:0; font-size:14px; color:var(--muted); }
-      .hero { text-align:center; margin:0 auto 20px; }
-      .hero img { width:100%; max-width:640px; height:auto; border-radius:10px; }
-      .gallery { margin:28px 0 36px; }
-      .gallery h2 { font-size:22px; margin:0 0 12px; }
-      .gallery ul { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; list-style:none; padding:0; margin:0; }
-      .gallery img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:8px; border:1px solid #e5e7eb; background:#fff; }
-      .cta { display:inline-block; background:var(--accent); color:#111; font-weight:700; padding:12px 22px; border-radius:8px; text-decoration:none; }
-      .notice { background:#fff7e6; border:1px solid #ffd591; padding:10px 14px; border-radius:8px; font-size:14px; }
-      blockquote { margin:20px 0; padding:8px 16px; background:var(--card); border-left:4px solid var(--accent); }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font: 17px/1.7 var(--font);
+        color: var(--fg);
+        background:
+          radial-gradient(1100px 480px at 8% -8%, rgba(181, 107, 120, 0.14), transparent 55%),
+          radial-gradient(900px 420px at 100% 0%, rgba(140, 120, 130, 0.12), transparent 52%),
+          linear-gradient(180deg, var(--bg) 0%, #f8f5f6 48%, var(--bg-deep) 100%);
+        min-height: 100vh;
+      }
+      a { color: #8a4f5c; }
+      .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+      .wrap-wide { max-width: var(--wrap-wide); margin: 0 auto; padding: 0 20px; }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(245, 241, 243, 0.88);
+        border-bottom: 1px solid rgba(224, 214, 219, 0.9);
+      }
+      .site-header .bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 0;
+      }
+      .site-header a.brand {
+        font-family: var(--display);
+        font-weight: 700;
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        color: var(--brand);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+      .site-header nav { display: flex; gap: 18px; }
+      .site-header nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .site-header nav a:hover { color: var(--fg); }
+
+      .site-footer {
+        border-top: 1px solid var(--line);
+        margin-top: 72px;
+        padding: 28px 0 40px;
+        color: var(--muted);
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.35);
+      }
+      .site-footer p { margin: 0 0 8px; }
+      .site-footer a { color: var(--muted); }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+        padding: 0;
+        list-style: none;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        height: 100%;
+        transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: #d2c4ca;
+        box-shadow: 0 12px 28px rgba(40, 24, 30, 0.08);
+      }
+      .card img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #fff; display: block; }
+      .card h2, .card h3 { font-size: 1.05rem; line-height: 1.35; margin: 0 0 6px; letter-spacing: -0.01em; }
+
+      .hero { text-align: center; margin: 0 auto 20px; }
+      .hero img { width: 100%; max-width: 640px; height: auto; border-radius: 12px; }
+      .hero figcaption,
+      .gallery figcaption {
+        margin: 10px auto 0;
+        max-width: 36rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+      .gallery { margin: 28px 0 36px; }
+      .gallery h2 { font-size: 1.35rem; margin: 0 0 12px; font-family: var(--display); }
+      .gallery ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 18px 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .gallery figure { margin: 0; }
+      .gallery img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: #fff;
+      }
+      .gallery figcaption {
+        margin-top: 8px;
+        text-align: left;
+        font-size: 0.88rem;
+      }
+      .cta {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--accent-ink);
+        font-weight: 700;
+        padding: 13px 22px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: transform 180ms ease, filter 180ms ease;
+      }
+      .cta:hover { transform: translateY(-1px); filter: brightness(1.03); }
+      .cta-amazon {
+        display: inline-block;
+        background: var(--amazon);
+        color: var(--amazon-ink);
+        font-weight: 700;
+        padding: 13px 22px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: transform 180ms ease, filter 180ms ease;
+      }
+      .cta-amazon:hover { transform: translateY(-1px); filter: brightness(1.03); }
+      .cta-ghost {
+        display: inline-block;
+        color: var(--fg);
+        font-weight: 700;
+        padding: 13px 18px;
+        text-decoration: none;
+        border-bottom: 2px solid var(--accent);
+      }
+      .notice {
+        background: #f8eef1;
+        border: 1px solid #e5cdd4;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+      blockquote {
+        margin: 20px 0;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.7);
+        border-left: 4px solid var(--accent);
+      }
+      main.page { padding: 24px 0 20px; }
+      /* Review pages own their H1 styling inside the article. */
+      main.page > h1 {
+        font-family: var(--display);
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin: 0 0 14px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .card, .cta, .cta-amazon { transition: none; }
+        .card:hover, .cta:hover, .cta-amazon:hover { transform: none; }
+      }
     </style>
   </head>
   <body>
-    <header>
-      <div class="wrap">
-        <nav><a href="/">Reviews</a><a href="/disclosure/">Disclosure</a></nav>
-        <a class="brand" href="/">MyBusinessWork Reviews</a>
+    <header class="site-header">
+      <div class:list={[isWide ? 'wrap-wide' : 'wrap']}>
+        <div class="bar">
+          <a class="brand" href="/">Daily Viral Deals</a>
+          <nav>
+            <a href="/#categories">Categories</a>
+            <a href="/#reviews">Reviews</a>
+            <a href="/disclosure/">Disclosure</a>
+          </nav>
+        </div>
       </div>
     </header>
-    <main class="wrap"><slot /></main>
-    <footer>
-      <div class="wrap">
+    <main class:list={[isLanding ? undefined : 'page', isLanding ? undefined : isWide ? 'wrap-wide' : 'wrap']}>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class:list={[isWide ? 'wrap-wide' : 'wrap']}>
         <p>As an Amazon Associate I earn from qualifying purchases.</p>
-        <p>&copy; {new Date().getFullYear()} mybusinesswork.com &middot; <a href="/disclosure/">Affiliate Disclosure</a></p>
+        <p>&copy; {new Date().getFullYear()} Daily Viral Deals &middot; <a href="/disclosure/">Affiliate Disclosure</a></p>
       </div>
     </footer>
   </body>

@@ -1,28 +1,415 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import { categoryHubs, reviewsForHub } from '../lib/categories';
 
 const reviews = (await getCollection('reviews')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featured = reviews[0];
+
+const heroSlides = [
+  '/images/site/hero-home-lifestyle.jpg',
+  '/images/site/hero-workspace.jpg',
+  '/images/site/hero-parcels.jpg',
+];
+const heroImage = heroSlides[0];
+
+const coverage = categoryHubs.map((hub) => ({
+  ...hub,
+  count: reviewsForHub(reviews, hub).length,
+  href: `/categories/${hub.slug}/`,
+}));
 ---
 
 <Base
-  title="Honest Product Reviews | MyBusinessWork Reviews"
-  description="Clear, honest Amazon product reviews to help US shoppers decide what to buy."
+  layout="landing"
+  title="Daily Viral Deals | Honest Amazon Product Picks"
+  description="Helpful Amazon product reviews across categories—clear verdicts, real tradeoffs, and affiliate links that help US shoppers buy with confidence."
+  image={heroImage}
 >
-  <h1>Latest Product Reviews</h1>
-  <p class="notice">As an Amazon Associate I earn from qualifying purchases.</p>
-  {reviews.length === 0 && <p>No reviews yet. Run <code>npm run generate</code> to add one.</p>}
-  <ul class="grid">
-    {reviews.map((r) => (
-      <li class="card">
-        <a href={`/reviews/${r.id}/`}>
-          {r.data.imageSrc && <img src={r.data.imageSrc} alt={r.data.title} loading="lazy" />}
-          <div>
-            <h2>{r.data.title}</h2>
-            <p>{r.data.description}</p>
-          </div>
-        </a>
+  <section class="hook" aria-label="Hero">
+    <div class="hook-media" aria-hidden="true">
+      {heroSlides.map((src, i) => (
+        <img class:list={['slide', i === 0 && 'is-active']} src={src} alt="" width="1600" height="900" data-slide={i} />
+      ))}
+      <div class="hook-shade"></div>
+    </div>
+    <div class="wrap-wide hook-copy">
+      <p class="brand-mark">Daily Viral Deals</p>
+      <h1>Clear reviews. Confident purchases.</h1>
+      <p class="lede">
+        Independent Amazon product guidance across home, tech, and everyday essentials—so you know what matters before you buy.
+      </p>
+      <div class="cta-row">
+        <a class="cta" href="#reviews">Browse reviews</a>
+        {featured && (
+          <a class="cta-ghost" href={`/reviews/${featured.id}/`}>Read the latest review</a>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="meat wrap-wide" aria-labelledby="meat-title">
+    <div class="meat-intro">
+      <h2 id="meat-title">What you get in every review</h2>
+      <p>Practical buying help—not hype. The same structure, every category.</p>
+    </div>
+    <ol class="meat-points">
+      <li>
+        <strong>Quick verdict first</strong>
+        <span>Get the bottom line before you dig into the details.</span>
       </li>
-    ))}
-  </ul>
+      <li>
+        <strong>Who it’s actually for</strong>
+        <span>Match the product to your needs, budget, and use case.</span>
+      </li>
+      <li>
+        <strong>Honest tradeoffs</strong>
+        <span>Pros, caveats, and FAQs grounded in listed product facts—not invented lab tests.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="reviews-block wrap-wide" id="reviews" aria-labelledby="reviews-title">
+    <div class="reviews-head">
+      <h2 id="reviews-title">Latest reviews</h2>
+      <p class="notice affiliate-note">As an Amazon Associate I earn from qualifying purchases.</p>
+    </div>
+
+    {reviews.length === 0 ? (
+      <p>No reviews yet. Check back soon.</p>
+    ) : (
+      <ul class="grid review-grid">
+        {reviews.map((r) => <ReviewCard review={r} />)}
+      </ul>
+    )}
+  </section>
+
+  <section class="coverage wrap-wide" id="categories" aria-labelledby="coverage-title">
+    <div class="coverage-intro">
+      <h2 id="coverage-title">Shop by category</h2>
+      <p>Click a category to see related product reviews. New picks land here as the catalog grows.</p>
+    </div>
+    <ul class="coverage-grid">
+      {coverage.map((item) => (
+        <li>
+          <a class="coverage-card" href={item.href}>
+            <img src={item.src} alt="" loading="lazy" width="720" height="480" />
+            <div>
+              <h3>{item.label}</h3>
+              <p>{item.blurb}</p>
+              <span class="coverage-meta">
+                {item.count > 0
+                  ? `${item.count} ${item.count === 1 ? 'review' : 'reviews'} →`
+                  : 'Coming soon →'}
+              </span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="close-cta wrap-wide" aria-labelledby="close-title">
+    <div class="close-panel">
+      <img class="close-bg" src="/images/site/hero-parcels.jpg" alt="" aria-hidden="true" />
+      <div class="close-shade"></div>
+      <div class="close-copy">
+        <h2 id="close-title">Ready to choose with confidence?</h2>
+        <p>Open a review, scan the verdict, then check today’s price on Amazon.</p>
+        <div class="cta-row">
+          {featured ? (
+            <a class="cta" href={`/reviews/${featured.id}/`}>Open latest review</a>
+          ) : (
+            <a class="cta" href="#reviews">Browse reviews</a>
+          )}
+          <a class="cta-ghost" href="/disclosure/">How affiliate links work</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Base>
+
+<script>
+  const slides = [...document.querySelectorAll('.hook-media .slide')];
+  if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let i = 0;
+    setInterval(() => {
+      slides[i].classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+    }, 5500);
+  }
+</script>
+
+<style>
+  .hook {
+    position: relative;
+    min-height: min(88vh, 780px);
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+    color: #f5f6f8;
+  }
+  .hook-media { position: absolute; inset: 0; }
+  .hook-media .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.03);
+    transition: opacity 1.1s ease;
+  }
+  .hook-media .slide.is-active {
+    opacity: 1;
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+  .hook-shade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(105deg, rgba(28, 18, 24, 0.86) 0%, rgba(36, 24, 30, 0.58) 46%, rgba(40, 28, 34, 0.32) 100%),
+      linear-gradient(180deg, rgba(28, 18, 24, 0.16) 0%, rgba(28, 18, 24, 0.72) 100%);
+  }
+  .hook-copy {
+    position: relative;
+    z-index: 1;
+    padding: 16vh 20px 9vh;
+    max-width: 740px;
+    margin: 0;
+    animation: rise 700ms ease both;
+  }
+  .brand-mark {
+    margin: 0 0 16px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4.8vw, 3rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #fff;
+  }
+  .hook h1 {
+    margin: 0 0 14px;
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    max-width: 22ch;
+    color: rgba(255, 255, 255, 0.96);
+  }
+  .lede {
+    margin: 0 0 26px;
+    max-width: 40ch;
+    font-size: clamp(1.02rem, 1.8vw, 1.15rem);
+    line-height: 1.55;
+    color: rgba(245, 246, 248, 0.86);
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 18px;
+    align-items: center;
+  }
+  .hook .cta {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  .hook .cta-ghost {
+    color: #fff;
+    border-bottom-color: var(--accent);
+  }
+
+  .meat {
+    padding: 72px 20px 20px;
+    animation: rise 800ms ease 100ms both;
+  }
+  .meat-intro,
+  .coverage-intro {
+    max-width: 38rem;
+    margin-bottom: 28px;
+  }
+  .meat-intro h2,
+  .coverage-intro h2,
+  .reviews-head h2,
+  .close-copy h2 {
+    margin: 0 0 10px;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.55rem, 2.8vw, 2rem);
+    letter-spacing: -0.02em;
+  }
+  .meat-intro p,
+  .coverage-intro p,
+  .reviews-head .affiliate-note,
+  .close-copy p {
+    margin: 0;
+    color: var(--muted);
+  }
+  .meat-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 18px;
+  }
+  .meat-points li {
+    display: grid;
+    gap: 4px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+  }
+  .meat-points li:last-child { border-bottom: 1px solid var(--line); }
+  .meat-points strong {
+    font-family: var(--font);
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .meat-points span { color: var(--muted); }
+
+  .coverage { padding: 48px 20px 12px; }
+  .coverage-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+  .coverage-grid li {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    transition: transform 200ms ease, border-color 200ms ease;
+  }
+  .coverage-grid li:hover {
+    transform: translateY(-3px);
+    border-color: #d2c4ca;
+  }
+  .coverage-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+  }
+  .coverage-grid img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    background: #ddd;
+  }
+  .coverage-grid div {
+    padding: 16px 16px 18px;
+  }
+  .coverage-grid h3 {
+    margin: 0 0 6px;
+    font-family: var(--display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  .coverage-grid p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .coverage-meta {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--fg);
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .reviews-block { padding: 56px 20px 24px; }
+  .reviews-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+  .affiliate-note { max-width: 34rem; }
+  .close-cta { padding: 48px 20px 28px; }
+  .close-panel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    min-height: 250px;
+  }
+  .close-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .close-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(28, 18, 24, 0.82), rgba(36, 24, 30, 0.48));
+  }
+  .close-copy {
+    position: relative;
+    z-index: 1;
+    padding: 34px 28px;
+    color: #fff;
+    max-width: 36rem;
+  }
+  .close-copy h2 { color: #fff; }
+  .close-copy p {
+    margin: 0 0 22px;
+    color: rgba(245, 246, 248, 0.86);
+  }
+  .close-copy .cta-ghost {
+    color: #fff;
+    border-bottom-color: var(--accent);
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes drift {
+    from { transform: scale(1.03) translate3d(0, 0, 0); }
+    to { transform: scale(1.07) translate3d(-1%, -0.5%, 0); }
+  }
+
+  @media (min-width: 860px) {
+    .meat-points {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .meat-points li {
+      padding: 22px 20px 22px 0;
+      border-top: 0;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+    }
+    .meat-points li:last-child {
+      border-right: 0;
+      padding-right: 0;
+    }
+    .coverage-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hook { min-height: 76vh; }
+    .hook-copy { padding-top: 14vh; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hook-copy, .meat { animation: none; }
+    .hook-media .slide.is-active { animation: none; transform: none; }
+  }
+</style>
