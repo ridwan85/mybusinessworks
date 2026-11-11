@@ -20,8 +20,10 @@ export const categoryHubs: CategoryHub[] = [
         match: (r) =>
             testCategory(
                 r,
-                /home|living|kitchen|house|vacuum|sealer|cleaner|appliance|decor|bedding|cook|food|storage|doorbell|security|camera|monitor|lock|entry|porch|yard|garden|laundry|bath/i,
-            ),
+                /home|living|kitchen|house|vacuum|sealer|cleaner|appliance|decor|bedding|cook|food|storage|laundry|bath|garden|yard/i,
+            ) &&
+            // Smart-home gadgets from Amazon Devices belong in Work & tech.
+            !testCategory(r, /amazon devices|doorbell|smart home|security camera|echo |kindle|fire tv|video doorbell/i),
     },
     {
         slug: 'work-tech',
@@ -31,10 +33,8 @@ export const categoryHubs: CategoryHub[] = [
         match: (r) =>
             testCategory(
                 r,
-                /tech|electronic|computer|office|work|gadget|phone|laptop|audio|headphone|charger|keyboard|mouse|monitor|tablet|usb|ssd|router|wifi/i,
-            ) &&
-            // Keep home-security cameras/doorbells in Home & living, not Work & tech.
-            !testCategory(r, /doorbell|security camera|home security|video doorbell/i),
+                /tech|electronic|computer|office|work|gadget|phone|laptop|audio|headphone|charger|keyboard|mouse|monitor|tablet|usb|ssd|router|wifi|amazon devices|doorbell|smart home|security camera|echo |kindle|fire tv|video doorbell|camera/i,
+            ),
     },
     {
         slug: 'everyday-essentials',
@@ -86,10 +86,10 @@ export function findHub(slug: string) {
     return categoryHubs.find((h) => h.slug === slug);
 }
 
-/** Map messy Amazon leaf categories into cleaner on-site labels when needed. */
+/** Prefer Amazon department / listing category when we can recognize it. */
 export function normalizeProductCategory(raw: string | undefined, title = '') {
     const text = `${raw ?? ''} ${title}`;
-    if (/doorbell|home security|security camera/i.test(text)) return 'Home Security';
+    if (/amazon devices|doorbell|echo |kindle|fire tv|blink /i.test(text)) return 'Amazon Devices';
     if (/vacuum sealer|food sealer/i.test(text)) return 'Kitchen';
     return (raw ?? '').trim() || undefined;
 }

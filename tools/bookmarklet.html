@@ -20,11 +20,17 @@
       if (!asin) return alert('Open a single product page (amazon.com/dp/...) first.');
       const features = [...document.querySelectorAll('#feature-bullets li span.a-list-item')].map((e) => e.textContent.trim()).filter(Boolean);
       const crumbs = [...document.querySelectorAll('#wayfinding-breadcrumbs_feature_div li a')];
+      const dept = document.querySelector('#searchDropdownBox option:checked')?.textContent?.trim()
+        || document.querySelector('#nav-search-label-id')?.textContent?.trim()
+        || '';
+      const leaf = crumbs.length ? crumbs[crumbs.length - 1].textContent.trim() : '';
+      // Prefer Amazon department when it's specific (e.g. Amazon Devices); else breadcrumb leaf.
+      const category = (dept && !/^All Departments$/i.test(dept)) ? dept : leaf;
       const data = {
         asin: asin.toUpperCase(),
         title: t('#productTitle'),
         brand: t('#bylineInfo').replace(/^(Visit the |Brand: )/, '').replace(/ Store$/, ''),
-        category: crumbs.length ? crumbs[crumbs.length - 1].textContent.trim() : '',
+        category,
         features,
       };
       const json = JSON.stringify(data);

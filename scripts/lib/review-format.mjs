@@ -18,10 +18,10 @@ export const BODY_SECTIONS = [
 
 export const DEFAULT_CTA = 'Check Price on Amazon';
 
-/** Map messy Amazon leaf categories into cleaner on-site labels. */
+/** Prefer Amazon department / listing category when we can recognize it. */
 export function normalizeProductCategory(raw, title = '') {
     const text = `${raw ?? ''} ${title}`;
-    if (/doorbell|home security|security camera/i.test(text)) return 'Home Security';
+    if (/amazon devices|doorbell|echo |kindle|fire tv|blink /i.test(text)) return 'Amazon Devices';
     if (/vacuum sealer|food sealer/i.test(text)) return 'Kitchen';
     const cleaned = String(raw ?? '').trim();
     return cleaned || undefined;

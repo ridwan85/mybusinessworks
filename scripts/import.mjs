@@ -24,7 +24,7 @@ const out = path.join('data', 'products', `${d.asin}.json`);
 const existing = await fs.readFile(out, 'utf8').then(JSON.parse, () => ({}));
 function normalizeProductCategory(raw, title = '') {
     const text = `${raw ?? ''} ${title}`;
-    if (/doorbell|home security|security camera/i.test(text)) return 'Home Security';
+    if (/amazon devices|doorbell|echo |kindle|fire tv|blink /i.test(text)) return 'Amazon Devices';
     if (/vacuum sealer|food sealer/i.test(text)) return 'Kitchen';
     return String(raw ?? '').trim();
 }
