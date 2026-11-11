@@ -56,6 +56,8 @@ const isWide = layout === 'landing' || layout === 'review';
         --brand: #1a1417;
         --wrap: 860px;
         --wrap-wide: 1120px;
+        /* Text inset; cards/carousels may bleed past this */
+        --page-gutter: 24px;
         --font: 'IBM Plex Sans', 'Helvetica Neue', Helvetica, sans-serif;
         --display: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
       }
@@ -72,8 +74,15 @@ const isWide = layout === 'landing' || layout === 'review';
         min-height: 100vh;
       }
       a { color: #8a4f5c; }
-      .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
-      .wrap-wide { max-width: var(--wrap-wide); margin: 0 auto; padding: 0 20px; }
+      .wrap,
+      .wrap-wide {
+        max-width: var(--wrap-wide);
+        margin: 0 auto;
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+        box-sizing: border-box;
+      }
+      .wrap { max-width: var(--wrap); }
 
       .site-header {
         position: sticky;
@@ -87,23 +96,33 @@ const isWide = layout === 'landing' || layout === 'review';
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
-        padding: 14px 0;
+        gap: 12px;
+        padding: 12px 0;
+        min-height: 52px;
       }
       .site-header a.brand {
         font-family: var(--display);
         font-weight: 700;
-        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        font-size: clamp(1.05rem, 2vw, 1.2rem);
         color: var(--brand);
         text-decoration: none;
         letter-spacing: -0.02em;
+        white-space: nowrap;
+        flex: 0 1 auto;
       }
-      .site-header nav { display: flex; gap: 18px; }
+      .site-header nav {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 14px;
+        flex: 0 0 auto;
+      }
       .site-header nav a {
         color: var(--muted);
         text-decoration: none;
         font-weight: 600;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
       }
       .site-header nav a:hover { color: var(--fg); }
 
@@ -187,7 +206,9 @@ const isWide = layout === 'landing' || layout === 'review';
       }
       .cta:hover { transform: translateY(-1px); filter: brightness(1.03); }
       .cta-amazon {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         background: var(--amazon);
         color: var(--amazon-ink);
         font-weight: 700;
@@ -195,6 +216,8 @@ const isWide = layout === 'landing' || layout === 'review';
         border-radius: 10px;
         text-decoration: none;
         transition: transform 180ms ease, filter 180ms ease;
+        min-height: 48px;
+        text-align: center;
       }
       .cta-amazon:hover { transform: translateY(-1px); filter: brightness(1.03); }
       .cta-ghost {
@@ -218,7 +241,11 @@ const isWide = layout === 'landing' || layout === 'review';
         background: rgba(255, 255, 255, 0.7);
         border-left: 4px solid var(--accent);
       }
-      main.page { padding: 24px 0 20px; }
+      /* Only vertical — never wipe .wrap / .wrap-wide side gutters */
+      main.page {
+        padding-top: 24px;
+        padding-bottom: 20px;
+      }
       /* Review pages own their H1 styling inside the article. */
       main.page > h1 {
         font-family: var(--display);
@@ -226,6 +253,43 @@ const isWide = layout === 'landing' || layout === 'review';
         line-height: 1.15;
         letter-spacing: -0.02em;
         margin: 0 0 14px;
+      }
+
+      @media (max-width: 720px) {
+        body { font-size: 16px; }
+        :root { --page-gutter: 20px; }
+        .site-header .bar {
+          gap: 10px;
+          padding: 10px 0;
+          align-items: center;
+        }
+        .site-header a.brand {
+          font-size: 0.98rem;
+          max-width: 46%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .site-header nav {
+          gap: 12px;
+        }
+        .site-header nav a {
+          font-size: 0.78rem;
+        }
+        .site-header nav a[href='/disclosure/'] {
+          display: none; /* keep header one clean row on phones */
+        }
+        main.page {
+          padding-top: 16px;
+          padding-bottom: 28px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .cta-amazon,
+        .cta {
+          width: 100%;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {

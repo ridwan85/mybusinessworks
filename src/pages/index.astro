@@ -85,6 +85,31 @@ const homeJsonLd = {
     </div>
   </nav>
 
+  <section class="reviews-block wrap-wide" id="reviews" aria-labelledby="reviews-title">
+    <div class="reviews-head">
+      <div>
+        <h2 id="reviews-title">Latest reviews</h2>
+        <p class="notice affiliate-note">As an Amazon Associate I earn from qualifying purchases.</p>
+      </div>
+      {reviews.length > 1 && (
+        <div class="carousel-controls" data-carousel-controls="reviews">
+          <button type="button" class="carousel-btn" data-dir="-1" aria-label="Previous reviews">‹</button>
+          <button type="button" class="carousel-btn" data-dir="1" aria-label="Next reviews">›</button>
+        </div>
+      )}
+    </div>
+
+    {reviews.length === 0 ? (
+      <p>No reviews yet. Check back soon.</p>
+    ) : (
+      <div class="carousel" data-carousel="reviews">
+        <ul class="carousel-track" data-carousel-track>
+          {reviews.map((r) => <ReviewCard review={r} />)}
+        </ul>
+      </div>
+    )}
+  </section>
+
   <section class="meat wrap-wide" aria-labelledby="meat-title">
     <div class="meat-intro">
       <h2 id="meat-title">What you get in every review</h2>
@@ -106,44 +131,37 @@ const homeJsonLd = {
     </ol>
   </section>
 
-  <section class="reviews-block wrap-wide" id="reviews" aria-labelledby="reviews-title">
-    <div class="reviews-head">
-      <h2 id="reviews-title">Latest reviews</h2>
-      <p class="notice affiliate-note">As an Amazon Associate I earn from qualifying purchases.</p>
-    </div>
-
-    {reviews.length === 0 ? (
-      <p>No reviews yet. Check back soon.</p>
-    ) : (
-      <ul class="grid review-grid">
-        {reviews.map((r) => <ReviewCard review={r} />)}
-      </ul>
-    )}
-  </section>
-
   <section class="coverage wrap-wide" id="categories" aria-labelledby="coverage-title">
-    <div class="coverage-intro">
-      <h2 id="coverage-title">Shop by category</h2>
-      <p>Click a category to see related product reviews. New picks land here as the catalog grows.</p>
+    <div class="coverage-intro coverage-head">
+      <div>
+        <h2 id="coverage-title">Shop by category</h2>
+        <p>Swipe through categories—new picks land here as the catalog grows.</p>
+      </div>
+      <div class="carousel-controls" data-carousel-controls="categories">
+        <button type="button" class="carousel-btn" data-dir="-1" aria-label="Previous categories">‹</button>
+        <button type="button" class="carousel-btn" data-dir="1" aria-label="Next categories">›</button>
+      </div>
     </div>
-    <ul class="coverage-grid">
-      {coverage.map((item) => (
-        <li>
-          <a class="coverage-card" href={item.href}>
-            <img src={item.src} alt="" loading="lazy" width="720" height="480" />
-            <div>
-              <h3>{item.label}</h3>
-              <p>{item.blurb}</p>
-              <span class="coverage-meta">
-                {item.count > 0
-                  ? `${item.count} ${item.count === 1 ? 'review' : 'reviews'} →`
-                  : 'Coming soon →'}
-              </span>
-            </div>
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div class="carousel" data-carousel="categories">
+      <ul class="carousel-track coverage-track" data-carousel-track>
+        {coverage.map((item) => (
+          <li class="coverage-slide">
+            <a class="coverage-card" href={item.href}>
+              <img src={item.src} alt="" loading="lazy" width="720" height="480" />
+              <div>
+                <h3>{item.label}</h3>
+                <p>{item.blurb}</p>
+                <span class="coverage-meta">
+                  {item.count > 0
+                    ? `${item.count} ${item.count === 1 ? 'review' : 'reviews'} →`
+                    : 'Coming soon →'}
+                </span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </section>
 
   <section class="close-cta wrap-wide" aria-labelledby="close-title">
@@ -177,6 +195,27 @@ const homeJsonLd = {
       slides[i].classList.add('is-active');
     }, 5500);
   }
+
+  // Horizontal carousels (reviews + categories) — swipe or use arrows
+  document.querySelectorAll('[data-carousel]').forEach((root) => {
+    const id = root.getAttribute('data-carousel');
+    const track = root.querySelector('[data-carousel-track]');
+    if (!track) return;
+    const controls = document.querySelector(`[data-carousel-controls="${id}"]`);
+    const step = () => {
+      const card = track.querySelector(':scope > *');
+      if (!card) return Math.min(280, track.clientWidth * 0.85);
+      const style = getComputedStyle(track);
+      const gap = parseFloat(style.columnGap || style.gap || '16') || 16;
+      return card.getBoundingClientRect().width + gap;
+    };
+    controls?.querySelectorAll('[data-dir]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const dir = Number(btn.getAttribute('data-dir') || 1);
+        track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+      });
+    });
+  });
 </script>
 
 <style>
@@ -214,7 +253,7 @@ const homeJsonLd = {
   .hook-copy {
     position: relative;
     z-index: 1;
-    width: min(720px, calc(100% - 40px));
+    width: min(720px, calc(100% - (var(--page-gutter) * 2)));
     padding: 72px 0 80px;
     margin: 0 auto;
     animation: rise 700ms ease both;
@@ -273,14 +312,14 @@ const homeJsonLd = {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
-    padding-block: 0;
+    /* never set padding shorthand here — it would wipe .wrap-wide side gutters */
   }
   .shop-strip a {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: 12px;
-    padding: 16px 18px;
+    padding: 16px 4px;
     color: #f5f1f3;
     text-decoration: none;
     font-weight: 600;
@@ -301,13 +340,22 @@ const homeJsonLd = {
   }
 
   .meat {
-    padding: 72px 20px 20px;
+    padding-top: 48px;
+    padding-bottom: 12px;
     animation: rise 800ms ease 100ms both;
   }
-  .meat-intro,
-  .coverage-intro {
+  .meat-intro {
     max-width: 38rem;
     margin-bottom: 28px;
+  }
+  .coverage-intro {
+    max-width: none;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  .coverage-intro > div:first-child,
+  .reviews-head > div:first-child {
+    max-width: 34rem;
   }
   .meat-intro h2,
   .coverage-intro h2,
@@ -348,23 +396,30 @@ const homeJsonLd = {
   }
   .meat-points span { color: var(--muted); }
 
-  .coverage { padding: 48px 20px 12px; }
-  .coverage-grid {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 16px;
-    grid-template-columns: 1fr;
+  .coverage {
+    padding-top: 48px;
+    padding-bottom: 12px;
   }
-  .coverage-grid li {
+  .coverage-head,
+  .reviews-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  .coverage-slide {
+    list-style: none;
+    flex: 0 0 min(58vw, 220px);
+    scroll-snap-align: start;
     overflow: hidden;
     border-radius: 12px;
     border: 1px solid var(--line);
     background: var(--surface);
     transition: transform 200ms ease, border-color 200ms ease;
   }
-  .coverage-grid li:hover {
+  .coverage-slide:hover {
     transform: translateY(-3px);
     border-color: #d2c4ca;
   }
@@ -374,24 +429,25 @@ const homeJsonLd = {
     text-decoration: none;
     height: 100%;
   }
-  .coverage-grid img {
+  .coverage-slide img {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 8;
+    max-height: 120px;
     object-fit: cover;
     display: block;
     background: #ddd;
   }
-  .coverage-grid div {
-    padding: 16px 16px 18px;
+  .coverage-slide div {
+    padding: 12px 14px 14px;
   }
-  .coverage-grid h3 {
+  .coverage-slide h3 {
     margin: 0 0 6px;
     font-family: var(--display);
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--fg);
   }
-  .coverage-grid p {
+  .coverage-slide p {
     margin: 0;
     color: var(--muted);
     font-size: 0.95rem;
@@ -405,17 +461,52 @@ const homeJsonLd = {
     border-bottom: 2px solid var(--accent);
   }
 
-  .reviews-block { padding: 56px 20px 24px; }
-  .reviews-head {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px 24px;
-    align-items: end;
-    justify-content: space-between;
-    margin-bottom: 22px;
+  .reviews-block {
+    padding-top: 40px;
+    padding-bottom: 20px;
   }
-  .affiliate-note { max-width: 34rem; }
-  .close-cta { padding: 48px 20px 28px; }
+  .affiliate-note { max-width: 34rem; margin-top: 10px; }
+
+  .carousel {
+    /* Cards may hug the screen edge; section titles stay inset via .wrap-wide */
+    margin-inline: calc(var(--page-gutter) * -1);
+  }
+  .carousel-track {
+    list-style: none;
+    margin: 0;
+    padding: 4px var(--page-gutter) 12px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--page-gutter);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-controls {
+    display: flex;
+    gap: 8px;
+  }
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--fg);
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .carousel-btn:hover {
+    border-color: #d2c4ca;
+    background: #fff;
+  }
+  .close-cta {
+    padding-top: 40px;
+    padding-bottom: 28px;
+  }
   .close-panel {
     position: relative;
     overflow: hidden;
@@ -482,22 +573,51 @@ const homeJsonLd = {
       border-right: 0;
       padding-right: 0;
     }
-    .coverage-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .coverage-slide { flex-basis: 220px; }
+    .coverage-slide img { max-height: 100px; }
   }
 
   @media (max-width: 700px) {
-    .hook { min-height: 74vh; }
-    .hook-copy { padding: 64px 0 72px; }
+    .hook { min-height: min(70vh, 640px); }
+    .hook-copy {
+      width: min(34rem, calc(100% - (var(--page-gutter) * 2)));
+      padding: 56px 0 64px;
+    }
+    .brand-mark {
+      font-size: clamp(1.9rem, 10vw, 2.6rem);
+      margin-bottom: 14px;
+    }
+    .hook h1 {
+      max-width: 20ch;
+      font-size: 1.12rem;
+    }
+    .lede {
+      max-width: 32ch;
+      margin-bottom: 24px;
+    }
+    .cta-row {
+      flex-direction: column;
+      width: 100%;
+    }
+    .hook .cta-amazon,
+    .hook .cta-ghost {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
     .shop-strip-inner {
       grid-template-columns: 1fr;
     }
     .shop-strip a {
       border-right: 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 0;
+      /* horizontal inset comes from .wrap-wide gutters */
     }
     .shop-strip a:last-child { border-bottom: 0; }
+    .close-copy { padding: 32px var(--page-gutter); }
+    .coverage-slide { flex-basis: min(58vw, 210px); }
+    .coverage-slide img { max-height: 88px; }
   }
 
   @media (prefers-reduced-motion: reduce) {

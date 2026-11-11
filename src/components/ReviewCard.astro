@@ -32,7 +32,13 @@ const href = `/reviews/${r.id}/`;
 </li>
 
 <style>
-  .card-inner { display: block; height: 100%; }
+  .card {
+    list-style: none;
+    height: 100%;
+    scroll-snap-align: start;
+    flex: 0 0 min(78vw, 280px);
+  }
+  .card-inner { display: flex; flex-direction: column; height: 100%; }
   .media { display: block; }
   .media img, .media-fallback {
     width: 100%;
@@ -41,7 +47,12 @@ const href = `/reviews/${r.id}/`;
     background: #fff;
     display: block;
   }
-  .body { padding: 14px 16px 18px; }
+  .body {
+    padding: 14px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
   .eyebrow {
     margin: 0 0 6px;
     font-size: 0.75rem;
@@ -69,13 +80,23 @@ const href = `/reviews/${r.id}/`;
     margin: 0;
     font-size: 0.92rem;
     color: var(--muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .read-link {
     display: inline-block;
-    margin-top: 12px;
+    margin-top: auto;
+    padding-top: 12px;
     font-weight: 600;
     color: var(--fg);
     text-decoration: none;
     border-bottom: 2px solid var(--accent);
+    align-self: flex-start;
+  }
+
+  @media (min-width: 860px) {
+    .card { flex-basis: 260px; }
   }
 </style>

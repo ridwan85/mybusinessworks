@@ -86,7 +86,13 @@ const jsonLd = reviewPageJsonLd({
           <h1 id="hook-title">{data.hook}</h1>
           <p class="hook-support">{data.hookSupport}</p>
           <p class="cta-wrap">
-            <a class="cta-amazon" href={data.affiliateUrl} rel="sponsored nofollow noopener" target="_blank">{ctaLabel}</a>
+            <a
+              id="primary-cta"
+              class="cta-amazon"
+              href={data.affiliateUrl}
+              rel="sponsored nofollow noopener"
+              target="_blank"
+            >{ctaLabel}</a>
           </p>
         </div>
 
@@ -153,11 +159,63 @@ const jsonLd = reviewPageJsonLd({
             {data.angle === 'incident' && 'If you’d rather avoid the usual mess, waste, or surprise failure, check today’s price on Amazon.'}
           </p>
         </div>
-        <a class="cta-amazon" href={data.affiliateUrl} rel="sponsored nofollow noopener" target="_blank">{ctaLabel}</a>
+        <a
+          id="footer-cta"
+          class="cta-amazon"
+          href={data.affiliateUrl}
+          rel="sponsored nofollow noopener"
+          target="_blank"
+        >{ctaLabel}</a>
       </div>
     </section>
   </article>
+
+  <!-- Sticky buy bar — Amazon/Shopify PDP pattern: always reachable while reading -->
+  <div class="sticky-buy" data-sticky-buy>
+    <div class="sticky-buy-inner">
+      {heroSrc && (
+        <img class="sticky-thumb" src={heroSrc} alt="" width="56" height="56" loading="lazy" />
+      )}
+      <div class="sticky-copy">
+        <p class="sticky-title">{data.title}</p>
+        <p class="sticky-note">See today’s price on Amazon</p>
+      </div>
+      <a
+        class="cta-amazon sticky-cta"
+        href={data.affiliateUrl}
+        rel="sponsored nofollow noopener"
+        target="_blank"
+      >{ctaLabel}</a>
+    </div>
+  </div>
+
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script>
+    // Show sticky bar after the primary CTA leaves view; hide when footer CTA is visible.
+    const bar = document.querySelector('[data-sticky-buy]');
+    const primary = document.getElementById('primary-cta');
+    const footer = document.getElementById('footer-cta');
+    if (bar && primary && 'IntersectionObserver' in window) {
+      let primaryVisible = true;
+      let footerVisible = false;
+      const sync = () => {
+        const show = !primaryVisible && !footerVisible;
+        bar.classList.toggle('is-visible', show);
+        document.body.classList.toggle('has-sticky-buy', show);
+      };
+      const watch = (el, set) => {
+        new IntersectionObserver(
+          ([entry]) => {
+            set(entry.isIntersecting);
+            sync();
+          },
+          { threshold: 0.15 },
+        ).observe(el);
+      };
+      watch(primary, (v) => { primaryVisible = v; });
+      if (footer) watch(footer, (v) => { footerVisible = v; });
+    }
+  </script>
 </Base>
 
 <style>
@@ -204,7 +262,7 @@ const jsonLd = reviewPageJsonLd({
   }
   .hook-grid {
     display: grid;
-    gap: 28px;
+    gap: 20px;
     align-items: start;
   }
   .hook-meta {
@@ -242,17 +300,18 @@ const jsonLd = reviewPageJsonLd({
   }
   .hook-copy h1 {
     font-family: var(--display);
-    font-size: clamp(1.55rem, 3.4vw, 2.15rem);
+    font-size: clamp(1.45rem, 5.2vw, 2.15rem);
     line-height: 1.18;
     letter-spacing: -0.02em;
     margin: 0 0 14px;
-    max-width: 16ch;
+    max-width: none;
+    text-wrap: balance;
   }
   .hook-support {
     margin: 0 0 22px;
     max-width: 36rem;
     color: var(--muted);
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     line-height: 1.55;
   }
   .cta-wrap { margin: 0; }
@@ -266,6 +325,7 @@ const jsonLd = reviewPageJsonLd({
     max-width: none;
     max-height: 420px;
     height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 14px;
     border: 1px solid var(--line);
@@ -362,6 +422,7 @@ const jsonLd = reviewPageJsonLd({
   .review-body {
     font-size: 1.02rem;
     line-height: 1.75;
+    overflow-wrap: anywhere;
   }
   .review-body :global(h2) {
     font-family: var(--display);
@@ -406,22 +467,151 @@ const jsonLd = reviewPageJsonLd({
     max-width: 38rem;
   }
 
+  /* Sticky Amazon buy bar (mobile-first ecom pattern) */
+  .sticky-buy {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    padding: 10px var(--page-gutter, 36px) calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(252, 250, 251, 0.96);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -8px 28px rgba(28, 18, 24, 0.1);
+    transform: translateY(110%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+  .sticky-buy.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sticky-buy-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+    gap: 10px 12px;
+    align-items: center;
+  }
+  .sticky-thumb {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  .sticky-copy { min-width: 0; }
+  .sticky-title {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 650;
+    line-height: 1.25;
+    color: var(--fg);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .sticky-note {
+    margin: 2px 0 0;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .sticky-cta {
+    width: auto;
+    white-space: nowrap;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+  body.has-sticky-buy .site-footer {
+    padding-bottom: 96px;
+  }
+
   @media (min-width: 780px) {
     .hook-grid {
       grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
       gap: 32px;
       align-items: center;
     }
-    .hook-copy h1 { max-width: 15ch; }
+    .hook-copy h1 { max-width: 18ch; }
     .gallery ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .cta-panel {
       grid-template-columns: 1fr auto;
       align-items: center;
     }
+    .sticky-buy-inner {
+      grid-template-columns: 56px minmax(0, 1fr) auto;
+      gap: 14px;
+    }
+    .sticky-thumb { width: 56px; height: 56px; }
+    .sticky-cta { min-width: 12rem; }
   }
 
   @media (max-width: 779px) {
-    .hook-visual .hero img { max-height: 340px; }
-    .hook-copy h1 { max-width: none; }
+    .review {
+      max-width: none;
+    }
+    /* Product image first — can hug edges; text stays padded by page gutter */
+    .hook-grid {
+      grid-template-columns: 1fr;
+    }
+    .hook-visual {
+      order: -1;
+      margin-inline: calc(var(--page-gutter) * -1);
+    }
+    .hook-visual .hero img {
+      max-height: none;
+      aspect-ratio: 1 / 1;
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+    .hook-visual .hero figcaption {
+      padding-inline: var(--page-gutter);
+    }
+    .hook-copy,
+    .crumbs,
+    .meat-intro,
+    .review-body,
+    .cta-block,
+    .gallery h3 {
+      padding-inline: 4px;
+    }
+    .hook-copy h1 {
+      max-width: none;
+      font-size: clamp(1.35rem, 6vw, 1.75rem);
+    }
+    .gallery {
+      margin-inline: calc(var(--page-gutter) * -1);
+      padding-inline: var(--page-gutter);
+    }
+    .gallery ul {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .gallery figcaption { font-size: 0.8rem; }
+    .crumbs [aria-current='page'] { max-width: 55vw; }
+    .cta-panel { padding: 18px; }
+    .sticky-buy {
+      padding-left: var(--page-gutter);
+      padding-right: var(--page-gutter);
+    }
+    .sticky-buy-inner {
+      grid-template-columns: 44px minmax(0, 1fr);
+    }
+    .sticky-thumb { width: 44px; height: 44px; }
+    .sticky-cta {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sticky-buy { transition: none; }
   }
 </style>
