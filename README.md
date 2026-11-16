@@ -70,7 +70,7 @@ CLI-only tooling for **your** MyBusinessWorks account. Official Pins API only. E
 3. Request scopes: `boards:read`, `boards:write`, `pins:read`, `pins:write`.
 4. For app review, link privacy policy `https://mybusinesswork.com/privacy/` and describe an **internal content tool** that drafts pins from Daily Viral Deals reviews and publishes only after you confirm each pin.
 5. Put `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, and `PINTEREST_BOARD_ID` in `.env`.
-6. **Trial vs Standard:** new apps start on **Trial**. Trial cannot create Pins on production (`api.pinterest.com`) — you’ll get HTTP 403. For real Pins on your public boards, open the app → **Upgrade to Standard access**, link `https://mybusinesswork.com/privacy/`, and upload a short screen recording of `pinterest:oauth` + one confirmed `pinterest:publish`. Until approved, you can only test creates against the sandbox (`PINTEREST_USE_SANDBOX=1`; sandbox boards/Pins are separate and only visible to you).
+6. **Trial vs Standard:** new apps start on **Trial**. Trial cannot create Pins on production (`api.pinterest.com`) — you’ll get HTTP 403. For real Pins on your public boards, open the app → **Upgrade to Standard access**, link `https://mybusinesswork.com/privacy/`, and upload a short screen recording of `pinterest:oauth` + one confirmed `pinterest:publish`. Until approved, either test against the sandbox (`PINTEREST_USE_SANDBOX=1`) **or** publish via **Zernio** (temporary bypass): set `ZERNIO_API_KEY` + `ZERNIO_PINTEREST_ACCOUNT_ID` from [zernio.com](https://zernio.com), run `npm run zernio:profiles`, then `pinterest:publish` still requires typing `publish`. Force native API with `PINTEREST_PUBLISH_VIA=pinterest`.
 
 ### Auth → draft → publish
 

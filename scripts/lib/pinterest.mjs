@@ -198,7 +198,9 @@ export function assertDraftReadyForPublish(draft) {
     if (!String(draft.description || '').includes(hook)) {
         fail('Pin description must include the review hook. Re-run: npm run pinterest:draft');
     }
-    if (!draft.hookOnImage || !String(draft.mediaUrl || '').includes(PIN_FILENAME)) {
+    const media = String(draft.mediaUrl || '');
+    const hasPinMedia = media.includes(PIN_FILENAME) || /pinterest-pin[-a-z0-9]*\.jpe?g/i.test(media);
+    if (!draft.hookOnImage || !hasPinMedia) {
         fail(
             `Missing Pinterest Pin image with hook on it (${PIN_WIDTH}×${PIN_HEIGHT}, ${PIN_ASPECT}).\n` +
                 'Run: npm run pinterest:draft  (generates the Pin image before publish)',
@@ -322,10 +324,13 @@ export async function createPin({ token, boardId, draft }) {
     return json;
 }
 
-export async function writePublishReceipt({ draft, pin, boardId }) {
+export async function writePublishReceipt({ draft, pin, boardId, provider = 'pinterest' }) {
     await fs.mkdir(PUBLISHED_DIR, { recursive: true });
     const receipt = {
+        provider,
         pinId: pin.id || pin.pin_id || undefined,
+        zernioPostId: pin.zernioPostId || undefined,
+        pinUrl: pin.url || undefined,
         boardId,
         draftHash: draft.draftHash,
         slug: draft.slug,

@@ -16,7 +16,8 @@
         "test:image": "node --env-file=.env scripts/test-image-gen.mjs",
         "pinterest:oauth": "node --env-file=.env scripts/pinterest-oauth.mjs",
         "pinterest:draft": "node --env-file=.env scripts/pinterest-draft.mjs",
-        "pinterest:publish": "node --env-file=.env scripts/pinterest-publish.mjs"
+        "pinterest:publish": "node --env-file=.env scripts/pinterest-publish.mjs",
+        "zernio:profiles": "node --env-file=.env scripts/zernio-profiles.mjs"
     },
     "dependencies": {
         "@astrojs/sitemap": "^3.2.1",
