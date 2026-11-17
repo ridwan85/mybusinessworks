@@ -22,7 +22,7 @@ export async function readProductJson(file) {
 
 /**
  * Write product JSON.
- * Merges over an existing file (keeps imageUrl/showcases/etc.).
+ * Merges over an existing file (keeps siteStripe, siteStripeImage, ownImage, and other fields).
  * Preserves an existing createdAt forever — first process wins.
  */
 export async function writeProductJson(file, product) {

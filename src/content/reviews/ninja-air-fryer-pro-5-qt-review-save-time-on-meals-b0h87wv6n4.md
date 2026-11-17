@@ -5,9 +5,6 @@ asin: "B0H87WV6N4"
 brand: "Ninja"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B0H87WV6N4?tag=dailyvirald06-20"
-imageSrc: "/images/reviews/b0h87wv6n4/crispy-fries.jpg"
-imageCaption: "Bone & Champagne Ninja with the basket open—fries cooked and ready to plate."
-images: [{"src":"/images/reviews/b0h87wv6n4/crispy-fries.jpg","caption":"Bone & Champagne Ninja with the basket open—fries cooked and ready to plate.","alt":"Bone & Champagne Ninja with the basket open—fries cooked and ready to plate."},{"src":"/images/reviews/b0h87wv6n4/weeknight-dinner.jpg","caption":"Same Ninja on the counter beside a plated weeknight dinner after a quick cook.","alt":"Same Ninja on the counter beside a plated weeknight dinner after a quick cook."},{"src":"/images/reviews/b0h87wv6n4/counter-compact.jpg","caption":"Compact Bone & Champagne unit taking a small footprint on the kitchen counter.","alt":"Compact Bone & Champagne unit taking a small footprint on the kitchen counter."}]
 hook: "Home late and still stuck babysitting dinner on the stove?"
 hookSupport: "The Ninja Air Fryer Pro uses 400°F superheated air so weeknight meals go from frozen or fresh to crispy in minutes—without hovering over a burner."
 whyHelps: ["You no longer have to wait long periods for your traditional oven to preheat when rushing to feed the family.","The 5-in-1 functionality lets you quickly switch between cooking methods without digging out multiple appliances.","Frozen favorites go from the freezer to an extra-crispy finish in just minutes, speeding up busy weeknight routines."]

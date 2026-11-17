@@ -5,9 +5,6 @@ asin: "B07T89L8C7"
 brand: "Flawless"
 category: "Beauty"
 affiliateUrl: "https://www.amazon.com/dp/B07T89L8C7?tag=dailyvirald06-20"
-imageSrc: "/images/reviews/b07t89l8c7/morning-vanity.jpg"
-imageCaption: "Rose quartz facial roller on a bathroom vanity ready for a morning skincare routine."
-images: [{"src":"/images/reviews/b07t89l8c7/morning-vanity.jpg","caption":"Rose quartz facial roller on a bathroom vanity ready for a morning skincare routine.","alt":"Rose quartz facial roller on a bathroom vanity ready for a morning skincare routine."},{"src":"/images/reviews/b07t89l8c7/undereye-press.jpg","caption":"Rose quartz under-eye press attachment chilled for puffy eyes.","alt":"Rose quartz under-eye press attachment chilled for puffy eyes."},{"src":"/images/reviews/b07t89l8c7/gift-ready.jpg","caption":"Flawless Contour rose quartz roller gift-ready on a dresser.","alt":"Flawless Contour rose quartz roller gift-ready on a dresser."}]
 hook: "Puffy mornings shouldn’t wait for a spa appointment."
 hookSupport: "Flawless Contour pairs a vibrating rose quartz facial roller with a chillable under-eye press so you can depuff and massage at home with one AA battery included."
 whyHelps: ["Swap a multi-step spa plan for a quick roller pass while your serum sinks in.","Use the under-eye press after a fridge chill when bathroom lighting makes puffiness obvious.","Keep both rose quartz heads in one compact wand so the routine stays on the vanity, not in a drawer pile.","Add controlled vibration to a classic roller motion without booking a facial appointment."]

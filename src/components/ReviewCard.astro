@@ -1,5 +1,7 @@
 ---
 import { slugifyCategory } from '../lib/categories';
+import { displayImage } from '../lib/product-image';
+import GraphicCard from './GraphicCard.astro';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -9,15 +11,16 @@ interface Props {
 }
 const { review: r, priority = false } = Astro.props;
 const href = `/reviews/${r.id}/`;
+const photo = displayImage(r.data);
 ---
 
 <li class:list={['card', priority && 'is-priority']}>
   <article class="card-inner">
     <a class="media" href={href} tabindex="-1" aria-hidden="true">
-      {r.data.imageSrc ? (
-        <img src={r.data.imageSrc} alt="" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
+      {photo ? (
+        <img src={photo} alt="" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
       ) : (
-        <div class="media-fallback"></div>
+        <GraphicCard compact title={r.data.hook} eyebrow={r.data.category} />
       )}
       {priority && <span class="priority-badge">Latest</span>}
     </a>

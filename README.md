@@ -36,7 +36,7 @@ npm run generate -- "https://www.amazon.com/dp/B0XXXXXXXX"
 # or short links: https://link.amazon/... / amzn.to/...
 ```
 
-1. First `generate` run may create `data/products/<ASIN>.json` — fill `title`, `features`, optional `imageUrl` / `showcases` / SiteStripe, then run again.
+1. First `generate` run may create `data/products/<ASIN>.json` — fill `title` and `features`. Optional: `siteStripe` (the SiteStripe Image HTML snippet), `siteStripeImage` (an Amazon-hosted image URL from SiteStripe or the Product Advertising API), or `ownImage` (`/images/reviews/<asin>/own.jpg`, a photo you took). Do not download Amazon product photos into this repo.
 2. Review Markdown is written to `src/content/reviews/` in the locked format.
 3. Preview: `npm run dev`
 4. Publish: `git add . && git commit -m "Add review" && git push` (GitHub Actions deploys `master`).
@@ -57,6 +57,7 @@ DNS (apex + www) uses GitHub Pages A/CNAME records as documented in GitHub’s P
 - Privacy: `/privacy/` ([live](https://mybusinesswork.com/privacy/)).
 - No prices on-site (must stay current on Amazon).
 - Affiliate links use `?tag=` from `AMAZON_ASSOCIATE_TAG` and `rel="sponsored nofollow"`.
+- Do not re-host Amazon product images. Review pages show a text card unless `siteStripeImage` is an Amazon-hosted URL or `ownImage` is your own `own.jpg`. The image tag must point at Amazon’s servers (SiteStripe or the Product Advertising API), not a file in `public/`.
 
 ## 4. Pinterest (internal, compliant publisher)
 
@@ -81,11 +82,21 @@ npm run pinterest:oauth
 # If handoff fails, the page shows the code:
 # npm run pinterest:oauth -- --code PASTE_CODE_HERE
 
-# Build draft + generate a dedicated Pinterest Pin image (does not publish)
-# Image: 1000×1500 (2:3) with the review HOOK on the image
-# Description: starts with the same HOOK
+# One-time, for pin graphics only (not required to build the site):
+# npm install sharp
+
+# Build draft + a 1000×1500 text graphic (does not publish)
+# Graphic: hook, benefit lines, and brand colors. No Amazon product photo.
+# Description: starts with the same hook and ends with the Associate disclosure
 npm run pinterest:draft
 npm run pinterest:draft -- hellobaby-hb6550-no-wifi-baby-monitor-review-b09gm8jzm9
+
+# Optional: put YOUR photo (not an Amazon download) on the graphic
+# save public/images/reviews/<asin>/own.jpg
+npm run pinterest:draft -- hellobaby-hb6550-no-wifi-baby-monitor-review-b09gm8jzm9 --own-photo
+
+# Gemini scenes stay off. They only run for own.jpg, and only when you opt in:
+# PIN_ALLOW_AI_SCENE=1 npm run pinterest:draft -- <slug> --ai-scene
 
 # Deploy so /images/reviews/<asin>/pinterest-pin.jpg is live, then:
 # Publish ONE draft after typing "publish" to confirm
@@ -93,7 +104,7 @@ npm run pinterest:publish -- data/pinterest/drafts/<file>.json
 ```
 
 **Before publish, every Pin must have:**
-1. A generated **Pinterest image** at **1000×1500 (2:3)** with the **hook text on the image** (`public/images/reviews/<asin>/pinterest-pin.jpg`)
-2. The **same hook in the Pin description** (title also uses the hook)
+1. A **Pinterest image** at **1000×1500 (2:3)** with the **hook text on the image** (`public/images/reviews/<asin>/pinterest-pin.jpg`). New images are text graphics. Do not build them from Amazon product photos.
+2. The **same hook in the Pin description**, plus “As an Amazon Associate I earn from qualifying purchases.”
 
 `pinterest:publish` refuses drafts that skip those. Drafts live in `data/pinterest/drafts/`. Publish receipts (pin id + timestamp only) go to `data/pinterest/published/`. We do not scrape the Pinterest UI or store other users’ Pins.

@@ -5,9 +5,6 @@ asin: "B0C2C9NHZW"
 brand: "Levoit"
 category: "Home"
 affiliateUrl: "https://www.amazon.com/dp/B0C2C9NHZW?tag=dailyvirald06-20"
-imageSrc: "/images/reviews/b0c2c9nhzw/bedroom-night.jpg"
-imageCaption: "A Levoit Top Fill Humidifier sitting on a nightstand in a bedroom."
-images: [{"src":"/images/reviews/b0c2c9nhzw/bedroom-night.jpg","caption":"A Levoit Top Fill Humidifier sitting on a nightstand in a bedroom.","alt":"A Levoit Top Fill Humidifier sitting on a nightstand in a bedroom."},{"src":"/images/reviews/b0c2c9nhzw/desk-plants.jpg","caption":"A close-up view showing the easy top-fill design being refilled with water.","alt":"A close-up view showing the easy top-fill design being refilled with water."},{"src":"/images/reviews/b0c2c9nhzw/easy-refill.jpg","caption":"The simple control knob and 360-degree nozzle for customized mist output.","alt":"The simple control knob and 360-degree nozzle for customized mist output."}]
 hook: "Tired of wrestling heavy water tanks and spilling water all over your nightstand?"
 hookSupport: "The Levoit Top Fill Humidifier makes hydration hassle-free with a simple design that lets you pour water right in without turning a tank upside down."
 whyHelps: ["Skip the messy spills with a straightforward top-fill design that requires no flipping.","Save cleaning steps thanks to a wide opening and detachable parts that reach every corner easily.","Enjoy up to 25 hours of continuous runtime on low, so you spend less time refilling.","Adjust your comfort effortlessly with a single control knob and a 360-degree rotating nozzle."]

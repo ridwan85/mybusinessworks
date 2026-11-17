@@ -46,6 +46,10 @@ if (draft.boardKey) {
         if (fromKey) {
             boardId = fromKey;
             boardKey = draft.boardKey;
+        } else {
+            console.warn(
+                `Warning: board key "${draft.boardKey}" is not in data/pinterest/boards.json. Using PINTEREST_BOARD_ID instead.`,
+            );
         }
     } catch {
         /* fall through to env board */

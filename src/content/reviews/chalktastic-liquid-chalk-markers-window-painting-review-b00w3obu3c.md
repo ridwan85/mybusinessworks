@@ -5,9 +5,6 @@ asin: "B00W3OBU3C"
 brand: "Chalktastic"
 category: "Home"
 affiliateUrl: "https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20"
-imageSrc: "/images/reviews/b00w3obu3c/window-snowflake.jpg"
-imageCaption: "Snowflake doodles on a window with washable liquid chalk markers."
-images: [{"src":"/images/reviews/b00w3obu3c/window-snowflake.jpg","caption":"Snowflake doodles on a window with washable liquid chalk markers.","alt":"Snowflake doodles on a window with washable liquid chalk markers."},{"src":"/images/reviews/b00w3obu3c/easy-kids.jpg","caption":"Kids painting simple winter window designs with chalk pens.","alt":"Kids painting simple winter window designs with chalk pens."},{"src":"/images/reviews/b00w3obu3c/gift-set.jpg","caption":"Chalktastic liquid chalk marker set gift-ready for family DIY.","alt":"Chalktastic liquid chalk marker set gift-ready for family DIY."}]
 hook: "Easy winter window art without permanent mess."
 hookSupport: "Chalktastic’s set of 8 washable liquid chalk markers lets you decorate windows, glass, and boards with bold color, then wipe it clean with a damp cloth when you are done."
 whyHelps: ["Skip permanent paint and dusty chalk sticks—concentrated liquid chalk ink is made for non-porous surfaces like glass.","Reversible bullet and chisel tips cover fine snowflake lines and thicker lettering in one pen.","Washable, non-toxic, and odorless markers wipe away so family DIY stays temporary.","An 8-color set is gift-ready for families who want winter window painting ideas without a craft-room rebuild."]
