@@ -37,7 +37,21 @@ if (draft.mediaLocalPath) {
     }
 }
 
-const boardId = requireEnv('PINTEREST_BOARD_ID');
+let boardId = process.env.PINTEREST_BOARD_ID?.trim();
+let boardKey = draft.boardKey || undefined;
+if (draft.boardKey) {
+    try {
+        const boards = JSON.parse(await fs.readFile('data/pinterest/boards.json', 'utf8'));
+        const fromKey = boards?.boards?.[draft.boardKey]?.id;
+        if (fromKey) {
+            boardId = fromKey;
+            boardKey = draft.boardKey;
+        }
+    } catch {
+        /* fall through to env board */
+    }
+}
+if (!boardId) boardId = requireEnv('PINTEREST_BOARD_ID');
 const viaZernio = shouldPublishViaZernio();
 
 console.log('\n— Pin draft (confirm before API publish) —');
@@ -50,7 +64,7 @@ console.log(`Image:       ${draft.mediaUrl}`);
 console.log(`Pin spec:    ${PIN_WIDTH}×${PIN_HEIGHT} (${PIN_ASPECT}), file ${PIN_FILENAME}`);
 console.log(`Hook on img: ${draft.hookOnImage ? 'yes' : 'no'}`);
 console.log(`Link:        ${draft.link}`);
-console.log(`Board id:    ${boardId}`);
+console.log(`Board id:    ${boardId}${boardKey ? ` (${boardKey})` : ''}`);
 if (viaZernio) {
     console.log(`Zernio acct: ${process.env.ZERNIO_PINTEREST_ACCOUNT_ID || '(set ZERNIO_PINTEREST_ACCOUNT_ID)'}`);
 }

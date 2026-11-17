@@ -1,0 +1,28 @@
+{
+  "createdAt": "2026-11-17T01:48:03.926Z",
+  "note": "Publish when Pinterest daily pin quota resets. Do not publish until then.",
+  "asin": "B07T89L8C7",
+  "slug": "finishing-touch-flawless-contour-rose-quartz-review-b07t89l8c7",
+  "boards": {
+    "skincare": "258183059827347755",
+    "morning": "258183059827347738",
+    "wellness": "258183059827347739"
+  },
+  "pins": [
+    {
+      "draft": "data/pinterest/drafts/B07T89L8C7-morning.json",
+      "boardKey": "skincare",
+      "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-morning.json"
+    },
+    {
+      "draft": "data/pinterest/drafts/B07T89L8C7-undereye.json",
+      "boardKey": "morning",
+      "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-undereye.json"
+    },
+    {
+      "draft": "data/pinterest/drafts/B07T89L8C7-gift.json",
+      "boardKey": "wellness",
+      "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-gift.json"
+    }
+  ]
+}
