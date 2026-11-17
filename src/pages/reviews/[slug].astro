@@ -1,7 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { slugifyCategory } from '../../lib/categories';
+import ReviewCard from '../../components/ReviewCard.astro';
+import { relatedReviews, slugifyCategory } from '../../lib/categories';
 import { absoluteUrl, parseFaqFromMarkdown, reviewPageJsonLd } from '../../lib/seo';
 
 export async function getStaticPaths() {
@@ -12,6 +13,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
+const related = relatedReviews(await getCollection('reviews'), entry, 3);
 
 type GalleryItem = { src: string; caption?: string; alt?: string };
 
@@ -168,6 +170,22 @@ const jsonLd = reviewPageJsonLd({
         >{ctaLabel}</a>
       </div>
     </section>
+
+    {related.length > 0 && (
+      <section class="related-block" aria-labelledby="related-title">
+        <div class="related-head">
+          <h2 id="related-title">
+            {data.category ? `More ${data.category} reviews` : 'Related reviews'}
+          </h2>
+          {categoryHref && data.category && (
+            <a class="related-all" href={categoryHref}>See all in {data.category}</a>
+          )}
+        </div>
+        <ul class="grid related-grid">
+          {related.map((r) => <ReviewCard review={r} />)}
+        </ul>
+      </section>
+    )}
   </article>
 
   <!-- Sticky buy bar — Amazon/Shopify PDP pattern: always reachable while reading -->
@@ -442,6 +460,36 @@ const jsonLd = reviewPageJsonLd({
     font-size: 0.95rem;
   }
 
+  .related-block {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .related-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 0 16px;
+  }
+  .related-block h2 {
+    font-family: var(--display);
+    font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+    margin: 0;
+  }
+  .related-all {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--fg);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+  .related-grid :global(.card) {
+    flex: none;
+    width: 100%;
+  }
+
   .cta-block { margin-top: 8px; }
   .cta-panel {
     display: grid;
@@ -576,6 +624,7 @@ const jsonLd = reviewPageJsonLd({
     .meat-intro,
     .review-body,
     .cta-block,
+    .related-block,
     .gallery h3 {
       padding-inline: 4px;
     }

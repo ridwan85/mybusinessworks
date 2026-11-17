@@ -97,6 +97,20 @@ export function findHub(slug: string) {
     return categoryHubs.find((h) => h.slug === slug);
 }
 
+/** Same product category first; otherwise same hub. Excludes `current`. */
+export function relatedReviews(all: Review[], current: Review, limit = 3) {
+    const others = all.filter((r) => r.id !== current.id);
+    const cat = current.data.category?.trim().toLowerCase();
+    const byCategory = cat
+        ? others.filter((r) => r.data.category?.trim().toLowerCase() === cat)
+        : [];
+    const pool =
+        byCategory.length > 0
+            ? byCategory
+            : others.filter((r) => categoryHubs.some((h) => h.match(current) && h.match(r)));
+    return sortReviewsNewestFirst(pool).slice(0, limit);
+}
+
 /** Prefer Amazon department / listing category when we can recognize it. */
 export function normalizeProductCategory(raw: string | undefined, title = '') {
     const text = `${raw ?? ''} ${title}`;

@@ -40,6 +40,9 @@ const allReviews = await getCollection('reviews');
 const relatedHubs = categoryHubs
   .filter((h) => h.slug !== Astro.params.slug)
   .map((h) => ({ ...h, count: reviewsForHub(allReviews, h).length }));
+const siblingCategories = uniqueProductCategories(allReviews)
+  .filter((c) => c.slug !== Astro.params.slug)
+  .map((c) => ({ label: c.label, slug: c.slug, count: c.reviews.length }));
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const jsonLd = {
@@ -81,7 +84,15 @@ const jsonLd = {
   )}
 
   <section class="more-cats">
-    <h2>More categories</h2>
+    <h2>Browse by product type</h2>
+    <ul>
+      {siblingCategories.map((c) => (
+        <li>
+          <a href={`/categories/${c.slug}/`}>{c.label} <span>({c.count})</span></a>
+        </li>
+      ))}
+    </ul>
+    <h2 class="more-hubs">More shopping themes</h2>
     <ul>
       {relatedHubs.map((h) => (
         <li>
@@ -102,6 +113,7 @@ const jsonLd = {
   .empty { margin-top: 20px; }
   .more-cats { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
   .more-cats h2 { font-family: var(--display); font-size: 1.35rem; margin: 0 0 12px; }
+  .more-cats h2.more-hubs { margin-top: 28px; }
   .more-cats ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px 16px; }
   .more-cats a { font-weight: 600; text-decoration: none; color: var(--fg); border-bottom: 2px solid var(--accent); }
   .more-cats span { color: var(--muted); font-weight: 500; }
