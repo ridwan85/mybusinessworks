@@ -1,0 +1,46 @@
+{
+  "updatedAt": "2026-11-17T00:04:57.314Z",
+  "amazonGreatFindsId": "258183059827342101",
+  "boards": {
+    "kitchen": {
+      "id": "258183059827347737",
+      "name": "Kitchen Gadgets",
+      "description": "Kitchen gadgets, small appliances, Instant Pot, air fryer, blender, coffee maker, and everyday cooking tools."
+    },
+    "morning": {
+      "id": "258183059827347738",
+      "name": "Morning Routine Essentials",
+      "description": "Morning routine essentials: coffee makers, portable blenders, breakfast tools, and get-ready-faster finds."
+    },
+    "wellness": {
+      "id": "258183059827347739",
+      "name": "Self Care & Wellness",
+      "description": "Self care and wellness products: eye massagers, water flossers, relaxation tools, and daily recovery habits."
+    },
+    "hair": {
+      "id": "258183059827347740",
+      "name": "Hair Styling Tools",
+      "description": "Hair styling tools and beauty gadgets: dryers, curlers, multi-stylers, and salon-at-home favorites."
+    },
+    "organize": {
+      "id": "258183059827347741",
+      "name": "Home Organization",
+      "description": "Home organization ideas: sink caddies, cleaning tools, storage helpers, and tidy-home essentials."
+    },
+    "cozy": {
+      "id": "258183059827347742",
+      "name": "Cozy Home Finds",
+      "description": "Cozy home finds: heated blankets, humidifiers, candle warmers, and warm bedroom living ideas."
+    },
+    "baby": {
+      "id": "258183059827347743",
+      "name": "Baby & Nursery",
+      "description": "Baby and nursery essentials: baby monitors, kids reading devices, and parent-friendly home finds."
+    },
+    "bathroom": {
+      "id": "258183059827347744",
+      "name": "Bathroom Essentials",
+      "description": "Bathroom essentials: water flossers, vanity organizers, and everyday bathroom upgrade ideas."
+    }
+  }
+}
