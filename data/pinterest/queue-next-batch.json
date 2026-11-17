@@ -1,28 +1,69 @@
 {
-  "createdAt": "2026-11-17T01:48:03.926Z",
-  "note": "Publish when Pinterest daily pin quota resets. Do not publish until then.",
-  "asin": "B07T89L8C7",
-  "slug": "finishing-touch-flawless-contour-rose-quartz-review-b07t89l8c7",
-  "boards": {
-    "skincare": "258183059827347755",
-    "morning": "258183059827347738",
-    "wellness": "258183059827347739"
-  },
-  "pins": [
+  "createdAt": "2026-11-17T06:59:16.000Z",
+  "note": "Publish when Pinterest daily pin quota resets. Do not publish until then. Includes Flawless Contour + holiday window chalk + cookie cutters.",
+  "batches": [
     {
-      "draft": "data/pinterest/drafts/B07T89L8C7-morning.json",
-      "boardKey": "skincare",
-      "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-morning.json"
+      "asin": "B07T89L8C7",
+      "slug": "finishing-touch-flawless-contour-rose-quartz-review-b07t89l8c7",
+      "pins": [
+        {
+          "draft": "data/pinterest/drafts/B07T89L8C7-morning.json",
+          "boardKey": "skincare",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-morning.json"
+        },
+        {
+          "draft": "data/pinterest/drafts/B07T89L8C7-undereye.json",
+          "boardKey": "morning",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-undereye.json"
+        },
+        {
+          "draft": "data/pinterest/drafts/B07T89L8C7-gift.json",
+          "boardKey": "wellness",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-gift.json"
+        }
+      ]
     },
     {
-      "draft": "data/pinterest/drafts/B07T89L8C7-undereye.json",
-      "boardKey": "morning",
-      "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-undereye.json"
+      "asin": "B00W3OBU3C",
+      "slug": "chalktastic-liquid-chalk-markers-window-painting-review-b00w3obu3c",
+      "pins": [
+        {
+          "draft": "data/pinterest/drafts/B00W3OBU3C-easy.json",
+          "boardKey": "cozy",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B00W3OBU3C-easy.json"
+        },
+        {
+          "draft": "data/pinterest/drafts/B00W3OBU3C-kids.json",
+          "boardKey": "baby",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B00W3OBU3C-kids.json"
+        },
+        {
+          "draft": "data/pinterest/drafts/B00W3OBU3C-gift.json",
+          "boardKey": "organize",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B00W3OBU3C-gift.json"
+        }
+      ]
     },
     {
-      "draft": "data/pinterest/drafts/B07T89L8C7-gift.json",
-      "boardKey": "wellness",
-      "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-gift.json"
+      "asin": "B07XWZM6BV",
+      "slug": "maykito-christmas-cookie-cutters-set-review-b07xwzm6bv",
+      "pins": [
+        {
+          "draft": "data/pinterest/drafts/B07XWZM6BV-easy.json",
+          "boardKey": "kitchen",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B07XWZM6BV-easy.json"
+        },
+        {
+          "draft": "data/pinterest/drafts/B07XWZM6BV-decorated.json",
+          "boardKey": "morning",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B07XWZM6BV-decorated.json"
+        },
+        {
+          "draft": "data/pinterest/drafts/B07XWZM6BV-gift.json",
+          "boardKey": "cozy",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B07XWZM6BV-gift.json"
+        }
+      ]
     }
   ]
 }
