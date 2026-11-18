@@ -61,6 +61,18 @@ export function displayImage(data?: ImageFields): string | undefined {
     );
 }
 
+/**
+ * First image safe to share on Pinterest and other crawlers.
+ * Amazon-hosted URLs are skipped — Rich Pins must not depend on them.
+ */
+export function shareImage(...candidates: (string | undefined)[]): string | undefined {
+    for (const candidate of candidates) {
+        const allowed = allowedProductImage(candidate);
+        if (allowed && !isAmazonHostedImageUrl(allowed)) return allowed;
+    }
+    return undefined;
+}
+
 /** SiteStripe "Image" snippet: Amazon-hosted <a>/<img> only. */
 export function isSafeSiteStripeHtml(html?: string): boolean {
     if (!html?.trim()) return false;
