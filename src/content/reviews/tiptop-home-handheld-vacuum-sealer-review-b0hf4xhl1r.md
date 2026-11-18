@@ -35,17 +35,17 @@ createdAt: 2026-11-11T11:22:50+08:00
 
 Monday's dinner is still in the fridge on Thursday. The bag is puffy. The smell is not great.
 
-The <a href="https://www.amazon.com/dp/B0HF4XHL1R?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Tiptop Home handheld vacuum sealer</a> is a small cordless tool. The listing says it pulls at 60 kPa and seals in about 5 seconds. kPa is just a measure of suction.
+The <a href="https://www.amazon.com/dp/B0HF4XHL1R?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Tiptop Home handheld vacuum sealer</a> is a small cordless tool. The claim is a strong pull and a seal in about 5 seconds.
 
 ## What it does
 
 * **One button.** Press it. It pulls air, seals, and stops. You do not hold it the whole time.
 
-* **Cordless.** Charge it, then use it away from the wall. Camping and travel are on the listing for that reason. Keep it charged before prep day.
+* **Cordless.** Charge it, then use it away from the wall. They claim that is why it works for camping and travel. Keep it charged before prep day.
 
-* **30 reusable bags.** They are BPA-free, which means no harmful plastic chemical called BPA. The listing says they are washable and resealable. You wash them between foods so smells do not mix.
+* **30 reusable bags.** They are BPA-free, which means no harmful plastic chemical called BPA. They claim the bags are washable and you can seal them again. You wash them between foods so smells do not mix.
 
-* **What you can seal.** The listing names meat, fish, vegetables, fruit, dry goods, pizza, cooked meals, and leftovers. Use the included valve bags. This is not for a normal zip bag.
+* **What you can seal.** They claim it works for meat, fish, vegetables, fruit, dry goods, pizza, cooked meals, and leftovers. Use the included valve bags. This is not for a normal zip bag.
 
 * **Small on the counter.** It is handheld, not a long machine with a roll of plastic.
 
@@ -57,7 +57,7 @@ Skip it if you want to seal grocery zip bags. This tool wants its own bags.
 
 ## The good parts
 
-* About 5 seconds, per the listing.
+* The claim is about 5 seconds.
 * One button, then it stops.
 * 30 reusable bags in the box.
 * Cordless, so it can leave the kitchen.
@@ -68,13 +68,13 @@ Skip it if you want to seal grocery zip bags. This tool wants its own bags.
 * You must charge it or it is a brick.
 * The bags need a real wash between uses.
 * It is for valve bags, not every bag in the drawer.
-* 60 kPa and the 5-second line are Tiptop's claims.
+* The strong pull and the 5-second seal are claims.
 
 ## FAQ
 
-### What does 60 kPa mean?
+### How strong is the suction?
 
-It is a suction number. Higher means a stronger pull. Tiptop says this tool hits 60 kPa.
+They claim a strong pull, and a seal in about 5 seconds.
 
 ### Can I use any plastic bag?
 
@@ -86,7 +86,7 @@ Wash them. They are made to be reused. Do not skip the wash or smells jump from 
 
 ### Do I need a wall outlet while I seal?
 
-Not while you seal. You charge the battery first. Then it is cordless.
+No, not while you seal. Charge the battery first. Then it is cordless.
 
 ## Bottom line
 

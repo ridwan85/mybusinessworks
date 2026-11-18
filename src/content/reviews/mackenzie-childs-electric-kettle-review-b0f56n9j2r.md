@@ -66,11 +66,11 @@ No. It heats water. You make the coffee or tea after that. If you want a pod mac
 
 ### How much water does it hold?
 
-The listing says 8 cups. That covers a small group before a refill.
+The claim is 8 cups. That covers a small group before a refill.
 
 ### Will the pattern match my kitchen?
 
-Only if you like red-and-white check. If you want a plain look, skip this one. See the <a href="https://www.amazon.com/dp/B0F56N9J2R?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">MacKenzie-Childs kettle</a> photos before you buy.
+Yes, if you like red-and-white check. If you want a plain look, skip this one. See the <a href="https://www.amazon.com/dp/B0F56N9J2R?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">MacKenzie-Childs kettle</a> photos before you buy.
 
 ### Is it just for show?
 

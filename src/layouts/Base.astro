@@ -206,7 +206,7 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
         border-color: #d2c4ca;
         box-shadow: 0 12px 28px rgba(40, 24, 30, 0.08);
       }
-      .card img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #fff; display: block; }
+      .card img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; background: #fff; display: block; }
       .card h2, .card h3 { font-size: 1.05rem; line-height: 1.35; margin: 0 0 6px; letter-spacing: -0.01em; }
 
       .hero { text-align: center; margin: 0 auto 20px; }
@@ -232,6 +232,7 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
       .gallery figure { margin: 0; }
       .gallery img {
         width: 100%;
+        height: auto;
         aspect-ratio: 1;
         object-fit: cover;
         border-radius: 10px;

@@ -26,17 +26,17 @@ createdAt: "2026-11-17T09:45:00+08:00"
 
 Your eyes look puffy. A spa visit is not happening before work.
 
-The <a href="https://www.amazon.com/dp/B07T89L8C7?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Flawless Contour</a> is a vibrating roller in rose quartz, plus a smaller under-eye press. One AA battery comes in the box. The brand says it is for massage and the look of puffiness. It is not a medical treatment.
+The <a href="https://www.amazon.com/dp/B07T89L8C7?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Flawless Contour</a> is a vibrating roller in rose quartz, plus a smaller under-eye press. One AA battery comes in the box. The claim is a short face massage and less puffiness. It is not a medical treatment.
 
 ## What it does
 
-* **Two heads.** A face roller and an under-eye press. The listing says both are real rose quartz. Stone color can vary a little.
+* **Two heads.** A face roller and an under-eye press. They claim both heads are real rose quartz. Stone color can vary a little.
 
 * **A small motor.** Vibration is the difference from a plain roller. You need a working AA battery. Keep a spare if you use it every day.
 
-* **The eye press.** The listing says you can chill it in the fridge first. That is for puffy eyes. It is not a promise to remove dark circles.
+* **The eye press.** They claim you can chill the eye press in the fridge first. That is for puffy eyes. It is not a promise to remove dark circles.
 
-* **Brand claims.** They say the roller is meant to help the look of fine lines. Treat that as their claim. It will not replace a dermatologist.
+* **Brand claims.** The claim is it can soften the look of fine lines. It will not replace a dermatologist.
 
 * **Your products.** Serum is not included. Use what you already have, if you use any.
 
@@ -73,11 +73,11 @@ Yes. One AA comes in the box. The vibration stops when the battery dies.
 
 ### Should I chill the eye press?
 
-The listing says yes, before use, if you want help with puffiness. Do not freeze it solid. Read the card in the box.
+Yes. They claim chilling it first helps with puffiness. Do not freeze it solid. Read the card in the box.
 
 ### Is the stone real?
 
-The listing says the heads are genuine rose quartz. Color can vary. The tool is the <a href="https://www.amazon.com/dp/B07T89L8C7?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Flawless Contour</a>.
+Yes. They claim the heads are real rose quartz. Color can vary. The tool is the <a href="https://www.amazon.com/dp/B07T89L8C7?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Flawless Contour</a>.
 
 ## Bottom line
 

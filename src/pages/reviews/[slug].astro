@@ -38,7 +38,7 @@ const showPriceNote = /\$\s?\d|\bunder\s+\$/i.test(
   [data.title, data.hook, data.shortVerdict, data.description, entry.body ?? ''].filter(Boolean).join('\n'),
 );
 const angleLabel =
-  data.angle === 'time' ? 'Saves time' : data.angle === 'incident' ? 'Avoids a headache' : 'More convenient';
+  data.angle === 'time' ? 'Saves time' : data.angle === 'incident' ? 'Fewer messes' : 'Easier day';
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const categorySlug = data.category ? slugifyCategory(data.category) : undefined;
@@ -139,9 +139,9 @@ const jsonLd = reviewPageJsonLd({
       <div class="meat-intro">
         <h2 id="meat-title" class="meat-heading">Why it helps in real life</h2>
         <p class="meat-lead">
-          {data.angle === 'time' && 'Here’s how it saves time in everyday use—not in a lab, in the situations you actually hit.'}
-          {data.angle === 'convenience' && 'Here’s how it removes friction in everyday use—fewer steps when you’d otherwise skip the chore.'}
-          {data.angle === 'incident' && 'Here’s how it helps you avoid the usual mess, waste, or fridge headache in everyday use.'}
+          {data.angle === 'time' && 'Here is how it saves time on a normal day.'}
+          {data.angle === 'convenience' && 'Here is how it makes the job easier.'}
+          {data.angle === 'incident' && 'Here is how it helps you dodge the usual mess.'}
         </p>
         <ol class="why-helps">
           {data.whyHelps.map((point) => <li>{point}</li>)}
@@ -184,11 +184,11 @@ const jsonLd = reviewPageJsonLd({
     <section class="cta-block" aria-labelledby="cta-title">
       <div class="cta-panel">
         <div>
-          <h2 id="cta-title">Ready to make the switch?</h2>
+          <h2 id="cta-title">Want to see the price?</h2>
           <p>
-            {data.angle === 'time' && 'If saving minutes on a repeated chore matters, check today’s price and see if this fits your setup.'}
-            {data.angle === 'convenience' && 'If you want fewer steps and less friction day to day, check today’s price on Amazon.'}
-            {data.angle === 'incident' && 'If you’d rather avoid the usual mess, waste, or surprise failure, check today’s price on Amazon.'}
+            {data.angle === 'time' && 'If saving time on this chore matters, check today’s price on Amazon.'}
+            {data.angle === 'convenience' && 'If you want the easier version of this job, check today’s price on Amazon.'}
+            {data.angle === 'incident' && 'If you want to skip the usual mess, check today’s price on Amazon.'}
           </p>
         </div>
         <a
@@ -225,7 +225,7 @@ const jsonLd = reviewPageJsonLd({
       )}
       <div class="sticky-copy">
         <p class="sticky-title">{data.title}</p>
-        <p class="sticky-note">See today’s price on Amazon</p>
+        <p class="sticky-note">See today's price on Amazon</p>
       </div>
       <a
         class="cta-amazon sticky-cta"
@@ -467,8 +467,10 @@ const jsonLd = reviewPageJsonLd({
   .gallery figure { margin: 0; }
   .gallery img {
     width: 100%;
-    aspect-ratio: 1;
+    height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
+    object-position: center;
     border-radius: 10px;
     border: 1px solid var(--line);
     background: #fff;
@@ -703,6 +705,9 @@ const jsonLd = reviewPageJsonLd({
     .gallery ul {
       grid-template-columns: 1fr 1fr;
       gap: 10px;
+    }
+    .gallery img {
+      max-height: 220px;
     }
     .gallery figcaption { font-size: 0.8rem; }
     .crumbs [aria-current='page'] { max-width: 55vw; }

@@ -65,7 +65,7 @@ Skip it for outdoor lettering that must survive weather. Skip it if you only use
 
 ### Will it come off the window?
 
-That is the point on smooth glass. Clean the glass first. Wipe when you are done. A porous surface may not release the same way.
+Yes, on smooth glass. Clean the glass first. Wipe when you are done. A porous surface may not release the same way.
 
 ### Is it paint?
 
@@ -73,7 +73,7 @@ No. It is liquid chalk. It is for temporary art, not a permanent window job.
 
 ### Can it stay outside in the rain?
 
-Do not count on it. Indoor windows are the easy job. Weather means touch-ups. Read the <a href="https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Chalktastic markers</a> page for the set size you are buying.
+No. Indoor windows are the easy job. Weather means touch-ups. Read the <a href="https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Chalktastic markers</a> page for the set size you are buying.
 
 ### Can kids use them?
 

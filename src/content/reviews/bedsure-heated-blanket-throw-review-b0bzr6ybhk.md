@@ -30,17 +30,17 @@ The <a href="https://www.amazon.com/dp/B0BZR6YBHK?tag=dailyvirald06-20" rel="nof
 
 ## What it does
 
-* **Heat on you.** Six levels. A controller. Timers at 1, 2, 4, 6, 8, or 10 hours. Bedsure says longer heating wires spread the warmth.
+* **Heat on you.** Six levels. A controller. Timers at 1, 2, 4, 6, 8, or 10 hours. The claim is longer heating wires spread the warmth.
 
-* **Preheat.** The listing says you can preheat, then drop to a level you can stay with. Exact minutes depend on the room.
+* **Preheat.** The claim is you can preheat, then drop to a level you can stay with. Exact minutes depend on the room.
 
-* **Two fabrics.** A flannel side and a sherpa side. Sherpa is the fuzzy side. GSM on the listing is just fabric weight. You can also use it unplugged as a normal throw.
+* **Two fabrics.** A flannel side and a sherpa side. Sherpa is the fuzzy side. The fabric-weight number on the page just means how thick the cloth is. You can also use it unplugged as a normal throw.
 
-* **100 watts.** It plugs into a normal 120 volt outlet. Bedsure says that uses less power than heating a room with a space heater. It still needs a plug nearby.
+* **100 watts.** It plugs into a normal 120 volt outlet. The claim is it uses less power than heating a room with a space heater. It still needs a plug nearby.
 
 * **Safety marks.** ETL and FCC certified. The default auto shutoff is 8 hours. That is to help prevent overheating. If you want longer, you restart it.
 
-* **Washing.** The listing says it is machine-care friendly. Unplug the controller first. Follow the tag in the box.
+* **Washing.** They claim you can wash it in a machine. Unplug the controller first. Follow the tag in the box.
 
 ## Who it's for
 
@@ -53,7 +53,7 @@ Skip it if you need one blanket to cover a whole mattress. This is a throw.
 * Six heat levels and several timers.
 * Preheat, then a steadier level.
 * Soft even when it is off.
-* Less power than heating a whole room, per the listing.
+* The claim is less power than heating a whole room.
 * Auto shutoff at 8 hours.
 * A gift that is easy to understand.
 
@@ -67,15 +67,15 @@ Skip it if you need one blanket to cover a whole mattress. This is a throw.
 
 ### Can I wash it?
 
-The listing says machine care is fine. Disconnect the controller first. Read the tag that comes with it.
+Yes. They claim a machine wash is fine. Disconnect the controller first. Read the tag that comes with it.
 
 ### How fast does it preheat?
 
-Bedsure says the preheat gets it toasty quickly. The room temperature changes that.
+The claim is the preheat gets it toasty quickly. The room temperature changes that.
 
 ### Can I fall asleep with it on?
 
-It has an 8-hour auto shutoff and ETL and FCC marks. That is the safety design. It is not a promise for every sleeper. Read the manual.
+Yes. It has an 8-hour auto shutoff. Read the manual before you sleep with it on.
 
 ### Can I use it with the heat off?
 

@@ -41,7 +41,7 @@ The <a href="https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20" rel="nof
 
 * **Video at the door.** 2K picture, per Ring. Zoom up to 6x for a tighter look. Live View lets you watch in the moment. Two-way talk lets you speak and listen.
 
-* **Alerts.** The listing says your phone can ping when it sees motion.
+* **Alerts.** They claim your phone pings when it sees motion.
 
 * **Battery, not wires.** A tool in the box pops it off the wall. You charge the battery with USB-C. The cable is not included. Bring your own.
 
@@ -49,7 +49,7 @@ The <a href="https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20" rel="nof
 
 * **Saved clips.** Rewatching history and the smarter alerts need a Ring Protect plan. That plan is sold separately. Live view is the part that does not depend on you buying that first. Read the live page so you know what is free.
 
-* **Alexa.** Ring says it works with Echo speakers and Echo Show screens. Handy if you already have one. Not required.
+* **Alexa.** They claim it works with Echo speakers and Echo Show screens. Handy if you already have one. Not required.
 
 ## Who it's for
 
@@ -79,15 +79,15 @@ No. This model is battery powered. That is the point if you have no doorbell wir
 
 ### Is a charger in the box?
 
-A removal tool is included. A USB-C cable is not. You bring the cable and a power brick.
+No. A removal tool is included. A USB-C cable is not. You bring the cable and a power brick.
 
 ### Can I rewatch yesterday?
 
-Saved history needs a compatible Ring Protect plan, sold separately. Check the <a href="https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ring Battery Doorbell 2K</a> page for what the plan adds.
+No, not without a Ring Protect plan. That plan is sold separately. Check the <a href="https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ring Battery Doorbell 2K</a> page for what the plan adds.
 
 ### Does it work with Alexa?
 
-Ring says yes with Echo devices. You can hear a chime or open video on a Show. You do not have to own one.
+Yes. They claim it works with Echo devices. You can hear a chime or open video on a Show. You do not have to own one.
 
 ## Bottom line
 

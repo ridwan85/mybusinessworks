@@ -30,13 +30,13 @@ The <a href="https://www.amazon.com/dp/B0BSNHVW5Q?tag=dailyvirald06-20" rel="nof
 
 ## What it does
 
-* **Less rub.** The listing says the smooth face cuts friction. That can help frizz and breakage on curly or delicate hair. Results vary.
+* **Less rub.** The claim is the smooth face cuts rubbing. That can help frizz and breakage on curly or delicate hair. Results vary.
 
-* **Skin.** Bedsure says the smooth surface lowers the chance of sleep marks. It is not a wrinkle treatment.
+* **Skin.** The claim is the smooth surface lowers the chance of sleep marks. It is not a wrinkle treatment.
 
 * **Envelope closure.** A flap holds the pillow. No zipper on your face. Queen size is 20 by 30 inches. Pillows are not included.
 
-* **Not silk.** No silkworms are used. The listing calls that vegan. It is still polyester. It can feel warmer or cooler than you expect.
+* **Not silk.** No silkworms are used. They call that vegan. It is still polyester. It can feel warmer or cooler than you expect.
 
 * **Colors.** Many colors are listed. Match the bed, or give a set as a gift.
 
