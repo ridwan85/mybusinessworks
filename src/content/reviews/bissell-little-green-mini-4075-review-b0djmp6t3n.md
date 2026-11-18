@@ -5,6 +5,7 @@ asin: "B0DJMP6T3N"
 brand: "BISSELL"
 category: "Home"
 affiliateUrl: "https://www.amazon.com/dp/B0DJMP6T3N?tag=dailyvirald06-20"
+ownImage: "/images/reviews/b0djmp6t3n/own.jpg"
 imageSrc: "/images/reviews/b0djmp6t3n/couch-stain.jpg"
 imageCaption: "BISSELL Little Green Mini on the couch, hose ready for a quick upholstery spot clean."
 images: [{"src":"/images/reviews/b0djmp6t3n/couch-stain.jpg","caption":"BISSELL Little Green Mini on the couch, hose ready for a quick upholstery spot clean.","alt":"BISSELL Little Green Mini on the couch, hose ready for a quick upholstery spot clean."},{"src":"/images/reviews/b0djmp6t3n/car-detail.jpg","caption":"Portable spot cleaner detailing a car seat after a spill.","alt":"Portable spot cleaner detailing a car seat after a spill."},{"src":"/images/reviews/b0djmp6t3n/closet-ready.jpg","caption":"Compact Little Green Mini tucked and ready in a small storage spot.","alt":"Compact Little Green Mini tucked and ready in a small storage spot."}]

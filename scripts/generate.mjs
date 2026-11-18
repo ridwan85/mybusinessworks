@@ -11,6 +11,12 @@ import {
     normalizeProductCategory,
 } from './lib/review-format.mjs';
 import { stampCreatedAt } from './lib/product-meta.mjs';
+import {
+    isAmazonHostedImageUrl,
+    isLocalLifestyleImage,
+    isOwnerPhotoPath,
+    isRehostedAmazonPhoto,
+} from './lib/amazon-image.mjs';
 
 const TAG = process.env.AMAZON_ASSOCIATE_TAG;
 const env = process.env;
@@ -71,7 +77,7 @@ const slugify = (s) =>
 
 // SiteStripe "Image" snippet: only Amazon-hosted <a>/<img> tags are accepted.
 function parseSiteStripe(html, file) {
-    if (!html?.trim()) return {};
+    if (!html?.trim() || !/<img\b/i.test(html)) return {};
     const bad = /<script|\son\w+\s*=|javascript:|<(?!\/?(?:a|img)\b)[a-z]/i.test(html);
     const urls = [...html.matchAll(/(?:src|href)\s*=\s*["']([^"']+)["']/gi)].map((m) => (m[1].startsWith('//') ? `https:${m[1]}` : m[1]));
     const okHost = (u) => {
@@ -87,15 +93,27 @@ function parseSiteStripe(html, file) {
     return { imageHtml: html.trim(), imageSrc: imgSrc.startsWith('//') ? `https:${imgSrc}` : imgSrc };
 }
 
-function collectShowcases(p) {
+function collectCreatives(p) {
     const out = [];
-    if (Array.isArray(p.showcases)) {
-        for (const s of p.showcases) {
-            const src = typeof s === 'string' ? s : s?.src;
-            if (src) out.push(src);
+    const push = (src) => {
+        if (!src || out.includes(src)) return;
+        if (isRehostedAmazonPhoto(src)) {
+            console.log(`Ignoring ${src}. That file is a re-hosted Amazon product photo and is not published.`);
+            return;
         }
+        if (isOwnerPhotoPath(src) || isLocalLifestyleImage(src)) {
+            out.push(src);
+            return;
+        }
+        if (isAmazonHostedImageUrl(src)) {
+            console.log(`Ignoring ${src}. Put Amazon-hosted SiteStripe or API URLs in siteStripeImage. Do not download the file.`);
+        }
+    };
+    if (p.ownImage) push(p.ownImage);
+    if (p.imageUrl) push(p.imageUrl);
+    if (Array.isArray(p.showcases)) {
+        for (const item of p.showcases) push(typeof item === 'string' ? item : item?.src);
     }
-    if (p.imageUrl && !out.includes(p.imageUrl)) out.push(p.imageUrl);
     return out;
 }
 
@@ -111,11 +129,27 @@ async function loadProduct(asin) {
             console.log(`Stamped createdAt ${p.createdAt} on ${file}`);
         }
         const stripe = parseSiteStripe(p.siteStripe, file);
-        const showcases = collectShowcases(p);
+        const siteStripeImage = isAmazonHostedImageUrl(p.siteStripeImage)
+            ? p.siteStripeImage
+            : isAmazonHostedImageUrl(stripe.imageSrc)
+              ? stripe.imageSrc
+              : undefined;
+        const creatives = collectCreatives(p);
+        const ownImage = creatives.find((src) => isOwnerPhotoPath(src));
+        const imageSrc = ownImage || creatives.find((src) => isLocalLifestyleImage(src));
+        const showcases = creatives.filter((src) => src !== imageSrc);
+        if (p.siteStripeImage && !siteStripeImage) {
+            fail(`${file}: "siteStripeImage" must be an Amazon-hosted image URL (SiteStripe or the Product Advertising API).`);
+        }
+        if (p.ownImage && !ownImage) {
+            fail(`${file}: "ownImage" must be your own photo, for example /images/reviews/${asin.toLowerCase()}/own.jpg.`);
+        }
         return {
             ...p,
-            ...stripe,
-            imageSrc: stripe.imageSrc || p.imageSrc || showcases[0] || undefined,
+            imageHtml: stripe.imageHtml,
+            siteStripeImage,
+            ownImage,
+            imageSrc,
             showcases,
         };
     } catch (e) {
@@ -123,7 +157,7 @@ async function loadProduct(asin) {
         await fs.copyFile(path.join('data', 'products', '_example.json'), file);
         fail(
             `No product data for ${asin}. A template was created at ${file}.\n` +
-                'Fill in title, features and (optionally) imageUrl/showcases/SiteStripe, then run the command again.',
+                'Fill in title and features. Optional: siteStripe (SiteStripe Image HTML), siteStripeImage (Amazon-hosted image URL), or ownImage (/images/reviews/<asin>/own.jpg). Do not download Amazon product photos into this repo.',
         );
     }
 }
@@ -131,7 +165,7 @@ async function loadProduct(asin) {
 async function writeReview(p) {
     const { apiKey, baseURL } = PROVIDERS[PROVIDER];
     const client = new OpenAI({ apiKey, baseURL });
-    const hasImages = Boolean(p.imageSrc || p.showcases?.length);
+    const hasImages = Boolean(p.siteStripeImage || p.ownImage || p.imageSrc || p.showcases?.length || p.imageHtml);
     const completion = await client.chat.completions.create({
         model: MODEL,
         temperature: 0.6,
@@ -147,7 +181,7 @@ async function writeReview(p) {
                     category: p.category,
                     features: p.features,
                     hasProductImages: hasImages,
-                    imageCount: Math.max(p.showcases?.length || 0, p.imageSrc ? 1 : 0),
+                    imageCount: Math.max(p.showcases?.length || 0, p.imageSrc || p.siteStripeImage ? 1 : 0),
                 }),
             },
         ],
@@ -179,11 +213,12 @@ if (existing && !force) fail(`Review already exists (${existing}). Use --force t
 
 console.log(`Generating locked-format review for ${asin} with ${MODEL}...`);
 const review = await writeReview(product);
+const showLocal = Boolean(product.imageSrc || product.showcases?.length);
 const { imagesLine, imageCaptionLine } = buildImagesFrontmatter({
     imageSrc: product.imageSrc,
     showcases: product.showcases,
-    imageCaption: review.imageCaption,
-    imageCaptions: review.imageCaptions,
+    imageCaption: showLocal || product.siteStripeImage ? review.imageCaption : undefined,
+    imageCaptions: showLocal ? review.imageCaptions : [],
 });
 
 const body = review.body + '\n';
@@ -197,7 +232,9 @@ const frontmatter = [
     category ? `category: ${JSON.stringify(category)}` : null,
     `affiliateUrl: ${JSON.stringify(affiliateUrl)}`,
     product.imageHtml ? `imageHtml: ${JSON.stringify(product.imageHtml)}` : null,
-    product.imageSrc ? `imageSrc: ${JSON.stringify(product.imageSrc)}` : null,
+    product.siteStripeImage ? `siteStripeImage: ${JSON.stringify(product.siteStripeImage)}` : null,
+    product.ownImage ? `ownImage: ${JSON.stringify(product.ownImage)}` : null,
+    product.imageSrc && product.imageSrc !== product.ownImage ? `imageSrc: ${JSON.stringify(product.imageSrc)}` : null,
     imageCaptionLine,
     imagesLine,
     `hook: ${JSON.stringify(review.hook)}`,

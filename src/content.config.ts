@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { isAmazonHostedImageUrl, isOwnerPhotoPath } from './lib/product-image';
 
 const reviews = defineCollection({
     loader: glob({ pattern: '**/*.md', base: './src/content/reviews' }),
@@ -10,7 +11,22 @@ const reviews = defineCollection({
         brand: z.string().optional(),
         category: z.string().optional(),
         affiliateUrl: z.string().url(),
-        // Absolute http(s) URLs or site-relative paths like /images/...
+        // Optional Amazon-hosted image (SiteStripe or Product Advertising API). Not a downloaded file.
+        siteStripeImage: z
+            .string()
+            .url()
+            .refine((value) => isAmazonHostedImageUrl(value), {
+                message: 'siteStripeImage must be an Amazon-hosted image URL from SiteStripe or the Product Advertising API.',
+            })
+            .optional(),
+        // Optional photo the owner took. Example: /images/reviews/<asin>/own.jpg
+        ownImage: z
+            .string()
+            .refine((value) => isOwnerPhotoPath(value), {
+                message: 'ownImage must be a site path like /images/reviews/<asin>/own.jpg.',
+            })
+            .optional(),
+        // On-site lifestyle creatives are allowed. source.jpg (a re-hosted Amazon packshot) is not rendered.
         // Strings or { src, caption?, alt? } objects are accepted.
         images: z
             .array(

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T00:04:57.314Z",
+  "updatedAt": "2026-11-18T04:30:00.000Z",
   "amazonGreatFindsId": "258183059827342101",
   "boards": {
     "kitchen": {
@@ -41,6 +41,11 @@
       "id": "258183059827347744",
       "name": "Bathroom Essentials",
       "description": "Bathroom essentials: water flossers, vanity organizers, and everyday bathroom upgrade ideas."
+    },
+    "skincare": {
+      "id": "258183059827347755",
+      "name": "Skincare",
+      "description": "Skincare tools and daily routines: facial rollers, gua sha, and vanity skin-care finds."
     }
   }
 }

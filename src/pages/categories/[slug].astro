@@ -8,6 +8,7 @@ import {
   uniqueProductCategories,
 } from '../../lib/categories';
 import { breadcrumbListJsonLd } from '../../lib/seo';
+import { displayImage } from '../../lib/product-image';
 
 export async function getStaticPaths() {
   const reviews = await getCollection('reviews');
@@ -26,7 +27,7 @@ export async function getStaticPaths() {
     props: {
       label: cat.label,
       blurb: `Product reviews in ${cat.label}.`,
-      image: cat.reviews[0]?.data.imageSrc,
+      image: displayImage(cat.reviews[0]?.data),
       reviews: cat.reviews,
     },
   }));

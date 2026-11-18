@@ -5,6 +5,7 @@ asin: "B0F56N9J2R"
 brand: "MacKenzie-Childs"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B0F56N9J2R?tag=dailyvirald06-20"
+ownImage: "/images/reviews/b0f56n9j2r/own.jpg"
 imageSrc: "/images/reviews/b0f56n9j2r/counter.jpg"
 imageCaption: "Cherry Check kettle on a white counter next to a mug—ready for a quick morning pour."
 images: [{"src":"/images/reviews/b0f56n9j2r/counter.jpg","caption":"Cherry Check kettle on a white counter next to a mug—ready for a quick morning pour.","alt":"Cherry Check kettle on a white counter next to a mug—ready for a quick morning pour."},{"src":"/images/reviews/b0f56n9j2r/tea-table.jpg","caption":"Red-and-white checkered kettle on a tea table with cups and a plate set for guests.","alt":"Red-and-white checkered kettle on a tea table with cups and a plate set for guests."},{"src":"/images/reviews/b0f56n9j2r/coffee-station.jpg","caption":"The 8-cup electric kettle parked at a coffee station between canisters and a pour-over dripper.","alt":"The 8-cup electric kettle parked at a coffee station between canisters and a pour-over dripper."}]

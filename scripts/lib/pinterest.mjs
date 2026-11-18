@@ -6,6 +6,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { isAllowedProductImage } from './amazon-image.mjs';
 
 export const SITE_URL = (process.env.SITE_URL || 'https://mybusinesswork.com').replace(/\/$/, '');
 /** Production by default. Trial apps must use sandbox until Standard access is approved. */
@@ -26,6 +27,8 @@ export const PIN_WIDTH = 1000;
 export const PIN_HEIGHT = 1500;
 export const PIN_ASPECT = '2:3';
 export const PIN_FILENAME = 'pinterest-pin.jpg';
+/** Required on every pin description. Kept inside Pinterest's 800-character limit. */
+export const PIN_AFFILIATE_NOTE = 'As an Amazon Associate I earn from qualifying purchases. #affiliate';
 
 const TITLE_MAX = 100;
 const DESC_MAX = 800;
@@ -45,6 +48,19 @@ export function truncate(s, max) {
     const t = String(s || '').trim();
     if (t.length <= max) return t;
     return `${t.slice(0, max - 1).trimEnd()}…`;
+}
+
+/** Append the Associate disclosure. Truncates the body so the note itself is never cut. */
+export function withAffiliateNote(description) {
+    const note = PIN_AFFILIATE_NOTE;
+    const body = String(description || '')
+        .replace(/\n*As an Amazon Associate I earn from qualifying purchases\.?(?:\s*#affiliate)?\s*$/i, '')
+        .replace(/\n*#affiliate\s*$/i, '')
+        .trim();
+    const sep = '\n\n';
+    const maxBody = DESC_MAX - sep.length - note.length;
+    const trimmed = body.length > maxBody ? `${body.slice(0, Math.max(0, maxBody - 1)).trimEnd()}…` : body;
+    return trimmed ? `${trimmed}${sep}${note}` : note;
 }
 
 /** Minimal YAML frontmatter parse for our review files (no nested objects required). */
@@ -131,26 +147,22 @@ export function pinImagePublicPath(review) {
 }
 
 /** Pin copy: hook on the Pin (title + description), not just product SEO title. */
-export function buildPinDraft(review, { pinImageReady = false } = {}) {
+export function buildPinDraft(review, { pinImageReady = false, imageMode = 'template' } = {}) {
     const hook = String(review.hook || '').trim();
     if (!hook) fail(`Review ${review.slug} is missing hook — required on the Pin image and description.`);
 
     const link = `${SITE_URL}/reviews/${review.slug}/`;
     const title = truncate(hook, TITLE_MAX);
-    const description = truncate(
-        [
-            hook,
-            review.hookSupport || '',
-            `Full review: ${review.title || 'Daily Viral Deals'}`,
-        ]
+    const description = withAffiliateNote(
+        [hook, review.hookSupport || '', `Full review: ${review.title || 'Daily Viral Deals'}`]
             .map((s) => String(s || '').trim())
             .filter(Boolean)
             .join('\n\n'),
-        DESC_MAX,
     );
 
     const pinRel = pinImagePublicPath(review);
     const mediaUrl = absoluteUrl(pinRel);
+    const allowedSource = [review.ownImage, review.siteStripeImage, review.imageSrc].find((src) => isAllowedProductImage(src));
     const draft = {
         id: review.asin || review.slug,
         slug: review.slug,
@@ -162,7 +174,8 @@ export function buildPinDraft(review, { pinImageReady = false } = {}) {
         mediaUrl,
         mediaLocalPath: pinImageLocalPath(review),
         mediaPublicPath: pinRel,
-        sourceImageSrc: review.imageSrc || undefined,
+        sourceImageSrc: allowedSource || undefined,
+        imageMode,
         altText: truncate(`${hook} — Daily Viral Deals`, 500),
         angle: review.angle || undefined,
         pinSpec: {

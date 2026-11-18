@@ -5,6 +5,7 @@ asin: "B0BSNHVW5Q"
 brand: "Bedsure"
 category: "Home Decor"
 affiliateUrl: "https://www.amazon.com/dp/B0BSNHVW5Q?tag=dailyvirald06-20"
+ownImage: "/images/reviews/b0bsnhvw5q/own.jpg"
 imageSrc: "/images/reviews/b0bsnhvw5q/bedroom-ready.jpg"
 imageCaption: "Light turquoise Bedsure satin pillowcases styled on a made bed in soft morning light."
 images: [{"src":"/images/reviews/b0bsnhvw5q/bedroom-ready.jpg","caption":"Light turquoise Bedsure satin pillowcases styled on a made bed in soft morning light.","alt":"Light turquoise Bedsure satin pillowcases styled on a made bed in soft morning light."},{"src":"/images/reviews/b0bsnhvw5q/hair-morning.jpg","caption":"Curly hair resting on a satin pillowcase made for less morning frizz.","alt":"Curly hair resting on a satin pillowcase made for less morning frizz."},{"src":"/images/reviews/b0bsnhvw5q/gift-set.jpg","caption":"Two folded satin pillowcases ready as a simple gift set on a dresser.","alt":"Two folded satin pillowcases ready as a simple gift set on a dresser."}]

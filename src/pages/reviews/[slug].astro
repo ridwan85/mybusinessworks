@@ -1,8 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import GraphicCard from '../../components/GraphicCard.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { relatedReviews, slugifyCategory } from '../../lib/categories';
+import { allowedProductImage, displayImage, isSafeSiteStripeHtml } from '../../lib/product-image';
 import { absoluteUrl, parseFaqFromMarkdown, reviewPageJsonLd } from '../../lib/seo';
 
 export async function getStaticPaths() {
@@ -17,20 +19,15 @@ const related = relatedReviews(await getCollection('reviews'), entry, 3);
 
 type GalleryItem = { src: string; caption?: string; alt?: string };
 
+const showStripeHtml = isSafeSiteStripeHtml(data.imageHtml);
 const gallery: GalleryItem[] = (data.images ?? [])
   .map((item) => (typeof item === 'string' ? { src: item } : item))
+  .map((item) => ({ ...item, src: allowedProductImage(item.src) || '' }))
+  .filter((item) => item.src)
   .filter((item, i, arr) => arr.findIndex((x) => x.src === item.src) === i);
 
-if (data.imageSrc && !gallery.some((g) => g.src === data.imageSrc)) {
-  gallery.unshift({
-    src: data.imageSrc,
-    caption: data.imageCaption,
-    alt: data.title,
-  });
-}
-
-const heroSrc = data.imageSrc || gallery[0]?.src;
-const heroCaption = data.imageCaption || gallery.find((g) => g.src === heroSrc)?.caption;
+const heroSrc = displayImage(data);
+const heroCaption = heroSrc ? data.imageCaption || gallery.find((g) => g.src === heroSrc)?.caption : undefined;
 const showcase = gallery.filter((g) => g.src !== heroSrc);
 const ctaLabel = data.ctaLabel || 'Check Price on Amazon';
 const angleLabel =
@@ -98,17 +95,18 @@ const jsonLd = reviewPageJsonLd({
           </p>
         </div>
 
-        {(data.imageHtml || heroSrc) && (
-          <div class="hook-visual">
-            {data.imageHtml && <div class="hero" set:html={data.imageHtml} />}
-            {!data.imageHtml && heroSrc && (
-              <figure class="hero">
-                <img src={heroSrc} alt={data.title} width="640" height="640" />
-                {heroCaption && <figcaption>{heroCaption}</figcaption>}
-              </figure>
-            )}
-          </div>
-        )}
+        <div class="hook-visual">
+          {showStripeHtml ? (
+            <div class="hero" set:html={data.imageHtml} />
+          ) : heroSrc ? (
+            <figure class="hero">
+              <img src={heroSrc} alt={data.title} width="640" height="640" />
+              {heroCaption && <figcaption>{heroCaption}</figcaption>}
+            </figure>
+          ) : (
+            <GraphicCard title={data.hook} eyebrow={data.category} lines={data.whyHelps} />
+          )}
+        </div>
       </div>
     </section>
 
@@ -190,7 +188,7 @@ const jsonLd = reviewPageJsonLd({
 
   <!-- Sticky buy bar — Amazon/Shopify PDP pattern: always reachable while reading -->
   <div class="sticky-buy" data-sticky-buy>
-    <div class="sticky-buy-inner">
+    <div class:list={['sticky-buy-inner', !heroSrc && 'no-thumb']}>
       {heroSrc && (
         <img class="sticky-thumb" src={heroSrc} alt="" width="56" height="56" loading="lazy" />
       )}
@@ -541,6 +539,9 @@ const jsonLd = reviewPageJsonLd({
     gap: 10px 12px;
     align-items: center;
   }
+  .sticky-buy-inner.no-thumb {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
   .sticky-thumb {
     width: 48px;
     height: 48px;
@@ -616,6 +617,11 @@ const jsonLd = reviewPageJsonLd({
       border-left: 0;
       border-right: 0;
     }
+    .hook-visual :global(.graphic-card) {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+    }
     .hook-visual .hero figcaption {
       padding-inline: var(--page-gutter);
     }
@@ -649,6 +655,9 @@ const jsonLd = reviewPageJsonLd({
     }
     .sticky-buy-inner {
       grid-template-columns: 44px minmax(0, 1fr);
+    }
+    .sticky-buy-inner.no-thumb {
+      grid-template-columns: minmax(0, 1fr);
     }
     .sticky-thumb { width: 44px; height: 44px; }
     .sticky-cta {

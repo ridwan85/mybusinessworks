@@ -7,9 +7,11 @@
         "Paste each 'About this item' bullet here",
         "One bullet per array item"
     ],
-    "imageUrl": "Optional primary product image URL or local path like /images/reviews/asin/main.jpg",
+    "imageUrl": "Optional on-site lifestyle path such as /images/reviews/asin/counter.jpg. Do not use source.jpg or a file downloaded from Amazon.",
     "showcases": [
-        "/images/reviews/asin/main.jpg"
+        "/images/reviews/asin/counter.jpg"
     ],
-    "siteStripe": "Paste the SiteStripe 'Image' HTML snippet here (optional)"
+    "siteStripe": "",
+    "siteStripeImage": "",
+    "ownImage": ""
 }
