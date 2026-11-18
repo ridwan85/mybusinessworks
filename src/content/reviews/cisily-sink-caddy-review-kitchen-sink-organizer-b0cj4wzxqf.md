@@ -7,7 +7,7 @@ category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20"
 ownImage: "/images/reviews/b0cj4wzxqf/own.jpg"
 imageSrc: "/images/reviews/b0cj4wzxqf/sink-tidy.jpg"
-imageCaption: "Black two-tier sink caddy with a raised brush rack, sponge, and soap on the counter."
+imageCaption: "Caddy hooked on the sink edge with sponge and brushes—tools stay off the wet basin floor."
 images: [{"src":"/images/reviews/b0cj4wzxqf/sink-tidy.jpg","caption":"Caddy hooked on the sink edge with sponge and brushes—tools stay off the wet basin floor.","alt":"Caddy hooked on the sink edge with sponge and brushes—tools stay off the wet basin floor."},{"src":"/images/reviews/b0cj4wzxqf/three-slots.jpg","caption":"Soap, sponge, and dish brushes each in their own compartment on the counter.","alt":"Soap, sponge, and dish brushes each in their own compartment on the counter."},{"src":"/images/reviews/b0cj4wzxqf/drain-closeup.jpg","caption":"Sloped tray sending leftover rinse water straight into the sink after dishes.","alt":"Sloped tray sending leftover rinse water straight into the sink after dishes."},{"src":"/images/reviews/b0cj4wzxqf/bathroom-vanity.jpg","caption":"Same organizer on a bathroom vanity holding hand soap and a cleaning brush.","alt":"Same organizer on a bathroom vanity holding hand soap and a cleaning brush."}]
 hook: "Tired of a cluttered sink and a sponge that never dries?"
 hookSupport: "This stainless Cisily caddy splits sponge, brush, and soap into three slots and uses a sloped self-drain tray so water isn’t puddling under everything."

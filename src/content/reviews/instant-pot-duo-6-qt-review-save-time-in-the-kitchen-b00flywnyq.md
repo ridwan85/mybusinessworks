@@ -7,7 +7,7 @@ category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B00FLYWNYQ?tag=dailyvirald06-20"
 ownImage: "/images/reviews/b00flywnyq/own.jpg"
 imageSrc: "/images/reviews/b00flywnyq/weeknight-soup.jpg"
-imageCaption: "A stainless pressure cooker with a black lid and front dial beside a bowl of soup."
+imageCaption: "Instant Pot Duo on the counter with steam rising beside a bowl of weeknight soup."
 images: [{"src":"/images/reviews/b00flywnyq/weeknight-soup.jpg","caption":"Instant Pot Duo on the counter with steam rising beside a bowl of weeknight soup.","alt":"Instant Pot Duo on the counter with steam rising beside a bowl of weeknight soup."},{"src":"/images/reviews/b00flywnyq/meal-prep.jpg","caption":"Instant Pot next to meal-prep containers filled with rice and chicken.","alt":"Instant Pot next to meal-prep containers filled with rice and chicken."},{"src":"/images/reviews/b00flywnyq/counter-ready.jpg","caption":"Closed Instant Pot Duo ready on a clean kitchen counter.","alt":"Closed Instant Pot Duo ready on a clean kitchen counter."}]
 hook: "Racing against the clock to put a home-cooked dinner on the table before the evening rush?"
 hookSupport: "When your schedule is packed, waiting hours for traditional meals to finish baking or simmering just isn't realistic. This multi-cooker helps you speed up dinner prep."

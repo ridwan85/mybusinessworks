@@ -7,7 +7,7 @@ category: "Home"
 affiliateUrl: "https://www.amazon.com/dp/B0DJMP6T3N?tag=dailyvirald06-20"
 ownImage: "/images/reviews/b0djmp6t3n/own.jpg"
 imageSrc: "/images/reviews/b0djmp6t3n/couch-stain.jpg"
-imageCaption: "A light green portable spot cleaner with clear tanks and a hose beside a sofa."
+imageCaption: "BISSELL Little Green Mini on the couch, hose ready for a quick upholstery spot clean."
 images: [{"src":"/images/reviews/b0djmp6t3n/couch-stain.jpg","caption":"BISSELL Little Green Mini on the couch, hose ready for a quick upholstery spot clean.","alt":"BISSELL Little Green Mini on the couch, hose ready for a quick upholstery spot clean."},{"src":"/images/reviews/b0djmp6t3n/car-detail.jpg","caption":"Portable spot cleaner detailing a car seat after a spill.","alt":"Portable spot cleaner detailing a car seat after a spill."},{"src":"/images/reviews/b0djmp6t3n/closet-ready.jpg","caption":"Compact Little Green Mini tucked and ready in a small storage spot.","alt":"Compact Little Green Mini tucked and ready in a small storage spot."}]
 hook: "Coffee just hit the couch—and it’s already soaking in."
 hookSupport: "This compact BISSELL sprays, scrubs, and suctions carpet, upholstery, pet beds, and car interiors—with a Tough Stain Tool, HydroRinse hose tool, and formula included."

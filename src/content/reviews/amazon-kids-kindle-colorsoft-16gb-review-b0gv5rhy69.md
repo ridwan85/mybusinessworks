@@ -7,7 +7,7 @@ category: "Amazon Devices"
 affiliateUrl: "https://www.amazon.com/dp/B0GV5RHY69?tag=dailyvirald06-20"
 ownImage: "/images/reviews/b0gv5rhy69/own.jpg"
 imageSrc: "/images/reviews/b0gv5rhy69/couch-read.jpg"
-imageCaption: "A teal-cased color e-reader showing a comic on a couch."
+imageCaption: "Kids Kindle Colorsoft on the couch with its protective cover—ready for a quiet reading stretch."
 images:
   - src: "/images/reviews/b0gv5rhy69/couch-read.jpg"
     caption: "Kids Kindle Colorsoft on the couch with its protective cover—ready for a quiet reading stretch."
