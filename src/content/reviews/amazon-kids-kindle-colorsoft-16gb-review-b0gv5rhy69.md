@@ -39,17 +39,17 @@ The <a href="https://www.amazon.com/dp/B0GV5RHY69?tag=dailyvirald06-20" rel="nof
 
 ## What it does
 
-* **Color, on a reader.** Amazon says the screen looks more like paper and stays readable in bright sun. Comics and illustrated books are the reason for color.
+* **Color, on a reader.** The claim is the screen looks more like paper and stays readable in bright sun. Comics and illustrated books are the reason for color.
 
-* **Not a toy tablet.** No apps, videos, games, or notifications. That is the listing. It is for reading.
+* **Not a toy tablet.** No apps, videos, games, or notifications. That is the point. It is for reading.
 
-* **The bundle.** Device, protective case, and 1 year of Kids+. Amazon says that year includes thousands of kids' books and comics. After the year, it renews at the current rate unless you cancel. Read that line before you buy.
+* **The bundle.** Device, protective case, and 1 year of Kids+. The claim is that year includes thousands of kids' books and comics. After the year, it renews at the current rate unless you cancel. Read that line before you buy.
 
 * **Light.** You can shift the front light from white to warm amber.
 
-* **Water.** Amazon says it is waterproof for the pool, beach, or bath. Follow their care notes.
+* **Water.** The claim is it is waterproof for the pool, beach, or bath. Follow their care notes.
 
-* **Battery.** Amazon says up to 8 weeks. That is their claim, and it depends on use. 16GB holds a lot of text. Color comics take more space than plain novels.
+* **Battery.** The claim is up to 8 weeks, and it depends on how you use it. 16GB holds a lot of text. Color comics take more space than plain novels.
 
 ## Who it's for
 
@@ -70,14 +70,14 @@ Skip it if your child wants a tablet full of apps. Skip it if you will not watch
 
 * Kids+ renews unless you cancel. Know the date.
 * 16GB goes faster if you download lots of color comics.
-* The age range on the listing is 6 to 12.
+* The claimed age range is 6 to 12.
 * Battery weeks and glare claims are Amazon's
 
 ## FAQ
 
 ### Is this a tablet with games?
 
-No. Amazon says there are no apps, videos, games, or notifications. It is for books.
+No. The claim is no apps, videos, games, or notifications. It is for books.
 
 ### What happens after the free year?
 
@@ -85,11 +85,11 @@ Kids+ renews at the rate in effect then, unless you cancel. You can cancel. Do n
 
 ### Can they read outside?
 
-Amazon says the screen stays readable in bright light. That is their claim. The bundle is the <a href="https://www.amazon.com/dp/B0GV5RHY69?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Kids Kindle Colorsoft</a>.
+Yes. The claim is the screen stays readable in bright light. The bundle is the <a href="https://www.amazon.com/dp/B0GV5RHY69?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Kids Kindle Colorsoft</a>.
 
 ### Is it waterproof?
 
-Amazon says yes, for pool, beach, or bath. Read the care notes so you know the limits.
+Yes. The claim is it is waterproof for the pool, beach, or bath. Read the care notes so you know the limits.
 
 ## Bottom line
 

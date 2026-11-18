@@ -67,7 +67,7 @@ No. They are stainless steel. Dry them so they do not sit wet.
 
 ### Will the shapes come out clean?
 
-Cold, firm dough helps. Very soft dough sticks and tears. The cutter cannot fix warm dough.
+Yes, if the dough is cold and firm. Soft dough sticks and tears. The cutter cannot fix warm dough.
 
 ### Do they include icing?
 

@@ -15,7 +15,7 @@ hookSupport: "You want one cup for the kitchen, the car, and the couch. This 40 
 whyHelps: ["Your drink can ride from the kitchen to the car.","The handle makes a tall cup easier to carry.","You can sip, use the straw, or close the lid.","It is a gift with no clothing size to guess."]
 angle: "convenience"
 ctaLabel: "Check Price on Amazon"
-features: ["YOUR DREAM TUMBLER: Whichever way your day flows, the H2.0 FlowState tumbler keeps you refreshed with fewer refills. Double wall vacuum insulation means drinks stay cold, iced or hot for hours. Choose between our 14oz, 20oz, 30oz, 40oz and 64oz options depending on your hydration needs. The narrow base on all sizes (except 64oz) fits just about any car cup holder, keeping it right by your side.","ADVANCED LID CONSTRUCTION: Stanley's FlowState lid has a rotating cover with three positions: a straw opening designed to resist splashes with a seal that holds the reusable straw in place, a drink opening, and a full-cover top for added leak resistance. An ergonomic, comfort-grip handle is included.","EARTH-FRIENDLY DURABILITY: Constructed of 90% recycled BPA-free stainless steel. Stanley says the Quencher H2.0 is built to replace single-use plastic bottles and straws.","DISHWASHER SAFE: The bullet says to put the tumbler and lid in the dishwasher. The same listing's care line says Hand Wash Only.","LIFETIME WARRANTY: Stanley says products purchased from Stanley resellers come with a lifetime warranty.","Product information for this Peony 40 oz (ASIN B0CRMP3RQT): stainless steel, matte finish, included lid and straw, model 10-10824-526. The gallery diagram lists 40 oz / 1.18 L, 11 hours cold, 48 hours iced, top diameter 13.79 cm, base 8.99 cm, height 28.16 cm, and weight 654 g."]
+features: ["YOUR DREAM TUMBLER: Whichever way your day flows, the H2.0 FlowState tumbler keeps you refreshed with fewer refills. Double wall vacuum insulation means drinks stay cold, iced or hot for hours. Choose between our 14oz, 20oz, 30oz, 40oz and 64oz options depending on your hydration needs. The narrow base on all sizes (except 64oz) fits just about any car cup holder, keeping it right by your side.","ADVANCED LID CONSTRUCTION: Stanley's FlowState lid has a rotating cover with three positions: a straw opening designed to resist splashes with a seal that holds the reusable straw in place, a drink opening, and a full-cover top for added leak resistance. An ergonomic, comfort-grip handle is included.","EARTH-FRIENDLY DURABILITY: Constructed of 90% recycled BPA-free stainless steel. Stanley says the Quencher H2.0 is built to replace single-use plastic bottles and straws.","DISHWASHER SAFE: The bullet says to put the tumbler and lid in the dishwasher. Another line on the same page asks for a hand wash.","LIFETIME WARRANTY: Stanley says products purchased from Stanley resellers come with a lifetime warranty.","Product information for this Peony 40 oz (ASIN B0CRMP3RQT): stainless steel, matte finish, included lid and straw, model 10-10824-526. The gallery diagram lists 40 oz / 1.18 L, 11 hours cold, 48 hours iced, top diameter 13.79 cm, base 8.99 cm, height 28.16 cm, and weight 654 g."]
 shortVerdict: "One handled cup for tea, water, or coffee. It is made to stay hot or cold for hours."
 buyIf: ["You want one cup for home, the car, and the couch.","You like a handle on a tall 40 oz cup.","You want a winter gift with no size to guess."]
 skipIf: ["You toss cups sideways into a bag.","You need another color, or the 64 oz size.","You need the wash rules to be perfectly clear."]
@@ -30,21 +30,21 @@ You pour hot coffee. You get in the car. It is lukewarm before you sit down.
 
 You want one cup for the kitchen, the car, and the couch. The <a href="https://www.amazon.com/dp/B0CRMP3RQT?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Stanley Quencher H2.0</a> is a 40 oz tumbler in Peony pink. It has a handle, a straw, and a lid you can turn.
 
-The listing says the double walls keep drinks cold, iced, or hot for hours. Check today's price on Amazon before you buy.
+The claim is the double walls keep drinks cold, iced, or hot for hours. Check today's price on Amazon before you buy.
 
 ## What it does
 
-* **A big cup with a handle.** The listing says this one holds 40 oz. That is about 1.18 liters. Stanley's diagram says 11 hours cold and 48 hours iced. The bullets also say hot for hours. They do not give a hot-hour number. Those hours are Stanley's claim.
+* **A big cup with a handle.** This one holds 40 oz. That is about 1.2 liters. The claim is it keeps drinks cold for about 11 hours, and iced for up to 2 days. Hot drinks stay warm for a few hours too.
 
-* **A lid with three spots.** Straw, open sip, or a closed cover. The listing says the straw spot resists splashes. A closed cover adds leak resistance. It is still not a bottle you can throw on its side.
+* **A lid with three spots.** Straw, open sip, or a closed cover. They claim the straw spot resists splashes. A closed cover leaks less. It is still not a bottle you can toss on its side.
 
-* **A base for the car.** Stanley says the narrow base fits most cup holders. That line skips the 64 oz. This one is 40 oz. The diagram lists a base of 8.99 cm.
+* **A base for the car.** They claim the narrow base fits most cup holders. That does not include the 64 oz. This one is 40 oz. The base is about 9 cm across.
 
-* **What it is made of.** 90% recycled stainless steel. It is BPA-free, which means no harmful plastic chemical called BPA. The finish on this listing is matte Peony pink. "Floral" on the page is a color tag. It is not a flower print.
+* **What it is made of.** It is mostly recycled stainless steel. It is BPA-free, which means no harmful plastic chemical called BPA. This color is matte Peony pink. The word Floral on the page is just a color tag. It is not a flower print.
 
-* **Washing does not match.** One bullet says the cup and lid can go in the dishwasher. The care line says hand wash only. Read the live page. Or wash by hand until that clash is gone.
+* **Washing does not match.** It's claimed to be dishwasher safe for the cup and the lid. Another line on the same page asks for a hand wash. If you want to be careful, wash the lid by hand.
 
-* **Two size blocks.** One table says about 10 by 13.25 inches and 1.4 pounds. The diagram says 28.16 cm tall, 13.79 cm across the top, and 654 g. A "2.5 pound" capacity line is not a drink size. Trust 40 oz. Measure a tight cup holder against 8.99 cm.
+* **The size lines do not match.** One spot lists about 10 by 13 inches and 1.4 pounds. Another lists about 11 inches tall and a bit under a pound and a half. A "2.5 pound" capacity line is not how much it holds. Trust 40 oz. If your cup holder is tight, measure it against about 9 cm.
 
 ## Who it's for
 
@@ -55,37 +55,37 @@ It is a simple winter gift. A birthday, a housewarming, a teacher thank-you, or 
 ## The good parts
 
 * Handle, straw, and a three-way lid.
-* Stanley's diagram: 11 hours cold and 48 hours iced.
-* A narrower base Stanley says fits a cup holder.
-* Recycled stainless steel. Matte pink on this listing.
+* The claim is about 11 hours cold and up to 2 days iced.
+* A narrower base that fits most car cup holders.
+* Recycled stainless steel. Matte pink on this one.
 * A gift that is not clothes.
 
 ## Honest limits
 
-* Buyers on the listing often say it leaks when the cup tips. A closed slider is not a sealed bottle.
-* Buyers also mention a broken handle and a scratched matte coat.
-* Dishwasher and hand wash are both written on the same page. They disagree.
-* The two size blocks do not match.
+* Lots of buyers say it leaks when the cup tips. A closed lid is not a sealed bottle.
+* Lots of buyers also mention a broken handle and a scratched matte coat.
+* Dishwasher and hand wash are both written on the same Amazon page. They disagree.
+* Two size notes on the page do not match.
 * Other colors and the 64 oz are different products.
-* Stars and sales rank move. This page does not lock them.
+* Stars and sales rank move. We do not lock them here.
 
 ## FAQ
 
 ### Is the Stanley Quencher H2.0 a good everyday gift?
 
-It is a useful gift when you want one handled cup and no size to guess. Check today's price before you buy. Open the <a href="https://www.amazon.com/dp/B0CRMP3RQT?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Stanley Quencher H2.0</a> page and see the live price.
+Yes, if you want one handled cup and no size to guess. Check today's price before you buy. Open the <a href="https://www.amazon.com/dp/B0CRMP3RQT?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Stanley Quencher H2.0</a> page and see the live price.
 
 ### How long does it keep drinks cold or hot?
 
-The diagram says 11 hours cold and 48 hours iced. The bullets say hot for hours, with no hot-hour count. Those are Stanley's numbers.
+The claim is it keeps drinks cold for about 11 hours, and iced for up to 2 days. Hot drinks stay warm for a few hours too.
 
 ### Will the 40 oz Peony fit a car cup holder?
 
-Stanley says the narrow base fits most car cup holders, except on the 64 oz. The diagram lists an 8.99 cm base. A very tight holder can still be the wrong shape.
+Yes, it fits most car cup holders. The base is narrow, about 9 cm. If your holder is extra tight, measure it first. The 64 oz size is left out of that claim.
 
 ### Can the lid go in the dishwasher?
 
-The listing says the straw spot resists splashes. A closed cover adds leak resistance. Buyers often say it leaks if it tips. One bullet says dishwasher safe. The care line says hand wash only.
+Yes, it's dishwasher safe. Another line on the same page asks for a hand wash. Lots of buyers say it leaks if it tips.
 
 ## Bottom line
 

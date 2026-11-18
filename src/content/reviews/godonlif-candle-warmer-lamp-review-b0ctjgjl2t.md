@@ -30,11 +30,11 @@ The <a href="https://www.amazon.com/dp/B0CTJGJL2T?tag=dailyvirald06-20" rel="nof
 
 ## What it does
 
-* **Heat from above.** The bulb warms the wax surface. The listing says that skips the flame, the smoke, and the soot of a normal burn.
+* **Heat from above.** The bulb warms the wax surface. The claim is no flame, no smoke, and no soot.
 
-* **A dimmer.** You turn the light down or up. That changes the mood and, the listing says, the melt speed.
+* **A dimmer.** You turn the light down or up. That changes the mood. They claim it also changes how fast the wax melts.
 
-* **A timer.** The listing includes a timer so it is not left running with no plan. Use it.
+* **A timer.** There is a timer, so it is not left running with no plan. Use it.
 
 * **Height adjusts.** The pole moves so different jar sizes can sit under the shade. This is for jar candles. Pillars and tapers are the wrong shape.
 
@@ -50,7 +50,7 @@ Skip it if your candles are not jars.
 
 ## The good parts
 
-* No flame on the listing's design.
+* No open flame.
 * Dimmer and timer.
 * Height adjusts for jar size.
 * Soft light for a bedroom or living room.
@@ -67,19 +67,19 @@ Skip it if your candles are not jars.
 
 ### Is there a flame?
 
-No. The lamp warms the wax from above. That is the safety idea on the listing.
+No. The lamp warms the wax from above. That is the safety idea.
 
 ### Can I use any candle?
 
-Use a jar candle. The pole adjusts for jar height. Pillars and tapers are a poor fit.
+No. Use a jar candle. The pole adjusts for jar height. Pillars and tapers are a poor fit.
 
 ### Will it light the room?
 
-It is a soft glow, not a reading lamp. The job is melting wax and a little light. Check the <a href="https://www.amazon.com/dp/B0CTJGJL2T?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">GODONLIF candle warmer</a> page for the shade style.
+No. It is a soft glow, not a reading lamp. The job is melting wax and a little light. Check the <a href="https://www.amazon.com/dp/B0CTJGJL2T?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">GODONLIF candle warmer</a> page for the shade style.
 
 ### Can I leave it on all night?
 
-Use the timer. Do not treat any warmer as something you forget forever. The listing includes a timer for that reason.
+No. Use the timer. Do not leave it running with no plan.
 
 ## Bottom line
 

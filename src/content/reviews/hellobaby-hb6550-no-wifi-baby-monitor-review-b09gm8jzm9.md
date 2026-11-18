@@ -39,15 +39,15 @@ The <a href="https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20" rel="nof
 
 ## What it does
 
-* **No Wi-Fi.** It uses a 2.4 GHz direct link. HelloBaby says that skips app logins and home-network hacks. You also cannot open the video on your phone at work.
+* **No Wi-Fi.** It uses a 2.4 GHz direct link. The claim is you skip app logins and home-network worries. You also cannot open the video on your phone at work.
 
-* **A 5-inch screen.** Pan up to 355 degrees and tilt up to 120 degrees from the parent unit. There is a 2x zoom. The listing says the camera turns quietly.
+* **A 5-inch screen.** Pan up to 355 degrees and tilt up to 120 degrees from the parent unit. There is a 2x zoom. They claim the camera turns quietly.
 
-* **Night and talk.** Infrared night vision. Two-way audio. A room-temperature alert. The listing also includes sound-level lights.
+* **Night and talk.** Infrared night vision. Two-way audio. A room-temperature alert. There are also lights that show how loud the room is.
 
-* **Range.** About 1,000 feet in open space, per the listing. Walls cut that down.
+* **Range.** They claim about 1,000 feet in open space. Walls cut that down.
 
-* **Power.** The camera stays plugged in. The parent unit has a battery so you can carry the screen. You can add cameras later, up to four, per the listing.
+* **Power.** The camera stays plugged in. The parent unit has a battery so you can carry the screen. They claim you can add cameras later, up to four.
 
 * **Travel.** No guest Wi-Fi to join. That is the point for visits.
 
@@ -83,11 +83,11 @@ Yes. The parent screen has a battery. The camera stays on AC power.
 
 ### How far does it reach?
 
-HelloBaby lists about 1,000 feet in the open. Thick walls shorten that. Test it in your home.
+They claim about 1,000 feet in the open. Thick walls shorten that. Test it in your home.
 
 ### Is it hard to set up?
 
-The listing says it pairs without a network. That is the travel benefit. Confirm the kit on the <a href="https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">HelloBaby HB6550</a> page.
+No. They claim it pairs without a home network. That is why travel is easy. Confirm the kit on the <a href="https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">HelloBaby HB6550</a> page.
 
 ## Bottom line
 

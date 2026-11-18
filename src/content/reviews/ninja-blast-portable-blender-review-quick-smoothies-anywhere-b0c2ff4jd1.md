@@ -34,11 +34,11 @@ The <a href="https://www.amazon.com/dp/B0C2FF4JD1?tag=dailyvirald06-20" rel="nof
 
 * **One 18 oz cup.** Smoothies, protein shakes, and frozen drinks. The cup is ribbed so the mix pulls down toward the blades. The blades are stainless steel. Ninja calls them BlastBlade.
 
-* **A lid for the road.** The listing says the sip lid seals when it is locked. There is a carry handle.
+* **A lid for the road.** They claim the sip lid seals when it is locked. There is a carry handle.
 
 * **Two buttons.** Power and blend are separate. That is meant to stop it from starting in a bag.
 
-* **Cleanup.** The lid and cup are BPA-free. That means no harmful plastic chemical called BPA. Ninja says they are dishwasher safe. Or add water and a drop of soap for a 30-second clean.
+* **Cleanup.** The lid and cup are BPA-free. That means no harmful plastic chemical called BPA. They claim the lid and cup are dishwasher safe. Or add water and a drop of soap for a 30-second clean.
 
 * **In the box.** Motor base, cup, sip lid with handle, USB-C cable, a quick start, a 5-recipe guide, and a booklet.
 
@@ -52,7 +52,7 @@ It is one serving. It is not a pitcher for a family breakfast.
 
 * Cordless, with USB-C charging.
 * Blend and drink from the same 18 oz cup.
-* A locked lid Ninja says is leakproof.
+* They claim the locked lid does not leak.
 * A 30-second self-clean, or the dishwasher.
 * Separate buttons so it is less likely to start in a bag.
 
@@ -61,13 +61,13 @@ It is one serving. It is not a pitcher for a family breakfast.
 * 18 oz is one person, not a crowd.
 * You have to keep the battery charged.
 * Very thick mixes need enough liquid.
-* Ninja's "perfectly smooth" line is their claim.
+* The claim is a perfectly smooth drink.
 
 ## FAQ
 
 ### Can it crush ice?
 
-Ninja says the steel blades and ribbed cup can blast ice and frozen fruit. Use enough liquid.
+Yes. They claim the steel blades and ribbed cup can crush ice and frozen fruit. Use enough liquid.
 
 ### How do I clean it?
 
@@ -75,7 +75,7 @@ Add water and a drop of dish soap for a 30-second spin. Or wash the BPA-free lid
 
 ### Will it leak in a bag?
 
-Ninja says the sip lid seals in the locked position. Lock it before you pack it. See the <a href="https://www.amazon.com/dp/B0C2FF4JD1?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Blast</a> listing for the cup you are buying.
+No. They claim the lid seals when it is locked. Lock it before you pack it. See the <a href="https://www.amazon.com/dp/B0C2FF4JD1?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Blast</a> page for the cup you are buying.
 
 ### How do you charge it?
 

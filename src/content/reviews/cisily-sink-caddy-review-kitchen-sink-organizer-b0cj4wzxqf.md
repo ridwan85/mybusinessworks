@@ -32,13 +32,13 @@ The <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nof
 
 * **Three spots.** Sponge, brush, and soap. They stop stacking in one wet pile.
 
-* **A sloped tray.** The listing calls it an automatic drain. Water is meant to leave the sponge area. You still wipe the tray sometimes. Drain does not mean never clean it.
+* **A sloped tray.** They call it a self-drain. Water is meant to leave the sponge area. You still wipe the tray sometimes. Drain does not mean never clean it.
 
-* **Stainless steel.** The listing says it resists rust and warping, and it rinses under the tap. "Resists" is not a forever promise.
+* **Stainless steel.** They claim it resists rust and warping, and it rinses under the tap. "Resists" is not a forever promise.
 
 * **No install.** Open the box and set it on the counter or the sink edge. No drill. No sticky pad.
 
-* **Not only the kitchen.** The listing also shows it in a bathroom for soap and a brush.
+* **Not only the kitchen.** They also show it in a bathroom for soap and a brush.
 
 ## Who it's for
 
@@ -65,19 +65,19 @@ Skip it if you love a hanging suction caddy. This one sits. Skip it if you need 
 
 ### Does it drain by itself?
 
-The tray is sloped so water can move away from the sponge. That is the design. You still rinse it.
+Yes. The tray is sloped so water can move away from the sponge. You still rinse it.
 
 ### Will it rust?
 
-It is stainless steel, which is meant to resist rust. Rinse it. Do not treat that as a lifetime promise.
+No, not if you rinse it. They claim the stainless steel resists rust. That is not a forever promise.
 
 ### Do I have to install it?
 
-No. Set it down and load it. The <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Cisily sink caddy</a> listing says it is ready out of the box.
+No. Set it down and load it. They claim the <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Cisily sink caddy</a> is ready out of the box.
 
 ### Can it live in the bathroom?
 
-Yes. The listing shows it with hand soap and a brush, not only dish tools.
+Yes. They also show it with hand soap and a brush, not only dish tools.
 
 ## Bottom line
 

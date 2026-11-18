@@ -38,7 +38,8 @@ export const SYSTEM_PROMPT =
     'Do not use: elevate, game-changer, seamless, boasts, look no further, in today\'s fast-paced world, or "whether you are X or Y". ' +
     'Do not overuse em dashes. Never write "I tried", "I tested", "we used", or "my kids love it". ' +
     'Do not add "this page did not test" disclaimers. ' +
-    'Use "the listing says" and, only when buyer comments are in the source facts, "buyers say" or "reviewers mention". ' +
+    'Do not write "Stanley says" or any "Brand says". Frame product claims as "The claim is", "They claim", or "It is claimed to". ' +
+    'Buyer comments, only when they are in the source facts, stay "lots of buyers say". ' +
     'No fake urgency, no invented numbers, no prices. ' +
     'Use ONLY the facts supplied. Never invent specifications, ratings, awards, or medical results. ' +
     'Do not include a title (H1) or an affiliate disclosure. The template owns those. ' +

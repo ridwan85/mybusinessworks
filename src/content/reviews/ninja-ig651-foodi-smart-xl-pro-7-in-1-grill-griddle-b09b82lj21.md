@@ -10,7 +10,7 @@ imageCaption: "Steaks searing on the Ninja Foodi Smart XL Pro grill grate with t
 images: [{"src":"/images/reviews/b09b82lj21/steak-sear.jpg","caption":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter.","alt":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter."},{"src":"/images/reviews/b09b82lj21/griddle-breakfast.jpg","caption":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate.","alt":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate."},{"src":"/images/reviews/b09b82lj21/air-crisp-fries.jpg","caption":"Golden fries in the 4-quart crisper basket after an Air Crisp cook.","alt":"Golden fries in the 4-quart crisper basket after an Air Crisp cook."}]
 hook: "One Pan Is Not Enough: An Indoor Grill and Griddle"
 hookSupport: "You can sear, griddle, and air fry in one machine. It is big. It stays indoors."
-whyHelps: ["You can sear without going outside.","The flat top covers pancakes, sandwiches, and more.","A probe helps you hit the doneness you want.","Ninja says the design cuts down on smoke."]
+whyHelps: ["You can sear without going outside.","The flat top covers pancakes, sandwiches, and more.","A probe helps you hit the doneness you want.","They claim it makes less smoke."]
 angle: "convenience"
 ctaLabel: "Check Price on Amazon"
 features: ["NINJA'S MOST POWERFUL GRILL: 500F independently powered grill grate creates direct, edge-to-edge high-heat searing for better char-grilled results. (Based on grill grate's direct heating element Versus FG500-series grills.)","12” BBQ GRIDDLE: flat top bbq griddle cooks foods grills can't and interlocks with the grate to harness its direct high heat. Precise temperature controls allow for fast, even cooking without hot or cold spots.","HOOD UP OR HOOD DOWN COOKING: Keep the hood down to add cyclonic air for fast, even, high-heat cooking, surround searing, crisping, and melting. Keep the hood up for intense high heat searing and flavors with direct bottom heat only.","SMART COOK SYSTEM PLUS THERMOMETER: The Foodi Smart Thermometer enable you to achieve the perfect doneness from rare to well with 4 smart protein settings & 9 customizable doneness levels. Do it all at a touch of a button with no more guesswork & no more over or under cooking.","UP TO 75% LESS FAT: Air fry crisp with up to 75% less fat than deep frying (tested against hand-cut, deep-fried French fries), using the included 4-qt crisper basket.","7 COOKING FUNCTIONS: Grill, BBQ Griddle, Air Crisp, Roast, Bake, Broil and Dehydrate functions enabled by the wide temperature range.","XL FAMILY-SIZED CAPACITY: Grill grate fits 6 steaks, mains, and sides at the same time, and more. Flat top BBQ griddle allows you to cook a whole platter of nachos, 4 sandwiches, or 6 pancakes.","SMOKE CONTROL SYSTEM: the combination of our chef recommended grilling practices, a temperature-controlled grill grate, splatter shield, and cool-air zone reduces smoke, keeping it out of the kitchen.","EASY TO CLEAN: PTFE/PFOA-free, nonstick ceramic-coated powered grill grate, crisper basket, and bbq griddle plate are dishwasher safe.","WHAT'S INCLUDED: Ninja Foodi Smart XL Pro Griddle & Grill, 9\" x 12\" Grill Grate, 12\" Flat Top BBQ Griddle, 4-qt. Crisper Basket, Foodi Smart Thermometer & Quick Start Guide."]
@@ -26,27 +26,27 @@ createdAt: "2026-11-16T10:45:00+08:00"
 
 Dinner needs a grill pan, a flat pan, and then the oven. That is three things to wash.
 
-The <a href="https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Foodi Smart XL Pro</a> is an indoor grill, a 12-inch griddle, and an air fryer. Ninja says the grill grate can hit 500°F.
+The <a href="https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Foodi Smart XL Pro</a> is an indoor grill, a 12-inch griddle, and an air fryer. The claim is the grill grate can hit 500°F.
 
 It is a big machine. Read the size before you clear a spot.
 
 ## What it does
 
-* **A hot grill grate.** Ninja says an independent element heats the grate to 500°F, edge to edge. They compare that with older FG500 grills.
+* **A hot grill grate.** They claim the grate heats to 500°F from edge to edge. They compare that with their older grills.
 
 * **A 12-inch flat top.** It swaps in for foods a grate cannot hold. Think pancakes, sandwiches, or a tray of nachos. You use the grate or the griddle, not both at once.
 
 * **Hood up or hood down.** Hood down adds air for crisping and melting. Hood up is direct heat from below.
 
-* **A food probe.** Four protein settings and nine doneness levels, from rare to well. Ninja says you pick it and the probe watches the meat.
+* **A food probe.** Four protein settings and nine doneness levels, from rare to well. The claim is you pick how done you want it, and the probe watches the meat.
 
-* **Seven functions.** Grill, griddle, air crisp, roast, bake, broil, and dehydrate. The air-fry basket is 4 quarts. Ninja says air crisp can mean up to 75% less fat than deep-fried fries. That is their test.
+* **Seven functions.** Grill, griddle, air crisp, roast, bake, broil, and dehydrate. The air-fry basket is 4 quarts. The claim is up to 75% less fat than deep-fried fries.
 
-* **Family size.** Ninja says the grate fits 6 steaks. The griddle fits 6 pancakes or 4 sandwiches.
+* **Family size.** The claim is the grate fits 6 steaks. The griddle fits 6 pancakes or 4 sandwiches.
 
-* **Smoke control.** A heat-controlled grate, a splatter shield, and a cool-air zone. Ninja says that keeps smoke down. You still need to clean the shield.
+* **Smoke control.** A heat-controlled grate, a splatter shield, and a cool-air zone. They claim that keeps smoke down. You still need to clean the shield.
 
-* **Cleanup.** The grate, basket, and griddle are ceramic nonstick. They are PTFE-free and PFOA-free, which means those nonstick chemicals are not in the coat. Ninja says they are dishwasher safe.
+* **Cleanup.** The grate, basket, and griddle are ceramic nonstick. They are PTFE-free and PFOA-free, which means those nonstick chemicals are not in the coat. They claim the lid and cup are dishwasher safe.
 
 ## Who it's for
 
@@ -59,8 +59,8 @@ It is a poor fit if the counter is already packed. A small air fryer is the ligh
 * Grill, griddle, and air fryer in one base.
 * A probe so you are not cutting meat to check.
 * Room for a family breakfast or several steaks.
-* Ninja says the smoke system helps indoors.
-* Dishwasher-safe cooking plates, per the listing.
+* They claim the smoke system helps indoors.
+* They claim the cooking plates are dishwasher safe.
 
 ## Honest limits
 
@@ -77,11 +77,11 @@ No. You swap one plate for the other. One surface at a time.
 
 ### How does the smoke control work?
 
-Ninja pairs a controlled grate, a splatter shield, and a cool-air zone. They also point you to their grilling tips. It is their system
+They claim a controlled grate, a splatter shield, and a cool-air zone cut the smoke. They also share grilling tips.
 
 ### Are the plates dishwasher safe?
 
-Yes. The listing says the ceramic grate, crisper basket, and griddle plate are dishwasher safe.
+Yes. They claim the grate, basket, and griddle plate are dishwasher safe.
 
 ### What is in the box?
 

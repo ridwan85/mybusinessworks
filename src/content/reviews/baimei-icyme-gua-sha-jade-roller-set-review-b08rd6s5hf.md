@@ -30,7 +30,7 @@ The <a href="https://www.amazon.com/dp/B08RD6S5HF?tag=dailyvirald06-20" rel="nof
 
 ## What it does
 
-* **Two stones.** A roller for the cheeks and jaw. A flat tool for smaller spots. The listing says they are natural jade. Color can vary.
+* **Two stones.** A roller for the cheeks and jaw. A flat tool for smaller spots. They claim the stones are natural jade. Color can vary.
 
 * **A cool feel.** People use them in the morning because the stone feels cool. Do not treat them like ice.
 
@@ -72,11 +72,11 @@ No. Do not buy it for that. It is a cool massage.
 
 ### Do I need oil or serum?
 
-The set does not include any. A few drops of what you already use can help the stone glide. The tools are the <a href="https://www.amazon.com/dp/B08RD6S5HF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">BAIMEI jade set</a>.
+No. The set does not include any. A few drops of what you already use can help the stone glide. The tools are the <a href="https://www.amazon.com/dp/B08RD6S5HF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">BAIMEI jade set</a>.
 
 ### Can I drop it?
 
-Try not to. Jade can crack on tile. Give it a safe spot.
+No. Jade can crack on tile. Give it a safe spot.
 
 ## Bottom line
 

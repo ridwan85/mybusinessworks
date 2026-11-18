@@ -26,7 +26,7 @@ createdAt: 2026-11-11T22:07:11+08:00
 
 The keys are in your hand. The coffee is not ready. A full pot feels too slow.
 
-The <a href="https://www.amazon.com/dp/B09715G57M?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Keurig K-Express</a> makes one cup from a K-Cup pod. This review is the black model. Keurig says the coffee is ready in minutes.
+The <a href="https://www.amazon.com/dp/B09715G57M?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Keurig K-Express</a> makes one cup from a K-Cup pod. This review is the black model. The claim is a cup is ready in minutes.
 
 It is simple on purpose. No schedule. No big screen. Just a cup.
 
@@ -34,13 +34,13 @@ It is simple on purpose. No schedule. No big screen. Just a cup.
 
 * **Three sizes.** Press a button for 8, 10, or 12 oz.
 
-* **A 42 oz tank.** Keurig says that is about four 8 oz cups before you refill. The tank comes off so you can fill it at the sink.
+* **A 42 oz tank.** They claim that is about four small cups before you refill. The tank comes off so you can fill it at the sink.
 
 * **Strong brew.** One setting for a bolder cup. It is still the same pod. It is not a different coffee.
 
 * **A travel mug.** Take the drip tray off and a mug up to 7.4 inches tall can fit. The tray also catches drips.
 
-* **It shuts off.** Five minutes after the last cup, it turns off. That is the energy feature on the listing.
+* **It shuts off.** Five minutes after the last cup, it turns off. That is how it saves a little power.
 
 * **Your own grounds.** It works with the My K-Cup reusable filter. That filter is sold separately.
 
@@ -70,7 +70,7 @@ It is a weak fit if you fill thermoses for a crowd every morning.
 
 ### How many cups does the tank hold?
 
-The tank is 42 oz. Keurig says that is up to four cups if each cup is 8 oz. Bigger cups mean fewer fills.
+The tank is 42 oz. They claim that is up to four cups if each cup is 8 oz. Bigger cups mean fewer fills.
 
 ### Can I use ground coffee?
 
@@ -78,7 +78,7 @@ Yes, with the My K-Cup reusable filter. It is sold separately. Most people use p
 
 ### Will a travel mug fit?
 
-Yes, if you remove the drip tray. Keurig says mugs up to 7.4 inches tall fit. Check your mug against the <a href="https://www.amazon.com/dp/B09715G57M?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Keurig K-Express</a> listing if it is extra tall.
+Yes, if you remove the drip tray. They claim mugs up to 7.4 inches tall fit. Check your mug against the <a href="https://www.amazon.com/dp/B09715G57M?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Keurig K-Express</a> page if it is extra tall.
 
 ### When does it turn off?
 

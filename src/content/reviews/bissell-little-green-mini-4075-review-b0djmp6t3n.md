@@ -34,7 +34,7 @@ It is not a machine for a whole bedroom of carpet.
 
 * **Spot cleaning.** It is for the mess in front of you, not a full room. Treat it while the spill is fresh. Old stains are harder. Results depend on the fabric and the mess.
 
-* **Tools in the box.** The listing includes a Tough Stain Tool and a HydroRinse hose tool, plus formula. You are not hunting for a bottle on the way to the car.
+* **Tools in the box.** The box includes a Tough Stain Tool, a hose tool, and formula. You are not hunting for a bottle on the way to the car.
 
 * **Portable, but corded.** You still need a nearby outlet. You also empty the dirty water and refill formula. That is normal use.
 
@@ -73,11 +73,11 @@ BISSELL points it at spills, mud, and pet messes on carpet, upholstery, car inte
 
 ### Do I need to buy formula?
 
-The listing includes formula. You will buy more later if you use it often. You also empty the dirty tank.
+No. Formula is included. You will buy more later if you use it often. You also empty the dirty tank.
 
 ### Does it work in the car?
 
-Yes. That is one of the jobs on the listing. You still need power nearby.
+Yes. That is one of the jobs they name. You still need power nearby.
 
 ## Bottom line
 
