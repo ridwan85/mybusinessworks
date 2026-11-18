@@ -79,7 +79,7 @@ function ellipsize(line, maxChars) {
 }
 
 /** Word-wrap. Extra words collapse onto the last line with an ellipsis. */
-function wrapText(text, maxChars, maxLines) {
+export function wrapText(text, maxChars, maxLines) {
     const words = String(text || '')
         .replace(/\s+/g, ' ')
         .trim()
@@ -226,6 +226,47 @@ export async function renderGraphicPin({ hook, lines = [], kicker = PIN_BRAND, d
  * Photorealistic pin: a scene photo plus a text overlay.
  * The scene must not be an Amazon product photo. Text is drawn here, not by the image model.
  */
+function clamp01(value, fallback) {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return fallback;
+    return Math.min(1, Math.max(0, n));
+}
+
+/**
+ * Frame a scene to 1000×1500.
+ * Tall photos keep the original top-weighted crop (cropBias 0.22).
+ * Wider photos are cover-cropped. zoom above 1 tightens the frame, and
+ * focusX / cropBias slide that window so two pins can use different crops.
+ */
+async function frameScene(sharp, scenePath, { cropBias = 0.22, focusX = 0.5, zoom = 1 } = {}) {
+    const srcMeta = await sharp(scenePath).metadata();
+    if (!srcMeta.width || !srcMeta.height) fail(`Cannot read dimensions for ${scenePath}.`);
+    const biasY = clamp01(cropBias, 0.22);
+    const biasX = clamp01(focusX, 0.5);
+    const zoomFactor = Math.max(1, Number(zoom) || 1);
+    const scaledH = Math.round(srcMeta.height * (PIN_WIDTH / srcMeta.width));
+
+    if (zoomFactor === 1 && scaledH >= PIN_HEIGHT) {
+        const cropTop = Math.round((scaledH - PIN_HEIGHT) * biasY);
+        return sharp(scenePath)
+            .resize(PIN_WIDTH, scaledH, { fit: 'fill' })
+            .extract({ left: 0, top: cropTop, width: PIN_WIDTH, height: PIN_HEIGHT })
+            .jpeg({ quality: 92 })
+            .toBuffer();
+    }
+
+    const coverScale = Math.max(PIN_WIDTH / srcMeta.width, PIN_HEIGHT / srcMeta.height) * zoomFactor;
+    const sw = Math.max(PIN_WIDTH, Math.round(srcMeta.width * coverScale));
+    const sh = Math.max(PIN_HEIGHT, Math.round(srcMeta.height * coverScale));
+    const left = Math.min(sw - PIN_WIDTH, Math.max(0, Math.round((sw - PIN_WIDTH) * biasX)));
+    const top = Math.min(sh - PIN_HEIGHT, Math.max(0, Math.round((sh - PIN_HEIGHT) * biasY)));
+    return sharp(scenePath)
+        .resize(sw, sh, { fit: 'fill' })
+        .extract({ left, top, width: PIN_WIDTH, height: PIN_HEIGHT })
+        .jpeg({ quality: 92 })
+        .toBuffer();
+}
+
 export async function renderLifestylePhotoPin({
     scenePath,
     destPath,
@@ -234,6 +275,9 @@ export async function renderLifestylePhotoPin({
     subline = '',
     brand = PIN_BRAND,
     cta = 'Read the review →',
+    cropBias = 0.22,
+    focusX = 0.5,
+    zoom = 1,
 }) {
     const title = String(headline || '').trim();
     if (!title) fail('Cannot render a photo pin without a headline.');
@@ -290,17 +334,7 @@ export async function renderLifestylePhotoPin({
   ${parts.join('\n  ')}
 </svg>`;
 
-    // Keep the top of the frame (window) and the heater. A pure south crop hides the snow.
-    const srcMeta = await sharp(scenePath).metadata();
-    const scale = PIN_WIDTH / srcMeta.width;
-    const scaledH = Math.round(srcMeta.height * scale);
-    const extra = Math.max(0, scaledH - PIN_HEIGHT);
-    const cropTop = Math.round(extra * 0.22);
-    const base = await sharp(scenePath)
-        .resize(PIN_WIDTH, scaledH, { fit: 'fill' })
-        .extract({ left: 0, top: cropTop, width: PIN_WIDTH, height: PIN_HEIGHT })
-        .jpeg({ quality: 92 })
-        .toBuffer();
+    const base = await frameScene(sharp, scenePath, { cropBias, focusX, zoom });
     await sharp(base)
         .composite([{ input: Buffer.from(overlay), top: 0, left: 0 }])
         .jpeg({ quality: 90 })
