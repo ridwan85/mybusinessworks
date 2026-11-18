@@ -24,7 +24,7 @@ createdAt: 2026-11-11T22:34:00+08:00
 
 ## Quick verdict
 
-You know that moment when the sponge, the soap, and the brush are all sitting in the same puddle? Water has nowhere to go, so nothing ever feels dry. A sloped caddy is meant to give each tool a spot and let the water leave.
+The sponge, the soap, and the brush are sharing one puddle again. Water has nowhere to go, so nothing ever feels dry. A sloped caddy is meant to give each tool a spot and let the water leave.
 
 The <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Cisily sink caddy</a> holds the sponge, brush, and soap apart. The tray slopes so water can run off, and it is stainless steel.
 

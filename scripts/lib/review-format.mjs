@@ -33,7 +33,8 @@ export const SYSTEM_PROMPT =
     'Write in American English, like a friend who would actually say this out loud. Grade 5 or 6 reading level. ' +
     'Use flowing, connected sentences with natural connectors such as because, so, and, and but. ' +
     'Do not stack tiny disconnected fragments. Contractions. Say "you". One to three sentences per paragraph. ' +
-    'Open Quick verdict with "You know that moment when", name the reader\'s real moment, validate the feeling, explain why the problem happens, then bring in the product as the fix. ' +
+    'Open Quick verdict with a natural scene that names the reader\'s real moment and validates the feeling, then explain why the problem happens, then bring in the product as the fix. ' +
+    'Vary the opening. Do not start every review with "You know that moment when". Use that phrase on at most one review. Mix a direct scene, a question, a "we have all been there" line, or a short story beat. ' +
     'Benefits are feelings and outcomes. Specs stay in "What it does", in plain words. ' +
     'If a spec word is needed, explain it. Example: BPA-free (no harmful plastic chemicals). ' +
     'Do not use: elevate, game-changer, seamless, boasts, look no further, in today\'s fast-paced world, or "whether you are X or Y". ' +

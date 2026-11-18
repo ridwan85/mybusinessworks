@@ -24,7 +24,7 @@ createdAt: "2026-11-17T14:57:00+08:00"
 
 ## Quick verdict
 
-You know that moment when the kids want colour on the window, but you do not want paint that stays until spring? Glass holds the ink because it is smooth, and that is also why a damp cloth can take it off. These markers are meant for art you can erase.
+The kids want color on the window. You do not want paint that stays until spring. Glass holds the ink because it is smooth, and that is also why a damp cloth can take it off. These markers are meant for art you can erase.
 
 The <a href="https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Chalktastic liquid chalk markers</a> are washable pens for glass and other smooth surfaces, and the set is for temporary art and signs.
 

@@ -33,7 +33,7 @@ createdAt: 2026-11-11T13:09:13+08:00
 
 ## Quick verdict
 
-You know that moment when it is nap time, and the app will not load because the Wi-Fi is acting up? You just want to see the crib, not reboot a router. A parent screen that talks straight to the camera is meant to skip that step.
+It is nap time, and the app will not load because the Wi-Fi is acting up. You just want to see the crib, not reboot a router. A parent screen that talks straight to the camera is meant to skip that step.
 
 The <a href="https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">HelloBaby HB6550</a> is a video baby monitor with no Wi-Fi, and the 5-inch parent screen talks straight to the camera.
 
