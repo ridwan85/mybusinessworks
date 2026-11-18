@@ -5,7 +5,6 @@ asin: "B0GV5RHY69"
 brand: "Amazon"
 category: "Amazon Devices"
 affiliateUrl: "https://www.amazon.com/dp/B0GV5RHY69?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b0gv5rhy69/own.jpg"
 imageSrc: "/images/reviews/b0gv5rhy69/couch-read.jpg"
 imageCaption: "Kids Kindle Colorsoft on the couch with its protective cover—ready for a quiet reading stretch."
 images:

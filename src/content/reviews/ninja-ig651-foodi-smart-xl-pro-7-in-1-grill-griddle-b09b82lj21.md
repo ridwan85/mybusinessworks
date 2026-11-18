@@ -5,7 +5,6 @@ asin: "B09B82LJ21"
 brand: "Ninja"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b09b82lj21/own.jpg"
 imageSrc: "/images/reviews/b09b82lj21/steak-sear.jpg"
 imageCaption: "Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter."
 images: [{"src":"/images/reviews/b09b82lj21/steak-sear.jpg","caption":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter.","alt":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter."},{"src":"/images/reviews/b09b82lj21/griddle-breakfast.jpg","caption":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate.","alt":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate."},{"src":"/images/reviews/b09b82lj21/air-crisp-fries.jpg","caption":"Golden fries in the 4-quart crisper basket after an Air Crisp cook.","alt":"Golden fries in the 4-quart crisper basket after an Air Crisp cook."}]

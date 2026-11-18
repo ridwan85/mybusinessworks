@@ -5,7 +5,6 @@ asin: "B07T89L8C7"
 brand: "Flawless"
 category: "Beauty"
 affiliateUrl: "https://www.amazon.com/dp/B07T89L8C7?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b07t89l8c7/own.jpg"
 imageSrc: "/images/reviews/b07t89l8c7/morning-vanity.jpg"
 imageCaption: "Rose quartz facial roller on a bathroom vanity ready for a morning skincare routine."
 images: [{"src":"/images/reviews/b07t89l8c7/morning-vanity.jpg","caption":"Rose quartz facial roller on a bathroom vanity ready for a morning skincare routine.","alt":"Rose quartz facial roller on a bathroom vanity ready for a morning skincare routine."},{"src":"/images/reviews/b07t89l8c7/undereye-press.jpg","caption":"Rose quartz under-eye press attachment chilled for puffy eyes.","alt":"Rose quartz under-eye press attachment chilled for puffy eyes."},{"src":"/images/reviews/b07t89l8c7/gift-ready.jpg","caption":"Flawless Contour rose quartz roller gift-ready on a dresser.","alt":"Flawless Contour rose quartz roller gift-ready on a dresser."}]

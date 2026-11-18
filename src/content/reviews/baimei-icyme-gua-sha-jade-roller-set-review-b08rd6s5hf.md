@@ -5,7 +5,6 @@ asin: "B08RD6S5HF"
 brand: "BAIMEI"
 category: "Beauty"
 affiliateUrl: "https://www.amazon.com/dp/B08RD6S5HF?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b08rd6s5hf/own.jpg"
 imageSrc: "/images/reviews/b08rd6s5hf/morning-depuff.jpg"
 imageCaption: "Green jade face roller on a bathroom vanity ready for a morning depuff session."
 images: [{"src":"/images/reviews/b08rd6s5hf/morning-depuff.jpg","caption":"Green jade face roller on a bathroom vanity ready for a morning depuff session.","alt":"Green jade face roller on a bathroom vanity ready for a morning depuff session."},{"src":"/images/reviews/b08rd6s5hf/serum-routine.jpg","caption":"Jade roller and gua sha paired with facial serum for a skincare routine.","alt":"Jade roller and gua sha paired with facial serum for a skincare routine."},{"src":"/images/reviews/b08rd6s5hf/gift-box.jpg","caption":"BAIMEI jade roller and gua sha gift set boxed on a dresser.","alt":"BAIMEI jade roller and gua sha gift set boxed on a dresser."}]

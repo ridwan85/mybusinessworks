@@ -5,7 +5,6 @@ asin: "B0CNTRVZPW"
 brand: "Waterpik"
 category: "Health & Household"
 affiliateUrl: "https://www.amazon.com/dp/B0CNTRVZPW?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b0cntrvzpw/own.jpg"
 imageSrc: "/images/reviews/b0cntrvzpw/sink-ready.jpg"
 imageCaption: "The cordless Waterpik sitting on a bathroom sink beside a toothbrush cup—ready for a quick morning floss."
 images:

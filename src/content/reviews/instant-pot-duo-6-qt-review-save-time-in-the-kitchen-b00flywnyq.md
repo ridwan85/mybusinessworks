@@ -5,7 +5,6 @@ asin: "B00FLYWNYQ"
 brand: "Instant Pot"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B00FLYWNYQ?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b00flywnyq/own.jpg"
 imageSrc: "/images/reviews/b00flywnyq/weeknight-soup.jpg"
 imageCaption: "Instant Pot Duo on the counter with steam rising beside a bowl of weeknight soup."
 images: [{"src":"/images/reviews/b00flywnyq/weeknight-soup.jpg","caption":"Instant Pot Duo on the counter with steam rising beside a bowl of weeknight soup.","alt":"Instant Pot Duo on the counter with steam rising beside a bowl of weeknight soup."},{"src":"/images/reviews/b00flywnyq/meal-prep.jpg","caption":"Instant Pot next to meal-prep containers filled with rice and chicken.","alt":"Instant Pot next to meal-prep containers filled with rice and chicken."},{"src":"/images/reviews/b00flywnyq/counter-ready.jpg","caption":"Closed Instant Pot Duo ready on a clean kitchen counter.","alt":"Closed Instant Pot Duo ready on a clean kitchen counter."}]
