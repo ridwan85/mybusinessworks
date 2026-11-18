@@ -6,7 +6,8 @@ brand: "Dreo"
 category: "Home"
 affiliateUrl: "https://www.amazon.com/dp/B0C6FCKQML?tag=dailyvirald06-20"
 ownImage: "/images/reviews/b0c6fckqml/own.jpg"
-imageCaption: "A white and gold tower heater glowing on a wood floor beside a bed, with snow outside the window."
+imageCaption: "Gold Dreo heater glowing beside a bed, snow outside the window, remote on the floor."
+images: [{"src":"/images/reviews/b0c6fckqml/desk-morning.jpg","caption":"Gold Dreo heater on the floor beside a desk on a cold morning.","alt":"Gold Dreo heater on the floor beside a desk on a cold morning."},{"src":"/images/reviews/b0c6fckqml/reading-nook.jpg","caption":"Gold Dreo heater beside a sofa and a knit blanket.","alt":"Gold Dreo heater beside a sofa and a knit blanket."}]
 hook: "Best winter gift under $50 for a chilly bedroom."
 hookSupport: "The Dreo HSH006 Gold is a 1500W ceramic tower with a thermostat, remote, and 12-hour timer, so one bedroom or office can warm up without heating the whole house."
 whyHelps: ["Warm one bedroom instead of the whole house.","Set 41-95°F, then adjust it from the remote.","A 12-hour timer turns it off without a walk back.","Listed at 34 dB for bedrooms and desk work."]
