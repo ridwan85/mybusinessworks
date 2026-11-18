@@ -16,8 +16,8 @@ images:
     caption: "See porch activity and packages at the door with Retinal 2K video and motion alerts to your phone."
     alt: "Ring Battery Doorbell near a front door with a delivery package on the step"
   - src: "/images/reviews/b0g2d1r15q/phone-alert.jpg"
-    caption: "Answer from your phone with Live View and Two-Way Talk when your hands are full inside the house."
-    alt: "Ring Battery Doorbell with a phone showing a live entryway view"
+    caption: "Matte gray doorbell with a blue button ring beside a phone showing a door alert."
+    alt: "Matte gray doorbell with a blue button ring beside a phone showing a door alert."
 hook: "Someone knocks while your hands are full across the house."
 hookSupport: "Instead of dropping everything to rush to the front entrance, you can see and speak to visitors directly from your phone or Echo screen in crisp Retinal 2K."
 whyHelps: ["Answer your entryway without moving from your seat using real-time Live View and Two-Way Talk.","Detach the doorbell in seconds using the included removal tool to recharge the built-in battery over USB-C.","Check clear details at your threshold with Retinal 2K resolution and up to 6x Enhanced Zoom.","Pair with your Echo Dot or Echo Show for instant hands-free notifications and effortless viewing."]

@@ -7,7 +7,7 @@ category: "Home Decor"
 affiliateUrl: "https://www.amazon.com/dp/B0CTJGJL2T?tag=dailyvirald06-20"
 ownImage: "/images/reviews/b0ctjgjl2t/own.jpg"
 imageSrc: "/images/reviews/b0ctjgjl2t/nightstand-glow.jpg"
-imageCaption: "The GODONLIF Candle Warmer Lamp featuring a sleek metal base and glass lampshade on a flat surface."
+imageCaption: "Black adjustable-arm candle warmer with a ribbed glass shade over an amber jar."
 images: [{"src":"/images/reviews/b0ctjgjl2t/nightstand-glow.jpg","caption":"The GODONLIF Candle Warmer Lamp featuring a sleek metal base and glass lampshade on a flat surface.","alt":"The GODONLIF Candle Warmer Lamp featuring a sleek metal base and glass lampshade on a flat surface."},{"src":"/images/reviews/b0ctjgjl2t/cozy-evening.jpg","caption":"A close-up view of the dimmable control knob and adjustable pole mechanism.","alt":"A close-up view of the dimmable control knob and adjustable pole mechanism."},{"src":"/images/reviews/b0ctjgjl2t/gift-ready.jpg","caption":"The lamp actively melting a jar candle safely from the top down in a living room setting.","alt":"The lamp actively melting a jar candle safely from the top down in a living room setting."}]
 hook: "Tired of smoking candles, soot stains, and worrying about open flames near kids and pets?"
 hookSupport: "This electric warmer melts wax safely from the top down, meaning zero open flame, soot, or pollution while you enjoy your favorite scents."
