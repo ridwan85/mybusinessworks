@@ -139,9 +139,9 @@ const jsonLd = reviewPageJsonLd({
       <div class="meat-intro">
         <h2 id="meat-title" class="meat-heading">Why it helps in real life</h2>
         <p class="meat-lead">
-          {data.angle === 'time' && 'Here is how it saves time on a normal day.'}
-          {data.angle === 'convenience' && 'Here is how it makes the job easier.'}
-          {data.angle === 'incident' && 'Here is how it helps you dodge the usual mess.'}
+          {data.angle === 'time' && 'On a normal day, this is where you get some of that time back.'}
+          {data.angle === 'convenience' && 'This is how the job gets easier, and why that matters.'}
+          {data.angle === 'incident' && 'This is how it helps you avoid the mess that usually shows up.'}
         </p>
         <ol class="why-helps">
           {data.whyHelps.map((point) => <li>{point}</li>)}
