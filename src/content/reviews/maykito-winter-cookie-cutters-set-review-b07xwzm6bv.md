@@ -5,6 +5,7 @@ asin: "B07XWZM6BV"
 brand: "Maykito"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B07XWZM6BV?tag=dailyvirald06-20"
+ownImage: "/images/reviews/b07xwzm6bv/own.jpg"
 imageSrc: "/images/reviews/b07xwzm6bv/tree-cutter.jpg"
 imageCaption: "Stainless tree cookie cutter pressing into rolled dough."
 images: [{"src":"/images/reviews/b07xwzm6bv/tree-cutter.jpg","caption":"Stainless tree cookie cutter pressing into rolled dough.","alt":"Stainless tree cookie cutter pressing into rolled dough."},{"src":"/images/reviews/b07xwzm6bv/decorated-batch.jpg","caption":"Decorated sugar cookies from classic winter cutter shapes.","alt":"Decorated sugar cookies from classic winter cutter shapes."},{"src":"/images/reviews/b07xwzm6bv/gift-box.jpg","caption":"Maykito cookie cutter set gift-boxed for family baking.","alt":"Maykito cookie cutter set gift-boxed for family baking."}]

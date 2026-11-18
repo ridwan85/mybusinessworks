@@ -5,6 +5,7 @@ asin: "B0H87WV6N4"
 brand: "Ninja"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B0H87WV6N4?tag=dailyvirald06-20"
+ownImage: "/images/reviews/b0h87wv6n4/own.jpg"
 imageSrc: "/images/reviews/b0h87wv6n4/crispy-fries.jpg"
 imageCaption: "Bone & Champagne Ninja with the basket open—fries cooked and ready to plate."
 images: [{"src":"/images/reviews/b0h87wv6n4/crispy-fries.jpg","caption":"Bone & Champagne Ninja with the basket open—fries cooked and ready to plate.","alt":"Bone & Champagne Ninja with the basket open—fries cooked and ready to plate."},{"src":"/images/reviews/b0h87wv6n4/weeknight-dinner.jpg","caption":"Same Ninja on the counter beside a plated weeknight dinner after a quick cook.","alt":"Same Ninja on the counter beside a plated weeknight dinner after a quick cook."},{"src":"/images/reviews/b0h87wv6n4/counter-compact.jpg","caption":"Compact Bone & Champagne unit taking a small footprint on the kitchen counter.","alt":"Compact Bone & Champagne unit taking a small footprint on the kitchen counter."}]

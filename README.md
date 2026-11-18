@@ -62,7 +62,7 @@ DNS (apex + www) uses GitHub Pages A/CNAME records as documented in GitHub’s P
 - Affiliate links use `?tag=` from `AMAZON_ASSOCIATE_TAG` and `rel="sponsored nofollow"`.
 - **Required:** do not re-host Amazon product photos. Do not commit `source.jpg` or any file downloaded from Amazon. An Amazon product image on the site must be an image URL that stays on Amazon’s servers (`siteStripeImage`, from SiteStripe or the Product Advertising API).
 - **Separate choice:** lifestyle creatives already in `public/images/reviews/` (not Amazon downloads) may stay on review pages. The text card is only the fallback when a review has no allowed image. Removing those creatives is optional and should wait until a SiteStripe URL or your own photo is ready to replace them.
-- `ownImage` (`/images/reviews/<asin>/own.jpg`) is a photo you took. New Pinterest pins still default to a text graphic and do not build scenes from Amazon photos.
+- `ownImage` (`/images/reviews/<asin>/own.jpg`) is an original image you supply: a photo you took, or an original lifestyle stand-in that was not copied from an Amazon listing. New Pinterest pins still default to a text graphic and do not build scenes from Amazon photos.
 
 ## 4. Pinterest (internal, compliant publisher)
 

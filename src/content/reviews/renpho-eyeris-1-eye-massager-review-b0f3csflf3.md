@@ -5,6 +5,7 @@ asin: "B0F3CSFLF3"
 brand: "RENPHO"
 category: "Health"
 affiliateUrl: "https://www.amazon.com/dp/B0F3CSFLF3?tag=dailyvirald06-20"
+ownImage: "/images/reviews/b0f3csflf3/own.jpg"
 imageSrc: "/images/reviews/b0f3csflf3/desk-break.jpg"
 imageCaption: "RENPHO eye massager resting on a desk beside a closed laptop during a screen break."
 images: [{"src":"/images/reviews/b0f3csflf3/desk-break.jpg","caption":"RENPHO eye massager resting on a desk beside a closed laptop during a screen break.","alt":"RENPHO eye massager resting on a desk beside a closed laptop during a screen break."},{"src":"/images/reviews/b0f3csflf3/sofa-relax.jpg","caption":"Someone winding down on the sofa wearing the heated RENPHO eye massager.","alt":"Someone winding down on the sofa wearing the heated RENPHO eye massager."},{"src":"/images/reviews/b0f3csflf3/travel-fold.jpg","caption":"Folded RENPHO eye massager packed next to a passport for travel.","alt":"Folded RENPHO eye massager packed next to a passport for travel."}]

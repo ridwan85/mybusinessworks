@@ -5,6 +5,7 @@ asin: "B0HCF2G9VQ"
 brand: "Shark"
 category: "Beauty"
 affiliateUrl: "https://www.amazon.com/dp/B0HCF2G9VQ?tag=dailyvirald06-20"
+ownImage: "/images/reviews/b0hcf2g9vq/own.jpg"
 imageSrc: "/images/reviews/b0hcf2g9vq/curl-style.jpg"
 imageCaption: "Shark FlexStyle Next-Gen IonCurl 5-in-1 Hair Styler and Dryer in use."
 images: [{"src":"/images/reviews/b0hcf2g9vq/curl-style.jpg","caption":"Shark FlexStyle Next-Gen IonCurl 5-in-1 Hair Styler and Dryer in use.","alt":"Shark FlexStyle Next-Gen IonCurl 5-in-1 Hair Styler and Dryer in use."},{"src":"/images/reviews/b0hcf2g9vq/vanity-ready.jpg","caption":"Close-up of the Coanda wrap curling attachment.","alt":"Close-up of the Coanda wrap curling attachment."},{"src":"/images/reviews/b0hcf2g9vq/blowout.jpg","caption":"The sleek device showing its multiple styling attachments.","alt":"The sleek device showing its multiple styling attachments."}]
