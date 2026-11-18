@@ -76,7 +76,7 @@ const authUrl = buildAuthorizeUrl({
     scopes: DEFAULT_SCOPES,
 });
 
-console.log('\nPinterest OAuth (internal Daily Viral Deals publisher)');
+console.log('\nPinterest OAuth (internal mybusinesswork.com publisher)');
 console.log(`Scopes:   ${DEFAULT_SCOPES.join(', ')}`);
 console.log(`Redirect: ${redirectUri}`);
 console.log(`Local:    http://127.0.0.1:${localPort}${localCallbackPath}`);

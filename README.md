@@ -1,4 +1,4 @@
-# Daily Viral Deals (Astro + GitHub Pages)
+# mybusinesswork.com (Astro + GitHub Pages)
 
 Amazon affiliate review site. Paste a product link → generate a locked-format review → publish static pages.
 
@@ -48,7 +48,7 @@ Overwrite an existing review: `npm run generate -- "https://www.amazon.com/dp/AS
 
 ## 3. Deploy / custom domain
 
-Brand: **Daily Viral Deals**. `public/CNAME` currently points at `mybusinesswork.com` (also set `site` in `astro.config.mjs` if the domain changes).
+Brand on the site and on pins: **mybusinesswork.com**. `public/CNAME` points at that domain (also set `site` in `astro.config.mjs` if the domain changes).
 
 GitHub Pages: **Settings → Pages → Source: GitHub Actions**.
 
@@ -74,7 +74,7 @@ CLI-only tooling for **your** MyBusinessWorks account. Official Pins API only. E
 2. Redirect URI (register exactly): `https://mybusinesswork.com/oauth/pinterest/`  
    That page lives on this site and hands the auth code to your local CLI (`127.0.0.1:8787`). Set the same value in `.env` as `PINTEREST_REDIRECT_URI`.
 3. Request scopes: `boards:read`, `boards:write`, `pins:read`, `pins:write`.
-4. For app review, link privacy policy `https://mybusinesswork.com/privacy/` and describe an **internal content tool** that drafts pins from Daily Viral Deals reviews and publishes only after you confirm each pin.
+4. For app review, link privacy policy `https://mybusinesswork.com/privacy/` and describe an **internal content tool** that drafts pins from mybusinesswork.com reviews and publishes only after you confirm each pin.
 5. Put `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, and `PINTEREST_BOARD_ID` in `.env`.
 6. **Trial vs Standard:** new apps start on **Trial**. Trial cannot create Pins on production (`api.pinterest.com`) — you’ll get HTTP 403. For real Pins on your public boards, open the app → **Upgrade to Standard access**, link `https://mybusinesswork.com/privacy/`, and upload a short screen recording of `pinterest:oauth` + one confirmed `pinterest:publish`. Until approved, either test against the sandbox (`PINTEREST_USE_SANDBOX=1`) **or** publish via **Zernio** (temporary bypass): set `ZERNIO_API_KEY` + `ZERNIO_PINTEREST_ACCOUNT_ID` from [zernio.com](https://zernio.com), run `npm run zernio:profiles`, then `pinterest:publish` still requires typing `publish`. Force native API with `PINTEREST_PUBLISH_VIA=pinterest`.
 

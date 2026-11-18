@@ -1,6 +1,6 @@
 ---
 title: "Ninja IG651 Foodi Smart XL Pro 7-in-1 Grill & Griddle"
-description: "Skip kitchen smoke and guesswork with the Ninja IG651 Foodi Smart XL Pro 7-in-1 Grill, Griddle, and Air Fryer. Read our honest Daily Viral Deals review."
+description: "Skip kitchen smoke and guesswork with the Ninja IG651 Foodi Smart XL Pro 7-in-1 Grill, Griddle, and Air Fryer. Read our honest review."
 asin: "B09B82LJ21"
 brand: "Ninja"
 category: "Kitchen"
