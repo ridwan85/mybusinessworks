@@ -1,5 +1,6 @@
 ---
 import { slugifyCategory } from '../lib/categories';
+import { localImageSize } from '../lib/image-size';
 import { displayImage } from '../lib/product-image';
 import GraphicCard from './GraphicCard.astro';
 import type { CollectionEntry } from 'astro:content';
@@ -12,13 +13,22 @@ interface Props {
 const { review: r, priority = false } = Astro.props;
 const href = `/reviews/${r.id}/`;
 const photo = displayImage(r.data);
+const photoSize = localImageSize(photo);
 ---
 
 <li class:list={['card', priority && 'is-priority']}>
   <article class="card-inner">
     <a class="media" href={href} tabindex="-1" aria-hidden="true">
       {photo ? (
-        <img src={photo} alt="" loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} />
+        <img
+          src={photo}
+          alt=""
+          width={photoSize?.width}
+          height={photoSize?.height}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchpriority={priority ? 'high' : undefined}
+        />
       ) : (
         <GraphicCard compact title={r.data.hook} eyebrow={r.data.category} />
       )}

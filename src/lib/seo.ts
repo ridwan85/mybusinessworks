@@ -30,6 +30,7 @@ export function parseFaqFromMarkdown(body: string): FaqItem[] {
         if (!question) return;
         const answer = answerLines
             .join(' ')
+            .replace(/<[^>]+>/g, '')
             .replace(/[*_`]/g, '')
             .replace(/\s+/g, ' ')
             .trim();

@@ -7,13 +7,13 @@
 export const ANGLES = ['time', 'convenience', 'incident'];
 
 export const BODY_SECTIONS = [
-    'Quick Verdict',
-    'Key Features',
-    'Who It\'s For',
-    'Pros',
-    'Things to Consider',
+    'Quick verdict',
+    'What it does',
+    'Who it\'s for',
+    'The good parts',
+    'Honest limits',
     'FAQ',
-    'Final Verdict',
+    'Bottom line',
 ];
 
 export const DEFAULT_CTA = 'Check Price on Amazon';
@@ -30,22 +30,38 @@ export function normalizeProductCategory(raw, title = '') {
 
 export const SYSTEM_PROMPT =
     'You are an experienced US affiliate product reviewer and conversion copywriter for mybusinesswork.com. ' +
-    'Write in American English, helpful and honest. ' +
-    'Use ONLY the facts supplied. Never invent specifications, prices, ratings, awards, or claim hands-on testing. ' +
-    'Do not make medical or guaranteed-result claims. Do not include links, a title (H1), or any affiliate disclosure. ' +
+    'Write in American English, like a seasoned friend. Grade 5 or 6 reading level. ' +
+    'Short sentences, mostly under 15 words. Contractions. Say "you". One to three sentences per paragraph. ' +
+    'Open the body with a real frustration scene, then the after feeling. ' +
+    'Benefits are feelings and outcomes. Specs stay in "What it does", in plain words. ' +
+    'If a spec word is needed, explain it. Example: BPA-free (no harmful plastic chemicals). ' +
+    'Do not use: elevate, game-changer, seamless, boasts, look no further, in today\'s fast-paced world, or "whether you are X or Y". ' +
+    'Do not overuse em dashes. Do not claim hands-on testing. Never write "I tried", "I tested", or "my kids love it". ' +
+    'Use "the listing says" and, only when buyer comments are in the source facts, "buyers say". ' +
+    'No fake urgency, no invented numbers, no prices. ' +
+    'Use ONLY the facts supplied. Never invent specifications, ratings, awards, or medical results. ' +
+    'Do not include a title (H1) or an affiliate disclosure. The template owns those. ' +
+    'Put one natural Amazon link in Quick verdict and one in an FAQ answer, using the supplied affiliateUrl, ' +
+    'as HTML: <a href="AFFILIATE_URL" rel="nofollow sponsored noopener" target="_blank">product name</a>. ' +
     'Page structure is locked: Hook → Why it helps in real life → Details → Amazon CTA (template owns CTAs). ' +
     'Pick ONE primary angle: "time" (saves time), "convenience" (fewer steps / easier), or "incident" (avoids a real-life mess, waste, failure, or headache). ' +
     'Return JSON with keys: ' +
     '"title" (SEO title, max 60 chars, includes the product name), ' +
     '"description" (meta description, max 155 chars), ' +
     '"angle" (one of: time, convenience, incident), ' +
-    '"hook" (max 90 chars: real-life situation headline; concrete everyday scene; do not require the product name), ' +
-    '"hookSupport" (1-2 sentences, max 220 chars: connect that situation to how this product helps, using only supplied facts), ' +
-    '"whyHelps" (array of 3-4 short sentences: each explains a concrete real-life benefit tied to the chosen angle; busy-shopper advice, not a feature dump), ' +
+    '"hook" (max 90 chars: emotional H1 with the long-tail keyword; a real frustration, not a spec list), ' +
+    '"hookSupport" (1-2 short sentences, max 180 chars: the after feeling, using only supplied facts), ' +
+    '"shortVerdict" (two short sentences, max 160 chars, shown under the H1), ' +
+    '"whyHelps" (array of 3-4 short sentences under 15 words: feelings and outcomes, not a spec dump), ' +
+    '"buyIf" (array of 2-3 short bullets: who should buy, from the facts), ' +
+    '"skipIf" (array of 2-3 short bullets: honest reasons to skip), ' +
+    '"compare" (array of exactly 3 objects with role, name, bestFor, limit, href. ' +
+    'role must be "this", then "cheaper", then "different". ' +
+    'For cheaper and different, use an Amazon search URL only: https://www.amazon.com/s?k=WORDS&tag=TAG. Do not invent ASINs or prices.), ' +
     '"ctaLabel" (short Amazon button label, usually "Check Price on Amazon"), ' +
     '"imageCaption" (one genuine caption describing what a product photo shows or does in real life; never prompt-style words like showcase, lifestyle shot, marble look, cinematic, or background), ' +
     '"imageCaptions" (optional array of 0-3 extra genuine photo captions in the same style, for additional product images if provided), ' +
-    '"body" (Markdown, 900-1300 words, H2/H3 EXACTLY in this order: Quick Verdict, Key Features, Who It\'s For, Pros, Things to Consider, FAQ (3-4 questions), Final Verdict). ' +
+    '"body" (Markdown, simple and skimmable, H2 EXACTLY in this order: Quick verdict, What it does, Who it\'s for, The good parts, Honest limits, FAQ (3-4 questions as H3), Bottom line). ' +
     'Do NOT include Where to Buy, Disclosure, Hook, or Why it helps sections in body—the template owns those.';
 
 export function normalizeReviewOutput(out, { hasImages = false } = {}) {
@@ -61,6 +77,34 @@ export function normalizeReviewOutput(out, { hasImages = false } = {}) {
         ? out.whyHelps.map((s) => String(s || '').trim()).filter(Boolean).slice(0, 4)
         : [];
     if (whyHelps.length < 2) errors.push('whyHelps needs at least 2 real-life points');
+
+    const shortList = (value, min, max, label) => {
+        const items = Array.isArray(value) ? value.map((s) => String(s || '').trim()).filter(Boolean).slice(0, max) : [];
+        if (items.length < min) errors.push(`${label} needs ${min}-${max} bullets`);
+        return items;
+    };
+    const buyIf = shortList(out?.buyIf, 2, 3, 'buyIf');
+    const skipIf = shortList(out?.skipIf, 2, 3, 'skipIf');
+    const shortVerdict = String(out?.shortVerdict || '').trim();
+    if (!shortVerdict) errors.push('missing shortVerdict');
+
+    const compareIn = Array.isArray(out?.compare) ? out.compare : [];
+    const roles = ['this', 'cheaper', 'different'];
+    const compare = roles.map((role) => compareIn.find((row) => row?.role === role)).filter(Boolean);
+    if (compare.length !== 3) errors.push('compare needs this, cheaper, and different rows');
+    for (const row of compare) {
+        if (!row.name || !row.bestFor || !row.limit) errors.push(`compare ${row.role} is incomplete`);
+        if (row.role !== 'this') {
+            try {
+                const url = new URL(String(row.href || ''));
+                if (!url.hostname.endsWith('amazon.com') || !url.pathname.startsWith('/s')) {
+                    errors.push(`compare ${row.role} href must be an Amazon search URL`);
+                }
+            } catch {
+                errors.push(`compare ${row.role} href must be an Amazon search URL`);
+            }
+        }
+    }
 
     let body = String(out.body || '')
         .replace(/^##\s*Where to Buy[\s\S]*?(?=^##\s|\Z)/gim, '')
@@ -100,7 +144,17 @@ export function normalizeReviewOutput(out, { hasImages = false } = {}) {
         angle: out.angle,
         hook: String(out.hook).trim(),
         hookSupport: String(out.hookSupport).trim(),
+        shortVerdict,
         whyHelps,
+        buyIf,
+        skipIf,
+        compare: compare.map((row) => ({
+            role: row.role,
+            name: String(row.name).trim(),
+            bestFor: String(row.bestFor).trim(),
+            limit: String(row.limit).trim(),
+            href: row.role === 'this' ? String(row.href || '').trim() : String(row.href).trim(),
+        })),
         ctaLabel: String(out.ctaLabel || DEFAULT_CTA).trim() || DEFAULT_CTA,
         imageCaption: imageCaption || undefined,
         imageCaptions,

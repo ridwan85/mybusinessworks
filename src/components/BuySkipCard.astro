@@ -1,0 +1,74 @@
+---
+interface Props {
+    buyIf: string[];
+    skipIf: string[];
+    affiliateUrl: string;
+    ctaLabel: string;
+}
+const { buyIf, skipIf, affiliateUrl, ctaLabel } = Astro.props;
+---
+
+<section class="decision" aria-label="Buy it or skip it">
+    <p class="associate-line">As an Amazon Associate I earn from qualifying purchases.</p>
+    <p class="cta-wrap">
+        <a id="primary-cta" class="cta-amazon" href={affiliateUrl} rel="sponsored nofollow">{ctaLabel}</a>
+    </p>
+    <div class="decision-cols">
+        <div>
+            <h2>Buy it if</h2>
+            <ul>
+                {buyIf.map((item) => <li>{item}</li>)}
+            </ul>
+        </div>
+        <div>
+            <h2>Skip it if</h2>
+            <ul>
+                {skipIf.map((item) => <li>{item}</li>)}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    .decision {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--surface);
+        padding: 14px 14px 16px;
+    }
+    .associate-line {
+        margin: 0 0 8px;
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.35;
+    }
+    .cta-wrap { margin: 0 0 14px; }
+    .decision-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 16px;
+    }
+    .decision h2 {
+        margin: 0 0 6px;
+        font-family: var(--font);
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+    }
+    .decision ul {
+        margin: 0;
+        padding-left: 1.05em;
+    }
+    .decision li {
+        margin: 0.28em 0;
+        font-size: 0.9rem;
+        line-height: 1.35;
+    }
+    @media (min-width: 780px) {
+        .decision { padding: 18px 18px 20px; }
+        .cta-wrap .cta-amazon { width: auto; min-width: 16rem; }
+    }
+    @media (max-width: 779px) {
+        .decision .cta-amazon { width: 100%; }
+    }
+</style>
