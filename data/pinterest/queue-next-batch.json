@@ -64,6 +64,17 @@
           "command": "npm run pinterest:publish -- data/pinterest/drafts/B07XWZM6BV-gift.json"
         }
       ]
+    },
+    {
+      "asin": "B0C6FCKQML",
+      "slug": "dreo-space-heater-review-gift-ideas-under-50-b0c6fckqml",
+      "pins": [
+        {
+          "draft": "data/pinterest/drafts/B0C6FCKQML.json",
+          "boardKey": "cozy",
+          "command": "npm run pinterest:publish -- data/pinterest/drafts/B0C6FCKQML.json"
+        }
+      ]
     }
   ]
 }
