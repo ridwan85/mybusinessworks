@@ -7,7 +7,7 @@ category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20"
 ownImage: "/images/reviews/b09b82lj21/own.jpg"
 imageSrc: "/images/reviews/b09b82lj21/steak-sear.jpg"
-imageCaption: "Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter."
+imageCaption: "A black indoor grill with the lid open and a flat plate on the counter."
 images: [{"src":"/images/reviews/b09b82lj21/steak-sear.jpg","caption":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter.","alt":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter."},{"src":"/images/reviews/b09b82lj21/griddle-breakfast.jpg","caption":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate.","alt":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate."},{"src":"/images/reviews/b09b82lj21/air-crisp-fries.jpg","caption":"Golden fries in the 4-quart crisper basket after an Air Crisp cook.","alt":"Golden fries in the 4-quart crisper basket after an Air Crisp cook."}]
 hook: "Tired of juggling three different pans just to cook one family meal?"
 hookSupport: "Instead of dirtying multiple dishes and constantly monitoring the stove, the Ninja IG651 Foodi Smart XL Pro combines a high-heat grill, flat top griddle, and air fryer into one easy-to-use countertop appliance."

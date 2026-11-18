@@ -7,7 +7,7 @@ category: "Amazon Devices"
 affiliateUrl: "https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20"
 ownImage: "/images/reviews/b0g2d1r15q/own.jpg"
 imageSrc: "/images/reviews/b0g2d1r15q/entry.jpg"
-imageCaption: "The Matte Mocha doorbell mounted by the front door—ready for live view when someone knocks."
+imageCaption: "A tall video doorbell with a black camera head and a blue ring button on a cream door."
 images:
   - src: "/images/reviews/b0g2d1r15q/entry.jpg"
     caption: "The Matte Mocha doorbell mounted by the front door—ready for live view when someone knocks."
