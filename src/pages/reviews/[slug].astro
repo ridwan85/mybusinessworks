@@ -34,6 +34,9 @@ const heroSize = localImageSize(heroSrc);
 const heroCaption = heroSrc ? data.imageCaption || gallery.find((g) => g.src === heroSrc)?.caption : undefined;
 const showcase = gallery.filter((g) => g.src !== heroSrc);
 const ctaLabel = data.ctaLabel || 'Check Price on Amazon';
+const showPriceNote = /\$\s?\d|\bunder\s+\$/i.test(
+  [data.title, data.hook, data.shortVerdict, data.description, entry.body ?? ''].filter(Boolean).join('\n'),
+);
 const angleLabel =
   data.angle === 'time' ? 'Saves time' : data.angle === 'incident' ? 'Avoids a headache' : 'More convenient';
 
@@ -126,6 +129,7 @@ const jsonLd = reviewPageJsonLd({
           skipIf={data.skipIf}
           affiliateUrl={data.affiliateUrl}
           ctaLabel={ctaLabel}
+          showPriceNote={showPriceNote}
         />
       </div>
     </section>

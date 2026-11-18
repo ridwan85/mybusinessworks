@@ -4,11 +4,15 @@ interface Props {
     skipIf: string[];
     affiliateUrl: string;
     ctaLabel: string;
+    showPriceNote?: boolean;
 }
-const { buyIf, skipIf, affiliateUrl, ctaLabel } = Astro.props;
+const { buyIf, skipIf, affiliateUrl, ctaLabel, showPriceNote = false } = Astro.props;
 ---
 
 <section class="decision" aria-label="Buy it or skip it">
+    {showPriceNote && (
+        <p class="price-note">Price at the time of writing. Check Amazon for today's price.</p>
+    )}
     <p class="associate-line">As an Amazon Associate I earn from qualifying purchases.</p>
     <p class="cta-wrap">
         <a id="primary-cta" class="cta-amazon" href={affiliateUrl} rel="sponsored nofollow">{ctaLabel}</a>
@@ -34,6 +38,7 @@ const { buyIf, skipIf, affiliateUrl, ctaLabel } = Astro.props;
         background: transparent;
         padding: 0;
     }
+    .price-note,
     .associate-line {
         margin: 0 0 8px;
         color: var(--muted);
