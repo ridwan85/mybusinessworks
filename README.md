@@ -36,7 +36,10 @@ npm run generate -- "https://www.amazon.com/dp/B0XXXXXXXX"
 # or short links: https://link.amazon/... / amzn.to/...
 ```
 
-1. First `generate` run may create `data/products/<ASIN>.json` — fill `title` and `features`. Optional: `siteStripe` (the SiteStripe Image HTML snippet), `siteStripeImage` (an Amazon-hosted image URL from SiteStripe or the Product Advertising API), or `ownImage` (`/images/reviews/<asin>/own.jpg`, a photo you took). Do not download Amazon product photos into this repo.
+1. First `generate` run may create `data/products/<ASIN>.json` — fill `title` and `features`. Optional images:
+   - `siteStripe` / `siteStripeImage`: Amazon-hosted image from SiteStripe or the Product Advertising API. Do not download it.
+   - `ownImage`: a photo you took, `/images/reviews/<asin>/own.jpg`.
+   - `imageUrl` / `showcases`: an on-site lifestyle creative you already made. Do not point these at `source.jpg` or a file saved from Amazon.
 2. Review Markdown is written to `src/content/reviews/` in the locked format.
 3. Preview: `npm run dev`
 4. Publish: `git add . && git commit -m "Add review" && git push` (GitHub Actions deploys `master`).
@@ -57,7 +60,9 @@ DNS (apex + www) uses GitHub Pages A/CNAME records as documented in GitHub’s P
 - Privacy: `/privacy/` ([live](https://mybusinesswork.com/privacy/)).
 - No prices on-site (must stay current on Amazon).
 - Affiliate links use `?tag=` from `AMAZON_ASSOCIATE_TAG` and `rel="sponsored nofollow"`.
-- Do not re-host Amazon product images. Review pages show a text card unless `siteStripeImage` is an Amazon-hosted URL or `ownImage` is your own `own.jpg`. The image tag must point at Amazon’s servers (SiteStripe or the Product Advertising API), not a file in `public/`.
+- **Required:** do not re-host Amazon product photos. Do not commit `source.jpg` or any file downloaded from Amazon. An Amazon product image on the site must be an image URL that stays on Amazon’s servers (`siteStripeImage`, from SiteStripe or the Product Advertising API).
+- **Separate choice:** lifestyle creatives already in `public/images/reviews/` (not Amazon downloads) may stay on review pages. The text card is only the fallback when a review has no allowed image. Removing those creatives is optional and should wait until a SiteStripe URL or your own photo is ready to replace them.
+- `ownImage` (`/images/reviews/<asin>/own.jpg`) is a photo you took. New Pinterest pins still default to a text graphic and do not build scenes from Amazon photos.
 
 ## 4. Pinterest (internal, compliant publisher)
 

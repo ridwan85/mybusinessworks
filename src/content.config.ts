@@ -26,7 +26,7 @@ const reviews = defineCollection({
                 message: 'ownImage must be a site path like /images/reviews/<asin>/own.jpg.',
             })
             .optional(),
-        // Older reviews may still list local paths. The template ignores those and shows a text card.
+        // On-site lifestyle creatives are allowed. source.jpg (a re-hosted Amazon packshot) is not rendered.
         // Strings or { src, caption?, alt? } objects are accepted.
         images: z
             .array(

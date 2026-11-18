@@ -5,6 +5,9 @@ asin: "B0F3CSFLF3"
 brand: "RENPHO"
 category: "Health"
 affiliateUrl: "https://www.amazon.com/dp/B0F3CSFLF3?tag=dailyvirald06-20"
+imageSrc: "/images/reviews/b0f3csflf3/desk-break.jpg"
+imageCaption: "RENPHO eye massager resting on a desk beside a closed laptop during a screen break."
+images: [{"src":"/images/reviews/b0f3csflf3/desk-break.jpg","caption":"RENPHO eye massager resting on a desk beside a closed laptop during a screen break.","alt":"RENPHO eye massager resting on a desk beside a closed laptop during a screen break."},{"src":"/images/reviews/b0f3csflf3/sofa-relax.jpg","caption":"Someone winding down on the sofa wearing the heated RENPHO eye massager.","alt":"Someone winding down on the sofa wearing the heated RENPHO eye massager."},{"src":"/images/reviews/b0f3csflf3/travel-fold.jpg","caption":"Folded RENPHO eye massager packed next to a passport for travel.","alt":"Folded RENPHO eye massager packed next to a passport for travel."}]
 hook: "Staring at screens all day leaves your eyes throbbing and your temples tight."
 hookSupport: "The RENPHO Eyeris 1 Eye Massager simplifies your wind-down routine by combining complete light-blocking coverage, gentle heat, and precision compression massage into one portable device."
 whyHelps: ["It streamlines your relaxation routine by combining light-blocking coverage, warmth, and compression into a single step.","The 180-degree foldable design and USB charging make it easy to use at your office desk, on an airplane, or while traveling.","An adjustable headband ensures a comfortable fit for adults and teenagers without complicated setups."]

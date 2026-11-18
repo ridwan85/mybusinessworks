@@ -5,6 +5,9 @@ asin: "B09B82LJ21"
 brand: "Ninja"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20"
+imageSrc: "/images/reviews/b09b82lj21/steak-sear.jpg"
+imageCaption: "Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter."
+images: [{"src":"/images/reviews/b09b82lj21/steak-sear.jpg","caption":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter.","alt":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter."},{"src":"/images/reviews/b09b82lj21/griddle-breakfast.jpg","caption":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate.","alt":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate."},{"src":"/images/reviews/b09b82lj21/air-crisp-fries.jpg","caption":"Golden fries in the 4-quart crisper basket after an Air Crisp cook.","alt":"Golden fries in the 4-quart crisper basket after an Air Crisp cook."}]
 hook: "Tired of juggling three different pans just to cook one family meal?"
 hookSupport: "Instead of dirtying multiple dishes and constantly monitoring the stove, the Ninja IG651 Foodi Smart XL Pro combines a high-heat grill, flat top griddle, and air fryer into one easy-to-use countertop appliance."
 whyHelps: ["You can switch between a 500-degree char-grilling grate and a 12-inch flat top griddle without changing appliances.","The integrated Foodi Smart Thermometer removes all guesswork so your meats cook to the exact doneness you want.","Cleanup is remarkably straightforward thanks to dishwasher-safe, PTFE/PFOA-free nonstick ceramic-coated plates.","A built-in smoke control system keeps cooking smoke out of your kitchen while you prepare family-sized portions."]

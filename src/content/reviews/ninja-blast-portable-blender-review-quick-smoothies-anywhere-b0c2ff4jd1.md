@@ -5,6 +5,9 @@ asin: "B0C2FF4JD1"
 brand: "Ninja"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B0C2FF4JD1?tag=dailyvirald06-20"
+imageSrc: "/images/reviews/b0c2ff4jd1/gym-smoothie.jpg"
+imageCaption: "Ninja Blast with a berry smoothie sitting on a gym bag after a workout blend."
+images: [{"src":"/images/reviews/b0c2ff4jd1/gym-smoothie.jpg","caption":"Ninja Blast with a berry smoothie sitting on a gym bag after a workout blend.","alt":"Ninja Blast with a berry smoothie sitting on a gym bag after a workout blend."},{"src":"/images/reviews/b0c2ff4jd1/kitchen-counter.jpg","caption":"Black Ninja Blast on the kitchen counter beside bananas and spinach for a morning shake.","alt":"Black Ninja Blast on the kitchen counter beside bananas and spinach for a morning shake."},{"src":"/images/reviews/b0c2ff4jd1/travel-bag.jpg","caption":"Portable blender packed beside a travel tote with a USB-C cable on a hotel desk.","alt":"Portable blender packed beside a travel tote with a USB-C cable on a hotel desk."}]
 hook: "Running out the door with zero time to sit down for breakfast?"
 hookSupport: "When your morning schedule is packed tight, waiting around to make and pour a smoothie can ruin your routine. This cordless blender lets you mix and drink right from the same vessel so you can grab your drink and head out instantly."
 whyHelps: ["Skip the kitchen cleanup and extra cups by blending and drinking from the exact same 18-ounce vessel.","Blast through frozen fruits and ice in seconds without waiting for bulky countertop cords or wall outlets.","Run a quick 30-second self-clean cycle with water and a drop of dish soap to save valuable minutes during busy days."]

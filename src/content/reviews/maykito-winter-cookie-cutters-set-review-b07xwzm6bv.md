@@ -5,6 +5,9 @@ asin: "B07XWZM6BV"
 brand: "Maykito"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B07XWZM6BV?tag=dailyvirald06-20"
+imageSrc: "/images/reviews/b07xwzm6bv/tree-cutter.jpg"
+imageCaption: "Stainless tree cookie cutter pressing into rolled dough."
+images: [{"src":"/images/reviews/b07xwzm6bv/tree-cutter.jpg","caption":"Stainless tree cookie cutter pressing into rolled dough.","alt":"Stainless tree cookie cutter pressing into rolled dough."},{"src":"/images/reviews/b07xwzm6bv/decorated-batch.jpg","caption":"Decorated sugar cookies from classic winter cutter shapes.","alt":"Decorated sugar cookies from classic winter cutter shapes."},{"src":"/images/reviews/b07xwzm6bv/gift-box.jpg","caption":"Maykito cookie cutter set gift-boxed for family baking.","alt":"Maykito cookie cutter set gift-boxed for family baking."}]
 hook: "Easy winter cookies start with the right cutters."
 hookSupport: "Maykito’s 12-piece stainless cookie cutter set covers familiar winter shapes so you can cut, bake, and decorate without hunting for one-off molds."
 whyHelps: ["Twelve seasonal shapes—tree, snowflake, star, gingerbread, house, and more—cover a full cookie tray from one boxed set.","Stainless steel holds shape better than flimsy plastic cutters when you press through chilled dough.","Gift-ready packaging makes the set easy to store or wrap for a family baking night.","Use beyond cookies for fondant, soft fruit, sandwiches, cheese, or craft clay when the season is over."]

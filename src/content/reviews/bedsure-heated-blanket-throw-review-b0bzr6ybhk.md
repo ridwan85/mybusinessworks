@@ -5,6 +5,9 @@ asin: "B0BZR6YBHK"
 brand: "Bedsure"
 category: "Home Decor"
 affiliateUrl: "https://www.amazon.com/dp/B0BZR6YBHK?tag=dailyvirald06-20"
+imageSrc: "/images/reviews/b0bzr6ybhk/couch-cozy.jpg"
+imageCaption: "A folded Bedsure heated throw blanket in grey, displaying the soft flannel and sherpa textures."
+images: [{"src":"/images/reviews/b0bzr6ybhk/couch-cozy.jpg","caption":"A folded Bedsure heated throw blanket in grey, displaying the soft flannel and sherpa textures.","alt":"A folded Bedsure heated throw blanket in grey, displaying the soft flannel and sherpa textures."},{"src":"/images/reviews/b0bzr6ybhk/movie-night.jpg","caption":"Close-up of the digital controller showing the heating levels and timer settings.","alt":"Close-up of the digital controller showing the heating levels and timer settings."},{"src":"/images/reviews/b0bzr6ybhk/bed-warmup.jpg","caption":"The heated blanket draped comfortably over a living room sofa for everyday use.","alt":"The heated blanket draped comfortably over a living room sofa for everyday use."}]
 hook: "Stop wasting time struggling to get your bed or couch warm on chilly evenings."
 hookSupport: "Instead of turning up the thermostat or fiddling with bulky space heaters, streamline your relaxation routine with a blanket designed for fewer steps and instant warmth."
 whyHelps: ["Skip the hassle of managing multiple heating devices and simply plug in for direct warmth.","The preheat function gets your blanket toasty fast so you can relax immediately without constant adjustments.","Easily dial in your comfort with straightforward controls, letting you enjoy movie nights and relaxing evenings with zero fuss."]

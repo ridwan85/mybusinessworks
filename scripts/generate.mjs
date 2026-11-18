@@ -11,7 +11,12 @@ import {
     normalizeProductCategory,
 } from './lib/review-format.mjs';
 import { stampCreatedAt } from './lib/product-meta.mjs';
-import { isAmazonHostedImageUrl, isOwnerPhotoPath } from './lib/amazon-image.mjs';
+import {
+    isAmazonHostedImageUrl,
+    isLocalLifestyleImage,
+    isOwnerPhotoPath,
+    isRehostedAmazonPhoto,
+} from './lib/amazon-image.mjs';
 
 const TAG = process.env.AMAZON_ASSOCIATE_TAG;
 const env = process.env;
@@ -88,10 +93,28 @@ function parseSiteStripe(html, file) {
     return { imageHtml: html.trim(), imageSrc: imgSrc.startsWith('//') ? `https:${imgSrc}` : imgSrc };
 }
 
-function ignoredImageNote(src) {
-    console.log(
-        `Ignoring ${src}. Product photos on the site must be an Amazon-hosted SiteStripe/API URL (siteStripeImage) or your own file (ownImage: /images/reviews/<asin>/own.jpg).`,
-    );
+function collectCreatives(p) {
+    const out = [];
+    const push = (src) => {
+        if (!src || out.includes(src)) return;
+        if (isRehostedAmazonPhoto(src)) {
+            console.log(`Ignoring ${src}. That file is a re-hosted Amazon product photo and is not published.`);
+            return;
+        }
+        if (isOwnerPhotoPath(src) || isLocalLifestyleImage(src)) {
+            out.push(src);
+            return;
+        }
+        if (isAmazonHostedImageUrl(src)) {
+            console.log(`Ignoring ${src}. Put Amazon-hosted SiteStripe or API URLs in siteStripeImage. Do not download the file.`);
+        }
+    };
+    if (p.ownImage) push(p.ownImage);
+    if (p.imageUrl) push(p.imageUrl);
+    if (Array.isArray(p.showcases)) {
+        for (const item of p.showcases) push(typeof item === 'string' ? item : item?.src);
+    }
+    return out;
 }
 
 async function loadProduct(asin) {
@@ -111,14 +134,10 @@ async function loadProduct(asin) {
             : isAmazonHostedImageUrl(stripe.imageSrc)
               ? stripe.imageSrc
               : undefined;
-        const ownImage = isOwnerPhotoPath(p.ownImage) ? p.ownImage : undefined;
-        if (p.imageUrl && p.imageUrl !== siteStripeImage && p.imageUrl !== ownImage) ignoredImageNote(p.imageUrl);
-        if (Array.isArray(p.showcases)) {
-            for (const item of p.showcases) {
-                const src = typeof item === 'string' ? item : item?.src;
-                if (src && src !== siteStripeImage && src !== ownImage) ignoredImageNote(src);
-            }
-        }
+        const creatives = collectCreatives(p);
+        const ownImage = creatives.find((src) => isOwnerPhotoPath(src));
+        const imageSrc = ownImage || creatives.find((src) => isLocalLifestyleImage(src));
+        const showcases = creatives.filter((src) => src !== imageSrc);
         if (p.siteStripeImage && !siteStripeImage) {
             fail(`${file}: "siteStripeImage" must be an Amazon-hosted image URL (SiteStripe or the Product Advertising API).`);
         }
@@ -130,6 +149,8 @@ async function loadProduct(asin) {
             imageHtml: stripe.imageHtml,
             siteStripeImage,
             ownImage,
+            imageSrc,
+            showcases,
         };
     } catch (e) {
         if (e.code !== 'ENOENT') throw e;
@@ -144,7 +165,7 @@ async function loadProduct(asin) {
 async function writeReview(p) {
     const { apiKey, baseURL } = PROVIDERS[PROVIDER];
     const client = new OpenAI({ apiKey, baseURL });
-    const hasImages = Boolean(p.siteStripeImage || p.ownImage || p.imageHtml);
+    const hasImages = Boolean(p.siteStripeImage || p.ownImage || p.imageSrc || p.showcases?.length || p.imageHtml);
     const completion = await client.chat.completions.create({
         model: MODEL,
         temperature: 0.6,
@@ -160,7 +181,7 @@ async function writeReview(p) {
                     category: p.category,
                     features: p.features,
                     hasProductImages: hasImages,
-                    imageCount: hasImages ? 1 : 0,
+                    imageCount: Math.max(p.showcases?.length || 0, p.imageSrc || p.siteStripeImage ? 1 : 0),
                 }),
             },
         ],
@@ -192,11 +213,12 @@ if (existing && !force) fail(`Review already exists (${existing}). Use --force t
 
 console.log(`Generating locked-format review for ${asin} with ${MODEL}...`);
 const review = await writeReview(product);
+const showLocal = Boolean(product.imageSrc || product.showcases?.length);
 const { imagesLine, imageCaptionLine } = buildImagesFrontmatter({
-    imageSrc: product.ownImage || product.siteStripeImage,
-    showcases: [],
-    imageCaption: product.ownImage || product.siteStripeImage ? review.imageCaption : undefined,
-    imageCaptions: [],
+    imageSrc: product.imageSrc,
+    showcases: product.showcases,
+    imageCaption: showLocal || product.siteStripeImage ? review.imageCaption : undefined,
+    imageCaptions: showLocal ? review.imageCaptions : [],
 });
 
 const body = review.body + '\n';
@@ -212,8 +234,9 @@ const frontmatter = [
     product.imageHtml ? `imageHtml: ${JSON.stringify(product.imageHtml)}` : null,
     product.siteStripeImage ? `siteStripeImage: ${JSON.stringify(product.siteStripeImage)}` : null,
     product.ownImage ? `ownImage: ${JSON.stringify(product.ownImage)}` : null,
+    product.imageSrc && product.imageSrc !== product.ownImage ? `imageSrc: ${JSON.stringify(product.imageSrc)}` : null,
     imageCaptionLine,
-    product.ownImage ? imagesLine : null,
+    imagesLine,
     `hook: ${JSON.stringify(review.hook)}`,
     `hookSupport: ${JSON.stringify(review.hookSupport)}`,
     `whyHelps: ${JSON.stringify(review.whyHelps)}`,

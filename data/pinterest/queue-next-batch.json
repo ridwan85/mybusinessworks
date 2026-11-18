@@ -8,7 +8,7 @@
       "pins": [
         {
           "draft": "data/pinterest/drafts/B07T89L8C7-morning.json",
-          "boardKey": "wellness",
+          "boardKey": "skincare",
           "command": "npm run pinterest:publish -- data/pinterest/drafts/B07T89L8C7-morning.json"
         },
         {

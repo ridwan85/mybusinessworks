@@ -1,7 +1,8 @@
 /**
  * Which product images this repo is allowed to use.
- * Amazon Associates: product images only via SiteStripe or the Product Advertising API,
- * and the browser must load them from Amazon's servers. Do not download them into public/.
+ * Required: do not re-host Amazon packshots (source.jpg or a file downloaded from Amazon).
+ * Amazon-hosted SiteStripe / API URLs stay on Amazon's servers.
+ * Optional: lifestyle creatives already in this repo may still be referenced.
  * Keep the same host rules in src/lib/product-image.ts.
  */
 
@@ -25,6 +26,20 @@ export function isOwnerPhotoPath(value) {
     return /^\/images\/reviews\/[a-z0-9]+\/own\.(jpe?g|png|webp)$/i.test(raw);
 }
 
+/** Downloaded Amazon packshot. Never publish or render this filename. */
+export function isRehostedAmazonPhoto(value) {
+    const raw = String(value || '').trim().split(/[?#]/)[0];
+    return /\/source\.(jpe?g|png|webp)$/i.test(raw);
+}
+
+/** On-site creative that is not an Amazon packshot copy. */
+export function isLocalLifestyleImage(value) {
+    const raw = String(value || '').trim().split(/[?#]/)[0];
+    if (!raw || isRehostedAmazonPhoto(raw)) return false;
+    return /^\/images\/reviews\/[a-z0-9]+\/[a-z0-9][a-z0-9-]*\.(jpe?g|png|webp)$/i.test(raw);
+}
+
 export function isAllowedProductImage(value) {
-    return isAmazonHostedImageUrl(value) || isOwnerPhotoPath(value);
+    if (isRehostedAmazonPhoto(value)) return false;
+    return isAmazonHostedImageUrl(value) || isOwnerPhotoPath(value) || isLocalLifestyleImage(value);
 }

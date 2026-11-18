@@ -5,6 +5,9 @@ asin: "B0CJ4WZXQF"
 brand: "Cisily"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20"
+imageSrc: "/images/reviews/b0cj4wzxqf/sink-tidy.jpg"
+imageCaption: "Caddy hooked on the sink edge with sponge and brushes—tools stay off the wet basin floor."
+images: [{"src":"/images/reviews/b0cj4wzxqf/sink-tidy.jpg","caption":"Caddy hooked on the sink edge with sponge and brushes—tools stay off the wet basin floor.","alt":"Caddy hooked on the sink edge with sponge and brushes—tools stay off the wet basin floor."},{"src":"/images/reviews/b0cj4wzxqf/three-slots.jpg","caption":"Soap, sponge, and dish brushes each in their own compartment on the counter.","alt":"Soap, sponge, and dish brushes each in their own compartment on the counter."},{"src":"/images/reviews/b0cj4wzxqf/drain-closeup.jpg","caption":"Sloped tray sending leftover rinse water straight into the sink after dishes.","alt":"Sloped tray sending leftover rinse water straight into the sink after dishes."},{"src":"/images/reviews/b0cj4wzxqf/bathroom-vanity.jpg","caption":"Same organizer on a bathroom vanity holding hand soap and a cleaning brush.","alt":"Same organizer on a bathroom vanity holding hand soap and a cleaning brush."}]
 hook: "Tired of a cluttered sink and a sponge that never dries?"
 hookSupport: "This stainless Cisily caddy splits sponge, brush, and soap into three slots and uses a sloped self-drain tray so water isn’t puddling under everything."
 whyHelps: ["Three divided compartments mean sponge, brush, and soap stop fighting for the same wet corner of the sink.","The sloped automatic drainage design sends water away so you spend less time wiping a slimy holder.","Premium stainless steel rinses clean under the tap and is built to resist rust and warping.","No install—open the box, set it on the counter or sink edge, and the station is ready."]

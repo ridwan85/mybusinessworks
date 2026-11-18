@@ -1,7 +1,9 @@
 /**
  * Product photos allowed on the public site.
- * Amazon-hosted URLs (SiteStripe or Product Advertising API) stay on Amazon's servers.
- * own.jpg is a photo the owner took. Local copies of Amazon images are not shown.
+ * Required: do not re-host Amazon packshots (source.jpg or a downloaded CDN file).
+ * Amazon-hosted SiteStripe / API URLs stay on Amazon's servers.
+ * Optional: lifestyle creatives already in this repo (not Amazon downloads) may still be shown.
+ * own.jpg is a photo the owner took.
  * Keep the same host rules in scripts/lib/amazon-image.mjs.
  */
 
@@ -24,8 +26,22 @@ export function isOwnerPhotoPath(value?: string): boolean {
     return /^\/images\/reviews\/[a-z0-9]+\/own\.(jpe?g|png|webp)$/i.test(raw);
 }
 
+/** Downloaded Amazon packshot. Never publish or render this filename. */
+export function isRehostedAmazonPhoto(value?: string): boolean {
+    const raw = String(value || '').trim().split(/[?#]/)[0];
+    return /\/source\.(jpe?g|png|webp)$/i.test(raw);
+}
+
+/** On-site creative that is not an Amazon packshot copy. */
+export function isLocalLifestyleImage(value?: string): boolean {
+    const raw = String(value || '').trim().split(/[?#]/)[0];
+    if (!raw || isRehostedAmazonPhoto(raw)) return false;
+    return /^\/images\/reviews\/[a-z0-9]+\/[a-z0-9][a-z0-9-]*\.(jpe?g|png|webp)$/i.test(raw);
+}
+
 export function allowedProductImage(value?: string): string | undefined {
-    if (isAmazonHostedImageUrl(value) || isOwnerPhotoPath(value)) return value;
+    if (isRehostedAmazonPhoto(value)) return undefined;
+    if (isAmazonHostedImageUrl(value) || isOwnerPhotoPath(value) || isLocalLifestyleImage(value)) return value;
     return undefined;
 }
 
@@ -35,7 +51,7 @@ type ImageFields = {
     imageSrc?: string;
 };
 
-/** Hero image for a review: SiteStripe URL, then the owner's photo. Local Amazon copies are dropped. */
+/** Hero image: SiteStripe URL, then the owner's photo, then an on-site lifestyle creative. Amazon packshots are dropped. */
 export function displayImage(data?: ImageFields): string | undefined {
     if (!data) return undefined;
     return (

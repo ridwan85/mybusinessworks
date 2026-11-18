@@ -5,6 +5,9 @@ asin: "B0HCF2G9VQ"
 brand: "Shark"
 category: "Beauty"
 affiliateUrl: "https://www.amazon.com/dp/B0HCF2G9VQ?tag=dailyvirald06-20"
+imageSrc: "/images/reviews/b0hcf2g9vq/curl-style.jpg"
+imageCaption: "Shark FlexStyle Next-Gen IonCurl 5-in-1 Hair Styler and Dryer in use."
+images: [{"src":"/images/reviews/b0hcf2g9vq/curl-style.jpg","caption":"Shark FlexStyle Next-Gen IonCurl 5-in-1 Hair Styler and Dryer in use.","alt":"Shark FlexStyle Next-Gen IonCurl 5-in-1 Hair Styler and Dryer in use."},{"src":"/images/reviews/b0hcf2g9vq/vanity-ready.jpg","caption":"Close-up of the Coanda wrap curling attachment.","alt":"Close-up of the Coanda wrap curling attachment."},{"src":"/images/reviews/b0hcf2g9vq/blowout.jpg","caption":"The sleek device showing its multiple styling attachments.","alt":"The sleek device showing its multiple styling attachments."}]
 hook: "Tired of juggling a dryer, curler, and tools every morning?"
 hookSupport: "The Shark FlexStyle Next-Gen IonCurl combines drying, styling, and curling into one streamlined device, cutting down your morning routine and getting you out the door faster."
 whyHelps: ["It dries and styles your hair at the same time, cutting down the minutes you spend in front of the mirror.","The powerful Coanda wrap curling feature grabs and curls your hair in seconds without manual twisting.","With faster drying and styling times, you can finally reclaim a chunk of your busy morning schedule."]
