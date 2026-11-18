@@ -15,7 +15,7 @@ export const categoryHubs: CategoryHub[] = [
     {
         slug: 'home-living',
         label: 'Home & living',
-        blurb: 'Everyday things that earn a spot at home.',
+        blurb: 'Things you use at home, because they make an ordinary day a little easier.',
         src: '/images/site/hero-home-lifestyle.jpg',
         match: (r) =>
             testCategory(
@@ -28,7 +28,7 @@ export const categoryHubs: CategoryHub[] = [
     {
         slug: 'work-tech',
         label: 'Work & tech',
-        blurb: 'Tools that make work and tech less fiddly.',
+        blurb: 'Tools that make work and tech a little less fiddly.',
         src: '/images/site/hero-workspace.jpg',
         match: (r) =>
             testCategory(
@@ -41,7 +41,7 @@ export const categoryHubs: CategoryHub[] = [
     {
         slug: 'everyday-essentials',
         label: 'Everyday essentials',
-        blurb: 'The rest of the useful everyday picks.',
+        blurb: 'Other useful picks that did not fit the first two groups.',
         src: '/images/site/hero-parcels.jpg',
         match: (r) => {
             const specific = categoryHubs.filter((h) => h.slug !== 'everyday-essentials');

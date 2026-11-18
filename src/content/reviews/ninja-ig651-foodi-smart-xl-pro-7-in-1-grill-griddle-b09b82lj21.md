@@ -6,8 +6,8 @@ brand: "Ninja"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20"
 imageSrc: "/images/reviews/b09b82lj21/steak-sear.jpg"
-imageCaption: "Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter."
-images: [{"src":"/images/reviews/b09b82lj21/steak-sear.jpg","caption":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter.","alt":"Steaks searing on the Ninja Foodi Smart XL Pro grill grate with the lid open on the counter."},{"src":"/images/reviews/b09b82lj21/griddle-breakfast.jpg","caption":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate.","alt":"Pancakes and eggs cooking on the 12-inch flat-top BBQ griddle plate."},{"src":"/images/reviews/b09b82lj21/air-crisp-fries.jpg","caption":"Golden fries in the 4-quart crisper basket after an Air Crisp cook.","alt":"Golden fries in the 4-quart crisper basket after an Air Crisp cook."}]
+imageCaption: "Steaks on the grill grate, with the lid open."
+images: [{"src":"/images/reviews/b09b82lj21/steak-sear.jpg","caption":"Steaks on the grill grate, with the lid open.","alt":"Steaks on the grill grate, with the lid open."},{"src":"/images/reviews/b09b82lj21/griddle-breakfast.jpg","caption":"Pancakes and eggs on the flat griddle.","alt":"Pancakes and eggs on the flat griddle."},{"src":"/images/reviews/b09b82lj21/air-crisp-fries.jpg","caption":"Fries in the crisper basket.","alt":"Fries in the crisper basket."}]
 hook: "One Pan Is Not Enough: An Indoor Grill and Griddle"
 hookSupport: "You can sear, griddle, and air fry in one machine. It is big. It stays indoors."
 whyHelps: ["You can sear without going outside.","The flat top covers pancakes, sandwiches, and more.","A probe helps you hit the doneness you want.","They claim it makes less smoke."]
@@ -24,39 +24,37 @@ createdAt: "2026-11-16T10:45:00+08:00"
 
 ## Quick verdict
 
-Dinner needs a grill pan, a flat pan, and then the oven. That is three things to wash.
+Dinner needs a grill pan, a flat pan, and then the oven, which is three things to wash. One indoor machine can sear, griddle, and air fry, but it is big, so the counter has to have room.
 
-The <a href="https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Foodi Smart XL Pro</a> is an indoor grill, a 12-inch griddle, and an air fryer. The claim is the grill grate can hit 500°F.
-
-It is a big machine. Read the size before you clear a spot.
+The <a href="https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Foodi Smart XL Pro</a> is an indoor grill, a 12-inch griddle, and an air fryer. The claim is the grill grate can hit 500°F. Read the size before you clear a spot.
 
 ## What it does
 
-* **A hot grill grate.** They claim the grate heats to 500°F from edge to edge. They compare that with their older grills.
+* **A hot grill grate.** They claim the grate heats to 500°F from edge to edge, and they compare that with their older grills.
 
-* **A 12-inch flat top.** It swaps in for foods a grate cannot hold. Think pancakes, sandwiches, or a tray of nachos. You use the grate or the griddle, not both at once.
+* **A 12-inch flat top.** It swaps in for foods a grate cannot hold, like pancakes, sandwiches, or a tray of nachos. You use the grate or the griddle, not both at once.
 
-* **Hood up or hood down.** Hood down adds air for crisping and melting. Hood up is direct heat from below.
+* **Hood up or hood down.** Hood down adds air for crisping and melting, and hood up is direct heat from below.
 
-* **A food probe.** Four protein settings and nine doneness levels, from rare to well. The claim is you pick how done you want it, and the probe watches the meat.
+* **A food probe.** There are four protein settings and nine doneness levels, from rare to well. The claim is you pick how done you want it, and the probe watches the meat.
 
-* **Seven functions.** Grill, griddle, air crisp, roast, bake, broil, and dehydrate. The air-fry basket is 4 quarts. The claim is up to 75% less fat than deep-fried fries.
+* **Seven functions.** You can grill, griddle, air crisp, roast, bake, broil, and dehydrate. The air-fry basket is 4 quarts, and the claim is up to 75% less fat than deep-fried fries.
 
-* **Family size.** The claim is the grate fits 6 steaks. The griddle fits 6 pancakes or 4 sandwiches.
+* **Family size.** The claim is the grate fits 6 steaks, and the griddle fits 6 pancakes or 4 sandwiches.
 
-* **Smoke control.** A heat-controlled grate, a splatter shield, and a cool-air zone. They claim that keeps smoke down. You still need to clean the shield.
+* **Smoke control.** A heat-controlled grate, a splatter shield, and a cool-air zone are how they claim to keep smoke down, but you still need to clean the shield.
 
-* **Cleanup.** The grate, basket, and griddle are ceramic nonstick. They are PTFE-free and PFOA-free, which means those nonstick chemicals are not in the coat. They claim the lid and cup are dishwasher safe.
+* **Cleanup.** The grate, basket, and griddle are ceramic nonstick. They are PTFE-free and PFOA-free, which means those nonstick chemicals are not in the coat. They claim the cooking plates are dishwasher safe.
 
 ## Who it's for
 
-It fits families and apartment cooks who want grilled food indoors. It fits you if meat temperature is the part you always get wrong.
+It fits families and apartment cooks who want grilled food indoors, and it fits you if meat temperature is the part you always get wrong.
 
-It is a poor fit if the counter is already packed. A small air fryer is the lighter choice.
+It is a poor fit if the counter is already packed, because a small air fryer is the lighter choice.
 
 ## The good parts
 
-* Grill, griddle, and air fryer in one base.
+* A grill, a griddle, and an air fryer in one base.
 * A probe so you are not cutting meat to check.
 * Room for a family breakfast or several steaks.
 * They claim the smoke system helps indoors.
@@ -64,20 +62,20 @@ It is a poor fit if the counter is already packed. A small air fryer is the ligh
 
 ## Honest limits
 
-* It is XL. It will own a chunk of counter.
-* The splatter shield needs regular cleaning or the smoke control gets worse.
+* It is XL, so it will own a chunk of counter.
+* The splatter shield needs regular cleaning, or the smoke control gets worse.
 * The unit is heavy to move in and out of a cabinet.
-* Grill and griddle do not run together.
+* The grill and the griddle do not run together.
 
 ## FAQ
 
 ### Can I use the grill and the griddle at the same time?
 
-No. You swap one plate for the other. One surface at a time.
+No. You swap one plate for the other, so it is one surface at a time.
 
 ### How does the smoke control work?
 
-They claim a controlled grate, a splatter shield, and a cool-air zone cut the smoke. They also share grilling tips.
+They claim a controlled grate, a splatter shield, and a cool-air zone cut the smoke, and they also share grilling tips.
 
 ### Are the plates dishwasher safe?
 
@@ -89,6 +87,6 @@ The base, a 9 by 12 inch grill grate, a 12-inch griddle, a 4-quart crisper baske
 
 ## Bottom line
 
-This Foodi is for people who want an indoor grill night without three pans. The probe is the calm part. It tells you when the meat hits the level you picked.
+This Foodi is for people who want an indoor grill night without three pans, and the probe is the calm part because it tells you when the meat hits the level you picked.
 
-Skip it if you only air fry small batches. That job has a smaller machine. Skip it if you cannot spare the counter.
+Skip it if you only air fry small batches, because that job has a smaller machine. Skip it if you cannot spare the counter.
