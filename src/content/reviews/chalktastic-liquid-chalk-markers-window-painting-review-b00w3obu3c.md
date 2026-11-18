@@ -5,7 +5,6 @@ asin: "B00W3OBU3C"
 brand: "Chalktastic"
 category: "Home"
 affiliateUrl: "https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b00w3obu3c/own.jpg"
 imageSrc: "/images/reviews/b00w3obu3c/window-snowflake.jpg"
 imageCaption: "Snowflake doodles on a window with washable liquid chalk markers."
 images: [{"src":"/images/reviews/b00w3obu3c/window-snowflake.jpg","caption":"Snowflake doodles on a window with washable liquid chalk markers.","alt":"Snowflake doodles on a window with washable liquid chalk markers."},{"src":"/images/reviews/b00w3obu3c/easy-kids.jpg","caption":"Kids painting simple winter window designs with chalk pens.","alt":"Kids painting simple winter window designs with chalk pens."},{"src":"/images/reviews/b00w3obu3c/gift-set.jpg","caption":"Chalktastic liquid chalk marker set gift-ready for family DIY.","alt":"Chalktastic liquid chalk marker set gift-ready for family DIY."}]

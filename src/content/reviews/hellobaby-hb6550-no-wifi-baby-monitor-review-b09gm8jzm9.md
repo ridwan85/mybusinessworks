@@ -5,7 +5,6 @@ asin: "B09GM8JZM9"
 brand: "HelloBaby"
 category: "Baby Products"
 affiliateUrl: "https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b09gm8jzm9/own.jpg"
 imageSrc: "/images/reviews/b09gm8jzm9/kitchen-check.jpg"
 imageCaption: "A quick glance at the handheld screen while making coffee—no phone app or Wi‑Fi login required."
 images:

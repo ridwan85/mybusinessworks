@@ -5,7 +5,6 @@ asin: "B0C2C9NHZW"
 brand: "Levoit"
 category: "Home"
 affiliateUrl: "https://www.amazon.com/dp/B0C2C9NHZW?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b0c2c9nhzw/own.jpg"
 imageSrc: "/images/reviews/b0c2c9nhzw/bedroom-night.jpg"
 imageCaption: "A Levoit Top Fill Humidifier sitting on a nightstand in a bedroom."
 images: [{"src":"/images/reviews/b0c2c9nhzw/bedroom-night.jpg","caption":"A Levoit Top Fill Humidifier sitting on a nightstand in a bedroom.","alt":"A Levoit Top Fill Humidifier sitting on a nightstand in a bedroom."},{"src":"/images/reviews/b0c2c9nhzw/desk-plants.jpg","caption":"A close-up view showing the easy top-fill design being refilled with water.","alt":"A close-up view showing the easy top-fill design being refilled with water."},{"src":"/images/reviews/b0c2c9nhzw/easy-refill.jpg","caption":"The simple control knob and 360-degree nozzle for customized mist output.","alt":"The simple control knob and 360-degree nozzle for customized mist output."}]

@@ -5,7 +5,6 @@ asin: "B09715G57M"
 brand: "Keurig"
 category: "Kitchen"
 affiliateUrl: "https://www.amazon.com/dp/B09715G57M?tag=dailyvirald06-20"
-ownImage: "/images/reviews/b09715g57m/own.jpg"
 imageSrc: "/images/reviews/b09715g57m/morning-brew.jpg"
 imageCaption: "Black Keurig K-Express brewing a cup on the counter—fresh coffee in minutes."
 images: [{"src":"/images/reviews/b09715g57m/morning-brew.jpg","caption":"Black Keurig K-Express brewing a cup on the counter—fresh coffee in minutes.","alt":"Black Keurig K-Express brewing a cup on the counter—fresh coffee in minutes."},{"src":"/images/reviews/b09715g57m/travel-mug.jpg","caption":"Drip tray removed so a tall travel mug fits for a grab-and-go brew.","alt":"Drip tray removed so a tall travel mug fits for a grab-and-go brew."},{"src":"/images/reviews/b09715g57m/counter-ready.jpg","caption":"Compact K-Express ready on the counter beside a few K-Cup pods.","alt":"Compact K-Express ready on the counter beside a few K-Cup pods."}]
