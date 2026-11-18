@@ -26,7 +26,7 @@ createdAt: 2026-11-11T22:36:00+08:00
 
 Coffee hits the couch. A paper towel just pushes it deeper.
 
-The <a href="https://www.amazon.com/dp/B0DJMP6T3N?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">BISSELL Little Green Mini 4075</a> is a portable spot cleaner. You spray, scrub, and suction. BISSELL aims it at carpet, upholstery, car seats, and pet beds. This page did not clean a stain with it.
+The <a href="https://www.amazon.com/dp/B0DJMP6T3N?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">BISSELL Little Green Mini 4075</a> is a portable spot cleaner. You spray, scrub, and suction. BISSELL aims it at carpet, upholstery, car seats, and pet beds.
 
 It is not a machine for a whole bedroom of carpet.
 

@@ -26,7 +26,7 @@ createdAt: 2026-11-18T13:30:00+08:00
 
 The house is warm. Your bedroom is not. You do not want to heat every room.
 
-The <a href="https://www.amazon.com/dp/B0C6FCKQML?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Dreo space heater</a> in this review is the Gold HSH006. It is a corded 1500W ceramic tower. Dreo lists it for about 200 square feet. This page did not run it in a room.
+The <a href="https://www.amazon.com/dp/B0C6FCKQML?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Dreo space heater</a> in this review is the Gold HSH006. It is a corded 1500W ceramic tower. Dreo lists it for about 200 square feet.
 
 ## What it does
 
@@ -36,7 +36,7 @@ The <a href="https://www.amazon.com/dp/B0C6FCKQML?tag=dailyvirald06-20" rel="nof
 
 * **Modes on the listing.** Power heat, ECO, and Fan Only. There is also a 12-hour timer, mute, a child lock, and a memory function. If a badge says "5 Mode," read the live page so you know what those modes are.
 
-* **Quiet, per Dreo.** The listing says 34 dB. That is their number for a bedroom or a desk. This page did not measure it.
+* **Quiet, per Dreo.** The listing says 34 dB. That is their number for a bedroom or a desk.
 
 * **Safety lines.** Tip-over shutoff, overheat protection, a safety plug, and flame-retardant material. ETL certified. Indoor only. Do not use an extension cord or a power strip. Do not set it on a bed or a soft chair where the vents get blocked.
 

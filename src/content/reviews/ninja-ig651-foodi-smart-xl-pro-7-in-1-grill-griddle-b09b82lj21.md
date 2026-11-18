@@ -26,7 +26,7 @@ createdAt: "2026-11-16T10:45:00+08:00"
 
 Dinner needs a grill pan, a flat pan, and then the oven. That is three things to wash.
 
-The <a href="https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Foodi Smart XL Pro</a> is an indoor grill, a 12-inch griddle, and an air fryer. Ninja says the grill grate can hit 500°F. This page did not cook on it.
+The <a href="https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Foodi Smart XL Pro</a> is an indoor grill, a 12-inch griddle, and an air fryer. Ninja says the grill grate can hit 500°F.
 
 It is a big machine. Read the size before you clear a spot.
 
@@ -77,7 +77,7 @@ No. You swap one plate for the other. One surface at a time.
 
 ### How does the smoke control work?
 
-Ninja pairs a controlled grate, a splatter shield, and a cool-air zone. They also point you to their grilling tips. It is their system, not a test from this page.
+Ninja pairs a controlled grate, a splatter shield, and a cool-air zone. They also point you to their grilling tips. It is their system
 
 ### Are the plates dishwasher safe?
 

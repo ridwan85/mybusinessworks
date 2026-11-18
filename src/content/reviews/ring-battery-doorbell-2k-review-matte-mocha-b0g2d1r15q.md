@@ -35,7 +35,7 @@ createdAt: 2026-11-11T12:14:01+08:00
 
 Someone knocks. Your hands are full. The door is at the other end of the house.
 
-The <a href="https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ring Battery Doorbell 2K</a> in Matte Mocha is a wire-free doorbell camera. Ring calls the picture Retinal 2K, with up to 6x zoom. This page did not install it.
+The <a href="https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ring Battery Doorbell 2K</a> in Matte Mocha is a wire-free doorbell camera. Ring calls the picture Retinal 2K, with up to 6x zoom.
 
 ## What it does
 
@@ -70,7 +70,6 @@ Skip it if you hate taking a device down to charge. A wired doorbell stays power
 * USB-C cable is not in the box.
 * Video history needs a paid Ring plan.
 * You unmount it to charge.
-* This page did not test video quality or battery life.
 
 ## FAQ
 

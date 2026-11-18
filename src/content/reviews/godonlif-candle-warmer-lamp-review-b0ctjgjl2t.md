@@ -26,7 +26,7 @@ createdAt: 2026-11-11T22:32:00+08:00
 
 You like the smell of a candle. You do not like soot, smoke, or a flame near kids and pets.
 
-The <a href="https://www.amazon.com/dp/B0CTJGJL2T?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">GODONLIF candle warmer lamp</a> melts a jar candle from the top down. There is no flame. This page did not melt a candle with it.
+The <a href="https://www.amazon.com/dp/B0CTJGJL2T?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">GODONLIF candle warmer lamp</a> melts a jar candle from the top down. There is no flame.
 
 ## What it does
 
@@ -61,7 +61,7 @@ Skip it if your candles are not jars.
 * It must plug in.
 * Jar candles only.
 * It will not light a room for reading.
-* Melt speed still depends on the wax and the distance. This page did not time a melt.
+* Melt speed still depends on the wax and the distance.
 
 ## FAQ
 

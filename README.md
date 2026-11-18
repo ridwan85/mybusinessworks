@@ -12,7 +12,7 @@ Every product page uses the same arc (do not invent a new structure):
 4. **Buy it if / Skip it if** and a 3-row compare table — template-owned, filled from each review
 5. **CTA** — Amazon orange “Check Price on Amazon” (template-owned, tagged affiliate URL)
 
-Copy is plain (about a grade 5–6 reading level). Do not claim a hands-on test. The template adds “Researched from the listing, specs and buyer reviews, not a hands-on test.”
+Copy is plain (about a grade 5–6 reading level). Attribute facts with “the listing says” or “buyers say.” Do not claim you tried the product, and do not add “this page did not test” lines.
 
 Image captions must describe what the photo shows/does in real life — never prompt-style words like “showcase”, “lifestyle shot”, or “marble look”.
 

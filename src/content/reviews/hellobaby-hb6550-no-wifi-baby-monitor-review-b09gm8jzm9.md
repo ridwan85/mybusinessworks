@@ -35,7 +35,7 @@ createdAt: 2026-11-11T13:09:13+08:00
 
 Nap time. You do not want to load an app or reboot the router.
 
-The <a href="https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">HelloBaby HB6550</a> is a video baby monitor with no Wi-Fi. A 5-inch parent screen talks straight to the camera. This page did not set one up in a nursery.
+The <a href="https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">HelloBaby HB6550</a> is a video baby monitor with no Wi-Fi. A 5-inch parent screen talks straight to the camera.
 
 ## What it does
 
@@ -45,7 +45,7 @@ The <a href="https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20" rel="nof
 
 * **Night and talk.** Infrared night vision. Two-way audio. A room-temperature alert. The listing also includes sound-level lights.
 
-* **Range.** About 1,000 feet in open space, per the listing. Walls cut that down. This page did not measure it.
+* **Range.** About 1,000 feet in open space, per the listing. Walls cut that down.
 
 * **Power.** The camera stays plugged in. The parent unit has a battery so you can carry the screen. You can add cameras later, up to four, per the listing.
 
@@ -70,7 +70,6 @@ Skip it if you need to check the baby from the office.
 * No phone viewing when you leave.
 * Walls reduce the 1,000-foot claim.
 * The camera needs constant power.
-* This page did not test range or night video.
 
 ## FAQ
 

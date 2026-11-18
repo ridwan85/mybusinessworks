@@ -26,7 +26,7 @@ createdAt: "2026-11-16T11:00:00+08:00"
 
 You are late. Breakfast is still fruit in the fridge. A big blender means a cord, a pour, and a wash.
 
-The <a href="https://www.amazon.com/dp/B0C2FF4JD1?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Blast</a> is a cordless blender with an 18 oz cup. You blend in the cup, then drink from it. This page covers the black BC151BK. This page did not blend a drink in it.
+The <a href="https://www.amazon.com/dp/B0C2FF4JD1?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Blast</a> is a cordless blender with an 18 oz cup. You blend in the cup, then drink from it. This page covers the black BC151BK.
 
 ## What it does
 
@@ -60,14 +60,14 @@ It is one serving. It is not a pitcher for a family breakfast.
 
 * 18 oz is one person, not a crowd.
 * You have to keep the battery charged.
-* Very thick mixes need enough liquid. This page did not test that limit.
+* Very thick mixes need enough liquid.
 * Ninja's "perfectly smooth" line is their claim.
 
 ## FAQ
 
 ### Can it crush ice?
 
-Ninja says the steel blades and ribbed cup can blast ice and frozen fruit. Use enough liquid. This page did not run that test.
+Ninja says the steel blades and ribbed cup can blast ice and frozen fruit. Use enough liquid.
 
 ### How do I clean it?
 

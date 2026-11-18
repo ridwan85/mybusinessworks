@@ -28,7 +28,7 @@ You get home late. The oven is cold. Nobody wants to stand over a pan.
 
 The <a href="https://www.amazon.com/dp/B0H87WV6N4?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Air Fryer Pro 5 Qt</a> blows 400°F air around the food. Ninja says that makes food hot and crispy with little or no oil. This color is Bone and Champagne. It is an Amazon exclusive finish.
 
-It will not cook every dish. It is built for frozen food, chicken, vegetables, and quick sides. This page did not cook in it.
+It will not cook every dish. It is built for frozen food, chicken, vegetables, and quick sides.
 
 ## What it does
 
@@ -38,7 +38,7 @@ It will not cook every dish. It is built for frozen food, chicken, vegetables, a
 
 * **A 5-quart basket.** Ninja says it holds up to 4 pounds of fries or 5 pounds of chicken wings. There is a crisper plate inside.
 
-* **Less oil.** Ninja says you can use up to 75% less fat than deep-fried fries. They tested that against hand-cut fries fried in oil. It is their test, not ours.
+* **Less oil.** Ninja says you can use up to 75% less fat than deep-fried fries. They tested that against hand-cut fries fried in oil.
 
 * **A smaller footprint.** Ninja says this shape saves counter space without shrinking the basket. Still measure your counter.
 

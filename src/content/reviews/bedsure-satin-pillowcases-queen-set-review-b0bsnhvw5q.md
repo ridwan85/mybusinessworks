@@ -26,11 +26,11 @@ createdAt: "2026-11-17T08:30:00+08:00"
 
 You wake up. Your hair is a cloud. Your cheek has a crease from the pillow.
 
-The <a href="https://www.amazon.com/dp/B0BSNHVW5Q?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Bedsure satin pillowcases</a> are a queen set of two. They are 100% polyester with a smooth, silk-like face. They are not silk. This page did not sleep on them.
+The <a href="https://www.amazon.com/dp/B0BSNHVW5Q?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Bedsure satin pillowcases</a> are a queen set of two. They are 100% polyester with a smooth, silk-like face. They are not silk.
 
 ## What it does
 
-* **Less rub.** The listing says the smooth face cuts friction. That can help frizz and breakage on curly or delicate hair. Results vary. This page did not measure hair.
+* **Less rub.** The listing says the smooth face cuts friction. That can help frizz and breakage on curly or delicate hair. Results vary.
 
 * **Skin.** Bedsure says the smooth surface lowers the chance of sleep marks. It is not a wrinkle treatment.
 
@@ -61,7 +61,7 @@ Skip it if you want real silk. Skip it if you thought pillows were in the box.
 * Polyester can sleep warmer or cooler than you like.
 * Gentle washing only.
 * Cases only. No pillow inserts.
-* Hair and skin lines are the brand's claim, not a test from this page.
+* Hair and skin lines are the brand's claim
 
 ## FAQ
 

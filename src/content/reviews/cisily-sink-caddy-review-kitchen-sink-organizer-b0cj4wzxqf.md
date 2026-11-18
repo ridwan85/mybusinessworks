@@ -26,7 +26,7 @@ createdAt: 2026-11-11T22:34:00+08:00
 
 The sponge is wet. The soap is slimy. The brush is in the same puddle.
 
-The <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Cisily sink caddy</a> gives those three things their own spots. The tray slopes so water can run off. It is stainless steel. This page did not live with it on a sink.
+The <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Cisily sink caddy</a> gives those three things their own spots. The tray slopes so water can run off. It is stainless steel.
 
 ## What it does
 
@@ -69,7 +69,7 @@ The tray is sloped so water can move away from the sponge. That is the design. Y
 
 ### Will it rust?
 
-It is stainless steel, which is meant to resist rust. Rinse it. Do not treat that as a lifetime promise. This page did not leave it wet for months.
+It is stainless steel, which is meant to resist rust. Rinse it. Do not treat that as a lifetime promise.
 
 ### Do I have to install it?
 

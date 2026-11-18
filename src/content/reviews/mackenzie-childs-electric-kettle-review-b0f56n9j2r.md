@@ -26,7 +26,7 @@ createdAt: 2026-11-11T21:28:30+08:00
 
 Your kettle works. It also looks like a tool you hide in a cupboard.
 
-The <a href="https://www.amazon.com/dp/B0F56N9J2R?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">MacKenzie-Childs electric kettle</a> is an 8-cup stainless kettle in a red-and-white cherry check. It heats water for tea or coffee. The pattern is the point. This page did not boil water in it.
+The <a href="https://www.amazon.com/dp/B0F56N9J2R?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">MacKenzie-Childs electric kettle</a> is an 8-cup stainless kettle in a red-and-white cherry check. It heats water for tea or coffee. The pattern is the point.
 
 ## What it does
 
@@ -56,7 +56,7 @@ Skip it if your kitchen is all white and quiet. A plain kettle does the same job
 * The check is strong. It will not blend into a plain kitchen.
 * It only boils water. It does not brew a pod.
 * Designer kettles are not the basic shopper's default. Check today's price.
-* The finish needs gentle care. This page did not wear-test it.
+* The finish needs gentle care.
 
 ## FAQ
 

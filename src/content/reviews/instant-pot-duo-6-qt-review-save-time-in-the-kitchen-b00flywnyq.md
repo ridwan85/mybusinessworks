@@ -28,7 +28,7 @@ You walk in tired. The fridge has food. Dinner still feels an hour away.
 
 The <a href="https://www.amazon.com/dp/B00FLYWNYQ?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Instant Pot Duo 6 Qt</a> is one electric pot with seven jobs. Pressure cooker, slow cooker, rice cooker, steamer, sauté pan, yogurt maker, and warmer.
 
-Instant Pot says pressure cooking can be up to 70% faster than old methods. That number is their claim. This page did not cook a meal in it.
+Instant Pot says pressure cooking can be up to 70% faster than old methods. That number is their claim.
 
 ## What it does
 
@@ -63,7 +63,7 @@ Skip the crowd of single-use gadgets if this one pot can cover them. It will not
 * The 6-quart body takes real counter space. It does replace other pots.
 * The first few meals can feel confusing. Read the pressure steps.
 * Quick release means hot steam. Do it with care.
-* This page did not test cook times. The 70% line is Instant Pot's claim.
+* The 70% line is Instant Pot's claim.
 
 ## FAQ
 

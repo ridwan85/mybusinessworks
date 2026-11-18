@@ -26,13 +26,13 @@ createdAt: 2026-11-11T22:35:00+08:00
 
 The couch is cold. Heating the whole house feels like too much.
 
-The <a href="https://www.amazon.com/dp/B0BZR6YBHK?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Bedsure heated throw</a> is a 50 by 60 inch blanket. This review is the grey one. It has a soft side and a fuzzy side. You plug it in for heat. This page did not sleep under it.
+The <a href="https://www.amazon.com/dp/B0BZR6YBHK?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Bedsure heated throw</a> is a 50 by 60 inch blanket. This review is the grey one. It has a soft side and a fuzzy side. You plug it in for heat.
 
 ## What it does
 
 * **Heat on you.** Six levels. A controller. Timers at 1, 2, 4, 6, 8, or 10 hours. Bedsure says longer heating wires spread the warmth.
 
-* **Preheat.** The listing says you can preheat, then drop to a level you can stay with. Exact minutes depend on the room. This page did not time it.
+* **Preheat.** The listing says you can preheat, then drop to a level you can stay with. Exact minutes depend on the room.
 
 * **Two fabrics.** A flannel side and a sherpa side. Sherpa is the fuzzy side. GSM on the listing is just fabric weight. You can also use it unplugged as a normal throw.
 
@@ -62,7 +62,6 @@ Skip it if you need one blanket to cover a whole mattress. This is a throw.
 * 50 by 60 inches covers a person, not a bed.
 * You need an outlet and a place for the controller.
 * The 8-hour shutoff will stop a very long night. You restart it if you want more.
-* This page did not measure heat-up time.
 
 ## FAQ
 
@@ -72,7 +71,7 @@ The listing says machine care is fine. Disconnect the controller first. Read the
 
 ### How fast does it preheat?
 
-Bedsure says the preheat gets it toasty quickly. The room temperature changes that. This page did not time it.
+Bedsure says the preheat gets it toasty quickly. The room temperature changes that.
 
 ### Can I fall asleep with it on?
 

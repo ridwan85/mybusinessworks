@@ -35,7 +35,7 @@ createdAt: 2026-11-11T20:48:07+08:00
 
 The book bag is heavy. Outside, a bright tablet is hard to read. And the games are right there.
 
-The <a href="https://www.amazon.com/dp/B0GV5RHY69?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Amazon Kids Kindle Colorsoft</a> is a 7-inch color reader for ages 6 to 12. The bundle includes a cover and one year of Kids+. This page did not hand it to a child.
+The <a href="https://www.amazon.com/dp/B0GV5RHY69?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Amazon Kids Kindle Colorsoft</a> is a 7-inch color reader for ages 6 to 12. The bundle includes a cover and one year of Kids+.
 
 ## What it does
 
@@ -47,7 +47,7 @@ The <a href="https://www.amazon.com/dp/B0GV5RHY69?tag=dailyvirald06-20" rel="nof
 
 * **Light.** You can shift the front light from white to warm amber.
 
-* **Water.** Amazon says it is waterproof for the pool, beach, or bath. Follow their care notes. This page did not dunk it.
+* **Water.** Amazon says it is waterproof for the pool, beach, or bath. Follow their care notes.
 
 * **Battery.** Amazon says up to 8 weeks. That is their claim, and it depends on use. 16GB holds a lot of text. Color comics take more space than plain novels.
 
@@ -71,7 +71,7 @@ Skip it if your child wants a tablet full of apps. Skip it if you will not watch
 * Kids+ renews unless you cancel. Know the date.
 * 16GB goes faster if you download lots of color comics.
 * The age range on the listing is 6 to 12.
-* Battery weeks and glare claims are Amazon's, not a test from this page.
+* Battery weeks and glare claims are Amazon's
 
 ## FAQ
 

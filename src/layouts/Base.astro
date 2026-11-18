@@ -110,7 +110,7 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        font: 17px/1.7 var(--font);
+        font: 17px/1.65 var(--font);
         color: var(--fg);
         background:
           radial-gradient(1100px 480px at 8% -8%, rgba(181, 107, 120, 0.14), transparent 55%),
@@ -127,7 +127,11 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
         padding-right: var(--page-gutter);
         box-sizing: border-box;
       }
-      .wrap { max-width: var(--wrap); }
+      .wrap { max-width: 72ch; }
+      main.page > p {
+        margin: 0 0 1.15em;
+        line-height: 1.65;
+      }
 
       .site-header {
         position: sticky;
@@ -301,7 +305,7 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
       }
 
       @media (max-width: 720px) {
-        body { font-size: 16px; }
+        body { font-size: 17px; line-height: 1.65; }
         :root { --page-gutter: 20px; }
         .site-header .bar {
           gap: 10px;

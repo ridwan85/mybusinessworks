@@ -26,7 +26,7 @@ createdAt: "2026-11-17T14:57:00+08:00"
 
 You want color on the window. You do not want paint that stays till spring.
 
-The <a href="https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Chalktastic liquid chalk markers</a> are washable pens for glass and other smooth surfaces. The set is for temporary art and signs. This page did not draw a window with them.
+The <a href="https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Chalktastic liquid chalk markers</a> are washable pens for glass and other smooth surfaces. The set is for temporary art and signs.
 
 ## What it does
 
@@ -60,7 +60,6 @@ Skip it for outdoor lettering that must survive weather. Skip it if you only use
 * A second pass may be needed for bold color.
 * Outdoor rain is not the main job.
 * Spot-test delicate glass or film.
-* This page did not run a wipe test.
 
 ## FAQ
 

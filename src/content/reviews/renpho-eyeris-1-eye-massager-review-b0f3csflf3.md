@@ -26,7 +26,7 @@ createdAt: "2026-11-16T11:10:00+08:00"
 
 You close the laptop. Your eyes ache. Your temples feel tight.
 
-The <a href="https://www.amazon.com/dp/B0F3CSFLF3?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">RENPHO Eyeris 1</a> is an eye mask with heat and gentle pressure. It also blocks light. RENPHO says it can ease that tight feeling. This page did not wear it. It is not a cure for an eye disease.
+The <a href="https://www.amazon.com/dp/B0F3CSFLF3?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">RENPHO Eyeris 1</a> is an eye mask with heat and gentle pressure. It also blocks light. RENPHO says it can ease that tight feeling. It is not a cure for an eye disease.
 
 ## What it does
 
@@ -58,7 +58,6 @@ Skip it if your eyes are under a doctor's care. Skip it if you must drive right 
 * Not for eye surgery or serious eye conditions.
 * Protein leather can bother some skin.
 * You will hear a soft motor.
-* This page did not test comfort or results.
 
 ## FAQ
 

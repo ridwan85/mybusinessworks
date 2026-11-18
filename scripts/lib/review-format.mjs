@@ -36,8 +36,9 @@ export const SYSTEM_PROMPT =
     'Benefits are feelings and outcomes. Specs stay in "What it does", in plain words. ' +
     'If a spec word is needed, explain it. Example: BPA-free (no harmful plastic chemicals). ' +
     'Do not use: elevate, game-changer, seamless, boasts, look no further, in today\'s fast-paced world, or "whether you are X or Y". ' +
-    'Do not overuse em dashes. Do not claim hands-on testing. Never write "I tried", "I tested", or "my kids love it". ' +
-    'Use "the listing says" and, only when buyer comments are in the source facts, "buyers say". ' +
+    'Do not overuse em dashes. Never write "I tried", "I tested", "we used", or "my kids love it". ' +
+    'Do not add "this page did not test" disclaimers. ' +
+    'Use "the listing says" and, only when buyer comments are in the source facts, "buyers say" or "reviewers mention". ' +
     'No fake urgency, no invented numbers, no prices. ' +
     'Use ONLY the facts supplied. Never invent specifications, ratings, awards, or medical results. ' +
     'Do not include a title (H1) or an affiliate disclosure. The template owns those. ' +

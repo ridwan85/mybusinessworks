@@ -26,7 +26,7 @@ createdAt: 2026-11-11T22:33:00+08:00
 
 The old tank is heavy. You flip it. Water hits the nightstand.
 
-The <a href="https://www.amazon.com/dp/B0C2C9NHZW?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Levoit top-fill humidifier</a> holds 2.5 liters. You lift a cover and pour. Levoit says low mode can run up to 25 hours. This page did not run it overnight.
+The <a href="https://www.amazon.com/dp/B0C2C9NHZW?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Levoit top-fill humidifier</a> holds 2.5 liters. You lift a cover and pour. Levoit says low mode can run up to 25 hours.
 
 ## What it does
 
@@ -34,7 +34,7 @@ The <a href="https://www.amazon.com/dp/B0C2C9NHZW?tag=dailyvirald06-20" rel="nof
 
 * **Easier to wipe.** The opening is wide. Parts come off so you are not scrubbing a hidden corner. You still need to clean it. Minerals build up.
 
-* **Night mode.** Levoit lists the noise at 25 dB on low, with the lights off. That number is theirs. This page did not measure it.
+* **Night mode.** Levoit lists the noise at 25 dB on low, with the lights off. That number is theirs.
 
 * **One knob.** You set the mist. The nozzle turns 360 degrees so you can aim it.
 

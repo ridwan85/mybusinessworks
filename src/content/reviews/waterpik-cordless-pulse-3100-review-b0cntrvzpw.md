@@ -35,7 +35,7 @@ createdAt: 2026-11-11T17:13:18+08:00
 
 String floss is still in the drawer. The morning is already short.
 
-The <a href="https://www.amazon.com/dp/B0CNTRVZPW?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Waterpik Cordless Pulse 3100</a> is a rechargeable water flosser. Two tips. Low and high. A 6 oz tank. Waterpik says a session is about 45 seconds. This page did not use it. It does not replace a dentist.
+The <a href="https://www.amazon.com/dp/B0CNTRVZPW?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Waterpik Cordless Pulse 3100</a> is a rechargeable water flosser. Two tips. Low and high. A 6 oz tank. Waterpik says a session is about 45 seconds. It does not replace a dentist.
 
 ## What it does
 
@@ -71,7 +71,7 @@ Skip it if you want a huge tank. Skip it if you cannot charge by USB.
 * 6 oz means refills if you go long.
 * Tips wear out.
 * It supports a habit. It does not replace a dentist.
-* The plaque line on the listing is Waterpik's claim. This page did not test plaque.
+* The plaque line on the listing is Waterpik's claim.
 
 ## FAQ
 

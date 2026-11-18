@@ -35,7 +35,7 @@ createdAt: 2026-11-11T11:22:50+08:00
 
 Monday's dinner is still in the fridge on Thursday. The bag is puffy. The smell is not great.
 
-The <a href="https://www.amazon.com/dp/B0HF4XHL1R?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Tiptop Home handheld vacuum sealer</a> is a small cordless tool. The listing says it pulls at 60 kPa and seals in about 5 seconds. kPa is just a measure of suction. This page did not seal a bag with it.
+The <a href="https://www.amazon.com/dp/B0HF4XHL1R?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Tiptop Home handheld vacuum sealer</a> is a small cordless tool. The listing says it pulls at 60 kPa and seals in about 5 seconds. kPa is just a measure of suction.
 
 ## What it does
 
@@ -68,13 +68,13 @@ Skip it if you want to seal grocery zip bags. This tool wants its own bags.
 * You must charge it or it is a brick.
 * The bags need a real wash between uses.
 * It is for valve bags, not every bag in the drawer.
-* 60 kPa and the 5-second line are Tiptop's claims. This page did not measure them.
+* 60 kPa and the 5-second line are Tiptop's claims.
 
 ## FAQ
 
 ### What does 60 kPa mean?
 
-It is a suction number. Higher means a stronger pull. Tiptop says this tool hits 60 kPa. This page did not test the pull.
+It is a suction number. Higher means a stronger pull. Tiptop says this tool hits 60 kPa.
 
 ### Can I use any plastic bag?
 

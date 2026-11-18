@@ -26,13 +26,13 @@ createdAt: 2026-11-11T22:31:00+08:00
 
 Wet hair. A dryer in one hand. A curler waiting. The morning is already short.
 
-The <a href="https://www.amazon.com/dp/B0HCF2G9VQ?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Shark FlexStyle IonCurl</a> is a dryer and a multi-styler. Shark says the airflow dries and curls without extreme heat. This model is the HD840. This page did not style hair with it.
+The <a href="https://www.amazon.com/dp/B0HCF2G9VQ?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Shark FlexStyle IonCurl</a> is a dryer and a multi-styler. Shark says the airflow dries and curls without extreme heat. This model is the HD840.
 
 ## What it does
 
 * **Dry and style.** One base, several heads. Dry, smooth, add volume, or curl. Shark calls the curl wrap Coanda. That means the air pulls hair around the barrel.
 
-* **Ions.** Shark says ions help hair dry faster and look smoother, with less heat damage. That is their claim. This page did not test damage.
+* **Ions.** Shark says ions help hair dry faster and look smoother, with less heat damage. That is their claim.
 
 * **Buttons.** Double-tap AirSet to pause the air. Hold it for a cool shot. Scalp Shield drops to a cooler setting. Shark says that protects the scalp from high heat.
 
@@ -57,7 +57,7 @@ Skip it if a basic dryer is all you use. The extra heads will sit in a drawer.
 * You need practice. The first curls may look uneven.
 * High speed is noisy.
 * It is a full system, not one basic dryer. Check today's price.
-* "No heat damage" is Shark's line, not a result from this page.
+* "No heat damage" is Shark's line
 
 ## FAQ
 

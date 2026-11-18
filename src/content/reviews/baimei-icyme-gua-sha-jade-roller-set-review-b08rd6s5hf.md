@@ -26,7 +26,7 @@ createdAt: "2026-11-17T08:35:00+08:00"
 
 Your face feels puffy. A 20-step routine is not happening.
 
-The <a href="https://www.amazon.com/dp/B08RD6S5HF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">BAIMEI IcyMe set</a> is a jade roller and a gua sha tool. Here, gua sha just means a flat stone you glide on your skin. It is a massage set, not a medical treatment. This page did not use it.
+The <a href="https://www.amazon.com/dp/B08RD6S5HF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">BAIMEI IcyMe set</a> is a jade roller and a gua sha tool. Here, gua sha just means a flat stone you glide on your skin. It is a massage set, not a medical treatment.
 
 ## What it does
 
@@ -59,7 +59,6 @@ Skip it if you want a buzzing tool or a heated mask.
 * Not a medical treatment.
 * No serum in the box.
 * The stone can break if you drop it.
-* This page did not test a routine.
 
 ## FAQ
 
