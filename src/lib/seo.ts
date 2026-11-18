@@ -1,6 +1,14 @@
 /** Lightweight SEO helpers — JSON-LD + FAQ extraction from review Markdown. */
 
+import { isAmazonHostedImageUrl } from './product-image';
+
 export type FaqItem = { question: string; answer: string };
+
+/** Brand name used in Open Graph and Article schema. */
+export const SITE_NAME = 'MyBusinessWorks';
+
+/** On-site image used when a page has no shareable photo of its own. */
+export const DEFAULT_SHARE_IMAGE_PATH = '/images/site/hero-home-lifestyle.jpg';
 
 /** Parse `## FAQ` / `### Question` blocks from review Markdown bodies. */
 export function parseFaqFromMarkdown(body: string): FaqItem[] {
@@ -92,12 +100,37 @@ type ReviewSeoInput = {
     breadcrumbs: { name: string; url: string }[];
 };
 
-/** Review + Product (+ optional FAQ / breadcrumbs) as a single @graph. */
+/** Drop Amazon CDN URLs so Rich Pin images stay on our domain. */
+function shareableImage(url?: string) {
+    if (!url || isAmazonHostedImageUrl(url)) return undefined;
+    return url;
+}
+
+/** Review + Product + Article (+ optional FAQ / breadcrumbs) as a single @graph. */
 export function reviewPageJsonLd(input: ReviewSeoInput) {
+    const origin = new URL('/', input.pageUrl).origin;
+    const imageUrl = shareableImage(input.imageUrl);
     const org = {
         '@type': 'Organization',
         name: 'mybusinesswork.com',
-        url: new URL('/', input.pageUrl).origin,
+        url: origin,
+    };
+    const publisher = {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        url: origin,
+    };
+
+    const article: Record<string, unknown> = {
+        '@type': 'Article',
+        headline: input.title,
+        datePublished: input.pubDate.toISOString(),
+        author: publisher,
+        publisher,
+        mainEntityOfPage: input.pageUrl,
+        url: input.pageUrl,
+        description: input.description,
+        ...(imageUrl ? { image: imageUrl } : {}),
     };
 
     const product: Record<string, unknown> = {
@@ -108,8 +141,9 @@ export function reviewPageJsonLd(input: ReviewSeoInput) {
         mpn: input.asin,
         url: input.pageUrl,
         ...(input.brand ? { brand: { '@type': 'Brand', name: input.brand } } : {}),
-        ...(input.imageUrl ? { image: [input.imageUrl] } : {}),
+        ...(imageUrl ? { image: [imageUrl] } : {}),
         // Keep affiliate URLs out of JSON-LD — they belong on visible CTAs with rel=sponsored.
+        // No offers, prices, or ratings — we do not have those facts.
     };
 
     const review = {
@@ -126,12 +160,12 @@ export function reviewPageJsonLd(input: ReviewSeoInput) {
             name: input.title,
             sku: input.asin,
             ...(input.brand ? { brand: { '@type': 'Brand', name: input.brand } } : {}),
-            ...(input.imageUrl ? { image: input.imageUrl } : {}),
+            ...(imageUrl ? { image: imageUrl } : {}),
         },
-        ...(input.imageUrl ? { image: input.imageUrl } : {}),
+        ...(imageUrl ? { image: imageUrl } : {}),
     };
 
-    const graph: unknown[] = [org, product, review, breadcrumbListJsonLd(input.breadcrumbs)];
+    const graph: unknown[] = [org, article, product, review, breadcrumbListJsonLd(input.breadcrumbs)];
     const faq = faqPageJsonLd(input.faqs);
     if (faq) graph.push(faq);
 

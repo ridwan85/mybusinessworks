@@ -4,8 +4,8 @@ import Base from '../../layouts/Base.astro';
 import GraphicCard from '../../components/GraphicCard.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { relatedReviews, slugifyCategory } from '../../lib/categories';
-import { allowedProductImage, displayImage, isSafeSiteStripeHtml } from '../../lib/product-image';
-import { absoluteUrl, parseFaqFromMarkdown, reviewPageJsonLd } from '../../lib/seo';
+import { allowedProductImage, displayImage, isSafeSiteStripeHtml, shareImage } from '../../lib/product-image';
+import { absoluteUrl, DEFAULT_SHARE_IMAGE_PATH, parseFaqFromMarkdown, reviewPageJsonLd, SITE_NAME } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const reviews = await getCollection('reviews');
@@ -44,6 +44,9 @@ const breadcrumbs = [
   { name: data.title, url: pageUrl },
 ];
 
+const sharePath =
+  shareImage(heroSrc, data.ownImage, data.imageSrc, ...gallery.map((item) => item.src)) ?? DEFAULT_SHARE_IMAGE_PATH;
+
 const jsonLd = reviewPageJsonLd({
   title: data.title,
   description: data.description,
@@ -53,13 +56,21 @@ const jsonLd = reviewPageJsonLd({
   asin: data.asin,
   pubDate: data.pubDate,
   pageUrl,
-  imageUrl: absoluteUrl(heroSrc, Astro.site),
+  imageUrl: absoluteUrl(sharePath, Astro.site),
   faqs: parseFaqFromMarkdown(entry.body),
   breadcrumbs,
 });
 ---
 
-<Base layout="review" ogType="article" title={data.title} description={data.description} image={heroSrc}>
+<Base
+  layout="review"
+  ogType="article"
+  title={data.title}
+  description={data.description}
+  image={sharePath}
+  publishedTime={data.pubDate}
+  author={SITE_NAME}
+>
   <article class="review">
     <nav class="crumbs" aria-label="Breadcrumb">
       <ol>
