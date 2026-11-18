@@ -47,6 +47,9 @@ const reviews = defineCollection({
         // angle focuses the promise on time, convenience, or avoiding a real-life incident.
         hook: z.string().min(1),
         hookSupport: z.string().min(1),
+        // Optional pin-style lines. Used when a review should echo its Pinterest headline treatment.
+        eyebrow: z.string().min(1).optional(),
+        subline: z.string().min(1).optional(),
         // Short real-life explanation under "Why it helps" (2-4 points).
         whyHelps: z.array(z.string().min(1)).min(2).max(4),
         angle: z.enum(['time', 'convenience', 'incident']),
