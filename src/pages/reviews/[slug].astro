@@ -1,9 +1,12 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import BuySkipCard from '../../components/BuySkipCard.astro';
+import CompareTable from '../../components/CompareTable.astro';
 import GraphicCard from '../../components/GraphicCard.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { relatedReviews, slugifyCategory } from '../../lib/categories';
+import { localImageSize } from '../../lib/image-size';
 import { allowedProductImage, displayImage, isSafeSiteStripeHtml, shareImage } from '../../lib/product-image';
 import { absoluteUrl, DEFAULT_SHARE_IMAGE_PATH, parseFaqFromMarkdown, reviewPageJsonLd, SITE_NAME } from '../../lib/seo';
 
@@ -27,9 +30,13 @@ const gallery: GalleryItem[] = (data.images ?? [])
   .filter((item, i, arr) => arr.findIndex((x) => x.src === item.src) === i);
 
 const heroSrc = displayImage(data);
+const heroSize = localImageSize(heroSrc);
 const heroCaption = heroSrc ? data.imageCaption || gallery.find((g) => g.src === heroSrc)?.caption : undefined;
 const showcase = gallery.filter((g) => g.src !== heroSrc);
 const ctaLabel = data.ctaLabel || 'Check Price on Amazon';
+const showPriceNote = /\$\s?\d|\bunder\s+\$/i.test(
+  [data.title, data.hook, data.shortVerdict, data.description, entry.body ?? ''].filter(Boolean).join('\n'),
+);
 const angleLabel =
   data.angle === 'time' ? 'Saves time' : data.angle === 'incident' ? 'Avoids a headache' : 'More convenient';
 
@@ -95,16 +102,7 @@ const jsonLd = reviewPageJsonLd({
           <p class="product-kicker">{data.title}</p>
           {data.eyebrow && <p class="gift-eyebrow">{data.eyebrow}</p>}
           <h1 id="hook-title">{data.hook}</h1>
-          {data.subline && <p class="gift-subline">{data.subline}</p>}
-          <p class="hook-support">{data.hookSupport}</p>
-          <p class="cta-wrap">
-            <a
-              id="primary-cta"
-              class="cta-amazon"
-              href={data.affiliateUrl}
-              rel="sponsored nofollow"
-            >{ctaLabel}</a>
-          </p>
+          <p class="verdict">{data.shortVerdict}</p>
         </div>
 
         <div class="hook-visual">
@@ -112,13 +110,27 @@ const jsonLd = reviewPageJsonLd({
             <div class="hero" set:html={data.imageHtml} />
           ) : heroSrc ? (
             <figure class="hero">
-              <img src={heroSrc} alt={data.title} width="640" height="640" />
+              <img
+                src={heroSrc}
+                alt={data.title}
+                width={heroSize?.width ?? 1200}
+                height={heroSize?.height ?? 900}
+                decoding="async"
+              />
               {heroCaption && <figcaption>{heroCaption}</figcaption>}
             </figure>
           ) : (
             <GraphicCard title={data.hook} eyebrow={data.category} lines={data.whyHelps} />
           )}
         </div>
+
+        <BuySkipCard
+          buyIf={data.buyIf}
+          skipIf={data.skipIf}
+          affiliateUrl={data.affiliateUrl}
+          ctaLabel={ctaLabel}
+          showPriceNote={showPriceNote}
+        />
       </div>
     </section>
 
@@ -134,7 +146,6 @@ const jsonLd = reviewPageJsonLd({
         <ol class="why-helps">
           {data.whyHelps.map((point) => <li>{point}</li>)}
         </ol>
-        <p class="notice">As an Amazon Associate I earn from qualifying purchases. This post contains affiliate links at no extra cost to you.</p>
       </div>
 
       {showcase.length > 0 && (
@@ -145,7 +156,14 @@ const jsonLd = reviewPageJsonLd({
               <li>
                 <figure>
                   <a href={item.src} target="_blank" rel="noopener">
-                    <img src={item.src} alt={item.alt || data.title} loading="lazy" />
+                    <img
+                      src={item.src}
+                      alt={item.alt || data.title}
+                      width={localImageSize(item.src)?.width}
+                      height={localImageSize(item.src)?.height}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </a>
                   {item.caption && <figcaption>{item.caption}</figcaption>}
                 </figure>
@@ -158,6 +176,8 @@ const jsonLd = reviewPageJsonLd({
       <div class="review-body">
         <Content />
       </div>
+
+      <CompareTable rows={data.compare} affiliateUrl={data.affiliateUrl} />
     </section>
 
     <!-- CTA -->
@@ -287,9 +307,9 @@ const jsonLd = reviewPageJsonLd({
     padding-bottom: 8px;
   }
   .hook-grid {
-    display: grid;
-    gap: 20px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
   .hook-meta {
     display: flex;
@@ -334,12 +354,19 @@ const jsonLd = reviewPageJsonLd({
   }
   .hook-copy h1 {
     font-family: var(--display);
-    font-size: clamp(1.45rem, 5.2vw, 2.15rem);
-    line-height: 1.18;
+    font-size: clamp(1.4rem, 5vw, 2.05rem);
+    line-height: 1.15;
     letter-spacing: -0.02em;
-    margin: 0 0 10px;
+    margin: 0 0 8px;
     max-width: none;
     text-wrap: balance;
+  }
+  .verdict {
+    margin: 0;
+    max-width: 38rem;
+    color: var(--fg);
+    font-size: 1.02rem;
+    line-height: 1.4;
   }
   .gift-subline {
     margin: 0 0 14px;
@@ -348,13 +375,6 @@ const jsonLd = reviewPageJsonLd({
     font-size: clamp(1.05rem, 2.4vw, 1.25rem);
     line-height: 1.35;
     color: var(--muted);
-  }
-  .hook-support {
-    margin: 0 0 22px;
-    max-width: 36rem;
-    color: var(--muted);
-    font-size: 1.02rem;
-    line-height: 1.55;
   }
   .cta-wrap { margin: 0; }
 
@@ -366,6 +386,9 @@ const jsonLd = reviewPageJsonLd({
     width: 100%;
     max-width: none;
     height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 220px;
+    object-fit: cover;
     display: block;
     border-radius: 14px;
     border: 1px solid var(--line);
@@ -459,8 +482,9 @@ const jsonLd = reviewPageJsonLd({
   }
 
   .review-body {
-    font-size: 1.02rem;
-    line-height: 1.75;
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 70ch;
     overflow-wrap: anywhere;
   }
   .review-body :global(h2) {
@@ -472,7 +496,7 @@ const jsonLd = reviewPageJsonLd({
     font-size: 1.05rem;
     margin: 1.3em 0 0.45em;
   }
-  .review-body :global(p) { margin: 0 0 1em; }
+  .review-body :global(p) { margin: 0 0 1.15em; }
   .review-body :global(ul),
   .review-body :global(ol) {
     margin: 0 0 1em;
@@ -606,11 +630,22 @@ const jsonLd = reviewPageJsonLd({
 
   @media (min-width: 780px) {
     .hook-grid {
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-      gap: 32px;
-      align-items: center;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.85fr);
+      grid-template-areas:
+        "copy visual"
+        "decision decision";
+      gap: 22px 32px;
+      align-items: start;
     }
-    .hook-copy h1 { max-width: 18ch; }
+    .hook-copy { grid-area: copy; }
+    .hook-visual { grid-area: visual; }
+    .hook-grid :global(.decision) { grid-area: decision; }
+    .hook-copy h1 { max-width: 22ch; }
+    .hook-visual .hero img {
+      aspect-ratio: 4 / 5;
+      max-height: 460px;
+    }
     .gallery ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .cta-panel {
       grid-template-columns: 1fr auto;
@@ -628,28 +663,25 @@ const jsonLd = reviewPageJsonLd({
     .review {
       max-width: none;
     }
-    /* Product image first — can hug edges; text stays padded by page gutter */
-    .hook-grid {
-      grid-template-columns: 1fr;
+    .hook-block { margin-bottom: 28px; }
+    .crumbs { margin-bottom: 10px; }
+    .hook-copy { order: 1; }
+    .hook-grid :global(.decision) { order: 2; }
+    .hook-visual { order: 3; }
+    .product-kicker,
+    .gift-eyebrow,
+    .gift-subline { display: none; }
+    .hook-copy h1 {
+      font-size: 1.45rem;
+      line-height: 1.15;
     }
-    .hook-visual {
-      order: -1;
-      margin-inline: calc(var(--page-gutter) * -1);
+    .review-body {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: none;
     }
-    .hook-visual .hero img {
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 0;
-      border-left: 0;
-      border-right: 0;
-    }
-    .hook-visual :global(.graphic-card) {
-      border-radius: 0;
-      border-left: 0;
-      border-right: 0;
-    }
-    .hook-visual .hero figcaption {
-      padding-inline: var(--page-gutter);
+    .verdict {
+      font-size: 0.98rem;
     }
     .hook-copy,
     .crumbs,

@@ -179,6 +179,7 @@ async function writeReview(p) {
                     product: p.title,
                     brand: p.brand,
                     category: p.category,
+                    affiliateUrl,
                     features: p.features,
                     hasProductImages: hasImages,
                     imageCount: Math.max(p.showcases?.length || 0, p.imageSrc || p.siteStripeImage ? 1 : 0),
@@ -239,7 +240,16 @@ const frontmatter = [
     imagesLine,
     `hook: ${JSON.stringify(review.hook)}`,
     `hookSupport: ${JSON.stringify(review.hookSupport)}`,
+    `shortVerdict: ${JSON.stringify(review.shortVerdict)}`,
     `whyHelps: ${JSON.stringify(review.whyHelps)}`,
+    `buyIf: ${JSON.stringify(review.buyIf)}`,
+    `skipIf: ${JSON.stringify(review.skipIf)}`,
+    `compare: ${JSON.stringify(review.compare.map((row) => {
+        if (row.role === 'this') return { ...row, href: affiliateUrl };
+        const href = new URL(row.href);
+        href.searchParams.set('tag', TAG);
+        return { ...row, href: href.toString() };
+    }))}`,
     `angle: ${JSON.stringify(review.angle)}`,
     `ctaLabel: ${JSON.stringify(review.ctaLabel || DEFAULT_CTA)}`,
     `features: ${JSON.stringify(product.features)}`,

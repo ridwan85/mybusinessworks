@@ -52,6 +52,21 @@ const reviews = defineCollection({
         subline: z.string().min(1).optional(),
         // Short real-life explanation under "Why it helps" (2-4 points).
         whyHelps: z.array(z.string().min(1)).min(2).max(4),
+        /** Two short lines under the H1. Feelings and outcome, not a spec list. */
+        shortVerdict: z.string().min(1).max(240),
+        buyIf: z.array(z.string().min(1)).min(2).max(3),
+        skipIf: z.array(z.string().min(1)).min(2).max(3),
+        compare: z
+            .array(
+                z.object({
+                    role: z.enum(['this', 'cheaper', 'different']),
+                    name: z.string().min(1),
+                    bestFor: z.string().min(1),
+                    limit: z.string().min(1),
+                    href: z.string().url(),
+                }),
+            )
+            .length(3),
         angle: z.enum(['time', 'convenience', 'incident']),
         ctaLabel: z.string().optional(),
         features: z.array(z.string()),

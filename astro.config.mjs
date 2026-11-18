@@ -19,8 +19,17 @@ function rehypeSponsoredLinks() {
         const href = node.properties?.href;
         if (node.type === 'element' && node.tagName === 'a' && typeof href === 'string' && /^https?:/.test(href)) {
             if (isSameWindowStoreLink(href)) {
-                node.properties.rel = ['sponsored', 'nofollow'];
-                delete node.properties.target;
+                // Main buttons stay same-window (set in the template). In-body text
+                // links that ask for a new tab keep it, with the sponsored rel.
+                const target = node.properties.target;
+                const wantsBlank = target === '_blank' || (Array.isArray(target) && target.includes('_blank'));
+                if (wantsBlank) {
+                    node.properties.rel = ['nofollow', 'sponsored', 'noopener'];
+                    node.properties.target = '_blank';
+                } else {
+                    node.properties.rel = ['sponsored', 'nofollow'];
+                    delete node.properties.target;
+                }
             } else {
                 node.properties.rel = ['sponsored', 'nofollow', 'noopener'];
                 node.properties.target = '_blank';

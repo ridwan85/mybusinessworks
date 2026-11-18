@@ -4,8 +4,8 @@ import { isAmazonHostedImageUrl } from './product-image';
 
 export type FaqItem = { question: string; answer: string };
 
-/** Brand name used in Open Graph and Article schema. */
-export const SITE_NAME = 'MyBusinessWorks';
+/** Brand name used in Open Graph, Article schema, and author fields. */
+export const SITE_NAME = 'My Business Works';
 
 /** On-site image used when a page has no shareable photo of its own. */
 export const DEFAULT_SHARE_IMAGE_PATH = '/images/site/hero-home-lifestyle.jpg';
@@ -30,6 +30,7 @@ export function parseFaqFromMarkdown(body: string): FaqItem[] {
         if (!question) return;
         const answer = answerLines
             .join(' ')
+            .replace(/<[^>]+>/g, '')
             .replace(/[*_`]/g, '')
             .replace(/\s+/g, ' ')
             .trim();
@@ -112,14 +113,10 @@ export function reviewPageJsonLd(input: ReviewSeoInput) {
     const imageUrl = shareableImage(input.imageUrl);
     const org = {
         '@type': 'Organization',
-        name: 'mybusinesswork.com',
-        url: origin,
-    };
-    const publisher = {
-        '@type': 'Organization',
         name: SITE_NAME,
         url: origin,
     };
+    const publisher = org;
 
     const article: Record<string, unknown> = {
         '@type': 'Article',

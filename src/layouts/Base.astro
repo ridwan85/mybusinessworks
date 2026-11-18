@@ -12,7 +12,7 @@ interface Props {
   ogType?: 'website' | 'article';
   /** ISO date or Date. Emitted as article:published_time on article pages. */
   publishedTime?: Date | string;
-  /** article:author. Review pages use the site name; there is no person byline. */
+  /** article:author. Review pages use the organization name; there is no person byline. */
   author?: string;
 }
 
@@ -110,7 +110,7 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        font: 17px/1.7 var(--font);
+        font: 17px/1.65 var(--font);
         color: var(--fg);
         background:
           radial-gradient(1100px 480px at 8% -8%, rgba(181, 107, 120, 0.14), transparent 55%),
@@ -127,7 +127,11 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
         padding-right: var(--page-gutter);
         box-sizing: border-box;
       }
-      .wrap { max-width: var(--wrap); }
+      .wrap { max-width: 72ch; }
+      main.page > p {
+        margin: 0 0 1.15em;
+        line-height: 1.65;
+      }
 
       .site-header {
         position: sticky;
@@ -301,7 +305,7 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
       }
 
       @media (max-width: 720px) {
-        body { font-size: 16px; }
+        body { font-size: 17px; line-height: 1.65; }
         :root { --page-gutter: 20px; }
         .site-header .bar {
           gap: 10px;
@@ -352,6 +356,7 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
           <nav>
             <a href="/#categories">Categories</a>
             <a href="/#reviews">Reviews</a>
+            <a href="/about/">About</a>
             <a href="/disclosure/">Disclosure</a>
           </nav>
         </div>
@@ -363,7 +368,7 @@ const articleAuthor = ogType === 'article' ? author || SITE_NAME : undefined;
     <footer class="site-footer">
       <div class:list={[isWide ? 'wrap-wide' : 'wrap']}>
         <p>As an Amazon Associate I earn from qualifying purchases.</p>
-        <p>&copy; {new Date().getFullYear()} mybusinesswork.com &middot; <a href="/disclosure/">Affiliate Disclosure</a> &middot; <a href="/privacy/">Privacy Policy</a></p>
+        <p>&copy; {new Date().getFullYear()} mybusinesswork.com &middot; <a href="/about/">About</a> &middot; <a href="/disclosure/">Affiliate Disclosure</a> &middot; <a href="/privacy/">Privacy Policy</a></p>
       </div>
     </footer>
   </body>

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { categoryHubs, reviewsForHub, sortReviewsNewestFirst } from '../lib/categories';
+import { localImageSize } from '../lib/image-size';
 
 const HOME_CAROUSEL_LIMIT = 10;
 const reviews = sortReviewsNewestFirst(await getCollection('reviews'));
@@ -35,13 +36,13 @@ const homeJsonLd = {
         'Clear Amazon product reviews for home, tech, and everyday essentials—honest verdicts, real tradeoffs, and confident buy/skip calls.',
       publisher: {
         '@type': 'Organization',
-        name: 'mybusinesswork.com',
+        name: 'My Business Works',
         url: siteUrl,
       },
     },
     {
       '@type': 'Organization',
-      name: 'mybusinesswork.com',
+      name: 'My Business Works',
       url: siteUrl,
     },
   ],
@@ -57,9 +58,23 @@ const homeJsonLd = {
 >
   <section class="hook" aria-label="Hero">
     <div class="hook-media" aria-hidden="true">
-      {heroSlides.map((src, i) => (
-        <img class:list={['slide', i === 0 && 'is-active']} src={src} alt="" width="1600" height="900" data-slide={i} />
-      ))}
+      {heroSlides.map((src, i) => {
+        const size = localImageSize(src);
+        return (
+          <img
+            class:list={['slide', i === 0 && 'is-active']}
+            src={i === 0 ? src : undefined}
+            data-src={src}
+            alt=""
+            width={size?.width ?? 1600}
+            height={size?.height ?? 900}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+            fetchpriority={i === 0 ? 'high' : 'low'}
+            data-slide={i}
+          />
+        );
+      })}
       <div class="hook-shade"></div>
     </div>
     <div class="hook-copy">
@@ -171,7 +186,16 @@ const homeJsonLd = {
 
   <section class="close-cta wrap-wide" aria-labelledby="close-title">
     <div class="close-panel">
-      <img class="close-bg" src="/images/site/hero-parcels.jpg" alt="" aria-hidden="true" />
+      <img
+        class="close-bg"
+        src="/images/site/hero-parcels.jpg"
+        alt=""
+        aria-hidden="true"
+        width={localImageSize('/images/site/hero-parcels.jpg')?.width ?? 1600}
+        height={localImageSize('/images/site/hero-parcels.jpg')?.height ?? 900}
+        loading="lazy"
+        decoding="async"
+      />
       <div class="close-shade"></div>
       <div class="close-copy">
         <h2 id="close-title">Ready to choose with confidence?</h2>
@@ -192,11 +216,22 @@ const homeJsonLd = {
 
 <script>
   const slides = [...document.querySelectorAll('.hook-media .slide')];
+  const hydrate = (img) => {
+    if (img instanceof HTMLImageElement && img.dataset.src && !img.getAttribute('src')) {
+      img.src = img.dataset.src;
+    }
+  };
+  if (slides.length > 1) {
+    const kick = () => slides.slice(1).forEach(hydrate);
+    if ('requestIdleCallback' in window) requestIdleCallback(kick);
+    else setTimeout(kick, 1200);
+  }
   if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     let i = 0;
     setInterval(() => {
       slides[i].classList.remove('is-active');
       i = (i + 1) % slides.length;
+      hydrate(slides[i]);
       slides[i].classList.add('is-active');
     }, 5500);
   }

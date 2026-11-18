@@ -1,0 +1,115 @@
+---
+interface Props {
+    buyIf: string[];
+    skipIf: string[];
+    affiliateUrl: string;
+    ctaLabel: string;
+    showPriceNote?: boolean;
+}
+const { buyIf, skipIf, affiliateUrl, ctaLabel, showPriceNote = false } = Astro.props;
+---
+
+<section class="decision" aria-label="Buy it or skip it">
+    {showPriceNote && (
+        <p class="price-note">Price at the time of writing. Check Amazon for today's price.</p>
+    )}
+    <p class="associate-line">As an Amazon Associate I earn from qualifying purchases.</p>
+    <p class="cta-wrap">
+        <a id="primary-cta" class="cta-amazon" href={affiliateUrl} rel="sponsored nofollow">{ctaLabel}</a>
+    </p>
+    <div class="decision-cols">
+        <div class="panel panel-buy">
+            <h2>Buy it if</h2>
+            <ul>
+                {buyIf.map((item) => <li>{item}</li>)}
+            </ul>
+        </div>
+        <div class="panel panel-skip">
+            <h2>Skip it if</h2>
+            <ul>
+                {skipIf.map((item) => <li>{item}</li>)}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    .decision {
+        background: transparent;
+        padding: 0;
+    }
+    .price-note,
+    .associate-line {
+        margin: 0 0 8px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .cta-wrap { margin: 0 0 12px; }
+    .decision-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .panel {
+        border-radius: 12px;
+        padding: 12px 12px 14px;
+        border: 1px solid;
+        border-left-width: 4px;
+    }
+    .panel-buy {
+        background: #ecfdf3;
+        border-color: #16a34a;
+    }
+    .panel-skip {
+        background: #fef2f2;
+        border-color: #dc2626;
+    }
+    .decision h2 {
+        margin: 0 0 8px;
+        font-family: var(--font);
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+    }
+    .panel-buy h2 { color: #166534; }
+    .panel-skip h2 { color: #991b1b; }
+    .decision ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .decision li {
+        position: relative;
+        margin: 0.4em 0;
+        padding-left: 1.35em;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        color: #1c171a;
+    }
+    .decision li::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+    .panel-buy li::before {
+        content: '✓';
+        color: #166534;
+    }
+    .panel-skip li::before {
+        content: '✕';
+        color: #991b1b;
+    }
+    @media (min-width: 780px) {
+        .cta-wrap .cta-amazon { width: auto; min-width: 16rem; }
+        .panel { padding: 14px 16px 16px; }
+    }
+    @media (max-width: 779px) {
+        .decision .cta-amazon { width: 100%; }
+    }
+    @media (max-width: 359px) {
+        .decision-cols { grid-template-columns: 1fr; }
+    }
+</style>

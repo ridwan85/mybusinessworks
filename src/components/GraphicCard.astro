@@ -105,4 +105,11 @@ const shown = lines.map((line) => line.trim()).filter(Boolean).slice(0, compact 
     font-size: clamp(1.05rem, 2.2vw, 1.3rem);
     -webkit-line-clamp: 6;
   }
+  @media (max-width: 779px) {
+    .graphic-card:not(.is-compact) {
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+      max-height: 220px;
+    }
+  }
 </style>
