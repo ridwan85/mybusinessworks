@@ -24,13 +24,14 @@ createdAt: "2026-11-17T09:45:00+08:00"
 
 ## Quick verdict
 
-Your eyes look puffy, but a spa visit is not happening before work. A short massage at the sink can cool the area, and it does not need an appointment.
+You know that moment when your eyes look puffy, but a spa visit is not happening before work? A cool press can calm that look for a few minutes, which is all most mornings allow. This roller is meant for that short step at the sink.
 
-The <a href="https://www.amazon.com/dp/B07T89L8C7?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Flawless Contour</a> is a vibrating roller in rose quartz, plus a smaller under-eye press. One AA battery comes in the box. The claim is a short face massage and less puffiness, but it is not a medical treatment.
+The <a href="https://www.amazon.com/dp/B07T89L8C7?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Flawless Contour</a> is a vibrating roller in rose quartz, plus a smaller under-eye press. One AA battery comes in the box. It is a massage tool, not a medical treatment.
+
 
 ## What it does
 
-* **Two heads.** You get a face roller and an under-eye press. They claim both heads are real rose quartz, but the stone color can vary a little.
+* **Two heads.** You get a face roller and an under-eye press. Both heads are real rose quartz, but the stone color can vary a little.
 
 * **A small motor.** Vibration is the difference from a plain roller, so you need a working AA battery. Keep a spare if you use it every day.
 

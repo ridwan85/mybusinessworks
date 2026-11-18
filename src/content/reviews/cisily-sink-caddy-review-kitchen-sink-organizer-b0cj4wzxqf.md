@@ -24,9 +24,10 @@ createdAt: 2026-11-11T22:34:00+08:00
 
 ## Quick verdict
 
-The sponge is wet, the soap is slimy, and the brush is sitting in the same puddle. You want those three things apart, with a path for the water to leave, so the sink edge is not a swamp.
+You know that moment when the sponge, the soap, and the brush are all sitting in the same puddle? Water has nowhere to go, so nothing ever feels dry. A sloped caddy is meant to give each tool a spot and let the water leave.
 
-The <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Cisily sink caddy</a> gives sponge, brush, and soap their own spots. The tray slopes so water can run off, and it is stainless steel.
+The <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Cisily sink caddy</a> holds the sponge, brush, and soap apart. The tray slopes so water can run off, and it is stainless steel.
+
 
 ## What it does
 
@@ -72,7 +73,7 @@ No, not if you rinse it. They claim the stainless steel resists rust, but that i
 
 ### Do I have to install it?
 
-No. Set it down and load it. They claim the <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Cisily sink caddy</a> is ready out of the box.
+No. Set it down and load it. The <a href="https://www.amazon.com/dp/B0CJ4WZXQF?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Cisily sink caddy</a> is ready to set down, with nothing to install.
 
 ### Can it live in the bathroom?
 
