@@ -175,7 +175,7 @@ async function writeReview(p) {
             {
                 role: 'user',
                 content: JSON.stringify({
-                    format: 'Daily Viral Deals locked review format',
+                    format: 'mybusinesswork.com locked review format',
                     product: p.title,
                     brand: p.brand,
                     category: p.category,

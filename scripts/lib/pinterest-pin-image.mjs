@@ -14,6 +14,7 @@ import {
     PIN_HEIGHT,
     PIN_WIDTH,
     PIN_ASPECT,
+    PIN_BRAND,
     fail,
     pinImageLocalPath,
     reviewImageDir,
@@ -121,7 +122,7 @@ function kickerFor(review) {
     if (review?.angle === 'time') return 'Saves time';
     if (review?.angle === 'incident') return 'Avoids a headache';
     if (review?.angle === 'convenience') return 'Everyday convenience';
-    return 'Daily Viral Deals';
+    return PIN_BRAND;
 }
 
 function textSvg({ hook, lines, kicker, photoBand }) {
@@ -176,7 +177,7 @@ function textSvg({ hook, lines, kicker, photoBand }) {
 
     parts.push(`<rect x="0" y="${PIN_HEIGHT - 72}" width="${PIN_WIDTH}" height="72" fill="${BRAND}"/>`);
     parts.push(
-        `<text x="72" y="${PIN_HEIGHT - 28}" fill="${PAPER}" font-family="${sans}" font-size="26" font-weight="700">Daily Viral Deals</text>`,
+        `<text x="72" y="${PIN_HEIGHT - 28}" fill="${PAPER}" font-family="${sans}" font-size="26" font-weight="700">${escapeXml(PIN_BRAND)}</text>`,
     );
 
     return `<?xml version="1.0" encoding="UTF-8"?>
@@ -190,7 +191,7 @@ function textSvg({ hook, lines, kicker, photoBand }) {
  * Write a 1000×1500 JPEG graphic.
  * ownPhotoPath, when set, is placed in the top band. It is not sent to an image model.
  */
-export async function renderGraphicPin({ hook, lines = [], kicker = 'Daily Viral Deals', destPath, ownPhotoPath = null }) {
+export async function renderGraphicPin({ hook, lines = [], kicker = PIN_BRAND, destPath, ownPhotoPath = null }) {
     const headline = String(hook || '').trim();
     if (!headline) fail('Cannot render a Pin image without a headline.');
     await fs.mkdir(path.dirname(destPath), { recursive: true });
@@ -214,6 +215,97 @@ export async function renderGraphicPin({ hook, lines = [], kicker = 'Daily Viral
     }
 
     await image.jpeg({ quality: 90 }).toFile(destPath);
+    const meta = await sharp(destPath).metadata();
+    if (meta.width !== PIN_WIDTH || meta.height !== PIN_HEIGHT) {
+        fail(`Pin image rendered at ${meta.width}×${meta.height}, expected ${PIN_WIDTH}×${PIN_HEIGHT}.`);
+    }
+    return destPath;
+}
+
+/**
+ * Photorealistic pin: a scene photo plus a text overlay.
+ * The scene must not be an Amazon product photo. Text is drawn here, not by the image model.
+ */
+export async function renderLifestylePhotoPin({
+    scenePath,
+    destPath,
+    kicker = 'WINTER GIFT IDEA',
+    headline,
+    subline = '',
+    brand = PIN_BRAND,
+    cta = 'Read the review →',
+}) {
+    const title = String(headline || '').trim();
+    if (!title) fail('Cannot render a photo pin without a headline.');
+    if (!scenePath) fail('Cannot render a photo pin without a scene image.');
+    await fs.mkdir(path.dirname(destPath), { recursive: true });
+
+    const sharp = await loadSharp();
+    const serif = "Pin Serif, 'Liberation Serif', Georgia, 'Times New Roman', serif";
+    const sans = "Pin Sans, 'Liberation Sans', Inter, Helvetica, Arial, sans-serif";
+    const headlineLines = wrapText(title, 18, 4);
+    const headlineSize = headlineLines.length > 3 ? 58 : 64;
+    const headlineLeading = Math.round(headlineSize * 1.12);
+
+    let y = 118;
+    const parts = [];
+    parts.push(
+        `<defs><linearGradient id="topFade" x1="0" y1="0" x2="0" y2="1">` +
+            `<stop offset="0%" stop-color="#f6efe9" stop-opacity="0.78"/>` +
+            `<stop offset="42%" stop-color="#f6efe9" stop-opacity="0.42"/>` +
+            `<stop offset="100%" stop-color="#f6efe9" stop-opacity="0"/>` +
+            `</linearGradient></defs>`,
+    );
+    parts.push(`<rect x="0" y="0" width="${PIN_WIDTH}" height="520" fill="url(#topFade)"/>`);
+    parts.push(
+        `<text x="72" y="${y}" fill="${ACCENT}" font-family="${sans}" font-size="26" font-weight="700" letter-spacing="3.5">${escapeXml(
+            kicker.toUpperCase(),
+        )}</text>`,
+    );
+    y += 78;
+    for (const line of headlineLines) {
+        parts.push(
+            `<text x="72" y="${y}" fill="${INK}" font-family="${serif}" font-size="${headlineSize}" font-weight="700">${escapeXml(line)}</text>`,
+        );
+        y += headlineLeading;
+    }
+    if (subline) {
+        y += 8;
+        parts.push(
+            `<text x="72" y="${y}" fill="${MUTED}" font-family="${sans}" font-size="32" font-weight="400">${escapeXml(subline)}</text>`,
+        );
+    }
+    const footerH = 68;
+    parts.push(`<rect x="0" y="${PIN_HEIGHT - footerH}" width="${PIN_WIDTH}" height="${footerH}" fill="${BRAND}"/>`);
+    parts.push(
+        `<text x="36" y="${PIN_HEIGHT - 26}" fill="${PAPER}" font-family="${sans}" font-size="26" font-weight="700">${escapeXml(brand)}</text>`,
+    );
+    parts.push(
+        `<text x="${PIN_WIDTH - 36}" y="${PIN_HEIGHT - 26}" fill="${PAPER}" font-family="${sans}" font-size="26" font-weight="700" text-anchor="end">${escapeXml(cta)}</text>`,
+    );
+
+    const overlay = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="${PIN_WIDTH}" height="${PIN_HEIGHT}" viewBox="0 0 ${PIN_WIDTH} ${PIN_HEIGHT}">
+  <style>${fontFaceCss()}</style>
+  ${parts.join('\n  ')}
+</svg>`;
+
+    // Keep the top of the frame (window) and the heater. A pure south crop hides the snow.
+    const srcMeta = await sharp(scenePath).metadata();
+    const scale = PIN_WIDTH / srcMeta.width;
+    const scaledH = Math.round(srcMeta.height * scale);
+    const extra = Math.max(0, scaledH - PIN_HEIGHT);
+    const cropTop = Math.round(extra * 0.22);
+    const base = await sharp(scenePath)
+        .resize(PIN_WIDTH, scaledH, { fit: 'fill' })
+        .extract({ left: 0, top: cropTop, width: PIN_WIDTH, height: PIN_HEIGHT })
+        .jpeg({ quality: 92 })
+        .toBuffer();
+    await sharp(base)
+        .composite([{ input: Buffer.from(overlay), top: 0, left: 0 }])
+        .jpeg({ quality: 90 })
+        .toFile(destPath);
+
     const meta = await sharp(destPath).metadata();
     if (meta.width !== PIN_WIDTH || meta.height !== PIN_HEIGHT) {
         fail(`Pin image rendered at ${meta.width}×${meta.height}, expected ${PIN_WIDTH}×${PIN_HEIGHT}.`);

@@ -96,7 +96,7 @@ type ReviewSeoInput = {
 export function reviewPageJsonLd(input: ReviewSeoInput) {
     const org = {
         '@type': 'Organization',
-        name: 'Daily Viral Deals',
+        name: 'mybusinesswork.com',
         url: new URL('/', input.pageUrl).origin,
     };
 

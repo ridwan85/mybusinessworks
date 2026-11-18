@@ -1,5 +1,5 @@
 /**
- * Internal Pinterest helpers for Daily Viral Deals.
+ * Internal Pinterest helpers for mybusinesswork.com.
  * Compliant flow: draft from our reviews → human confirm → official API create.
  * Does not scrape Pinterest UI or store other users' Pins/boards.
  */
@@ -29,6 +29,8 @@ export const PIN_ASPECT = '2:3';
 export const PIN_FILENAME = 'pinterest-pin.jpg';
 /** Required on every pin description. Kept inside Pinterest's 800-character limit. */
 export const PIN_AFFILIATE_NOTE = 'As an Amazon Associate I earn from qualifying purchases. #affiliate';
+/** Public brand on pin images and alt text. */
+export const PIN_BRAND = 'mybusinesswork.com';
 
 const TITLE_MAX = 100;
 const DESC_MAX = 800;
@@ -154,7 +156,7 @@ export function buildPinDraft(review, { pinImageReady = false, imageMode = 'temp
     const link = `${SITE_URL}/reviews/${review.slug}/`;
     const title = truncate(hook, TITLE_MAX);
     const description = withAffiliateNote(
-        [hook, review.hookSupport || '', `Full review: ${review.title || 'Daily Viral Deals'}`]
+        [hook, review.hookSupport || '', `Full review: ${review.title || PIN_BRAND}`]
             .map((s) => String(s || '').trim())
             .filter(Boolean)
             .join('\n\n'),
@@ -176,7 +178,7 @@ export function buildPinDraft(review, { pinImageReady = false, imageMode = 'temp
         mediaPublicPath: pinRel,
         sourceImageSrc: allowedSource || undefined,
         imageMode,
-        altText: truncate(`${hook} — Daily Viral Deals`, 500),
+        altText: truncate(`${hook} — ${PIN_BRAND}`, 500),
         angle: review.angle || undefined,
         pinSpec: {
             width: PIN_WIDTH,
@@ -186,7 +188,7 @@ export function buildPinDraft(review, { pinImageReady = false, imageMode = 'temp
         },
         hookOnImage: Boolean(pinImageReady),
         createdAt: new Date().toISOString(),
-        source: 'daily-viral-deals-review',
+        source: 'mybusinesswork-review',
     };
     draft.draftHash = crypto
         .createHash('sha256')

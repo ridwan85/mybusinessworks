@@ -1,6 +1,6 @@
 ---
 title: "Ninja Air Fryer Pro 5-Qt Review: Save Time on Meals"
-description: "Read our honest Daily Viral Deals review of the Ninja Air Fryer Pro 5 Qt. Discover how this 5-in-1 kitchen appliance saves time and cooks fast."
+description: "Read our honest review of the Ninja Air Fryer Pro 5 Qt. Discover how this 5-in-1 kitchen appliance saves time and cooks fast."
 asin: "B0H87WV6N4"
 brand: "Ninja"
 category: "Kitchen"

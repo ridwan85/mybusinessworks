@@ -13,8 +13,8 @@
   "mediaLocalPath": "public/images/reviews/b0c6fckqml/pinterest-pin.jpg",
   "mediaPublicPath": "/images/reviews/b0c6fckqml/pinterest-pin.jpg",
   "sourceImageSrc": "/images/reviews/b0c6fckqml/own.jpg",
-  "imageMode": "template",
-  "altText": "Best winter gift under $50 for a chilly bedroom. — Daily Viral Deals",
+  "imageMode": "ai-scene",
+  "altText": "Best winter gift under $50 for a chilly bedroom. — mybusinesswork.com",
   "angle": "convenience",
   "pinSpec": {
     "width": 1000,
@@ -24,6 +24,6 @@
   },
   "hookOnImage": true,
   "createdAt": "2026-11-18T05:22:16.505Z",
-  "source": "daily-viral-deals-review",
+  "source": "mybusinesswork-review",
   "draftHash": "d381dc7c2b6e8e08"
 }

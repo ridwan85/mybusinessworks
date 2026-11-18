@@ -1,5 +1,5 @@
 /**
- * Locked Daily Viral Deals review format.
+ * Locked mybusinesswork.com review format.
  * Every new product review must follow Hook → Why it helps → Details → CTA.
  * The Astro template owns CTAs + disclosure UI; Markdown body is details only.
  */
@@ -29,7 +29,7 @@ export function normalizeProductCategory(raw, title = '') {
 }
 
 export const SYSTEM_PROMPT =
-    'You are an experienced US affiliate product reviewer and conversion copywriter for Daily Viral Deals. ' +
+    'You are an experienced US affiliate product reviewer and conversion copywriter for mybusinesswork.com. ' +
     'Write in American English, helpful and honest. ' +
     'Use ONLY the facts supplied. Never invent specifications, prices, ratings, awards, or claim hands-on testing. ' +
     'Do not make medical or guaranteed-result claims. Do not include links, a title (H1), or any affiliate disclosure. ' +
