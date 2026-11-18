@@ -1,12 +1,14 @@
 {
   "provider": "zernio",
-  "pinId": "258182991137780886",
-  "zernioPostId": "6afd4dcb02efa422ae8061d2",
-  "pinUrl": "https://www.pinterest.com/pin/258182991137780886/",
+  "pinId": "258182991137780994",
+  "zernioPostId": "6afd50c18dc30e816aa7699d",
+  "pinUrl": "https://www.pinterest.com/pin/258182991137780994/",
   "boardId": "258183059827347742",
   "draftHash": "d381dc7c2b6e8e08",
   "slug": "dreo-space-heater-review-gift-ideas-under-50-b0c6fckqml",
-  "publishedAt": "2026-11-18T07:03:41.693Z",
+  "publishedAt": "2026-11-18T07:16:19.315Z",
   "link": "https://mybusinesswork.com/reviews/dreo-space-heater-review-gift-ideas-under-50-b0c6fckqml/",
-  "mediaUrl": "https://mybusinesswork.com/images/reviews/b0c6fckqml/pinterest-pin.jpg"
+  "mediaUrl": "https://media.zernio.com/media/1794986160632_891180627c92bdd0_dreo-winter-gift-pin.jpg",
+  "replacedPinIds": ["258182991137780886", "258182991137780599"],
+  "note": "Republished so the pin shows the Gold heater on the site. The earlier pins reused a cached image of a different heater."
 }
