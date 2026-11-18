@@ -467,8 +467,10 @@ const jsonLd = reviewPageJsonLd({
   .gallery figure { margin: 0; }
   .gallery img {
     width: 100%;
-    aspect-ratio: 1;
+    height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
+    object-position: center;
     border-radius: 10px;
     border: 1px solid var(--line);
     background: #fff;
@@ -703,6 +705,9 @@ const jsonLd = reviewPageJsonLd({
     .gallery ul {
       grid-template-columns: 1fr 1fr;
       gap: 10px;
+    }
+    .gallery img {
+      max-height: 220px;
     }
     .gallery figcaption { font-size: 0.8rem; }
     .crumbs [aria-current='page'] { max-width: 55vw; }
