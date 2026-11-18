@@ -288,10 +288,10 @@ export async function renderLifestylePhotoPin({
     const serif = "Pin Serif, 'Liberation Serif', Georgia, 'Times New Roman', serif";
     const sans = "Pin Sans, 'Liberation Sans', Inter, Helvetica, Arial, sans-serif";
     const headlineLines = wrapText(title, 18, 4);
-    const headlineSize = headlineLines.length > 3 ? 58 : 64;
+    const headlineSize = headlineLines.length > 2 ? 52 : 64;
     const headlineLeading = Math.round(headlineSize * 1.12);
 
-    let y = 118;
+    let y = 96;
     const parts = [];
     parts.push(
         `<defs><linearGradient id="topFade" x1="0" y1="0" x2="0" y2="1">` +
@@ -306,7 +306,7 @@ export async function renderLifestylePhotoPin({
             kicker.toUpperCase(),
         )}</text>`,
     );
-    y += 78;
+    y += 62;
     for (const line of headlineLines) {
         parts.push(
             `<text x="72" y="${y}" fill="${INK}" font-family="${serif}" font-size="${headlineSize}" font-weight="700">${escapeXml(line)}</text>`,
@@ -314,10 +314,25 @@ export async function renderLifestylePhotoPin({
         y += headlineLeading;
     }
     if (subline) {
-        y += 8;
+        // The last headline line already advanced a full leading. Pull the
+        // support line up so it stays under the headline, on the window.
+        y -= Math.round(headlineLeading * 0.22);
+        const subSize = 32;
+        const subText = String(subline).trim();
+        const subWidth = Math.min(PIN_WIDTH - 160, Math.round(subText.length * subSize * 0.56));
+        const padX = 20;
+        const padY = 12;
+        const panelW = subWidth + padX * 2;
+        const panelH = subSize + padY * 2;
+        const panelX = 64;
+        const panelY = y - subSize + 4;
         parts.push(
-            `<text x="72" y="${y}" fill="${MUTED}" font-family="${sans}" font-size="32" font-weight="400">${escapeXml(subline)}</text>`,
+            `<rect x="${panelX}" y="${panelY}" width="${panelW}" height="${panelH}" rx="12" fill="#f7f1eb" fill-opacity="0.96"/>`,
         );
+        parts.push(
+            `<text x="${panelX + padX}" y="${y}" fill="${INK}" font-family="${sans}" font-size="${subSize}" font-weight="700">${escapeXml(subText)}</text>`,
+        );
+        y += panelH;
     }
     const footerH = 68;
     parts.push(`<rect x="0" y="${PIN_HEIGHT - footerH}" width="${PIN_WIDTH}" height="${footerH}" fill="${BRAND}"/>`);

@@ -6,10 +6,10 @@ brand: "SAMEAT"
 category: "Home"
 affiliateUrl: "https://www.amazon.com/dp/B0C7KQTXV1?tag=dailyvirald06-20"
 ownImage: "/images/reviews/b0c7kqtxv1/own.jpg"
-imageCaption: "White SAMEAT towel warmer on a bathroom counter, snow outside the window, a warm lamp beside it."
+imageCaption: "White SAMEAT towel warmer with the lid on, a rolled towel beside it, snow outside the window."
 images: [{"src":"/images/reviews/b0c7kqtxv1/bath-counter.jpg","caption":"White SAMEAT bucket on a winter bathroom counter beside a folded towel.","alt":"White SAMEAT bucket on a winter bathroom counter beside a folded towel."},{"src":"/images/reviews/b0c7kqtxv1/entry-robe.jpg","caption":"White SAMEAT towel warmer in an entryway corner, a robe hanging on a hook.","alt":"White SAMEAT towel warmer in an entryway corner, a robe hanging on a hook."}]
-hook: "A spa-warm towel after each winter shower, no remodel"
-eyebrow: "Winter gift idea"
+hook: "A spa-warm towel after every winter shower"
+eyebrow: "Towel Warmer Bucket"
 subline: "Four timers, then it turns off."
 hookSupport: "The white SAMEAT bucket, model TW-ST1912, is a plug-in towel warmer with a wood-handle lid, a listed 450W heater, and a timer that stops after 30 minutes, 1 hour, 2 hours, or 4 hours."
 whyHelps: ["Four timers, then it turns off.","Listed for up to two 40 by 70 inch towels.","A bucket you plug in, with no bathroom remodel.","A winter gift with no clothing size to guess."]
