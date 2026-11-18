@@ -82,7 +82,9 @@ const jsonLd = reviewPageJsonLd({
             <span class="angle">{angleLabel}</span>
           </div>
           <p class="product-kicker">{data.title}</p>
+          {data.eyebrow && <p class="gift-eyebrow">{data.eyebrow}</p>}
           <h1 id="hook-title">{data.hook}</h1>
+          {data.subline && <p class="gift-subline">{data.subline}</p>}
           <p class="hook-support">{data.hookSupport}</p>
           <p class="cta-wrap">
             <a
@@ -314,14 +316,30 @@ const jsonLd = reviewPageJsonLd({
     font-size: 0.95rem;
     font-weight: 500;
   }
+  .gift-eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent-ink);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
   .hook-copy h1 {
     font-family: var(--display);
     font-size: clamp(1.45rem, 5.2vw, 2.15rem);
     line-height: 1.18;
     letter-spacing: -0.02em;
-    margin: 0 0 14px;
+    margin: 0 0 10px;
     max-width: none;
     text-wrap: balance;
+  }
+  .gift-subline {
+    margin: 0 0 14px;
+    max-width: 36rem;
+    font-family: var(--display);
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    line-height: 1.35;
+    color: var(--muted);
   }
   .hook-support {
     margin: 0 0 22px;
