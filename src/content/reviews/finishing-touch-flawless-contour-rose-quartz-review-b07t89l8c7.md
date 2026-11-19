@@ -12,7 +12,7 @@ hook: "Puffy Eyes, and No Time for a Spa"
 hookSupport: "A short face massage at the sink. A vibrating roller and a small eye press. Not a clinic visit."
 whyHelps: ["A short massage before makeup, at home.","The eye press can go in the fridge first.","One tool, two heads, and one AA battery in the box.","You skip a spa booking for a simple depuff step."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the face roller"
 features: ["Each package includes 1 controlled vibrating facial roller and massager, an under eye press and 1 AA battery.","The next generation of facial rolling: Flawless Contour combines controlled vibrating technology with genuine rose quartz stone.","Flawless Contour comes with 2 genuine rose quartz attachment heads: a facial roller and under eye press.","Facial roller is designed to help stimulate circulation, promote collagen production, and help reduce the appearance of fine lines and wrinkles.","Under eye press: helps reduce puffy eyes and dark circles. Refrigerate the eye press prior to use to help improve the performance and the reduction of puffy swollen under eyelid."]
 shortVerdict: "A vibrating rose quartz roller plus an eye press. It is a massage tool. It will not erase wrinkles overnight."
 buyIf: ["You want a quick face massage in the morning.","You like rose quartz and do not mind a small motor.","Puffy eyes are the part you want to cool."]

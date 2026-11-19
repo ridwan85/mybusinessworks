@@ -21,7 +21,7 @@ hook: "Nap Checks Should Not Need the Wi-Fi"
 hookSupport: "A parent screen and a camera talk to each other. No app. No home network."
 whyHelps: ["You see the crib without opening an app.","The camera pans from the parent screen.","Night vision is built in.","It works where the Wi-Fi is bad or missing."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the baby monitor"
 features: ["Remote 355° Pan and Tilt Baby Monitor & 5\" Color Display: Enjoy a 5\" Big Screen on this baby camera monitor. Remote control camera rotate 355° in horizontal and 120° vertical gives you a larger view of your baby's room. 2X zoom function ensures clear visuals. Noiseless camera rotation for a peaceful environment.","Infrared Night Vision & 2-Way Audio Video Baby Monitoring: Crisp night vision gives you a clear view of your little one as they snooze, even in low-light conditions. Invisible infrared LED design for a clear video feed at night without disrupting your baby.","Easy Set up & Safe Travel Baby Monitor No WiFi Needed: Non-wifi video baby monitor using advanced 2.4GHz FHSS and digital encryption technology for fast data transfer between camera and monitor without Wi‑Fi hacking concerns.","HB6550 Features: Crystal clear Two-Way Audio, Room Temperature Monitor and Alert, Night vision, 8 Lullabies, Sound Level LED Indicator, Audio-only Saving Power Mode, Tabletop or Wall Mounting Options, Multi-Camera Expandability (up to 4 cameras), Date/Time on the Screen.","Travel-ready monitoring with long battery life on the parent unit and roughly 1000ft range (as listed), VOX mode, and easy setup—suited for home use and trips without relying on home Wi‑Fi."]
 shortVerdict: "A no-Wi-Fi baby monitor with a 5-inch screen for home or a trip, but you cannot watch it from a phone at work."
 buyIf: ["You want a handheld screen, not your phone.","You travel or visit family with a baby.","You do not want a camera on the internet."]
@@ -88,7 +88,7 @@ They claim about 1,000 feet in the open, but thick walls shorten that, so test i
 
 ### Is it hard to set up?
 
-No. They claim it pairs without a home network, and that is why travel is easy. Confirm the kit on the <a href="https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">HelloBaby HB6550</a> page.
+No. They claim it pairs without a home network, and that is why travel is easy. Confirm the kit on the <a href="https://www.amazon.com/dp/B09GM8JZM9?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">HelloBaby HB6550</a>.
 
 ## Bottom line
 

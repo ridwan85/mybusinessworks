@@ -3,7 +3,7 @@ title: "Bedsure Heated Blanket Throw Review"
 description: "The Bedsure heated throw is 50 by 60 inches, with 6 heat levels and an auto shutoff. A plain look at warmth, safety, and size."
 asin: "B0BZR6YBHK"
 brand: "Bedsure"
-category: "Home Decor"
+category: "Home & living"
 affiliateUrl: "https://www.amazon.com/dp/B0BZR6YBHK?tag=dailyvirald06-20"
 imageSrc: "/images/reviews/b0bzr6ybhk/couch-cozy.jpg"
 imageCaption: "A folded grey heated throw, with the soft side and the fuzzy side showing."
@@ -12,7 +12,7 @@ hook: "The Couch Is Cold and the Heater Is Too Much"
 hookSupport: "This throw warms you, not the whole room. It is a lap blanket, not a full bed cover."
 whyHelps: ["You get warm without turning up the whole house.","Preheat gets the blanket going, then you turn it down.","Six heat levels and a timer.","Unplugged, it is still a soft throw."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the heated throw"
 features: ["Fast & Even Warmth: 6 heating levels and 6 timer settings (1-2-4-6-8-10H) let you enjoy personalized coziness. Advanced longer heating wires provide fast, even warmth.","Safer & More Reliable: ETL and FCC certified with default 8-hour auto shut-off to help prevent overheating.","Preheat Function: Preheat the blanket for toasty warmth, then enjoy longer sessions at a comfortable heat level without constant fiddling.","Softness & Versatile Comfort: 220 GSM flannel top and 200 GSM sherpa backing. When not powered on, it serves as a regular throw blanket. Machine care friendly.","Energy-Saving: 100W power rating designed for standard 120V AC wall outlets—cozy warmth with lower electricity use than traditional space heaters.","Giftable: Great for movie nights, beds, housewarmings, birthdays, or holidays; available in multiple colors and sizes."]
 shortVerdict: "A 50 by 60 inch heated throw with 6 heat levels. It warms a person, but it does not heat a room."
 buyIf: ["You are cold on the couch or at a desk.","You want heat on you, not in the whole room.","You want a practical gift for a chilly person."]
@@ -35,7 +35,7 @@ The <a href="https://www.amazon.com/dp/B0BZR6YBHK?tag=dailyvirald06-20" rel="nof
 
 * **Preheat.** The claim is you can preheat, then drop to a level you can stay with, but the exact minutes depend on the room.
 
-* **Two fabrics.** One side is flannel and the other is sherpa, which is the fuzzy side. The fabric-weight number on the page just means how thick the cloth is. You can also use it unplugged, because it is still a normal throw.
+* **Two fabrics.** One side is flannel and the other is sherpa, which is the fuzzy side. The fabric-weight number just means how thick the cloth is. You can also use it unplugged, because it is still a normal throw.
 
 * **100 watts.** It plugs into a normal 120 volt outlet. The claim is it uses less power than heating a room with a space heater, but it still needs a plug nearby.
 

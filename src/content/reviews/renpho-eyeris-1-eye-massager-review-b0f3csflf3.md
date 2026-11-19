@@ -3,7 +3,7 @@ title: "RENPHO Eyeris 1 Eye Massager Review"
 description: "The RENPHO Eyeris 1 is a heated eye mask with gentle pressure. Read the blurry-vision note and who should not use it."
 asin: "B0F3CSFLF3"
 brand: "RENPHO"
-category: "Health"
+category: "Health & household"
 affiliateUrl: "https://www.amazon.com/dp/B0F3CSFLF3?tag=dailyvirald06-20"
 imageSrc: "/images/reviews/b0f3csflf3/desk-break.jpg"
 imageCaption: "The eye mask on a desk next to a closed laptop."
@@ -12,7 +12,7 @@ hook: "Your Eyes Hurt After a Day of Screens"
 hookSupport: "A heated mask with gentle pressure for tired eyes. Read the warnings before you buy."
 whyHelps: ["Heat and gentle pressure after a long screen day.","It blocks light while you rest.","It folds flat for a bag or a flight.","You can pause without booking anything."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the eye mask"
 features: ["FSA Eligible HSA & Eye Massager with Heat: This Renpho eye massager with heat qualifies as an FSA/HSA eligible item, allowing you to use your health savings account for purchase.","Relax Your Eyes: Soothe tired eyes and sleep better with the RENPHO sleep eye mask. Combining complete light-blocking coverage with soothing warmth and precision compression massage, it helps ease tightness around your eyes and temples.","180° Foldable & Portable Design: Folds into a compact design so you can carry it to the office, airplane, or while traveling. Adjustable headband suitable for teenagers and adults.","Heat and compression massage: Gentle heat with pressure massage designed to relax the eye area after long screen sessions.","Gift-ready wellness tool: Popular birthday and holiday gift option for people who spend long hours at a computer.","Please note: Vision may blur briefly after use—close your eyes until it clears. Normal operating noise under 45 dB. Not suitable after eye surgery or for serious eye conditions. Check for protein leather allergies before use."]
 shortVerdict: "A foldable heated eye mask for screen-tired eyes. Vision can blur for a moment after. Not for recent eye surgery."
 buyIf: ["Your eyes and temples feel tight after screens.","You want a mask you can pack.","You read the warnings and they do not apply to you."]

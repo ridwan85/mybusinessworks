@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import BuySkipCard from '../../components/BuySkipCard.astro';
 import CompareTable from '../../components/CompareTable.astro';
 import GraphicCard from '../../components/GraphicCard.astro';
+import ResponsiveImg from '../../components/ResponsiveImg.astro';
 import ReviewCard from '../../components/ReviewCard.astro';
 import { relatedReviews, slugifyCategory } from '../../lib/categories';
 import { localImageSize } from '../../lib/image-size';
@@ -34,9 +35,21 @@ const heroSize = localImageSize(heroSrc);
 const heroCaption = heroSrc ? data.imageCaption || gallery.find((g) => g.src === heroSrc)?.caption : undefined;
 const showcase = gallery.filter((g) => g.src !== heroSrc);
 const ctaLabel = data.ctaLabel || 'Check Price on Amazon';
-const showPriceNote = /\$\s?\d|\bunder\s+\$/i.test(
-  [data.title, data.hook, data.shortVerdict, data.description, entry.body ?? ''].filter(Boolean).join('\n'),
-);
+const priceNoteIds = new Set([
+  'stanley-quencher-h2-0-review-gift-ideas-under-25-b0crmp3rqt',
+  'bedsure-heated-blanket-throw-review-b0bzr6ybhk',
+  'bedsure-satin-pillowcases-queen-set-review-b0bsnhvw5q',
+]);
+const showPriceNote =
+  priceNoteIds.has(entry.id) ||
+  /\$\s?\d|\bunder\s+\$/i.test(
+    [data.title, data.hook, data.shortVerdict, data.description, entry.body ?? ''].filter(Boolean).join('\n'),
+  );
+// Only a positive sourced buyer line belongs next to the buy button.
+// Leak, break, and scratch comments stay in Skip it if and the limits section.
+const buyerLine = entry.body
+  ?.match(/Lots of buyers say[^.]+\./g)
+  ?.find((line) => !/leak|break|scratch|tip/i.test(line));
 const angleLabel =
   data.angle === 'time' ? 'Saves time' : data.angle === 'incident' ? 'Fewer messes' : 'Easier day';
 
@@ -110,12 +123,14 @@ const jsonLd = reviewPageJsonLd({
             <div class="hero" set:html={data.imageHtml} />
           ) : heroSrc ? (
             <figure class="hero">
-              <img
+              <ResponsiveImg
                 src={heroSrc}
                 alt={data.title}
                 width={heroSize?.width ?? 1200}
                 height={heroSize?.height ?? 900}
-                decoding="async"
+                sizes="(max-width: 779px) 92vw, 280px"
+                loading="eager"
+                fetchpriority="high"
               />
               {heroCaption && <figcaption>{heroCaption}</figcaption>}
             </figure>
@@ -130,6 +145,7 @@ const jsonLd = reviewPageJsonLd({
           affiliateUrl={data.affiliateUrl}
           ctaLabel={ctaLabel}
           showPriceNote={showPriceNote}
+          buyerLine={buyerLine}
         />
       </div>
     </section>
@@ -146,6 +162,7 @@ const jsonLd = reviewPageJsonLd({
         <ol class="why-helps">
           {data.whyHelps.map((point) => <li>{point}</li>)}
         </ol>
+        {buyerLine && <p class="buyer-line">{buyerLine}</p>}
       </div>
 
       {showcase.length > 0 && (
@@ -156,13 +173,13 @@ const jsonLd = reviewPageJsonLd({
               <li>
                 <figure>
                   <a href={item.src} target="_blank" rel="noopener">
-                    <img
+                    <ResponsiveImg
                       src={item.src}
                       alt={item.alt || data.title}
                       width={localImageSize(item.src)?.width}
                       height={localImageSize(item.src)?.height}
+                      sizes="(max-width: 779px) 46vw, 240px"
                       loading="lazy"
-                      decoding="async"
                     />
                   </a>
                   {item.caption && <figcaption>{item.caption}</figcaption>}
@@ -221,7 +238,7 @@ const jsonLd = reviewPageJsonLd({
   <div class="sticky-buy" data-sticky-buy>
     <div class:list={['sticky-buy-inner', !heroSrc && 'no-thumb']}>
       {heroSrc && (
-        <img class="sticky-thumb" src={heroSrc} alt="" width="56" height="56" loading="lazy" />
+        <ResponsiveImg class="sticky-thumb" src={heroSrc} alt={data.title} width={56} height={56} sizes="56px" loading="lazy" fill={false} />
       )}
       <div class="sticky-copy">
         <p class="sticky-title">{data.title}</p>

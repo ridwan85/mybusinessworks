@@ -5,8 +5,9 @@ interface Props {
     affiliateUrl: string;
     ctaLabel: string;
     showPriceNote?: boolean;
+    buyerLine?: string;
 }
-const { buyIf, skipIf, affiliateUrl, ctaLabel, showPriceNote = false } = Astro.props;
+const { buyIf, skipIf, affiliateUrl, ctaLabel, showPriceNote = false, buyerLine } = Astro.props;
 ---
 
 <section class="decision" aria-label="Buy it or skip it">
@@ -17,6 +18,7 @@ const { buyIf, skipIf, affiliateUrl, ctaLabel, showPriceNote = false } = Astro.p
     <p class="cta-wrap">
         <a id="primary-cta" class="cta-amazon" href={affiliateUrl} rel="sponsored nofollow">{ctaLabel}</a>
     </p>
+    {buyerLine && <p class="buyer-line">{buyerLine}</p>}
     <div class="decision-cols">
         <div class="panel panel-buy">
             <h2>Buy it if</h2>
@@ -45,7 +47,12 @@ const { buyIf, skipIf, affiliateUrl, ctaLabel, showPriceNote = false } = Astro.p
         font-size: 16px;
         line-height: 1.5;
     }
-    .cta-wrap { margin: 0 0 12px; }
+    .cta-wrap { margin: 0 0 8px; }
+    .buyer-line {
+        margin: 0 0 12px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
     .decision-cols {
         display: grid;
         grid-template-columns: 1fr 1fr;

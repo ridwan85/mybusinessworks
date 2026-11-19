@@ -3,7 +3,7 @@ title: "Chalktastic Liquid Chalk Markers Review: Winter Window Art Without Perma
 description: "Chalktastic liquid chalk markers are washable pens for glass and other smooth surfaces. A plain look at winter window art that wipes off."
 asin: "B00W3OBU3C"
 brand: "Chalktastic"
-category: "Home"
+category: "Home & living"
 affiliateUrl: "https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20"
 imageSrc: "/images/reviews/b00w3obu3c/window-snowflake.jpg"
 imageCaption: "Snowflake doodles on a window."
@@ -12,7 +12,7 @@ hook: "Winter Window Art Without a Permanent Mess"
 hookSupport: "Bold color on glass, then you wipe it off. It is not paint."
 whyHelps: ["Kids can draw on the window and you can wipe it off.","You get color without a permanent paint commitment.","Tips can switch from a fine line to a wider stroke.","It is a simple family art night, not a remodel."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the chalk markers"
 features: ["Ideal for decorating any window, bistro board, or sign—these erasable chalkboard markers also work on glass, ceramic, whiteboards, and more.","Colored chalk power without the dusty mess—high-quality concentrated ink for non-porous surfaces.","Reversible bullet and chisel tip so you can switch between fine lines and broader strokes.","Washable, non-toxic, and odorless—wipe away with a damp cloth for a smear-free clean.","Practical for family DIY crafts, seasonal window decorating, and gift-ready creative kits."]
 shortVerdict: "Washable chalk pens for windows and signs, but weak if the art has to survive rain for weeks."
 buyIf: ["You want winter window art that washes off.","You make signs on glass or a non-porous board.","Kids are drawing, and paint feels too permanent."]
@@ -73,7 +73,7 @@ No. It is liquid chalk, so it is for temporary art, not a permanent window job.
 
 ### Can it stay outside in the rain?
 
-No. Indoor windows are the easy job, and weather means touch-ups. Read the <a href="https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Chalktastic markers</a> page for the set size you are buying.
+No. Indoor windows are the easy job, and weather means touch-ups. Read the <a href="https://www.amazon.com/dp/B00W3OBU3C?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Chalktastic markers</a> for the set size you are buying.
 
 ### Can kids use them?
 

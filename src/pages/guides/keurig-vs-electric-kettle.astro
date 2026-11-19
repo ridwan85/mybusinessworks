@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import GuideTable from '../../components/GuideTable.astro';
+
+const keurig = 'https://www.amazon.com/dp/B09715G57M?tag=dailyvirald06-20';
+const kettle = 'https://www.amazon.com/dp/B0F56N9J2R?tag=dailyvirald06-20';
+const rows = [
+    {
+        name: 'Keurig K-Express',
+        href: keurig,
+        goodWhen: 'You want one finished cup of coffee before you leave.',
+        limit: 'The tank is 42 oz, about four small cups. It does not start on a timer, and ground coffee needs a filter sold separately.',
+    },
+    {
+        name: 'MacKenzie-Childs electric kettle',
+        href: kettle,
+        goodWhen: 'You want hot water for tea or pour-over, and you like a red-and-white check on the counter.',
+        limit: 'It heats water. It does not brew a pod, and the pattern is bold.',
+    },
+];
+---
+
+<Base
+    title="Keurig K-Express vs an electric kettle"
+    description="Compare the Keurig K-Express with the MacKenzie-Childs 8-cup kettle. One makes a pod of coffee. The other heats water."
+>
+    <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> / <a href="/guides/">Guides</a> / <span aria-current="page">Keurig vs kettle</span>
+    </nav>
+    <h1>Keurig K-Express vs an electric kettle</h1>
+    <p>The keys are in your hand and the drink is not ready. One machine makes the coffee. The other only boils the water, and you finish the cup yourself.</p>
+    <p><strong>Our pick for a finished cup:</strong> the black Keurig K-Express. You press a button for 8, 10, or 12 oz. The claim is a cup is ready in minutes. It turns off five minutes after the last brew. A mug up to 7.4 inches tall fits if you take the drip tray off.</p>
+    <p><strong>Our pick if you make tea or pour-over:</strong> the MacKenzie-Childs kettle. It holds 8 cups and stays on the counter. The cherry check is the reason to leave it out. It does not brew coffee by itself.</p>
+    <p class="notice">Price at the time of writing. Check Amazon for today's price.</p>
+    <p class="notice">As an Amazon Associate I earn from qualifying purchases.</p>
+    <p>
+        <a class="cta-amazon" href={keurig} rel="sponsored nofollow">See today's price for the K-Express</a>
+    </p>
+    <GuideTable rows={rows} />
+    <p>
+        Read the
+        <a href="/reviews/keurig-k-express-coffee-maker-review-b09715g57m/">Keurig review</a> and the
+        <a href="/reviews/mackenzie-childs-electric-kettle-review-b0f56n9j2r/">kettle review</a>.
+    </p>
+</Base>
+
+<style>
+    .crumb { color: var(--muted); font-size: 0.92rem; margin-bottom: 12px; }
+    .crumb a { color: var(--muted); }
+    .cta-amazon {
+        display: inline-block;
+        background: var(--amazon);
+        color: var(--amazon-ink);
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin: 8px 0 18px;
+    }
+</style>

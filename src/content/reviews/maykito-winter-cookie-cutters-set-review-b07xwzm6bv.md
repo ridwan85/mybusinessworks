@@ -12,7 +12,7 @@ hook: "The Dough Sticks to the Wrong Shape: Winter Cookie Cutters"
 hookSupport: "Twelve stainless cutters turn a sheet of dough into clear shapes. Icing skill is still on you."
 whyHelps: ["You stop hunting for one shape at a time.","Stainless cutters hold a cleaner edge than flimsy plastic.","The set is a simple baking gift.","Family baking night needs fewer missing shapes."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the cookie cutters"
 features: ["Twelve-piece stainless cookie cutter set with winter shapes such as tree, snowflake, star, house, snowman, gingerbread, reindeer, candy cane, and glove designs.","Made of premium stainless steel—strong, shape-holding, and rust resistant with proper care.","Care tip: hand wash and wipe dry after each use to help prevent rust and maximize life.","Gift-ready boxed packaging for convenient storage and family gifting.","Use for cookie dough, fondant, soft fruits, bread, sandwiches, cheese, or craft clay; also works as a pancake mold."]
 shortVerdict: "A 12-piece stainless cutter set for winter cookies at home. It cuts the dough, but it does not decorate for you."
 buyIf: ["You already bake and need winter shapes.","You want a gift for a home baker.","You will hand wash and dry the cutters."]
@@ -71,7 +71,7 @@ Yes, if the dough is cold and firm. Soft dough sticks and tears, and the cutter 
 
 ### Do they include icing?
 
-No. You get cutters, and you bring the dough and the icing. See the <a href="https://www.amazon.com/dp/B07XWZM6BV?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Maykito cookie cutter set</a> if you want the shape list on the live page.
+No. You get cutters, and you bring the dough and the icing. See the <a href="https://www.amazon.com/dp/B07XWZM6BV?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Maykito cookie cutter set</a> if you want the shape list on Amazon.
 
 ### Can kids use them?
 

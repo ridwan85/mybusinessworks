@@ -3,7 +3,7 @@ title: "BISSELL Little Green Mini 4075 Review"
 description: "The BISSELL Little Green Mini 4075 is a portable spot cleaner for couches, cars, and pet messes. It is not a whole-room carpet machine."
 asin: "B0DJMP6T3N"
 brand: "BISSELL"
-category: "Home"
+category: "Home & living"
 affiliateUrl: "https://www.amazon.com/dp/B0DJMP6T3N?tag=dailyvirald06-20"
 imageSrc: "/images/reviews/b0djmp6t3n/couch-stain.jpg"
 imageCaption: "The Little Green Mini on the couch, with the hose out."
@@ -12,7 +12,7 @@ hook: "Coffee Just Hit the Couch: A Small Spot Cleaner"
 hookSupport: "You spray, scrub, and suck up a fresh mess. It stores in a closet, not a garage."
 whyHelps: ["You grab it when the spill is still wet.","It reaches a couch, a car seat, or a pet bed.","The tools and formula come in the box.","It stores small, then comes out for the next mess."]
 angle: "incident"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the Little Green Mini"
 features: ["SAVE YOUR SANCTUARY: Tackle spills and pet stains while removing dander, dust, and pollen allergens.","CLEANS MORE THAN CARPET: Spray, scrub, and suction to remove embedded dirt and stains from upholstery, car interiors, pet beds, and more.","INCLUDES: 4” Tough Stain Tool with removable lens, HydroRinse self-cleaning hose tool, and 8oz. BISSELL Little Green Formula.","EASY STORAGE: Conveniently stores in small spaces - perfect for cabinets, closets, and more.","LITTLE GREEN FORMULA: Instantly and permanently removes stains and eliminates everyday household odors.","EVERY PURCHASE SAVES PETS: BISSELL supports BISSELL Pet Foundation and its mission of saving pets in need."]
 shortVerdict: "A small cleaner for spills and pet spots, but it will not shampoo a whole room."
 buyIf: ["Coffee, mud, or pet messes land on fabric.","You live in an apartment with no room for a big machine.","You want to treat a spot before it sets."]
@@ -67,7 +67,7 @@ No. It is a mini spot cleaner, so a full room needs a larger machine.
 
 ### What messes is it for?
 
-They point it at spills, mud, and pet messes on carpet, upholstery, car interiors, and pet beds, and fast treatment helps. The <a href="https://www.amazon.com/dp/B0DJMP6T3N?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Little Green Mini</a> page shows the tools in this bundle.
+They point it at spills, mud, and pet messes on carpet, upholstery, car interiors, and pet beds, and fast treatment helps. The <a href="https://www.amazon.com/dp/B0DJMP6T3N?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Little Green Mini</a> shows the tools in this bundle.
 
 ### Do I need to buy formula?
 

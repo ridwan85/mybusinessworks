@@ -3,7 +3,7 @@ title: "GODONLIF Candle Warmer Lamp Review"
 description: "The GODONLIF candle warmer lamp melts a jar candle from the top. No open flame. A plain look at the timer, the dimmer, and the limits."
 asin: "B0CTJGJL2T"
 brand: "GODONLIF"
-category: "Home Decor"
+category: "Home & living"
 affiliateUrl: "https://www.amazon.com/dp/B0CTJGJL2T?tag=dailyvirald06-20"
 imageSrc: "/images/reviews/b0ctjgjl2t/nightstand-glow.jpg"
 imageCaption: "The candle warmer lamp on a flat surface."
@@ -12,7 +12,7 @@ hook: "You Want Candle Scent Without an Open Flame"
 hookSupport: "A lamp melts the wax from above. No flame, no soot from a burn."
 whyHelps: ["You get candle scent without a flame.","A timer can shut the melt off.","You dim it to melt slower or faster.","The height moves for different jar sizes."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the candle warmer"
 features: ["Safety and Environmental Friendliness: Our electric Candle Warmer Lamp gently melting the candle from the top down. With no open flame, it eliminates concerns of flame, smoke, soot, and pollution. Ideal for homes with children and pets.","Fully Dimmable and 24-Hour Cycle Timing Function: Enjoy complete control over the ambiance with our dimmable knob, offering unrestricted dimming for personalized melting speeds. Convenient timer function for uninterrupted sweet dreams.","Sleek Design, Versatile Usage: Combining classical elegance with modern aesthetics, our lamp features a metal base and glass lampshade. Perfect for living rooms, bedrooms, studies, offices, and yoga rooms.","Height-Adjustable: Adapt to various jar candle sizes with its adjustable pole, ensuring a perfect fit for any decor.","Gifts Idea: A strong gift pick for Mother's Day, New Year, housewarming, birthdays, family gatherings, and teacher appreciation.","The All-in-One Gift & Decor Centerpiece: Creates a warm, inviting atmosphere and doubles as subtle bedroom or living-room decor."]
 shortVerdict: "A dimmable lamp that warms jar candles. It needs an outlet. It is not a bright reading lamp."
 buyIf: ["You love jar candles but worry about flames.","Kids or pets are in the room.","You want a soft light on a side table."]
@@ -75,7 +75,7 @@ No. Use a jar candle. The pole adjusts for jar height, but pillars and tapers ar
 
 ### Will it light the room?
 
-No. It is a soft glow, not a reading lamp, because the job is melting wax and a little light. Check the <a href="https://www.amazon.com/dp/B0CTJGJL2T?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">GODONLIF candle warmer</a> page for the shade style.
+No. It is a soft glow, not a reading lamp, because the job is melting wax and a little light. Check the <a href="https://www.amazon.com/dp/B0CTJGJL2T?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">GODONLIF candle warmer</a> for the shade style.
 
 ### Can I leave it on all night?
 

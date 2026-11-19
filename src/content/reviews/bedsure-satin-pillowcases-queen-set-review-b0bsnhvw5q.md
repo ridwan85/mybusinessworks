@@ -3,7 +3,7 @@ title: "Bedsure Satin Pillowcases for Hair and Skin Review"
 description: "Bedsure satin pillowcases are a queen set of 2 in polyester, not silk. A plain look at hair, skin, and washing."
 asin: "B0BSNHVW5Q"
 brand: "Bedsure"
-category: "Home Decor"
+category: "Home & living"
 affiliateUrl: "https://www.amazon.com/dp/B0BSNHVW5Q?tag=dailyvirald06-20"
 imageSrc: "/images/reviews/b0bsnhvw5q/bedroom-ready.jpg"
 imageCaption: "Light turquoise satin pillowcases on a made bed."
@@ -12,7 +12,7 @@ hook: "You Wake Up Frizzy: Satin Pillowcases for Hair and Skin"
 hookSupport: "A smoother pillowcase means less rubbing on hair and skin overnight. These are polyester, not silk."
 whyHelps: ["Less rubbing can mean less morning frizz.","A smooth surface can mean fewer sleep creases.","The envelope back keeps the pillow inside.","You get two cases, so one can be in the wash."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the satin cases"
 features: ["Better Hair: Made of 100% polyester, these silk-like satin pillowcases feature a smooth texture that minimizes friction, helping reduce hair breakage and control frizz. Perfect for curly, wavy, or delicate hair types","Better Skin: The buttery smooth surface of this pillowcase set reduces the chance of skin marks and wrinkles after a cozy night's sleep, providing you with a fabulous look even in the morning","Better Sleep: The silk-like fabric on this pillowcase set provides long-lasting durability against wear and tear. An envelope closure design ensures the pillow insert stays in place without sliding","Vegan Friendly: Unlike silk, no silkworms are employed in the making of this elegantly smooth pillowcase, making it an excellent choice for those with a vegan lifestyle","Vibrant Gift Option: This vibrant pillowcase set is available in dozens of color options, so you can always find the one that perfectly matches the mood and vibe for you or your recipients","What You Can Get: Indulge in a blissful night’s rest with our set of two queen satin pillowcases (20\" x 30\")"]
 shortVerdict: "Two queen pillowcases with a smooth, silk-like feel. They are polyester. They do not include pillows."
 buyIf: ["Curly or delicate hair frizzes on cotton.","You want a silk-like feel without real silk.","You need a simple gift in a color you can match."]

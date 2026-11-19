@@ -12,7 +12,7 @@ hook: "The Sponge Never Dries: A Sink Caddy That Drains"
 hookSupport: "Sponge, brush, and soap get their own spots. A sloped tray sends water back to the sink."
 whyHelps: ["The sponge is not sitting in a puddle.","Soap and brushes stop sharing one wet pile.","You set it down, because there is nothing to install.","A rinse under the tap is the daily clean."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the sink caddy"
 features: ["AUTOMATIC DRAINAGE SYSTEM: Slope design for drainage that reduces cleaning time for the sponge holder and keeps the sink area tidier.","PREMIUM STURDY MATERIAL: Made of premium stainless steel which can effectively prevent rust and deformation. Easy to rinse clean under a running tap.","REASONABLE DIVIDER DESIGN: Ergonomic divider design with 3 separate storage spaces for sponge, brush, and soap so the kitchen looks cleaner.","SATISFACTION GUARANTEED: Ready to use upon receipt, no installation required. Widely used on counters or bathrooms; a practical gift."]
 shortVerdict: "A small stainless caddy for the sink tools you use every day, but it will not replace a dish rack."
 buyIf: ["Your sink edge is a wet pile of tools.","You want a sponge that can dry.","You need a small housewarming gift."]
