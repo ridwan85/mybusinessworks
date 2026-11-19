@@ -47,6 +47,7 @@ export default defineConfig({
         '/categories/home': '/categories/home-living/',
         '/categories/home-decor': '/categories/home-living/',
         '/categories/health': '/categories/health-household/',
+        '/guides/stanley-quencher-vs-counter-kettle': '/guides/keurig-vs-electric-kettle/',
     },
     integrations: [
         sitemap({

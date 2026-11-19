@@ -45,7 +45,11 @@ const showPriceNote =
   /\$\s?\d|\bunder\s+\$/i.test(
     [data.title, data.hook, data.shortVerdict, data.description, entry.body ?? ''].filter(Boolean).join('\n'),
   );
-const buyerLine = entry.body?.match(/Lots of buyers say[^.]+\./)?.[0];
+// Only a positive sourced buyer line belongs next to the buy button.
+// Leak, break, and scratch comments stay in Skip it if and the limits section.
+const buyerLine = entry.body
+  ?.match(/Lots of buyers say[^.]+\./g)
+  ?.find((line) => !/leak|break|scratch|tip/i.test(line));
 const angleLabel =
   data.angle === 'time' ? 'Saves time' : data.angle === 'incident' ? 'Fewer messes' : 'Easier day';
 
