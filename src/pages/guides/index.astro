@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const guides = [
+    {
+        href: '/guides/best-space-heater-for-one-room-under-50/',
+        title: 'Best space heater for one room under $50',
+        blurb: 'A corded heater for one bedroom, and a throw if you only need heat on you.',
+    },
+    {
+        href: '/guides/stanley-quencher-vs-counter-kettle/',
+        title: 'Stanley Quencher vs a counter kettle',
+        blurb: 'One cup you carry, or hot water that stays on the counter.',
+    },
+    {
+        href: '/guides/best-weeknight-cooker-instant-pot-or-air-fryer/',
+        title: 'Best weeknight cooker: Instant Pot or air fryer',
+        blurb: 'A one-pot meal, or food that should come out crisp.',
+    },
+];
+---
+
+<Base
+    title="Guides | mybusinesswork.com"
+    description="Short guides that compare products we already reviewed, so you can pick without digging through Amazon."
+>
+    <h1>Guides</h1>
+    <p>
+        These pages use facts from reviews we already wrote. We do not add new specs, and we do not lock a star rating or a price.
+    </p>
+    <p class="notice">As an Amazon Associate I earn from qualifying purchases.</p>
+    <ul>
+        {guides.map((guide) => (
+            <li>
+                <a href={guide.href}><strong>{guide.title}</strong></a>
+                <p>{guide.blurb}</p>
+            </li>
+        ))}
+    </ul>
+</Base>

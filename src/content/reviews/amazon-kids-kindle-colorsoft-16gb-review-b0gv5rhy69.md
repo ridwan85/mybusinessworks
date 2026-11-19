@@ -21,7 +21,7 @@ hook: "A Heavy Stack of Kids Books, and Glare Outside"
 hookSupport: "One color reader holds the books, without games, but the kids plan can renew after year one."
 whyHelps: ["A heavy stack of books becomes one light reader.","The screen is meant to stay readable in bright light.","Games and videos are not there to pull them away.","A case and a year of kids books come in the bundle."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the Kids Kindle"
 features: ["A complete bundle: Includes Amazon Kids Kindle Colorsoft with 7” display, 1-year Kids+ subscription and protective case.","Colorsoft display: Paper-like color brings covers, comics, and graphic novels to life, while staying glare-free in bright sunlight.","1-year Kids+ subscription included: Thousands of graphic novels, comics and illustrated chapter books for kids 6-12, including Big Nate, Catwad and Marvel. Renews automatically at the applicable rate. You can cancel anytime.","Adjustable warm light: Shift the front light from crisp white to warm amber. Bright by day, warm by night, and easy on the eyes either way.","Waterproof: For reading by the pool, at the beach, or in the bath.","Up to 8 weeks of battery: A single charge lasts for months, so the charger can stay in the drawer.","Distraction-free: Just read with no apps, videos, games, or notifications to pull kids away from their books."]
 shortVerdict: "For the heavy school bag and the games that steal the story. A color reader for ages 6 to 12. The Kids+ year can renew unless you cancel."
 buyIf: ["Your child is about 6 to 12 and likes books.","You are tired of carrying comics and graphic novels.","You want reading without a full tablet of apps."]
@@ -70,7 +70,7 @@ Skip it if your child wants a tablet full of apps, or if you will not watch the 
 
 * Kids+ renews unless you cancel, so you need to know the date.
 * 16GB fills faster if you download lots of color comics.
-* The age range on the page is 6 to 12.
+* The age range is 6 to 12.
 * The battery weeks and the glare-free screen are claims, so real use can differ.
 
 ## FAQ

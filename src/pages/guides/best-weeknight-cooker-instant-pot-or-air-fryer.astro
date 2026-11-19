@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import GuideTable from '../../components/GuideTable.astro';
+
+const pot = 'https://www.amazon.com/dp/B00FLYWNYQ?tag=dailyvirald06-20';
+const fryer = 'https://www.amazon.com/dp/B0H87WV6N4?tag=dailyvirald06-20';
+const rows = [
+    {
+        name: 'Instant Pot Duo, 6 qt',
+        href: pot,
+        goodWhen: 'You walk in tired and dinner is still a pot of food: soup, beans, rice, or a slow cook.',
+        limit: 'It takes counter space. Quick release sends out hot steam, so keep your hands clear.',
+    },
+    {
+        name: 'Ninja Air Fryer Pro, 5 qt',
+        href: fryer,
+        goodWhen: 'You want fries, chicken, or vegetables crisp without waiting on a cold oven.',
+        limit: 'A big family may need two batches. It is not the same texture as a deep fryer.',
+    },
+];
+---
+
+<Base
+    title="Best weeknight cooker: Instant Pot or air fryer"
+    description="Compare the Instant Pot Duo 6 qt with the Ninja Air Fryer Pro 5 qt. Pick the pot for one-pot meals, or the air fryer for crisp food."
+>
+    <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> / <a href="/guides/">Guides</a> / <span aria-current="page">Weeknight cooker</span>
+    </nav>
+    <h1>Best weeknight cooker: Instant Pot or air fryer</h1>
+    <p>You get home late, and dinner is still ahead of you. The right machine depends on whether the food should simmer in one pot or come out crisp.</p>
+    <p><strong>Our pick for a one-pot meal:</strong> the Instant Pot Duo 6 qt. It can pressure cook, slow cook, steam, sauté, and keep food warm. The claim is pressure cooking can be up to 70% faster than older methods. It is listed for up to 6 people.</p>
+    <p><strong>Our pick when the food should be crisp:</strong> the Ninja Air Fryer Pro 5 qt. It air fries, bakes, roasts, reheats, and dehydrates. The claim is hot air, up to 400°F, crisps food with little or no oil. It holds up to 4 pounds of fries or 5 pounds of wings.</p>
+    <p class="notice">Price at the time of writing. Check Amazon for today's price.</p>
+    <p class="notice">As an Amazon Associate I earn from qualifying purchases.</p>
+    <p>
+        <a class="cta-amazon" href={pot} rel="sponsored nofollow">See today's price for the 6 qt Instant Pot</a>
+    </p>
+    <GuideTable rows={rows} />
+    <p>
+        Read the <a href="/reviews/instant-pot-duo-6-qt-review-save-time-in-the-kitchen-b00flywnyq/">Instant Pot review</a> and the
+        <a href="/reviews/ninja-air-fryer-pro-5-qt-review-save-time-on-meals-b0h87wv6n4/">Ninja air fryer review</a> before you clear counter space.
+    </p>
+</Base>
+
+<style>
+    .crumb { color: var(--muted); font-size: 0.92rem; margin-bottom: 12px; }
+    .crumb a { color: var(--muted); }
+    .cta-amazon {
+        display: inline-block;
+        background: var(--amazon);
+        color: var(--amazon-ink);
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin: 8px 0 18px;
+    }
+</style>

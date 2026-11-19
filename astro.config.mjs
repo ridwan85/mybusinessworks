@@ -43,10 +43,27 @@ function rehypeSponsoredLinks() {
 export default defineConfig({
     site: 'https://mybusinesswork.com',
     output: 'static',
+    redirects: {
+        '/categories/home': '/categories/home-living/',
+        '/categories/home-decor': '/categories/home-living/',
+        '/categories/health': '/categories/health-household/',
+    },
     integrations: [
         sitemap({
             filter: (page) => !page.includes('/oauth/'),
         }),
+        {
+            name: 'sitemap-xml-copy',
+            hooks: {
+                'astro:build:done': async ({ dir }) => {
+                    const { copyFile } = await import('node:fs/promises');
+                    const { fileURLToPath } = await import('node:url');
+                    const path = await import('node:path');
+                    const out = fileURLToPath(dir);
+                    await copyFile(path.join(out, 'sitemap-index.xml'), path.join(out, 'sitemap.xml'));
+                },
+            },
+        },
     ],
     markdown: { rehypePlugins: [rehypeSponsoredLinks] },
 });

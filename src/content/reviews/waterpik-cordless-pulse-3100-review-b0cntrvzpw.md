@@ -3,7 +3,7 @@ title: "Waterpik Cordless Pulse 3100 Review"
 description: "The Waterpik Cordless Pulse 3100 is a rechargeable water flosser with two tips and a small tank. A wall adapter is not included."
 asin: "B0CNTRVZPW"
 brand: "Waterpik"
-category: "Health & Household"
+category: "Health & household"
 affiliateUrl: "https://www.amazon.com/dp/B0CNTRVZPW?tag=dailyvirald06-20"
 imageSrc: "/images/reviews/b0cntrvzpw/sink-ready.jpg"
 imageCaption: "On the bathroom sink next to the toothbrush cup."
@@ -21,7 +21,7 @@ hook: "Flossing Takes Too Long on a Busy Morning"
 hookSupport: "A cordless water flosser with two speeds, a small tank, and no wall plug in the box."
 whyHelps: ["You skip the tangle of string floss.","Low or high pressure. You pick.","It can go in a toiletry bag.","They claim you can use it in the shower."]
 angle: convenience
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the cordless Waterpik"
 features: ["RECHARGEABLE WATER FLOSSER: Waterpik Cordless Pulse is a great choice for portable water flossing. It includes 2 Waterpik flossing tips, a rechargeable battery, and can be used in the shower.","EASY TO USE: Ergonomically designed non-slip hand grip is comfortable and easy to hold, plus Waterpik Cordless Pulse features quiet water flossing technology.","DENTIST RECOMMENDED: Waterpik is the #1 water flosser brand recommended by dental professionals and the first water flosser brand to earn the American Dental Association (ADA) Seal of Acceptance for safety and effectiveness.","KEY FEATURES: 2 tips, 2 safe and effective settings (low/high), 6oz removable reservoir (top-rack dishwasher safe), up to 45 secs floss time, lithium-ion battery with recharge indicator, USB cable (wall adapter not included), waterproof for shower use.","PROVEN EFFECTIVE: Waterpik water flossers use PrecisionPulse technology to deliver a combination of water pressure and pulsations, removing up to 99.9 percent of plaque bacteria from treated areas that cause gingivitis, bleeding gums, cavities, and bad breath.","WARRANTY AND SUPPORT: Backed by a 2-year limited manufacturer’s warranty, see manual for details. Waterpik’s Colorado support team is available to help with any product questions or needs.","SHOWER USE: This product can be used in the shower. The manual’s shower warnings apply only when the corresponding symbol appears on the product labels and packaging; that symbol is not on this item."]
 shortVerdict: "A portable water flosser for a short clean between teeth. It does not replace a dentist, and the wall adapter is not included."
 buyIf: ["String floss is the step you skip.","Your bathroom has no room for a countertop unit.","You travel and want floss in the bag."]
@@ -82,7 +82,7 @@ No. It is a daily water flosser, and it does not replace a dentist's advice or t
 
 ### What is in the box?
 
-Two tips, the handle, a 6 oz tank, and a USB cable. There is no wall plug. Check the <a href="https://www.amazon.com/dp/B0CNTRVZPW?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Waterpik Cordless Pulse 3100</a> page so you are not surprised.
+Two tips, the handle, a 6 oz tank, and a USB cable. There is no wall plug. Check the <a href="https://www.amazon.com/dp/B0CNTRVZPW?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Waterpik Cordless Pulse 3100</a> so you are not surprised.
 
 ### Can I use it in the shower?
 

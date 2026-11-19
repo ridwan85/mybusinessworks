@@ -12,7 +12,7 @@ hook: "Late Again? A Single-Serve Coffee Maker for Fast Mornings"
 hookSupport: "You press a button and get one cup. No full pot to wait on."
 whyHelps: ["You get one cup without waiting on a full pot.","You pick 8, 10, or 12 oz with a button.","A tall travel mug can fit if you remove the tray.","It turns off 5 minutes after the last cup."]
 angle: "time"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the K-Express"
 features: ["STRONG BREW: Increases the strength and bold taste of your coffee’s flavor.","3 CUP SIZES: Brew an 8, 10, or 12 oz. cup at the push of a button.","MULTIPLE CUP WATER RESERVOIR: 42oz. removable reservoir lets you brew up to 4 cups before refilling. 8 oz. cup size","FAST & FRESH BREWED: Delicious coffee made in minutes.","TRAVEL MUG FRIENDLY: Removable drip tray accommodates travel mugs up to 7.4” tall.","ENERGY EFFICIENT: Auto off feature turns off your coffee maker 5 minutes after the last brew, helping to save energy.","COMPATIBLE WITH THE MY K-CUP UNIVERSAL REUSABLE COFFEE FILTER: Brew your own ground coffee (sold separately)."]
 shortVerdict: "One hot cup, fast, in 8, 10, or 12 oz, and the water tank is small on purpose."
 buyIf: ["Mornings are a rush and you drink one cup.","People in the house want different cup sizes.","You have a small counter or a desk."]
@@ -76,7 +76,7 @@ Yes, with the My K-Cup reusable filter, but it is sold separately. Most people u
 
 ### Will a travel mug fit?
 
-Yes, if you remove the drip tray. Mugs up to 7.4 inches tall fit. Check your mug against the <a href="https://www.amazon.com/dp/B09715G57M?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Keurig K-Express</a> page if it is extra tall.
+Yes, if you remove the drip tray. Mugs up to 7.4 inches tall fit. Check your mug against the <a href="https://www.amazon.com/dp/B09715G57M?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Keurig K-Express</a> if it is extra tall.
 
 ### When does it turn off?
 

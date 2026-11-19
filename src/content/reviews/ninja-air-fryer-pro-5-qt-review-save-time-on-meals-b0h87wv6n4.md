@@ -12,7 +12,7 @@ hook: "Home Late and Dinner Is Still Raw? A 5-Quart Air Fryer"
 hookSupport: "The oven takes forever to heat. This 5-quart Ninja uses hot air so dinner can crisp faster."
 whyHelps: ["You skip a long oven preheat on a late night.","Frozen food can crisp without a deep fryer.","One basket covers fry, bake, roast, reheat, and dry.","The nonstick basket is easier to wash than a pan pile."]
 angle: "time"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the 5 qt air fryer"
 features: ["AIR CRISP TECHNOLOGY: 400℉ superheated air surrounds food for hot, crispy results with little to no oil","5-in-1 FUNCTIONALITY: Air Fry, Bake, Roast, Reheat, and Dehydrate","LARGE CAPACITY: The 5-QT nonstick basket and crisper plate fit up to 4 lbs of French fries or 5 lbs of chicken wings","GUILT-FREE FRIED FOODS: Up to 75% less fat than traditional air frying methods. Tested against hand-cut, deep-fried French fries","FROZEN TO CRISPY: Cook frozen foods in just minutes for an extra-crispy finish","SPACE SAVER: Ninja’s latest air fryer design allows you to save even more space on your countertop without compromising capacity","EASY TO CLEAN: The basket and crisper plate are both nonstick for easy cleaning"]
 shortVerdict: "A compact 5-quart cooker for crispy food in less time, but it is not magic for every meal."
 buyIf: ["You cook for one, two, or a small family.","Frozen fries and chicken are a normal dinner.","Your counter is tight, but you still want a real basket."]
@@ -68,7 +68,7 @@ A huge dinner for a crowd may need two batches. If you love a real deep fryer, t
 
 ### What fits in the 5-quart basket?
 
-It holds up to 4 pounds of fries or 5 pounds of chicken wings, and you can also roast vegetables, bake, or dehydrate. Check the <a href="https://www.amazon.com/dp/B0H87WV6N4?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Air Fryer Pro</a> page for the exact model.
+It holds up to 4 pounds of fries or 5 pounds of chicken wings, and you can also roast vegetables, bake, or dehydrate. Check the <a href="https://www.amazon.com/dp/B0H87WV6N4?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Air Fryer Pro</a> for the exact model.
 
 ### Is the basket hard to clean?
 

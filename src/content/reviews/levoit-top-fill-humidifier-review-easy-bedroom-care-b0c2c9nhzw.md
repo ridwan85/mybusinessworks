@@ -3,7 +3,7 @@ title: "Levoit Top Fill Humidifier Review: Easy Bedroom Care"
 description: "The Levoit top-fill humidifier holds 2.5 liters and can run up to 25 hours on low. A plain look at noise, cleaning, and who should skip it."
 asin: "B0C2C9NHZW"
 brand: "Levoit"
-category: "Home"
+category: "Home & living"
 affiliateUrl: "https://www.amazon.com/dp/B0C2C9NHZW?tag=dailyvirald06-20"
 imageSrc: "/images/reviews/b0c2c9nhzw/bedroom-night.jpg"
 imageCaption: "The Levoit humidifier on a nightstand."
@@ -12,7 +12,7 @@ hook: "The Tank Spills on the Nightstand: An Easy Bedroom Humidifier"
 hookSupport: "You fill it from the top. You do not flip a heavy tank."
 whyHelps: ["You fill from the top, so you spill less.","The wide opening is easier to wipe.","They claim it is very quiet on low, with the lights off.","It stops when the tank is empty."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the humidifier"
 features: ["Fast Humidification All Night: Runs for up to 25 hours on low thanks to its large 2.5 liter capacity. The soothing moisture helps quickly relieve congestion and dry throat.","Easy Top-Fill Design: Easy top-fill design—no need to turn the water tank over or spill water. Just one step to remove the cover and fill the tank.","Much Easier for Cleaning: Easily clean the inside of the tank through its big opening. Detachable designs leave no hard-to-reach corners when cleaning.","No Disturbance When Sleeping: Noise level as low as 25dB and all lights off. Perfect humidifier for bedrooms and baby nurseries.","Customize Your Mist: Customize mist output with one knob and adjust direction freely with the 360 degree nozzle.","Auto Shut-Off for Safety: Automatically stops when the water tank is empty or removed from the base, preventing overheating or running dry."]
 shortVerdict: "A quiet cool-mist humidifier for a bedroom. The 2.5 liter tank is not for a whole open apartment."
 buyIf: ["Dry air bugs you at night.","You hate flipping a heavy water tank.","The humidifier lives in a bedroom or nursery."]
@@ -75,7 +75,7 @@ No. They claim it is very quiet on low, and you can turn the lights off.
 
 ### Does it connect to an app?
 
-No. One knob, and no phone controls. See the <a href="https://www.amazon.com/dp/B0C2C9NHZW?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Levoit humidifier</a> page if you want to confirm the model.
+No. One knob, and no phone controls. See the <a href="https://www.amazon.com/dp/B0C2C9NHZW?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Levoit humidifier</a> if you want to confirm the model.
 
 ### Do I still have to clean it?
 

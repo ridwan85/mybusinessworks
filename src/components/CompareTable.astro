@@ -28,13 +28,14 @@ const ordered = (['this', 'cheaper', 'different'] as const)
 
 <section class="compare-block" aria-labelledby="compare-title">
     <h2 id="compare-title">How it compares</h2>
-    <p class="compare-lead">We don't list prices, because they change. Open Amazon to see today's price.</p>
+    <p class="compare-lead">We don't list prices or lock star ratings, because both change. Open Amazon to see today's price.</p>
     <table class="compare-table">
         <thead>
             <tr>
                 <th scope="col">Pick</th>
                 <th scope="col">Good when</th>
                 <th scope="col">The catch</th>
+                <th scope="col">Rating</th>
             </tr>
         </thead>
         <tbody>
@@ -48,6 +49,9 @@ const ordered = (['this', 'cheaper', 'different'] as const)
                         </th>
                         <td data-label="Good when">{row.bestFor}</td>
                         <td data-label="The catch">{row.limit}</td>
+                        <td data-label="Rating">
+                            <a href={href} rel="nofollow sponsored noopener" target="_blank">See the live rating on Amazon</a>
+                        </td>
                     </tr>
                 );
             })}

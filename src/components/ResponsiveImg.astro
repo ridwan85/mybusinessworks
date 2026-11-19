@@ -1,0 +1,55 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+interface Props {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    sizes?: string;
+    loading?: 'eager' | 'lazy';
+    fetchpriority?: 'high' | 'low' | 'auto';
+    class?: string;
+    /** Stretch with the parent. Turn off for fixed-size thumbs. */
+    fill?: boolean;
+}
+
+const {
+    src,
+    alt,
+    width,
+    height,
+    sizes = '(max-width: 780px) 92vw, 480px',
+    loading = 'lazy',
+    fetchpriority,
+    class: className,
+    fill = true,
+} = Astro.props;
+
+const webp = src.replace(/\.(jpe?g|png)$/i, '.w640.webp');
+const hasWebp =
+    src.startsWith('/') &&
+    !src.includes('..') &&
+    existsSync(join(process.cwd(), 'public', webp.slice(1)));
+---
+
+<picture class:list={[fill && 'fill']}>
+    {hasWebp && <source type="image/webp" srcset={`${webp} 640w`} sizes={sizes} />}
+    <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        sizes={sizes}
+        loading={loading}
+        decoding="async"
+        fetchpriority={fetchpriority}
+        class={className}
+    />
+</picture>
+
+<style>
+    picture.fill { display: block; width: 100%; }
+    picture.fill img { width: 100%; height: auto; }
+</style>

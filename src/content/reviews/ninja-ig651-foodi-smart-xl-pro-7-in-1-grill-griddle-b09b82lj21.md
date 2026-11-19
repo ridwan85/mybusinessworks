@@ -12,7 +12,7 @@ hook: "One Pan Is Not Enough: An Indoor Grill and Griddle"
 hookSupport: "You can sear, griddle, and air fry in one machine. It is big. It stays indoors."
 whyHelps: ["You can sear without going outside.","The flat top covers pancakes, sandwiches, and more.","A probe helps you hit the doneness you want.","They claim it makes less smoke."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the Foodi grill"
 features: ["NINJA'S MOST POWERFUL GRILL: 500F independently powered grill grate creates direct, edge-to-edge high-heat searing for better char-grilled results. (Based on grill grate's direct heating element Versus FG500-series grills.)","12” BBQ GRIDDLE: flat top bbq griddle cooks foods grills can't and interlocks with the grate to harness its direct high heat. Precise temperature controls allow for fast, even cooking without hot or cold spots.","HOOD UP OR HOOD DOWN COOKING: Keep the hood down to add cyclonic air for fast, even, high-heat cooking, surround searing, crisping, and melting. Keep the hood up for intense high heat searing and flavors with direct bottom heat only.","SMART COOK SYSTEM PLUS THERMOMETER: The Foodi Smart Thermometer enable you to achieve the perfect doneness from rare to well with 4 smart protein settings & 9 customizable doneness levels. Do it all at a touch of a button with no more guesswork & no more over or under cooking.","UP TO 75% LESS FAT: Air fry crisp with up to 75% less fat than deep frying (tested against hand-cut, deep-fried French fries), using the included 4-qt crisper basket.","7 COOKING FUNCTIONS: Grill, BBQ Griddle, Air Crisp, Roast, Bake, Broil and Dehydrate functions enabled by the wide temperature range.","XL FAMILY-SIZED CAPACITY: Grill grate fits 6 steaks, mains, and sides at the same time, and more. Flat top BBQ griddle allows you to cook a whole platter of nachos, 4 sandwiches, or 6 pancakes.","SMOKE CONTROL SYSTEM: the combination of our chef recommended grilling practices, a temperature-controlled grill grate, splatter shield, and cool-air zone reduces smoke, keeping it out of the kitchen.","EASY TO CLEAN: PTFE/PFOA-free, nonstick ceramic-coated powered grill grate, crisper basket, and bbq griddle plate are dishwasher safe.","WHAT'S INCLUDED: Ninja Foodi Smart XL Pro Griddle & Grill, 9\" x 12\" Grill Grate, 12\" Flat Top BBQ Griddle, 4-qt. Crisper Basket, Foodi Smart Thermometer & Quick Start Guide."]
 shortVerdict: "A large indoor grill, griddle, and air fryer. Great when you cook for a family. Heavy on the counter."
 buyIf: ["You want grill marks without an outdoor grill.","You cook family-size breakfasts or steaks.","You hate guessing if meat is done."]
@@ -84,7 +84,7 @@ Yes. They claim the grate, basket, and griddle plate are dishwasher safe.
 
 ### What is in the box?
 
-The base, a 9 by 12 inch grill grate, a 12-inch griddle, a 4-quart crisper basket, the probe, and a quick start guide. Confirm it on the <a href="https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Foodi Smart XL Pro</a> page.
+The base, a 9 by 12 inch grill grate, a 12-inch griddle, a 4-quart crisper basket, the probe, and a quick start guide. Confirm it on the <a href="https://www.amazon.com/dp/B09B82LJ21?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ninja Foodi Smart XL Pro</a>.
 
 ## Bottom line
 

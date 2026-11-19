@@ -21,7 +21,7 @@ hook: "Someone Knocks and You Are Across the House"
 hookSupport: "You can see and talk from your phone. The battery means no doorbell wires. Some history features need a paid plan."
 whyHelps: ["You see the door without walking over.","You can talk to the person outside.","No doorbell wires to run.","It can show on an Echo screen you already own."]
 angle: "convenience"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the Ring doorbell"
 features: ["Capture it all with Retinal 2K video — From wide views to tighter focus, it’s easy to see your home or business in crisp clarity with Retinal 2K.","Zoom in up to 6x — Catch details at a distance, inspect faces, and more with up to 6x Enhanced Zoom.","Connect to who’s there — See, hear, and speak in real time with Live View and Two-Way Talk.","Get real-time alerts — Receive real-time notifications on your phone when motion is detected.","Easily recharge — Simply insert the included removal tool to detach your doorbell from the wall, then recharge the built-in battery via USB-C. (Cable not included.)","See more. Know more. Protect more. — Scroll back in time to rewatch what you missed, get AI-powered alerts that tell you what’s happening, and so much more with a compatible Ring Protect subscription (sold separately).","Works with Alexa — Hear custom notifications from Echo Dot, launch video with Echo Show, and enjoy hands-free home monitoring with select Alexa-enabled devices."]
 shortVerdict: "A battery doorbell with sharp 2K video. You supply the USB-C cable. Saved video history needs a separate Ring plan."
 buyIf: ["You want the door on your phone.","Your house has no doorbell wires.","You already use Alexa and want the door there too."]
@@ -48,7 +48,7 @@ The <a href="https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20" rel="nof
 
 * **Charging downtime.** The battery is inside the doorbell, so you take the whole unit down to charge, and the door is uncovered while it charges.
 
-* **Saved clips.** Rewatching history and the smarter alerts need a Ring Protect plan, and that plan is sold separately. Live view is the part that does not depend on you buying that first, so read the live page to see what is free.
+* **Saved clips.** Rewatching history and the smarter alerts need a Ring Protect plan, and that plan is sold separately. Live view is the part that does not depend on you buying that first, so check Amazon to see what is free.
 
 * **Alexa.** They claim it works with Echo speakers and Echo Show screens, which is handy if you already have one, but it is not required.
 
@@ -84,7 +84,7 @@ No. A removal tool is included, but a USB-C cable is not. You bring the cable an
 
 ### Can I rewatch yesterday?
 
-No, not without a Ring Protect plan. That plan is sold separately. Check the <a href="https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ring Battery Doorbell 2K</a> page for what the plan adds.
+No, not without a Ring Protect plan. That plan is sold separately. Check the <a href="https://www.amazon.com/dp/B0G2D1R15Q?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Ring Battery Doorbell 2K</a> for what the plan adds.
 
 ### Does it work with Alexa?
 

@@ -12,7 +12,7 @@ hook: "Dinner Is Late Again: A 6-Quart Cooker for Busy Nights"
 hookSupport: "You get home tired, and dinner still needs an hour. This 6-quart cooker is built to speed up that meal."
 whyHelps: ["Dinner can start with one pot, not a pile of pans.","Pressure mode is Instant Pot's faster path.","You can also slow cook when you are not in a rush.","The inner pot can go in the dishwasher."]
 angle: "time"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the 6 qt Instant Pot"
 features: ["7-IN-1 FUNCTIONALITY: Pressure cook, slow cook, rice cooker, yogurt maker, steamer, sauté pan and food warmer. PFOA/PTFE-free cooking.","QUICK ONE-TOUCH COOKING: 13 customizable Smart Programs for pressure cooking ribs, soups, beans, rice, poultry, yogurt, desserts and more.","COOK FAST OR SLOW: Pressure cook delicious one-pot meals up to 70% faster than traditional cooking methods or slow cook your favorite traditional recipes.","QUICK AND EASY CLEAN UP: Finger-print resistant, stainless-steel sides and dishwasher-safe lid, inner pot, and accessories.","PROVEN SAFETY FEATURES: Includes over 10 safety features, plus overheat protection and safe-locking lid.","GREAT FOR GROWING FAMILIES: Cook for up to 6 people – perfect for growing families, or meal prepping and batch cooking for singles.","VERSATILE INNER COOKING POT: Food-grade stainless-steel, a tri-ply bottom for more even cooking and perfect for sautéing.","DISCOVER AMAZING RECIPES: Download the free Instant Pot app to create quick new favorites, available on iOS and Android."]
 shortVerdict: "One pot for busy nights, and the claim is pressure mode is faster."
 buyIf: ["Weeknight dinner always starts too late.","You cook for a family, or you batch cook.","You want fewer gadgets on the counter."]
@@ -76,7 +76,7 @@ Yes. They claim the inner pot, lid, and included tools are dishwasher safe.
 
 ### How many people does 6 quarts feed?
 
-It is listed for up to 6 people, and it is also fine for batch cooking for one. See the <a href="https://www.amazon.com/dp/B00FLYWNYQ?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Instant Pot Duo 6 Qt</a> page for the current model details.
+It is listed for up to 6 people, and it is also fine for batch cooking for one. See the <a href="https://www.amazon.com/dp/B00FLYWNYQ?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Instant Pot Duo 6 Qt</a> for the current model details.
 
 ### Does it include recipes?
 

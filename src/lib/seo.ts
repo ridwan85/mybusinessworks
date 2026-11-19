@@ -5,7 +5,7 @@ import { isAmazonHostedImageUrl } from './product-image';
 export type FaqItem = { question: string; answer: string };
 
 /** Brand name used in Open Graph, Article schema, and author fields. */
-export const SITE_NAME = 'My Business Works';
+export const SITE_NAME = 'My Business Work';
 
 /** On-site image used when a page has no shareable photo of its own. */
 export const DEFAULT_SHARE_IMAGE_PATH = '/images/site/hero-home-lifestyle.jpg';

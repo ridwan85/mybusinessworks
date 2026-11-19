@@ -12,7 +12,7 @@ hook: "Dryer, Curler, and No Extra Minutes"
 hookSupport: "One Shark tool dries and styles. You still have to learn the barrels."
 whyHelps: ["One tool instead of a dryer plus a curler.","The claim is the airflow styles with less extreme heat.","A cool shot can set the style.","You spend less time switching tools."]
 angle: "time"
-ctaLabel: "Check Price on Amazon"
+ctaLabel: "See today's price for the FlexStyle"
 features: ["NEXT-GEN ION-POWERED HAIR DRYER & MULTI-STYLER: Dries, styles, and creates bouncy, defined curls with powerful Coanda ion airflow—all without heat damage.","POWERFUL COANDA WRAP CURLING: Hassle-free curls in seconds. Stronger wrap force for bouncier, more defined curls.","THE IONCURL DIFFERENCE: Ion power and powerful airflow help dry and style hair faster than your usual routine, with no heat damage for healthier looking hair.","NEW AIRSET BUTTON: Double-tap to pause airflow mid-style or hold down for a burst of cool air that locks your look in place.","NOW WITH SCALP SHIELD MODE: Activate to instantly drop to a cooler, scalp-safe setting — designed to protect hair growth from excessive heat.","ULTRA-FAST HAIR DRYER, VERSATILE MULTI-STYLER: Dry and style with one tool. Simplify your routine without sacrificing style.","NO HEAT DAMAGE: Advanced airflow technology styles without causing heat damage."]
 shortVerdict: "A 5-in-1 dryer and styler if you already use several hot tools. It is loud on high, and it takes practice."
 buyIf: ["You dry your hair and curl it most mornings.","Your counter is full of hot tools.","You will practice the curl barrels a few times."]
@@ -76,7 +76,7 @@ Yes, on high. Strong air needs a strong motor, so a quiet tool, this is not.
 
 ### How long does it take to learn?
 
-A few practice sessions. The wrap barrels are the new part. See the <a href="https://www.amazon.com/dp/B0HCF2G9VQ?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Shark FlexStyle IonCurl</a> page for the heads in this kit.
+A few practice sessions. The wrap barrels are the new part. See the <a href="https://www.amazon.com/dp/B0HCF2G9VQ?tag=dailyvirald06-20" rel="nofollow sponsored noopener" target="_blank">Shark FlexStyle IonCurl</a> for the heads in this kit.
 
 ## Bottom line
 

@@ -4,3 +4,5 @@ dist/
 .env
 .DS_Store
 tmp/
+# Phone-sized WebP files are created by scripts/build-webp.mjs during build.
+*.w640.webp

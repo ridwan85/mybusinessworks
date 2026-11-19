@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import GuideTable from '../../components/GuideTable.astro';
+
+const stanley = 'https://www.amazon.com/dp/B0CRMP3RQT?tag=dailyvirald06-20';
+const kettle = 'https://www.amazon.com/dp/B0F56N9J2R?tag=dailyvirald06-20';
+const rows = [
+    {
+        name: 'Stanley Quencher H2.0, 40 oz Peony',
+        href: stanley,
+        goodWhen: 'You want one cup for the kitchen, the car, and the couch.',
+        limit: 'Lots of buyers say it leaks if it tips. It is not a sealed bottle, and the 64 oz is a different product.',
+    },
+    {
+        name: 'MacKenzie-Childs electric kettle',
+        href: kettle,
+        goodWhen: 'You want hot water that stays on the counter, and you like a red-and-white check.',
+        limit: 'It only heats water. It does not ride in the car, and it does not brew coffee.',
+    },
+];
+---
+
+<Base
+    title="Stanley Quencher vs a counter kettle"
+    description="Compare the 40 oz Peony Stanley cup with an 8-cup electric kettle. One is for the drink you carry. The other stays on the counter."
+>
+    <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> / <a href="/guides/">Guides</a> / <span aria-current="page">Stanley vs kettle</span>
+    </nav>
+    <h1>Stanley Quencher vs a counter kettle</h1>
+    <p>It's 7 a.m. and the coffee cools off in the car. A kettle fixes a different problem: you want boiling water at the counter, and you want the kettle left out.</p>
+    <p><strong>Our pick for a drink you carry:</strong> the 40 oz Peony Stanley. It has a handle, a straw, and a lid with three positions. The claim is drinks stay cold for about 11 hours, iced for up to 2 days, and hot for hours. The base is about 9 cm, so it fits most car cup holders. Buy one color, not every color.</p>
+    <p><strong>Our pick if the water stays home:</strong> the MacKenzie-Childs kettle. It holds 8 cups. The cherry check is the reason to leave it on the counter.</p>
+    <p class="notice">Price at the time of writing. Check Amazon for today's price.</p>
+    <p class="notice">As an Amazon Associate I earn from qualifying purchases.</p>
+    <p>
+        <a class="cta-amazon" href={stanley} rel="sponsored nofollow">See today's price for the 40 oz Peony</a>
+    </p>
+    <GuideTable rows={rows} />
+    <p>
+        More detail is in the <a href="/reviews/stanley-quencher-h2-0-review-gift-ideas-under-25-b0crmp3rqt/">Stanley review</a> and the
+        <a href="/reviews/mackenzie-childs-electric-kettle-review-b0f56n9j2r/">kettle review</a>.
+    </p>
+</Base>
+
+<style>
+    .crumb { color: var(--muted); font-size: 0.92rem; margin-bottom: 12px; }
+    .crumb a { color: var(--muted); }
+    .cta-amazon {
+        display: inline-block;
+        background: var(--amazon);
+        color: var(--amazon-ink);
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin: 8px 0 18px;
+    }
+</style>

@@ -1,0 +1,102 @@
+---
+interface Row {
+    name: string;
+    href: string;
+    goodWhen: string;
+    limit: string;
+}
+
+interface Props {
+    rows: Row[];
+}
+
+const { rows } = Astro.props;
+---
+
+<table class="compare-table">
+    <thead>
+        <tr>
+            <th scope="col">Pick</th>
+            <th scope="col">Good when</th>
+            <th scope="col">The catch</th>
+            <th scope="col">Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {rows.map((row) => (
+            <tr>
+                <th scope="row">
+                    <a href={row.href} rel="nofollow sponsored noopener" target="_blank">{row.name}</a>
+                </th>
+                <td data-label="Good when">{row.goodWhen}</td>
+                <td data-label="The catch">{row.limit}</td>
+                <td data-label="Rating">
+                    <a href={row.href} rel="nofollow sponsored noopener" target="_blank">See the live rating on Amazon</a>
+                </td>
+            </tr>
+        ))}
+    </tbody>
+</table>
+<p class="compare-lead">We don't list prices or lock star ratings, because both change. Price at the time of writing. Check Amazon for today's price.</p>
+
+<style>
+    .compare-lead {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    .compare-table th,
+    .compare-table td {
+        text-align: left;
+        vertical-align: top;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+    .compare-table tr:last-child th,
+    .compare-table tr:last-child td { border-bottom: 0; }
+    .compare-table thead th {
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
+        background: #f8eef1;
+    }
+    .compare-table a { font-weight: 650; }
+    @media (max-width: 779px) {
+        .compare-table thead { display: none; }
+        .compare-table,
+        .compare-table tbody,
+        .compare-table tr,
+        .compare-table th,
+        .compare-table td { display: block; width: 100%; }
+        .compare-table { background: transparent; border: 0; }
+        .compare-table tr {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--surface);
+            margin: 0 0 10px;
+            overflow: hidden;
+        }
+        .compare-table td::before {
+            content: attr(data-label);
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 2px;
+        }
+    }
+</style>

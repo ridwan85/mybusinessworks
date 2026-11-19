@@ -1,18 +1,40 @@
 ---
 import Base from '../layouts/Base.astro';
+import { SITE_NAME } from '../lib/seo';
+
+const siteUrl = Astro.site ? new URL('/', Astro.site).href : 'https://mybusinesswork.com/';
+const aboutJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About',
+    dateModified: '2026-11-19',
+    publisher: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        url: siteUrl,
+    },
+};
 ---
 
 <Base
     title="About | mybusinesswork.com"
-    description="mybusinesswork.com does the homework so your day works better. Useful Amazon picks for busy people and gift shoppers."
+    description="How the My Business Work team writes reviews: product facts, buyer comments, trade-offs, and a date when we update."
 >
     <h1>About</h1>
-    <p>mybusinesswork.com means we do the homework so your day works better.</p>
-    <p>This is a small site from the My Business Works team, and we read the product page, the specs, and what real buyers say so you do not have to start from scratch.</p>
-    <p>We look for useful products for busy people and for people buying gifts, because the right pick saves you from buying the wrong thing first.</p>
+    <p><em>Last updated: November 19, 2026.</em></p>
+    <p>
+        mybusinesswork.com is a small site from the My Business Work team. The name means we do the homework so your day works better.
+    </p>
+    <p>
+        We read the product facts and what lots of buyers say. We do not claim we used the product ourselves. We write the trade-offs in plain words, and we date-stamp when we update.
+    </p>
+    <p>
+        The reviews are for busy people and for people buying gifts, so you can choose without digging through Amazon.
+    </p>
     <p>
         Some links go to Amazon. If you buy through one, we may earn a fee. You don't pay extra.
         As an Amazon Associate I earn from qualifying purchases.
     </p>
-    <p>The longer note is on the <a href="/disclosure/">affiliate disclosure</a> page.</p>
+    <p>The longer note is on our <a href="/disclosure/">affiliate disclosure</a>.</p>
+    <script type="application/ld+json" set:html={JSON.stringify(aboutJsonLd)} />
 </Base>

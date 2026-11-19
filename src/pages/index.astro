@@ -1,9 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import ResponsiveImg from '../components/ResponsiveImg.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 import { categoryHubs, reviewsForHub, sortReviewsNewestFirst } from '../lib/categories';
 import { localImageSize } from '../lib/image-size';
+import { SITE_NAME } from '../lib/seo';
 
 const HOME_CAROUSEL_LIMIT = 10;
 const reviews = sortReviewsNewestFirst(await getCollection('reviews'));
@@ -11,12 +13,22 @@ const featured = reviews[0];
 /** Newest by createdAt; homepage carousel stays capped so it doesn’t grow forever. */
 const latestReviews = reviews.slice(0, HOME_CAROUSEL_LIMIT);
 
-const heroSlides = [
-  '/images/site/hero-home-lifestyle.jpg',
-  '/images/site/hero-workspace.jpg',
-  '/images/site/hero-parcels.jpg',
+const heroImage = '/images/site/hero-home-lifestyle.jpg';
+const heroAlt = 'A living room with everyday home products, the kind of things we review.';
+const guides = [
+  {
+    href: '/guides/best-space-heater-for-one-room-under-50/',
+    title: 'Best space heater for one room under $50',
+  },
+  {
+    href: '/guides/stanley-quencher-vs-counter-kettle/',
+    title: 'Stanley Quencher vs a counter kettle',
+  },
+  {
+    href: '/guides/best-weeknight-cooker-instant-pot-or-air-fryer/',
+    title: 'Best weeknight cooker: Instant Pot or air fryer',
+  },
 ];
-const heroImage = heroSlides[0];
 
 const coverage = categoryHubs.map((hub) => ({
   ...hub,
@@ -33,16 +45,16 @@ const homeJsonLd = {
       name: 'mybusinesswork.com',
       url: siteUrl,
       description:
-        'Clear Amazon product reviews for home, tech, and everyday essentials, with honest verdicts and the real tradeoffs.',
+        'Plain reviews of home and everyday products, for busy people and gift shoppers.',
       publisher: {
         '@type': 'Organization',
-        name: 'My Business Works',
+        name: SITE_NAME,
         url: siteUrl,
       },
     },
     {
       '@type': 'Organization',
-      name: 'My Business Works',
+      name: SITE_NAME,
       url: siteUrl,
     },
   ],
@@ -53,35 +65,29 @@ const homeJsonLd = {
   layout="landing"
   ogType="website"
   title="mybusinesswork.com | Honest Amazon Product Picks"
-  description="Clear Amazon product reviews for home, tech, and everyday essentials, with honest verdicts and the real tradeoffs."
+  description="Plain reviews of home and everyday products. We read the facts and what buyers say, so you can choose without digging through Amazon."
   image={heroImage}
 >
   <section class="hook" aria-label="Hero">
-    <div class="hook-media" aria-hidden="true">
-      {heroSlides.map((src, i) => {
-        const size = localImageSize(src);
-        return (
-          <img
-            class:list={['slide', i === 0 && 'is-active']}
-            src={i === 0 ? src : undefined}
-            data-src={src}
-            alt=""
-            width={size?.width ?? 1600}
-            height={size?.height ?? 900}
-            loading={i === 0 ? 'eager' : 'lazy'}
-            decoding="async"
-            fetchpriority={i === 0 ? 'high' : 'low'}
-            data-slide={i}
-          />
-        );
-      })}
+    <div class="hook-media">
+      <ResponsiveImg
+        class="slide is-active"
+        src={heroImage}
+        alt={heroAlt}
+        width={localImageSize(heroImage)?.width ?? 1600}
+        height={localImageSize(heroImage)?.height ?? 900}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        fill={false}
+      />
       <div class="hook-shade"></div>
     </div>
     <div class="hook-copy">
       <p class="brand-mark">mybusinesswork.com</p>
-      <h1>Plain reviews. Easier choices.</h1>
+      <h1>Home and everyday product reviews.</h1>
       <p class="lede">
-        We read the Amazon page so you don't have to, then we write the plain version for home, tech, and everyday stuff.
+        We write for busy people and for people buying gifts. We read the product facts and what buyers say, so choosing is easier than digging through Amazon.
       </p>
       <div class="cta-row">
         <a class="cta cta-amazon" href="#reviews">Shop reviews</a>
@@ -167,7 +173,14 @@ const homeJsonLd = {
         {coverage.map((item) => (
           <li class="coverage-slide">
             <a class="coverage-card" href={item.href}>
-              <img src={item.src} alt="" loading="lazy" width="720" height="480" />
+              <ResponsiveImg
+                src={item.src}
+                alt={`${item.label}: ${item.blurb}`}
+                width={720}
+                height={480}
+                sizes="(max-width: 780px) 80vw, 320px"
+                loading="lazy"
+              />
               <div>
                 <h3>{item.label}</h3>
                 <p>{item.blurb}</p>
@@ -184,17 +197,27 @@ const homeJsonLd = {
     </div>
   </section>
 
+  <section class="guides wrap-wide" aria-labelledby="guides-title">
+    <h2 id="guides-title">Guides</h2>
+    <p>Short comparisons built from reviews we already wrote.</p>
+    <ul>
+      {guides.map((guide) => (
+        <li><a href={guide.href}>{guide.title}</a></li>
+      ))}
+    </ul>
+  </section>
+
   <section class="close-cta wrap-wide" aria-labelledby="close-title">
     <div class="close-panel">
-      <img
+      <ResponsiveImg
         class="close-bg"
         src="/images/site/hero-parcels.jpg"
-        alt=""
-        aria-hidden="true"
+        alt="Everyday products ready to be reviewed"
         width={localImageSize('/images/site/hero-parcels.jpg')?.width ?? 1600}
         height={localImageSize('/images/site/hero-parcels.jpg')?.height ?? 900}
+        sizes="100vw"
         loading="lazy"
-        decoding="async"
+        fill={false}
       />
       <div class="close-shade"></div>
       <div class="close-copy">
@@ -215,28 +238,7 @@ const homeJsonLd = {
 </Base>
 
 <script>
-  const slides = [...document.querySelectorAll('.hook-media .slide')];
-  const hydrate = (img) => {
-    if (img instanceof HTMLImageElement && img.dataset.src && !img.getAttribute('src')) {
-      img.src = img.dataset.src;
-    }
-  };
-  if (slides.length > 1) {
-    const kick = () => slides.slice(1).forEach(hydrate);
-    if ('requestIdleCallback' in window) requestIdleCallback(kick);
-    else setTimeout(kick, 1200);
-  }
-  if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let i = 0;
-    setInterval(() => {
-      slides[i].classList.remove('is-active');
-      i = (i + 1) % slides.length;
-      hydrate(slides[i]);
-      slides[i].classList.add('is-active');
-    }, 5500);
-  }
-
-  // Horizontal carousels (reviews + categories) — swipe or use arrows
+  // Horizontal carousels (reviews + categories). Swipe or use the arrows. The hero photo stays still.
   document.querySelectorAll('[data-carousel]').forEach((root) => {
     const id = root.getAttribute('data-carousel');
     const track = root.querySelector('[data-carousel-track]');
@@ -281,7 +283,6 @@ const homeJsonLd = {
   }
   .hook-media .slide.is-active {
     opacity: 1;
-    animation: drift 18s ease-in-out infinite alternate;
   }
   .hook-shade {
     position: absolute;
@@ -547,6 +548,9 @@ const homeJsonLd = {
     padding-top: 40px;
     padding-bottom: 28px;
   }
+  .guides { padding-top: 12px; padding-bottom: 8px; }
+  .guides ul { padding-left: 1.2rem; }
+  .guides li { margin: 0 0 0.4rem; }
   .close-panel {
     position: relative;
     overflow: hidden;

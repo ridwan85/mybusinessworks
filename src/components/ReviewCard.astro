@@ -3,6 +3,7 @@ import { slugifyCategory } from '../lib/categories';
 import { localImageSize } from '../lib/image-size';
 import { displayImage } from '../lib/product-image';
 import GraphicCard from './GraphicCard.astro';
+import ResponsiveImg from './ResponsiveImg.astro';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -20,13 +21,13 @@ const photoSize = localImageSize(photo);
   <article class="card-inner">
     <a class="media" href={href} tabindex="-1" aria-hidden="true">
       {photo ? (
-        <img
+        <ResponsiveImg
           src={photo}
-          alt=""
+          alt={r.data.title}
           width={photoSize?.width}
           height={photoSize?.height}
+          sizes="(max-width: 780px) 78vw, 280px"
           loading={priority ? 'eager' : 'lazy'}
-          decoding="async"
           fetchpriority={priority ? 'high' : undefined}
         />
       ) : (
