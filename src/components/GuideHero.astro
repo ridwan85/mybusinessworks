@@ -1,0 +1,36 @@
+---
+import ResponsiveImg from './ResponsiveImg.astro';
+import { localImageSize } from '../lib/image-size';
+
+interface Props {
+    src: string;
+    alt: string;
+}
+
+const { src, alt } = Astro.props;
+const size = localImageSize(src);
+---
+
+<figure class="guide-hero">
+    <ResponsiveImg
+        src={src}
+        alt={alt}
+        width={size?.width}
+        height={size?.height}
+        sizes="(max-width: 780px) 92vw, 720px"
+        loading="eager"
+        fetchpriority="high"
+    />
+</figure>
+
+<style>
+    .guide-hero { margin: 0 0 16px; }
+    .guide-hero :global(img) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 12px;
+        max-height: 320px;
+    }
+</style>

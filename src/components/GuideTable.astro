@@ -1,9 +1,14 @@
 ---
+import ResponsiveImg from './ResponsiveImg.astro';
+import { localImageSize } from '../lib/image-size';
+
 interface Row {
     name: string;
     href: string;
     goodWhen: string;
     limit: string;
+    image: string;
+    alt: string;
 }
 
 interface Props {
@@ -23,23 +28,50 @@ const { rows } = Astro.props;
         </tr>
     </thead>
     <tbody>
-        {rows.map((row) => (
-            <tr>
-                <th scope="row">
-                    <a href={row.href} rel="nofollow sponsored noopener" target="_blank">{row.name}</a>
-                </th>
-                <td data-label="Good when">{row.goodWhen}</td>
-                <td data-label="The catch">{row.limit}</td>
-                <td data-label="Rating">
-                    <a href={row.href} rel="nofollow sponsored noopener" target="_blank">See the live rating on Amazon</a>
-                </td>
-            </tr>
-        ))}
+        {rows.map((row) => {
+            const size = localImageSize(row.image);
+            return (
+                <tr>
+                    <th scope="row">
+                        <div class="pick">
+                            <ResponsiveImg
+                                src={row.image}
+                                alt={row.alt}
+                                width={size?.width}
+                                height={size?.height}
+                                sizes="96px"
+                                loading="lazy"
+                                fill={false}
+                            />
+                            <a href={row.href} rel="nofollow sponsored noopener" target="_blank">{row.name}</a>
+                        </div>
+                    </th>
+                    <td data-label="Good when">{row.goodWhen}</td>
+                    <td data-label="The catch">{row.limit}</td>
+                    <td data-label="Rating">
+                        <a href={row.href} rel="nofollow sponsored noopener" target="_blank">See the live rating on Amazon</a>
+                    </td>
+                </tr>
+            );
+        })}
     </tbody>
 </table>
 <p class="compare-lead">We don't list prices or lock star ratings, because both change. Price at the time of writing. Check Amazon for today's price.</p>
 
 <style>
+    .pick {
+        display: grid;
+        grid-template-columns: 88px 1fr;
+        gap: 10px;
+        align-items: center;
+    }
+    .pick :global(img) {
+        width: 88px;
+        height: 88px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+    }
     .compare-lead {
         margin: 12px 0 0;
         color: var(--muted);
@@ -74,6 +106,8 @@ const { rows } = Astro.props;
     }
     .compare-table a { font-weight: 650; }
     @media (max-width: 779px) {
+        .pick { grid-template-columns: 72px 1fr; }
+        .pick :global(img) { width: 72px; height: 72px; }
         .compare-table thead { display: none; }
         .compare-table,
         .compare-table tbody,

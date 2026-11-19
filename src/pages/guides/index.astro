@@ -1,21 +1,29 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ResponsiveImg from '../../components/ResponsiveImg.astro';
+import { localImageSize } from '../../lib/image-size';
 
 const guides = [
     {
         href: '/guides/best-space-heater-for-one-room-under-50/',
         title: 'Best space heater for one room under $50',
         blurb: 'A corded heater for one bedroom, and a throw if you only need heat on you.',
+        image: '/images/reviews/b0c6fckqml/desk-morning.jpg',
+        alt: 'Gold Dreo heater on the floor beside a desk on a cold morning.',
     },
     {
         href: '/guides/keurig-vs-electric-kettle/',
         title: 'Keurig K-Express vs an electric kettle',
         blurb: 'A finished cup of coffee, or hot water you use for tea.',
+        image: '/images/reviews/b09715g57m/morning-brew.jpg',
+        alt: 'Black Keurig K-Express brewing one cup on the counter.',
     },
     {
         href: '/guides/best-weeknight-cooker-instant-pot-or-air-fryer/',
         title: 'Best weeknight cooker: Instant Pot or air fryer',
         blurb: 'A one-pot meal, or food that should come out crisp.',
+        image: '/images/reviews/b00flywnyq/weeknight-soup.jpg',
+        alt: 'The Instant Pot on the counter beside a bowl of soup.',
     },
 ];
 ---
@@ -29,12 +37,65 @@ const guides = [
         These pages use facts from reviews we already wrote. We do not add new specs, and we do not lock a star rating or a price.
     </p>
     <p class="notice">As an Amazon Associate I earn from qualifying purchases.</p>
-    <ul>
-        {guides.map((guide) => (
-            <li>
-                <a href={guide.href}><strong>{guide.title}</strong></a>
-                <p>{guide.blurb}</p>
-            </li>
-        ))}
+    <ul class="guide-cards">
+        {guides.map((guide) => {
+            const size = localImageSize(guide.image);
+            return (
+                <li>
+                    <a href={guide.href}>
+                        <ResponsiveImg
+                            src={guide.image}
+                            alt={guide.alt}
+                            width={size?.width}
+                            height={size?.height}
+                            sizes="(max-width: 780px) 92vw, 280px"
+                            loading="lazy"
+                        />
+                        <strong>{guide.title}</strong>
+                        <p>{guide.blurb}</p>
+                    </a>
+                </li>
+            );
+        })}
     </ul>
 </Base>
+
+<style>
+    .guide-cards {
+        list-style: none;
+        padding: 0;
+        margin: 16px 0 0;
+        display: grid;
+        gap: 16px;
+    }
+    .guide-cards a {
+        display: block;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+    }
+    .guide-cards :global(img) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+    }
+    .guide-cards strong,
+    .guide-cards p {
+        display: block;
+        margin: 0;
+        padding: 0 14px;
+    }
+    .guide-cards strong { padding-top: 12px; }
+    .guide-cards p {
+        padding-bottom: 14px;
+        color: var(--muted);
+    }
+    @media (min-width: 780px) {
+        .guide-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+</style>
