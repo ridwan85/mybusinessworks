@@ -1,19 +1,25 @@
 ---
 import Base from '../../layouts/Base.astro';
+import GuideHero from '../../components/GuideHero.astro';
 import GuideTable from '../../components/GuideTable.astro';
 
 const pot = 'https://www.amazon.com/dp/B00FLYWNYQ?tag=dailyvirald06-20';
 const fryer = 'https://www.amazon.com/dp/B0H87WV6N4?tag=dailyvirald06-20';
+const hero = '/images/reviews/b00flywnyq/weeknight-soup.jpg';
 const rows = [
     {
         name: 'Instant Pot Duo, 6 qt',
         href: pot,
+        image: hero,
+        alt: 'The Instant Pot on the counter beside a bowl of soup.',
         goodWhen: 'You walk in tired and dinner is still a pot of food: soup, beans, rice, or a slow cook.',
         limit: 'It takes counter space. Quick release sends out hot steam, so keep your hands clear.',
     },
     {
         name: 'Ninja Air Fryer Pro, 5 qt',
         href: fryer,
+        image: '/images/reviews/b0h87wv6n4/crispy-fries.jpg',
+        alt: 'The Ninja air fryer basket is open, with fries ready to plate.',
         goodWhen: 'You want fries, chicken, or vegetables crisp without waiting on a cold oven.',
         limit: 'A big family may need two batches. It is not the same texture as a deep fryer.',
     },
@@ -28,6 +34,7 @@ const rows = [
         <a href="/">Home</a> / <a href="/guides/">Guides</a> / <span aria-current="page">Weeknight cooker</span>
     </nav>
     <h1>Best weeknight cooker: Instant Pot or air fryer</h1>
+    <GuideHero src={hero} alt="The Instant Pot on the counter beside a bowl of soup." />
     <p>You get home late, and dinner is still ahead of you. The right machine depends on whether the food should simmer in one pot or come out crisp.</p>
     <p><strong>Our pick for a one-pot meal:</strong> the Instant Pot Duo 6 qt. It can pressure cook, slow cook, steam, sauté, and keep food warm. The claim is pressure cooking can be up to 70% faster than older methods. It is listed for up to 6 people.</p>
     <p><strong>Our pick when the food should be crisp:</strong> the Ninja Air Fryer Pro 5 qt. It air fries, bakes, roasts, reheats, and dehydrates. The claim is hot air, up to 400°F, crisps food with little or no oil. It holds up to 4 pounds of fries or 5 pounds of wings.</p>

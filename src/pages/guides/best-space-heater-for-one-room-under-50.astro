@@ -1,19 +1,25 @@
 ---
 import Base from '../../layouts/Base.astro';
+import GuideHero from '../../components/GuideHero.astro';
 import GuideTable from '../../components/GuideTable.astro';
 
 const dreo = 'https://www.amazon.com/dp/B0C6FCKQML?tag=dailyvirald06-20';
 const throwUrl = 'https://www.amazon.com/dp/B0BZR6YBHK?tag=dailyvirald06-20';
+const hero = '/images/reviews/b0c6fckqml/desk-morning.jpg';
 const rows = [
     {
         name: 'Dreo heater, Gold HSH006',
         href: dreo,
+        image: hero,
+        alt: 'Gold Dreo heater on the floor beside a desk on a cold morning.',
         goodWhen: 'One bedroom or small office feels cold, and the rest of the house is fine.',
         limit: 'The claim is about 200 square feet. It does not turn side to side, and it needs a wall outlet.',
     },
     {
         name: 'Bedsure heated throw',
         href: throwUrl,
+        image: '/images/reviews/b0bzr6ybhk/couch-cozy.jpg',
+        alt: 'A folded grey heated throw, with the soft side and the fuzzy side showing.',
         goodWhen: 'You want heat on your lap or shoulders, not in the air.',
         limit: 'It is 50 by 60 inches, so it covers a person, not a room.',
     },
@@ -28,6 +34,7 @@ const rows = [
         <a href="/">Home</a> / <a href="/guides/">Guides</a> / <span aria-current="page">One-room heater</span>
     </nav>
     <h1>Best space heater for one room under $50</h1>
+    <GuideHero src={hero} alt="Gold Dreo heater on the floor beside a desk on a cold morning." />
     <p>The bedroom stays cold, but heating every room feels wasteful. You want the air in one space warmer, and you want today's price to still make sense as a modest gift.</p>
     <p><strong>Our pick:</strong> the Dreo Gold HSH006, if the room is about one bedroom. It is a corded 1500W ceramic tower. The claim is about 200 square feet. It does not turn from side to side, so you point it, then use the remote.</p>
     <p class="notice">Price at the time of writing. Check Amazon for today's price. "Under $50" only counts if Amazon still shows that.</p>
